@@ -3,6 +3,7 @@
 
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ArrowRight, Phone } from "lucide-react";
+import Link from "next/link"; // Added Link import
 
 const HeroSection = () => {
   return (
@@ -14,7 +15,7 @@ const HeroSection = () => {
           muted
           playsInline
           className="w-full h-full object-cover"
-          poster="https://placehold.co/1920x1080.png" 
+          poster="https://placehold.co/1920x1080.png"
           data-ai-hint="technology business"
         >
           <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/%E7%85%99%E7%AA%81%E3%81%8B%E3%82%89%E7%85%99%E3%81%8B%E3%82%99%E5%A4%9A%E3%81%8F%E5%87%BA%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82.mp4" type="video/mp4" />
@@ -30,22 +31,27 @@ const HeroSection = () => {
           Innovatech delivers cutting-edge solutions in AI, web, and mobile development to elevate your business.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up animation-delay-300">
-          <AnimatedButton 
-            size="lg" 
-            variant="default" 
+          <AnimatedButton
+            size="lg"
+            variant="default"
             pulseAnimation
             className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg transform hover:scale-105 transition-transform duration-300"
           >
             Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
           </AnimatedButton>
-          <AnimatedButton 
-            size="lg" 
-            variant="outline" 
-            pulseAnimation
-            className="border-primary-foreground text-primary bg-transparent hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
-          >
-            Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />
-          </AnimatedButton>
+          <Link href="/contact" passHref>
+            <AnimatedButton
+              asChild // Added asChild prop
+              size="lg"
+              variant="outline"
+              pulseAnimation
+              className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
+            >
+              <span> {/* Wrapped content in a span for proper rendering with asChild */}
+                Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />
+              </span>
+            </AnimatedButton>
+          </Link>
         </div>
       </div>
     </section>

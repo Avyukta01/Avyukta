@@ -19,7 +19,9 @@ import {
   Award, 
   DollarSign, 
   Building,
-  Handshake 
+  Handshake,
+  Sun, // Added Sun
+  Moon, // Added Moon
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -32,6 +34,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { LucideIcon } from "lucide-react";
+import { ThemeToggle } from "@/components/ui/ThemeToggle"; // Added ThemeToggle import
 
 interface NavLink {
   href: string;
@@ -98,7 +101,7 @@ const Header = () => {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container-max flex h-16 items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-6">
+        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navLinks.map((link) =>
             link.desktopSubLinks ? (
               <DropdownMenu key={link.label}>
@@ -133,12 +136,14 @@ const Header = () => {
             )
           )}
         </nav>
-        <div className="hidden md:block">
+        <div className="hidden md:flex items-center space-x-2">
+          <ThemeToggle />
           <AnimatedButton pulseAnimation className="bg-accent text-accent-foreground hover:bg-accent/90">
             Talk to Us
           </AnimatedButton>
         </div>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center space-x-2">
+          <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">

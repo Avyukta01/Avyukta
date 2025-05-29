@@ -3,7 +3,19 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { MoreHorizontal, X, ChevronDown } from "lucide-react";
+import { 
+  MoreHorizontal, 
+  X, 
+  ChevronDown,
+  Newspaper,
+  FileText,
+  ScrollText,
+  Megaphone,
+  CalendarClock,
+  HelpCircle,
+  BookOpen,
+  Mail
+} from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
@@ -14,8 +26,17 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import type { LucideIcon } from "lucide-react";
 
-const navLinks = [
+interface NavLink {
+  href: string;
+  label: string;
+  icon?: LucideIcon; // For desktop sublinks
+  desktopSubLinks?: NavLink[];
+}
+
+
+const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
   { href: "/ai", label: "AI" },
   {
@@ -53,14 +74,14 @@ const navLinks = [
     href: "/resources",
     label: "Resources",
     desktopSubLinks: [
-      { href: "/blog", label: "Blog" },
-      { href: "/resources/case-studies", label: "Case Studies" },
-      { href: "/resources/whitepapers-reports", label: "Whitepapers & Reports" },
-      { href: "/resources/news-announcements", label: "News & Announcements" },
-      { href: "/resources/webinars-events", label: "Webinars & Events" },
-      { href: "/faq", label: "Help Center / FAQs" },
-      { href: "/resources/tutorials", label: "Tutorials & How tos" },
-      { href: "/resources/newsletter", label: "Newsletter Signup" },
+      { href: "/blog", label: "Blog", icon: Newspaper },
+      { href: "/resources/case-studies", label: "Case Studies", icon: FileText },
+      { href: "/resources/whitepapers-reports", label: "Whitepapers & Reports", icon: ScrollText },
+      { href: "/resources/news-announcements", label: "News & Announcements", icon: Megaphone },
+      { href: "/resources/webinars-events", label: "Webinars & Events", icon: CalendarClock },
+      { href: "/faq", label: "Help Center / FAQs", icon: HelpCircle },
+      { href: "/resources/tutorials", label: "Tutorials & How tos", icon: BookOpen },
+      { href: "/resources/newsletter", label: "Newsletter Signup", icon: Mail },
     ],
   },
 ];
@@ -88,7 +109,8 @@ const Header = () => {
                 <DropdownMenuContent className="w-56" align="start">
                   {link.desktopSubLinks.map((subLink) => (
                     <DropdownMenuItem key={subLink.href} asChild>
-                      <Link href={subLink.href} className="w-full">
+                      <Link href={subLink.href} className="w-full flex items-center">
+                        {subLink.icon && <subLink.icon className="mr-2 h-4 w-4 opacity-70" />}
                         {subLink.label}
                       </Link>
                     </DropdownMenuItem>

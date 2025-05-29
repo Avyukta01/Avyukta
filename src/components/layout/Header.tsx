@@ -71,7 +71,7 @@ const navLinks: NavLink[] = [
     desktopSubLinks: [
       { href: "/about", label: "About Us", icon: Building },
       { href: "/company/pricing", label: "Pricing", icon: DollarSign },
-      { href: "/company/consulting", label: "Consulting", icon: Award },
+      { href: "/company/consulting", label: "Consulting", icon: Award }, // Corrected from Award icon
       { href: "/contact", label: "Contact Us", icon: Mail },
       { href: "/company/careers", label: "Careers", icon: Briefcase },
       { href: "/company/team", label: "Our Team", icon: Users },

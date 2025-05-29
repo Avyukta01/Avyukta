@@ -1,3 +1,4 @@
+
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -66,7 +67,7 @@ export default function WebinarsEventsPage() {
           <div className="container-max">
             <CalendarClock className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Innovatech Webinars & Events
+              Innovatech Webinars &amp; Events
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Join us for insightful discussions, workshops, and conferences. Stay ahead with the latest trends and innovations.
@@ -114,7 +115,7 @@ export default function WebinarsEventsPage() {
                     <p className="text-foreground/80">{event.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary transition-colors w-full md:w-auto">
+                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary group-hover:text-primary-foreground transition-colors w-full md:w-auto">
                       <Link href={event.slug}>
                         Register Now <Ticket className="ml-2 h-4 w-4" />
                       </Link>
@@ -171,7 +172,7 @@ export default function WebinarsEventsPage() {
                     <p className="text-foreground/80">{event.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="outline" className="border-primary text-primary hover:bg-primary/10 w-full md:w-auto">
+                    <Button asChild variant="outline" className="border-primary text-primary w-full md:w-auto">
                       <Link href={event.slug}>
                         Watch Recording <Video className="ml-2 h-4 w-4" />
                       </Link>

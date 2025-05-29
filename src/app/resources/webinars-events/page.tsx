@@ -85,10 +85,19 @@ export default function WebinarsEventsPage() {
               {upcomingEvents.map((event, index) => (
                 <Card 
                   key={event.slug} 
-                  className={`flex flex-col overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${(index * 100) + 200} group bg-gradient-to-r from-card via-secondary to-card bg-[length:200%_auto] animate-background-pan`}
+                  className={`
+                    flex flex-col overflow-hidden shadow-xl hover:shadow-2xl 
+                    transition-all duration-300 ease-in-out 
+                    animate-fade-in-up animation-delay-${(index * 100) + 200} 
+                    group 
+                    bg-gradient-to-r from-card via-secondary/70 to-card 
+                    group-hover:from-secondary/50 group-hover:via-primary group-hover:to-secondary/50 
+                    focus-within:from-secondary/50 focus-within:via-primary focus-within:to-secondary/50 
+                    bg-[length:200%_auto] animate-background-pan
+                  `}
                 >
-                  <Link href={event.slug} className="block">
-                    <div className="relative h-60 w-full overflow-hidden">
+                  <Link href={event.slug} className="block group-focus-within:ring-2 group-focus-within:ring-ring group-focus-within:ring-offset-2 rounded-t-lg">
+                    <div className="relative h-60 w-full overflow-hidden rounded-t-lg">
                       <Image
                         src={event.image}
                         alt={event.title}
@@ -104,7 +113,7 @@ export default function WebinarsEventsPage() {
                     </div>
                   </Link>
                   <CardHeader>
-                    <Link href={event.slug} className="block">
+                    <Link href={event.slug} className="block group-focus-within:underline">
                       <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors">{event.title}</CardTitle>
                     </Link>
                     <CardDescription className="text-sm font-medium text-muted-foreground">
@@ -142,10 +151,19 @@ export default function WebinarsEventsPage() {
               {pastEvents.map((event, index) => (
                 <Card 
                   key={event.slug} 
-                  className={`flex flex-col overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${(index * 100) + 200} group bg-gradient-to-r from-card via-muted to-card bg-[length:200%_auto] animate-background-pan`}
+                  className={`
+                    flex flex-col overflow-hidden shadow-xl hover:shadow-2xl 
+                    transition-all duration-300 ease-in-out 
+                    animate-fade-in-up animation-delay-${(index * 100) + 200} 
+                    group 
+                    bg-gradient-to-r from-card via-muted/70 to-card 
+                    group-hover:from-muted/50 group-hover:via-secondary group-hover:to-muted/50 
+                    focus-within:from-muted/50 focus-within:via-secondary focus-within:to-muted/50 
+                    bg-[length:200%_auto] animate-background-pan
+                  `}
                 >
-                   <Link href={event.slug} className="block">
-                    <div className="relative h-60 w-full overflow-hidden">
+                   <Link href={event.slug} className="block group-focus-within:ring-2 group-focus-within:ring-ring group-focus-within:ring-offset-2 rounded-t-lg">
+                    <div className="relative h-60 w-full overflow-hidden rounded-t-lg">
                       <Image
                         src={event.image}
                         alt={event.title}
@@ -161,7 +179,7 @@ export default function WebinarsEventsPage() {
                     </div>
                   </Link>
                   <CardHeader>
-                    <Link href={event.slug} className="block">
+                    <Link href={event.slug} className="block group-focus-within:underline">
                       <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors">{event.title}</CardTitle>
                     </Link>
                     <CardDescription className="text-sm font-medium text-muted-foreground">

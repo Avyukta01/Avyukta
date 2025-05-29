@@ -3,16 +3,30 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { MoreHorizontal, X } from "lucide-react"; // Changed Menu to MoreHorizontal
+import { MoreHorizontal, X, ChevronDown } from "lucide-react"; // Added ChevronDown
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu"; // Added DropdownMenu components
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/ai", label: "AI" },
-  { href: "/services", label: "Services" },
+  {
+    href: "/services", // Main link for mobile and fallback
+    label: "Services",
+    desktopSubLinks: [ // Sub-links specifically for desktop dropdown
+      { href: "/services/web-development", label: "Web Development" },
+      { href: "/services/mobile-apps", label: "Mobile Apps" },
+      { href: "/services/ai-solutions", label: "AI Solutions" },
+    ],
+  },
   { href: "/products", label: "Products" },
   { href: "/company", label: "Company" },
   { href: "/resources", label: "Resources" },
@@ -26,15 +40,38 @@ const Header = () => {
       <div className="container-max flex h-16 items-center justify-between">
         <Logo />
         <nav className="hidden md:flex items-center space-x-6">
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) =>
+            link.desktopSubLinks ? (
+              <DropdownMenu key={link.label}>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="text-sm font-medium text-foreground/80 hover:text-foreground hover:bg-transparent data-[state=open]:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-1"
+                  >
+                    {link.label}
+                    <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-56" align="start">
+                  {link.desktopSubLinks.map((subLink) => (
+                    <DropdownMenuItem key={subLink.href} asChild>
+                      <Link href={subLink.href} className="w-full">
+                        {subLink.label}
+                      </Link>
+                    </DropdownMenuItem>
+                  ))}
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : (
+              <Link
+                key={link.href}
+                href={link.href}
+                className="text-sm font-medium text-foreground/80 hover:text-foreground transition-colors"
+              >
+                {link.label}
+              </Link>
+            )
+          )}
         </nav>
         <div className="hidden md:block">
           <AnimatedButton pulseAnimation className="bg-accent text-accent-foreground hover:bg-accent/90">
@@ -61,7 +98,7 @@ const Header = () => {
                   </SheetClose>
                 </div>
                 <nav className="flex flex-col space-y-4">
-                  {navLinks.map((link) => (
+                  {navLinks.map((link) => ( // Mobile nav uses the primary links
                     <SheetClose key={link.href} asChild>
                       <Link
                         href={link.href}

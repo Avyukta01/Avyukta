@@ -27,7 +27,14 @@ const navLinks = [
       { href: "/services/ai-solutions", label: "AI Solutions" },
     ],
   },
-  { href: "/products", label: "Products" },
+  {
+    href: "/products",
+    label: "Products",
+    desktopSubLinks: [
+      { href: "/products/crm", label: "CRM" },
+      { href: "/products/dialer", label: "Dialer" },
+    ],
+  },
   {
     href: "/company", // Main link for mobile and fallback, e.g., an overview page
     label: "Company",

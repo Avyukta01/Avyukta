@@ -1,3 +1,6 @@
+"use client";
+
+import * as React from "react";
 import Link from "next/link";
 import { Facebook, Twitter, Linkedin, Instagram, Send } from "lucide-react";
 import Logo from "@/components/ui/Logo";
@@ -5,6 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
+  const [currentYear, setCurrentYear] = React.useState<number | null>(null);
+
+  React.useEffect(() => {
+    setCurrentYear(new Date().getFullYear());
+  }, []);
+
   return (
     <footer className="bg-secondary text-secondary-foreground section-padding">
       <div className="container-max">
@@ -56,7 +65,11 @@ const Footer = () => {
           </div>
         </div>
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
-          <p>&copy; {new Date().getFullYear()} Innovatech. All rights reserved.</p>
+          {currentYear ? (
+            <p>&copy; {currentYear} Innovatech. All rights reserved.</p>
+          ) : (
+            <p>&copy; Innovatech. All rights reserved.</p> 
+          )}
         </div>
       </div>
     </footer>

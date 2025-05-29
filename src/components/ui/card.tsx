@@ -1,3 +1,4 @@
+
 import * as React from "react"
 
 import { cn } from "@/lib/utils"
@@ -30,10 +31,13 @@ const CardHeader = React.forwardRef<
 CardHeader.displayName = "CardHeader"
 
 const CardTitle = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement, // Changed from HTMLDivElement to HTMLParagraphElement for semantic correctness
+  React.HTMLAttributes<HTMLHeadingElement> // Props for an h-element, but rendered as p
 >(({ className, ...props }, ref) => (
-  <div
+  // Rendered as a p tag but styled like a title. Could be h3, h4 etc.
+  // ShadCN uses h3 by default within cards but allows div.
+  // For flexibility and to avoid heading level conflicts, using p and styling.
+  <p
     ref={ref}
     className={cn(
       "text-2xl font-semibold leading-none tracking-tight",
@@ -45,10 +49,10 @@ const CardTitle = React.forwardRef<
 CardTitle.displayName = "CardTitle"
 
 const CardDescription = React.forwardRef<
-  HTMLDivElement,
-  React.HTMLAttributes<HTMLDivElement>
+  HTMLParagraphElement,
+  React.HTMLAttributes<HTMLParagraphElement>
 >(({ className, ...props }, ref) => (
-  <div
+  <p
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
     {...props}
@@ -77,3 +81,5 @@ const CardFooter = React.forwardRef<
 CardFooter.displayName = "CardFooter"
 
 export { Card, CardHeader, CardFooter, CardTitle, CardDescription, CardContent }
+
+    

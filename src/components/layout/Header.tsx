@@ -14,7 +14,12 @@ import {
   CalendarClock,
   HelpCircle,
   BookOpen,
-  Mail
+  Mail,
+  Briefcase, // Added for Careers if needed, or use existing
+  Users, // Added for Our Team
+  Award, // Added for Why Choose Us / Consulting
+  DollarSign, // Added for Pricing
+  Building // Added for About Us / Company
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -57,17 +62,17 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    href: "/company",
+    href: "/company", // Main link for mobile or if no sub-link is clicked
     label: "Company",
     desktopSubLinks: [
-      { href: "/about", label: "About Us" },
-      { href: "/company/pricing", label: "Pricing" },
-      { href: "/company/consulting", label: "Consulting" },
-      { href: "/contact", label: "Contact Us" },
-      { href: "/company/careers", label: "Career" },
-      { href: "/company/team", label: "Our Team" },
-      { href: "/company/why-choose-us", label: "Why Choose Us" },
-      { href: "/company/partners", label: "Partners & Affiliations" },
+      { href: "/about", label: "About Us", icon: Building },
+      { href: "/company/pricing", label: "Pricing", icon: DollarSign },
+      { href: "/company/consulting", label: "Consulting", icon: Award },
+      { href: "/contact", label: "Contact Us", icon: Mail },
+      { href: "/company/careers", label: "Careers", icon: Briefcase },
+      { href: "/company/team", label: "Our Team", icon: Users },
+      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Award }, // Re-using Award, can be more specific if needed
+      { href: "/company/partners", label: "Partners & Affiliations", icon: Users }, // Re-using Users or Handshake
     ],
   },
   {
@@ -110,7 +115,7 @@ const Header = () => {
                   {link.desktopSubLinks.map((subLink) => (
                     <DropdownMenuItem key={subLink.href} asChild>
                       <Link href={subLink.href} className="w-full flex items-center">
-                        {subLink.icon && <subLink.icon className="mr-2 h-4 w-4 opacity-70" />}
+                        {subLink.icon && <subLink.icon className="mr-2 h-4 w-4 opacity-70 flex-shrink-0" />}
                         {subLink.label}
                       </Link>
                     </DropdownMenuItem>
@@ -154,14 +159,26 @@ const Header = () => {
                 </div>
                 <nav className="flex flex-col space-y-4">
                   {navLinks.map((link) => (
-                    <SheetClose key={link.href} asChild>
-                      <Link
-                        href={link.href} 
-                        className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
-                      >
-                        {link.label}
-                      </Link>
-                    </SheetClose>
+                     <React.Fragment key={link.href}>
+                      <SheetClose asChild>
+                        <Link
+                          href={link.href} 
+                          className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
+                          onClick={() => {
+                            // If it has sublinks, don't close the sheet immediately,
+                            // let the user click a sublink.
+                            // This behavior might need adjustment based on desired UX for mobile submenus.
+                            // For now, direct link to parent, and sublinks are desktop only.
+                          }}
+                        >
+                          {link.label}
+                        </Link>
+                      </SheetClose>
+                      {/* Mobile sub-menu rendering (optional, can be complex for Sheet) */}
+                      {/* For simplicity, current setup has sublinks primarily for desktop.
+                          If mobile submenus are needed, a different UI pattern might be better inside the Sheet.
+                          For now, clicking parent link in mobile goes to parent page. */}
+                    </React.Fragment>
                   ))}
                 </nav>
                 <AnimatedButton pulseAnimation className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
@@ -177,3 +194,5 @@ const Header = () => {
 };
 
 export default Header;
+
+    

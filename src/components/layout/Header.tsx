@@ -36,20 +36,33 @@ const navLinks = [
     ],
   },
   {
-    href: "/company", // Main link for mobile and fallback, e.g., an overview page
+    href: "/company",
     label: "Company",
     desktopSubLinks: [
       { href: "/company/about", label: "About Us" },
       { href: "/company/pricing", label: "Pricing" },
       { href: "/company/consulting", label: "Consulting" },
-      { href: "/contact", label: "Contact Us" }, // Assuming /contact is the main contact page
+      { href: "/contact", label: "Contact Us" },
       { href: "/company/careers", label: "Career" },
       { href: "/company/team", label: "Our Team" },
       { href: "/company/why-choose-us", label: "Why Choose Us" },
       { href: "/company/partners", label: "Partners & Affiliations" },
     ],
   },
-  { href: "/resources", label: "Resources" },
+  {
+    href: "/resources",
+    label: "Resources",
+    desktopSubLinks: [
+      { href: "/blog", label: "Blog" },
+      { href: "/resources/case-studies", label: "Case Studies" },
+      { href: "/resources/whitepapers-reports", label: "Whitepapers & Reports" },
+      { href: "/resources/news-announcements", label: "News & Announcements" },
+      { href: "/resources/webinars-events", label: "Webinars & Events" },
+      { href: "/faq", label: "Help Center / FAQs" },
+      { href: "/resources/tutorials", label: "Tutorials & How tos" },
+      { href: "/resources/newsletter", label: "Newsletter Signup" },
+    ],
+  },
 ];
 
 const Header = () => {

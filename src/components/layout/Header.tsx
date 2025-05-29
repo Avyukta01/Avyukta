@@ -15,11 +15,12 @@ import {
   HelpCircle,
   BookOpen,
   Mail,
-  Briefcase, // Added for Careers if needed, or use existing
-  Users, // Added for Our Team
-  Award, // Added for Why Choose Us / Consulting
-  DollarSign, // Added for Pricing
-  Building // Added for About Us / Company
+  Briefcase, 
+  Users, 
+  Award, 
+  DollarSign, 
+  Building,
+  Handshake // Added for Partners & Affiliations
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -62,7 +63,7 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    href: "/company", // Main link for mobile or if no sub-link is clicked
+    href: "/company", 
     label: "Company",
     desktopSubLinks: [
       { href: "/about", label: "About Us", icon: Building },
@@ -71,8 +72,8 @@ const navLinks: NavLink[] = [
       { href: "/contact", label: "Contact Us", icon: Mail },
       { href: "/company/careers", label: "Careers", icon: Briefcase },
       { href: "/company/team", label: "Our Team", icon: Users },
-      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Award }, // Re-using Award, can be more specific if needed
-      { href: "/company/partners", label: "Partners & Affiliations", icon: Users }, // Re-using Users or Handshake
+      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Award }, 
+      { href: "/company/partners", label: "Partners & Affiliations", icon: Handshake }, 
     ],
   },
   {
@@ -164,20 +165,10 @@ const Header = () => {
                         <Link
                           href={link.href} 
                           className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
-                          onClick={() => {
-                            // If it has sublinks, don't close the sheet immediately,
-                            // let the user click a sublink.
-                            // This behavior might need adjustment based on desired UX for mobile submenus.
-                            // For now, direct link to parent, and sublinks are desktop only.
-                          }}
                         >
                           {link.label}
                         </Link>
                       </SheetClose>
-                      {/* Mobile sub-menu rendering (optional, can be complex for Sheet) */}
-                      {/* For simplicity, current setup has sublinks primarily for desktop.
-                          If mobile submenus are needed, a different UI pattern might be better inside the Sheet.
-                          For now, clicking parent link in mobile goes to parent page. */}
                     </React.Fragment>
                   ))}
                 </nav>
@@ -194,5 +185,3 @@ const Header = () => {
 };
 
 export default Header;
-
-    

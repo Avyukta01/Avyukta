@@ -13,28 +13,27 @@ const services = [
   {
     title: "Web Development",
     icon: Globe,
-    description: "We build responsive, scalable, and high-performance web applications tailored to your business needs. Our expertise covers front-end and back-end development, utilizing modern frameworks like Next.js, React, and Node.js to deliver seamless digital experiences. From e-commerce platforms to complex enterprise solutions, we ensure your web presence is robust, secure, and future-proof.",
+    description: "We craft exceptional digital experiences. Our web development services include building responsive e-commerce platforms, custom enterprise portals, dynamic single-page applications (SPAs), and content management systems (CMS). We leverage modern technologies like Next.js, React, and Node.js to create scalable, high-performance, and secure web solutions tailored to your specific business goals. Whether you need a Progressive Web App (PWA) or a complex data-driven application, we deliver excellence.",
     image: "https://placehold.co/600x400.png",
     aiHint: "web development code",
-    learnMoreLink: "/services/web-development" // Placeholder link
+    learnMoreLink: "/services/web-development" 
   },
   {
     title: "Mobile App Development",
     icon: Smartphone,
-    description: "Crafting intuitive and engaging mobile applications for iOS and Android platforms. We specialize in both native (Swift, Kotlin) and cross-platform (React Native, Flutter) development, focusing on user experience, performance, and scalability. Let us turn your mobile vision into a reality that captivates your users.",
+    description: "Turn your ideas into engaging mobile applications. We specialize in native iOS (Swift) and Android (Kotlin) development, as well as cross-platform solutions using React Native and Flutter. Our team builds a wide range of apps, including e-commerce, utility tools, social networking platforms, and enterprise mobility solutions, all focusing on intuitive UX/UI, robust performance, and scalability to captivate your users.",
     image: "https://placehold.co/600x400.png",
     aiHint: "mobile app interface",
-    learnMoreLink: "/services/mobile-apps" // Placeholder link
+    learnMoreLink: "/services/mobile-apps"
   },
   {
-    title: "AI Solutions",
+    title: "AI & ML Solutions",
     icon: BrainCircuit,
-    description: "Leverage the power of Artificial Intelligence to transform your business. We develop custom AI and Machine Learning models for data analysis, predictive insights, automation, natural language processing, and computer vision. Our AI solutions help you innovate, optimize processes, and gain a competitive edge.",
+    description: "Unlock the power of Artificial Intelligence and Machine Learning. We develop custom AI models for predictive analytics, natural language processing (NLP), computer vision, and intelligent automation. Our solutions help businesses gain deep insights from data, optimize complex processes, enhance customer experiences, and drive innovation to achieve a significant competitive edge.",
     image: "https://placehold.co/600x400.png",
     aiHint: "ai abstract brain",
-    learnMoreLink: "/services/ai-solutions" // Placeholder link
+    learnMoreLink: "/services/ai-solutions"
   },
-  // You can add more services here
 ];
 
 export default function ServicesPage() {
@@ -73,7 +72,7 @@ export default function ServicesPage() {
                       data-ai-hint={service.aiHint}
                       className="group-hover:scale-105 transition-transform duration-500"
                     />
-                    {service.icon && <service.icon className="absolute top-4 left-4 h-10 w-10 text-white/90 bg-black/40 p-2 rounded-lg shadow-md" />}
+                    {service.icon && <service.icon className="absolute top-4 left-4 h-10 w-10 text-accent bg-background/80 backdrop-blur-sm p-2 rounded-lg shadow-md" />}
                   </div>
                   <CardHeader>
                     <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors">{service.title}</CardTitle>

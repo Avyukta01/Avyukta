@@ -1,8 +1,9 @@
+
 "use client";
 
 import * as React from "react";
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, Send } from "lucide-react";
+import { Facebook, Twitter, Linkedin, Instagram, Send, MailOpen } from "lucide-react"; // Added MailOpen for consistency
 import Logo from "@/components/ui/Logo";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -43,6 +44,7 @@ const Footer = () => {
               <li><Link href="/resources/webinars-events" className="hover:text-primary transition-colors text-sm">Webinars & Events</Link></li>
               <li><Link href="/resources/tutorials" className="hover:text-primary transition-colors text-sm">Tutorials & How-tos</Link></li>
               <li><Link href="/faq" className="hover:text-primary transition-colors text-sm">FAQ</Link></li>
+              <li><Link href="/resources/newsletter" className="hover:text-primary transition-colors text-sm">Newsletter Signup</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors text-sm">Privacy Policy</Link></li>
             </ul>
           </div>

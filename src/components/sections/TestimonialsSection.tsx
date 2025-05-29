@@ -2,6 +2,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { LucideIcon } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react";
@@ -39,6 +40,23 @@ const testimonials = [
     stars: 5,
     aiHint: "startup founder"
   },
+  // Adding a few more unique testimonials for variety
+  {
+    quote: "Innovatech's AI solutions provided deep insights that were previously unavailable to us. A game changer!",
+    name: "Maria Garcia",
+    title: "Data Scientist, FutureAI Corp",
+    avatar: "https://placehold.co/100x100.png",
+    stars: 5,
+    aiHint: "data scientist"
+  },
+  {
+    quote: "The project management and communication from Innovatech were excellent throughout the development lifecycle.",
+    name: "David Lee",
+    title: "CTO, Innovate Ltd.",
+    avatar: "https://placehold.co/100x100.png",
+    stars: 4,
+    aiHint: "tech executive"
+  }
 ];
 
 const TestimonialsSection = () => {
@@ -46,21 +64,21 @@ const TestimonialsSection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    if (testimonials.length <= 1) return; // No need to cycle if only one or no testimonials
+    if (testimonials.length <= 1) return;
 
-    const cycleDuration = 5000; // Time each testimonial is visible
-    const transitionDuration = 500; // Duration of fade animation
+    const cycleDuration = 5000; 
+    const transitionDuration = 500;
 
     const timer = setInterval(() => {
-      setIsTransitioning(true); // Start fade-out
+      setIsTransitioning(true);
       setTimeout(() => {
         setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
-        setIsTransitioning(false); // Start fade-in
+        setIsTransitioning(false);
       }, transitionDuration);
-    }, cycleDuration + transitionDuration); // Total time for one cycle
+    }, cycleDuration + transitionDuration);
 
     return () => clearInterval(timer);
-  }, []); // Removed testimonials.length from dependency array to avoid resetting interval on potential prop changes if testimonials were a prop
+  }, []);
 
   if (!testimonials || testimonials.length === 0) {
     return null;
@@ -79,9 +97,10 @@ const TestimonialsSection = () => {
             Hear directly from businesses that have partnered with Innovatech to achieve their goals.
           </p>
         </div>
-        <div className="flex justify-center items-center min-h-[320px]"> {/* Container to center the card and maintain height */}
-          {testimonial && ( // Ensure testimonial object exists
+        <div className="flex justify-center items-center min-h-[320px]">
+          {testimonial && (
             <Card
+              key={testimonial.name} // Added key here
               className={`
                 w-full max-w-lg md:max-w-xl 
                 min-h-[280px] 
@@ -103,7 +122,7 @@ const TestimonialsSection = () => {
                   </div>
                 </div>
               </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-center pt-2"> {/* Changed to justify-center for quote vertical alignment */}
+              <CardContent className="flex-grow flex flex-col justify-center pt-2">
                 <div>
                   <div className="flex mb-3">
                     {Array(5).fill(0).map((_, i) => (

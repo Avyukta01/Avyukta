@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { MoreHorizontal, X, ChevronDown } from "lucide-react"; // Added ChevronDown
+import { MoreHorizontal, X, ChevronDown } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
@@ -13,22 +13,35 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"; // Added DropdownMenu components
+} from "@/components/ui/dropdown-menu";
 
 const navLinks = [
   { href: "/", label: "Home" },
   { href: "/ai", label: "AI" },
   {
-    href: "/services", // Main link for mobile and fallback
+    href: "/services",
     label: "Services",
-    desktopSubLinks: [ // Sub-links specifically for desktop dropdown
+    desktopSubLinks: [
       { href: "/services/web-development", label: "Web Development" },
       { href: "/services/mobile-apps", label: "Mobile Apps" },
       { href: "/services/ai-solutions", label: "AI Solutions" },
     ],
   },
   { href: "/products", label: "Products" },
-  { href: "/company", label: "Company" },
+  {
+    href: "/company", // Main link for mobile and fallback, e.g., an overview page
+    label: "Company",
+    desktopSubLinks: [
+      { href: "/company/about", label: "About Us" },
+      { href: "/company/pricing", label: "Pricing" },
+      { href: "/company/consulting", label: "Consulting" },
+      { href: "/contact", label: "Contact Us" }, // Assuming /contact is the main contact page
+      { href: "/company/careers", label: "Career" },
+      { href: "/company/team", label: "Our Team" },
+      { href: "/company/why-choose-us", label: "Why Choose Us" },
+      { href: "/company/partners", label: "Partners & Affiliations" },
+    ],
+  },
   { href: "/resources", label: "Resources" },
 ];
 
@@ -82,7 +95,7 @@ const Header = () => {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <MoreHorizontal className="h-6 w-6" /> {/* Changed Menu to MoreHorizontal */}
+                <MoreHorizontal className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
@@ -98,10 +111,10 @@ const Header = () => {
                   </SheetClose>
                 </div>
                 <nav className="flex flex-col space-y-4">
-                  {navLinks.map((link) => ( // Mobile nav uses the primary links
+                  {navLinks.map((link) => (
                     <SheetClose key={link.href} asChild>
                       <Link
-                        href={link.href}
+                        href={link.href} // Mobile nav uses the primary href
                         className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
                       >
                         {link.label}

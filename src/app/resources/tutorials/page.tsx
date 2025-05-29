@@ -1,3 +1,4 @@
+
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -92,7 +93,11 @@ export default function TutorialsPage() {
                     <CardDescription>{tutorial.excerpt}</CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary transition-colors w-full md:w-auto">
+                    <Button 
+                      asChild 
+                      variant="default" 
+                      className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary group-hover:text-primary-foreground transition-colors w-full md:w-auto"
+                    >
                       <Link href={tutorial.slug}>
                         View Tutorial <PlayCircle className="ml-2 h-5 w-5" />
                       </Link>

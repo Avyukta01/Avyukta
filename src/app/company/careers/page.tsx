@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Briefcase, Lightbulb, TrendingUp, Target, Users, Heart, Sparkles, CheckSquare, Search } from "lucide-react";
+import { Briefcase, Lightbulb, TrendingUp, Target, Users, Heart, Sparkles, CheckSquare, Search, Award, ShieldCheck } from "lucide-react"; // Ensured Award and ShieldCheck are imported
 import Link from "next/link";
 import Image from "next/image";
 
@@ -161,5 +161,3 @@ export default function CareerPage() {
     </div>
   );
 }
-
-    

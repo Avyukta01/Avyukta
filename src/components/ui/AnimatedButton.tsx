@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -14,7 +15,7 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
       <Button
         ref={ref}
         className={cn(
-          pulseAnimation && "animate-pulse", // Basic pulse, can be customized further in globals.css
+          pulseAnimation && "animate-pulse-slow", // Changed from animate-pulse
           className
         )}
         {...props}

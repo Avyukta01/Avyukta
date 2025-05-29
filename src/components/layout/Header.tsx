@@ -1,8 +1,9 @@
+
 "use client";
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
+import { MoreHorizontal, X } from "lucide-react"; // Changed Menu to MoreHorizontal
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
@@ -44,7 +45,7 @@ const Header = () => {
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
-                <Menu className="h-6 w-6" />
+                <MoreHorizontal className="h-6 w-6" /> {/* Changed Menu to MoreHorizontal */}
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>

@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -29,7 +30,7 @@ const Footer = () => {
             <ul className="space-y-2">
               <li><Link href="/about" className="hover:text-primary transition-colors text-sm">About Us</Link></li>
               <li><Link href="/services" className="hover:text-primary transition-colors text-sm">Services</Link></li>
-              <li><Link href="/careers" className="hover:text-primary transition-colors text-sm">Careers</Link></li>
+              <li><Link href="/company/careers" className="hover:text-primary transition-colors text-sm">Careers</Link></li>
               <li><Link href="/contact" className="hover:text-primary transition-colors text-sm">Contact</Link></li>
             </ul>
           </div>
@@ -37,7 +38,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-4">Resources</h3>
             <ul className="space-y-2">
               <li><Link href="/blog" className="hover:text-primary transition-colors text-sm">Blog</Link></li>
-              <li><Link href="/case-studies" className="hover:text-primary transition-colors text-sm">Case Studies</Link></li>
+              <li><Link href="/resources/case-studies" className="hover:text-primary transition-colors text-sm">Case Studies</Link></li>
               <li><Link href="/faq" className="hover:text-primary transition-colors text-sm">FAQ</Link></li>
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors text-sm">Privacy Policy</Link></li>
             </ul>
@@ -48,10 +49,14 @@ const Footer = () => {
               Get the latest updates and offers.
             </p>
             <form className="flex space-x-2">
-              <Input type="email" placeholder="Enter your email" className="bg-background text-foreground" />
-              <Button type="submit" variant="default" size="icon" aria-label="Subscribe">
-                <Send className="h-4 w-4" />
-              </Button>
+              <div>
+                <Input type="email" placeholder="Enter your email" className="bg-background text-foreground" />
+              </div>
+              <div>
+                <Button type="submit" variant="default" size="icon" aria-label="Subscribe">
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
             </form>
             <div className="mt-6">
               <h4 className="text-md font-semibold mb-2">Follow Us</h4>

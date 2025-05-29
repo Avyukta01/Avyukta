@@ -85,7 +85,7 @@ export default function WebinarsEventsPage() {
               {upcomingEvents.map((event, index) => (
                 <Card 
                   key={event.slug} 
-                  className={`flex flex-col overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${(index * 100) + 200} group`}
+                  className={`flex flex-col overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${(index * 100) + 200} group bg-gradient-to-r from-card via-secondary to-card bg-[length:200%_auto] animate-background-pan`}
                 >
                   <Link href={event.slug} className="block">
                     <div className="relative h-60 w-full overflow-hidden">
@@ -142,7 +142,7 @@ export default function WebinarsEventsPage() {
               {pastEvents.map((event, index) => (
                 <Card 
                   key={event.slug} 
-                  className={`flex flex-col overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${(index * 100) + 200} group`}
+                  className={`flex flex-col overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${(index * 100) + 200} group bg-gradient-to-r from-card via-muted to-card bg-[length:200%_auto] animate-background-pan`}
                 >
                    <Link href={event.slug} className="block">
                     <div className="relative h-60 w-full overflow-hidden">
@@ -172,7 +172,7 @@ export default function WebinarsEventsPage() {
                     <p className="text-foreground/80">{event.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="outline" className="border-primary text-primary w-full md:w-auto">
+                    <Button asChild variant="outline" className="border-primary text-primary hover:bg-accent hover:text-accent-foreground w-full md:w-auto">
                       <Link href={event.slug}>
                         Watch Recording <Video className="ml-2 h-4 w-4" />
                       </Link>

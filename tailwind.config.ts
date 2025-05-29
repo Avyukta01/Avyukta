@@ -104,6 +104,11 @@ export default {
           '0%': { opacity: '0', transform: 'translateX(20px)' },
           '100%': { opacity: '1', transform: 'translateX(0)' },
         },
+        'background-pan': {
+          '0%': { backgroundPosition: '0% center' },
+          '50%': { backgroundPosition: '100% center' },
+          '100%': { backgroundPosition: '0% center' },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
@@ -113,10 +118,9 @@ export default {
         'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
         'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
         'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
+        'background-pan': 'background-pan 10s ease-in-out infinite',
   		}
   	}
   },
   plugins: [require("tailwindcss-animate")],
 } satisfies Config;
-
-    

@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -20,7 +19,7 @@ import {
   Award, 
   DollarSign, 
   Building,
-  Handshake // Added for Partners & Affiliations
+  Handshake 
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -86,7 +85,7 @@ const navLinks: NavLink[] = [
       { href: "/resources/news-announcements", label: "News & Announcements", icon: Megaphone },
       { href: "/resources/webinars-events", label: "Webinars & Events", icon: CalendarClock },
       { href: "/faq", label: "Help Center / FAQs", icon: HelpCircle },
-      { href: "/resources/tutorials", label: "Tutorials & How tos", icon: BookOpen },
+      { href: "/resources/tutorials", label: "Tutorials & How-tos", icon: BookOpen },
       { href: "/resources/newsletter", label: "Newsletter Signup", icon: Mail },
     ],
   },

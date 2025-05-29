@@ -82,11 +82,21 @@ export default {
   				to: {
   					height: '0'
   				}
-  			}
+  			},
+        'pulse-slow': { // Added for AnimatedButton if needed, matching globals.css
+          '0%, 100%': { opacity: '1', transform: 'scale(1)' },
+          '50%': { opacity: '0.8', transform: 'scale(1.05)' },
+        },
+        'marquee': { // Added for TestimonialsSection, matching globals.css
+          '0%': { transform: 'translateX(0%)' },
+          '100%': { transform: 'translateX(-100%)' },
+        },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
-  			'accordion-up': 'accordion-up 0.2s ease-out'
+  			'accordion-up': 'accordion-up 0.2s ease-out',
+        'pulse-slow': 'pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite', // Added for AnimatedButton
+        'marquee': 'marquee 30s linear infinite', // Added for TestimonialsSection
   		}
   	}
   },

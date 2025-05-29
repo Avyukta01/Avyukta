@@ -109,7 +109,7 @@ const Header = () => {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="text-sm font-medium text-foreground/80 hover:text-foreground data-[state=open]:text-accent focus-visible:text-accent hover:bg-transparent data-[state=open]:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-1 transition-colors"
+                    className="text-sm font-medium text-foreground/80 hover:text-foreground data-[state=open]:text-primary focus-visible:text-primary hover:bg-transparent data-[state=open]:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-1 transition-colors"
                   >
                     {link.label}
                     <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
@@ -130,7 +130,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground focus-visible:text-accent focus-visible:outline-none transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-foreground focus-visible:text-primary focus-visible:outline-none transition-colors"
               >
                 {link.label}
               </Link>

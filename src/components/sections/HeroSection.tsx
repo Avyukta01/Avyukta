@@ -1,7 +1,7 @@
 
 "use client";
 
-import { Button } from "@/components/ui/button";
+import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ArrowRight, Phone } from "lucide-react";
 
 const HeroSection = () => {
@@ -31,12 +31,22 @@ const HeroSection = () => {
           Innovatech delivers cutting-edge solutions in AI, web, and mobile development to elevate your business.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
-          <Button size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg transform hover:scale-105 transition-transform duration-300">
+          <AnimatedButton 
+            size="lg" 
+            variant="default" 
+            pulseAnimation
+            className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg transform hover:scale-105 transition-transform duration-300"
+          >
             Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
-          </Button>
-          <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300">
+          </AnimatedButton>
+          <AnimatedButton 
+            size="lg" 
+            variant="outline" 
+            pulseAnimation
+            className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
+          >
             Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />
-          </Button>
+          </AnimatedButton>
         </div>
       </div>
     </section>

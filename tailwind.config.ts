@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -83,20 +84,35 @@ export default {
   					height: '0'
   				}
   			},
-        'pulse-slow': { // Added for AnimatedButton if needed, matching globals.css
+        'pulse-slow': {
           '0%, 100%': { opacity: '1', transform: 'scale(1)' },
           '50%': { opacity: '0.8', transform: 'scale(1.05)' },
         },
-        'marquee': { // Added for TestimonialsSection, matching globals.css
+        'marquee': {
           '0%': { transform: 'translateX(0%)' },
           '100%': { transform: 'translateX(-100%)' },
+        },
+        'fade-in-up': {
+          '0%': { opacity: '0', transform: 'translateY(20px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in-left': {
+          '0%': { opacity: '0', transform: 'translateX(-20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
+        },
+        'fade-in-right': {
+          '0%': { opacity: '0', transform: 'translateX(20px)' },
+          '100%': { opacity: '1', transform: 'translateX(0)' },
         },
   		},
   		animation: {
   			'accordion-down': 'accordion-down 0.2s ease-out',
   			'accordion-up': 'accordion-up 0.2s ease-out',
-        'pulse-slow': 'pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite', // Added for AnimatedButton
-        'marquee': 'marquee 30s linear infinite', // Added for TestimonialsSection
+        'pulse-slow': 'pulse-slow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'marquee': 'marquee 30s linear infinite',
+        'fade-in-up': 'fade-in-up 0.6s ease-out forwards',
+        'fade-in-left': 'fade-in-left 0.6s ease-out forwards',
+        'fade-in-right': 'fade-in-right 0.6s ease-out forwards',
   		}
   	}
   },

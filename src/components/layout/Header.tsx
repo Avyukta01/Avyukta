@@ -31,7 +31,7 @@ import type { LucideIcon } from "lucide-react";
 interface NavLink {
   href: string;
   label: string;
-  icon?: LucideIcon; // For desktop sublinks
+  icon?: LucideIcon; 
   desktopSubLinks?: NavLink[];
 }
 
@@ -60,7 +60,7 @@ const navLinks: NavLink[] = [
     href: "/company",
     label: "Company",
     desktopSubLinks: [
-      { href: "/company/about", label: "About Us" },
+      { href: "/about", label: "About Us" },
       { href: "/company/pricing", label: "Pricing" },
       { href: "/company/consulting", label: "Consulting" },
       { href: "/contact", label: "Contact Us" },
@@ -156,7 +156,7 @@ const Header = () => {
                   {navLinks.map((link) => (
                     <SheetClose key={link.href} asChild>
                       <Link
-                        href={link.href} // Mobile nav uses the primary href
+                        href={link.href} 
                         className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
                       >
                         {link.label}

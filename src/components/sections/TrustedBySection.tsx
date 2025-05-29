@@ -1,11 +1,11 @@
 import Image from "next/image";
 
 const logos = [
-  { name: "Company A", src: "https://placehold.co/150x60.png?text=Company+A", hint: "corporate logo" },
-  { name: "Company B", src: "https://placehold.co/150x60.png?text=Company+B", hint: "tech company" },
-  { name: "Company C", src: "https://placehold.co/150x60.png?text=Company+C", hint: "startup logo" },
-  { name: "Company D", src: "https://placehold.co/150x60.png?text=Company+D", hint: "enterprise solution" },
-  { name: "Company E", src: "https://placehold.co/150x60.png?text=Company+E", hint: "global firm" },
+  { name: "Company A", src: "https://placehold.co/150x60.png", hint: "corporate logo" },
+  { name: "Company B", src: "https://placehold.co/150x60.png", hint: "tech company" },
+  { name: "Company C", src: "https://placehold.co/150x60.png", hint: "startup logo" },
+  { name: "Company D", src: "https://placehold.co/150x60.png", hint: "enterprise solution" },
+  { name: "Company E", src: "https://placehold.co/150x60.png", hint: "global firm" },
 ];
 
 const TrustedBySection = () => {

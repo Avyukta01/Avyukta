@@ -2,9 +2,9 @@
 import Image from "next/image";
 
 const logos = [
-  { name: "Zoho", src: "/logos/zoho-logo.png", hint: "Zoho logo" },
-  { name: "Genesys", src: "/logos/genesys-logo.png", hint: "Genesys logo" },
-  { name: "Bitrix24", src: "/logos/bitrix24-logo.png", hint: "Bitrix24 logo" },
+  { name: "Zoho", src: "https://placehold.co/150x60.png", hint: "Zoho logo" },
+  { name: "Genesys", src: "https://placehold.co/150x60.png", hint: "Genesys logo" },
+  { name: "Bitrix24", src: "https://placehold.co/150x60.png", hint: "Bitrix24 logo" },
   { name: "TechCorp", src: "https://placehold.co/150x60.png", hint: "TechCorp client" }, 
   { name: "InnovateX", src: "https://placehold.co/150x60.png", hint: "InnovateX client" },
 ];
@@ -25,7 +25,7 @@ const TrustedBySection = () => {
                 width={150}
                 height={60}
                 objectFit="contain"
-                data-ai-hint={logo.hint.toLowerCase().replace(' logo', '').replace(' client', '').replace(' generic', '')}
+                data-ai-hint={logo.hint}
               />
             </div>
           ))}

@@ -3,7 +3,7 @@
 
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ArrowRight, Phone } from "lucide-react";
-import Link from "next/link"; // Added Link import
+import Link from "next/link"; 
 
 const HeroSection = () => {
   return (
@@ -34,20 +34,18 @@ const HeroSection = () => {
           <AnimatedButton
             size="lg"
             variant="default"
-            pulseAnimation
             className="bg-accent text-accent-foreground hover:bg-accent/90 shadow-lg transform hover:scale-105 transition-transform duration-300"
           >
             Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
           </AnimatedButton>
           <Link href="/contact" passHref>
             <AnimatedButton
-              asChild // Added asChild prop
+              asChild 
               size="lg"
               variant="outline"
-              pulseAnimation
               className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
-              <span> {/* Wrapped content in a span for proper rendering with asChild */}
+              <span> 
                 Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />
               </span>
             </AnimatedButton>

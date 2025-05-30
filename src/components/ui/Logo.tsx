@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const Logo = ({ className }: { className?: string }) => {
@@ -6,11 +7,19 @@ const Logo = ({ className }: { className?: string }) => {
     <Link
       href="/"
       className={cn(
-        "text-2xl font-bold text-primary hover:text-accent transition-colors duration-300 ease-in-out",
+        "flex items-center space-x-2 text-2xl font-bold text-primary hover:text-accent transition-colors duration-300 ease-in-out",
         className
       )}
     >
-      Innovatech
+      <Image
+        src="/logos/innovatech-logo.png" // Assumes your logo is here
+        alt="Innovatech Logo"
+        width={40} // Adjust width as needed
+        height={40} // Adjust height as needed
+        className="h-8 w-auto md:h-10" // Responsive height, auto width
+        data-ai-hint="company logo"
+      />
+      <span className="hidden sm:inline">Innovatech</span> {/* Optionally show text next to logo */}
     </Link>
   );
 };

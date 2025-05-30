@@ -33,6 +33,8 @@ import {
   Lightbulb,
   Layers3, // For Software Development (stack icon)
   ArrowRight,
+  Sparkles, // Added Sparkles
+  DownloadCloud, // Added DownloadCloud
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -43,11 +45,9 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
-  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import type { LucideIcon } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { cn } from "@/lib/utils";
 
 interface NavSubLink {
   href: string;
@@ -117,13 +117,13 @@ const navLinks: NavLink[] = [
       {
         title: "Cloud & DevOps Services",
         icon: CloudCog,
-        href: "/services/devops-cicd", // Combined DevOps and Cloud link
+        href: "/services/devops-cicd", 
         subServices: ["Cloud Migration", "Infrastructure as Code (IaC)", "CI/CD Pipelines", "Containerization & Orchestration"],
       },
       {
         title: "Tech Consultancy",
-        icon: Users, // Using Users icon as per image hint
-        href: "/company/consulting", // Link to existing consulting page
+        icon: Users, 
+        href: "/company/consulting", 
         subServices: ["Digital Transformation Strategy", "Technology Stack Advisory", "IT Architecture Planning", "Cybersecurity Consulting"],
       },
     ],
@@ -142,11 +142,11 @@ const navLinks: NavLink[] = [
     desktopSubLinks: [
       { href: "/about", label: "About Us", icon: Building },
       { href: "/company/pricing", label: "Pricing", icon: DollarSign },
-      { href: "/company/consulting", label: "Consulting", icon: Award }, // Kept for direct access
+      { href: "/company/consulting", label: "Consulting", icon: Award }, 
       { href: "/contact", label: "Contact Us", icon: Mail },
       { href: "/company/careers", label: "Careers", icon: Briefcase },
       { href: "/company/team", label: "Our Team", icon: Users },
-      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Award },
+      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Sparkles },
       { href: "/company/partners", label: "Partners & Affiliations", icon: Handshake },
     ],
   },
@@ -159,6 +159,7 @@ const navLinks: NavLink[] = [
       { href: "/resources/whitepapers-reports", label: "Whitepapers & Reports", icon: ScrollText },
       { href: "/resources/news-announcements", label: "News & Announcements", icon: Megaphone },
       { href: "/resources/webinars-events", label: "Webinars & Events", icon: CalendarClock },
+      { href: "/resources/brochures", label: "Download Brochures", icon: DownloadCloud },
       { href: "/faq", label: "Help Center / FAQs", icon: HelpCircle },
       { href: "/resources/tutorials", label: "Tutorials & How-tos", icon: BookOpen },
       { href: "/resources/newsletter", label: "Newsletter Signup", icon: Mail },
@@ -202,7 +203,7 @@ const Header = () => {
                         <ul className="space-y-1.5">
                           {category.subServices.map((subService) => (
                             <li key={subService}>
-                              <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default"> {/* Making sub-services non-clickable for now as per design */}
+                              <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
                                 {subService}
                               </span>
                             </li>
@@ -229,15 +230,31 @@ const Header = () => {
                     <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-60" align="start">
-                  {link.desktopSubLinks.map((subLink) => (
-                    <DropdownMenuItem key={subLink.href} asChild>
-                      <Link href={subLink.href} className="w-full flex items-center">
-                        {subLink.icon && <subLink.icon className="mr-2 h-4 w-4 opacity-70 flex-shrink-0" />}
-                        {subLink.label}
-                      </Link>
-                    </DropdownMenuItem>
-                  ))}
+                <DropdownMenuContent 
+                  className={link.label === "Company" ? "md:w-auto md:min-w-[32rem] p-6" : "w-60"} // Adjusted width for Company
+                  align="start"
+                >
+                  {link.label === "Company" ? (
+                     <div className="grid grid-cols-2 gap-x-6 gap-y-3">
+                      {link.desktopSubLinks.map((subLink) => (
+                        <DropdownMenuItem key={subLink.href} asChild className="p-0">
+                          <Link href={subLink.href} className="w-full flex items-center space-x-2 p-2 rounded-md hover:bg-accent/10 focus:bg-accent/10 transition-colors">
+                            {subLink.icon && <subLink.icon className="h-5 w-5 text-accent flex-shrink-0" />}
+                            <span className="text-sm text-popover-foreground hover:text-primary">{subLink.label}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </div>
+                  ) : (
+                    link.desktopSubLinks.map((subLink) => (
+                      <DropdownMenuItem key={subLink.href} asChild>
+                        <Link href={subLink.href} className="w-full flex items-center">
+                          {subLink.icon && <subLink.icon className="mr-2 h-4 w-4 opacity-70 flex-shrink-0" />}
+                          {subLink.label}
+                        </Link>
+                      </DropdownMenuItem>
+                    ))
+                  )}
                 </DropdownMenuContent>
               </DropdownMenu>
             ) : (

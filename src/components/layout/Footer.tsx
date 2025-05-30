@@ -46,6 +46,7 @@ const Footer = () => {
               <li><Link href="/resources/whitepapers-reports" className="hover:text-primary transition-colors text-sm">Whitepapers & Reports</Link></li>
               <li><Link href="/resources/news-announcements" className="hover:text-primary transition-colors text-sm">News & Announcements</Link></li>
               <li><Link href="/resources/webinars-events" className="hover:text-primary transition-colors text-sm">Webinars & Events</Link></li>
+              <li><Link href="/resources/brochures" className="hover:text-primary transition-colors text-sm">Download Brochures</Link></li>
               <li><Link href="/resources/tutorials" className="hover:text-primary transition-colors text-sm">Tutorials & How-tos</Link></li>
               <li><Link href="/faq" className="hover:text-primary transition-colors text-sm">FAQ</Link></li>
               <li><Link href="/resources/newsletter" className="hover:text-primary transition-colors text-sm">Newsletter Signup</Link></li>

@@ -1,4 +1,3 @@
-
 // src/components/sections/TrustedBySection.tsx
 "use client";
 
@@ -8,8 +7,8 @@ const logos = [
   { name: "Zoho", src: "/logos/Zoho.png", hint: "Zoho logo" },
   { name: "Genesys", src: "/logos/Genesys.png", hint: "Genesys logo" },
   { name: "Bitrix24", src: "/logos/Bitrix24.png", hint: "Bitrix24 logo" },
-  // { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
-  // { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
+  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
+  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
 ];
 
 const TrustedBySection = () => {
@@ -19,7 +18,7 @@ const TrustedBySection = () => {
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80 mb-12">
           Our Channel Partner
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
+        <div className="flex flex-wrap justify-center items-center gap-12 md:gap-20">
           {logos.map((logo) => (
             <div
               key={logo.name}
@@ -29,8 +28,8 @@ const TrustedBySection = () => {
               <Image
                 src={logo.src}
                 alt={`${logo.name} Logo`}
-                width={180} 
-                height={72}
+                width={200} 
+                height={80}
                 style={{ objectFit: 'contain' }}
                 data-ai-hint={logo.hint}
                 className="rounded-md"
@@ -44,4 +43,3 @@ const TrustedBySection = () => {
 };
 
 export default TrustedBySection;
-

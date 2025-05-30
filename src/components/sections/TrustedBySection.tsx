@@ -19,7 +19,7 @@ const TrustedBySection = () => {
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80 mb-12">
           Our Channel Partner
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
+        <div className="flex flex-wrap justify-center items-center gap-10 md:gap-16">
           {logos.map((logo) => (
             <div
               key={logo.name}
@@ -44,3 +44,4 @@ const TrustedBySection = () => {
 };
 
 export default TrustedBySection;
+

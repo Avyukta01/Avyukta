@@ -1,12 +1,14 @@
+// src/components/sections/TrustedBySection.tsx
+"use client";
 
 import Image from "next/image";
 
 const logos = [
-  { name: "Zoho", src: "/logos/zoho-logo.png", hint: "Zoho logo" },
-  { name: "Genesys", src: "/logos/genesys-logo.png", hint: "Genesys logo" },
-  { name: "Bitrix24", src: "/logos/bitrix24-logo.png", hint: "Bitrix24 logo" },
-  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
-  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
+  { name: "Zoho", src: "/logos/ZohoLogo.png", hint: "Zoho logo" },
+  { name: "Genesys", src: "/logos/Genesyslogo.png", hint: "Genesys logo" },
+  { name: "Bitrix24", src: "/logos/Bitrix24logo.png", hint: "Bitrix24 logo" },
+  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" }, // Placeholder, ensure this file exists if used or replace
+  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" }, // Placeholder, ensure this file exists if used or replace
 ];
 
 const TrustedBySection = () => {
@@ -36,4 +38,3 @@ const TrustedBySection = () => {
 };
 
 export default TrustedBySection;
-

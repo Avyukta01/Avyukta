@@ -7,9 +7,8 @@ const logos = [
   { name: "Zoho", src: "/logos/Zoho.png", hint: "Zoho logo" },
   { name: "Genesys", src: "/logos/Genesys.png", hint: "Genesys logo" },
   { name: "Bitrix24", src: "/logos/Bitrix24.png", hint: "Bitrix24 logo" },
-  // Keep these as placeholders or replace with actual local paths if you have them
-  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
-  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
+  
+ 
 ];
 
 const TrustedBySection = () => {

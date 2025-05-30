@@ -131,7 +131,7 @@ body {
 
   .marquee-content {
     display: inline-block;
-    animation: marquee 30s linear infinite;
+    animation: marquee 15s linear infinite; /* Updated duration from 30s to 15s */
   }
   
   .marquee-content-hover:hover {

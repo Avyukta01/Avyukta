@@ -71,7 +71,7 @@ const Footer = () => {
                 <h4 className="text-md font-semibold mb-2">Follow Us</h4>
                 <div className="flex space-x-4">
                     <Link href="https://www.facebook.com/Avyuktaintellicalldialer" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="text-muted-foreground hover:text-primary transition-colors"><Facebook size={20} /></Link>
-                    <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={20} /></Link>
+                    <Link href="https://x.com/i/flow/login?redirect_after_login=%2Favyukta_ecall" target="_blank" rel="noopener noreferrer" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={20} /></Link>
                     <Link href="https://www.linkedin.com/company/avyukta-intellicall1/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></Link>
                     <Link href="https://www.youtube.com/channel/UCAsFNU9xLxzQYixHDnronAw/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-muted-foreground hover:text-primary transition-colors"><Youtube size={20} /></Link>
                     <Link href="https://www.instagram.com/avyukta_intellicall/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={20} /></Link>
@@ -93,5 +93,3 @@ const Footer = () => {
 };
 
 export default Footer;
-
-    

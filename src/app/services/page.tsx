@@ -121,7 +121,7 @@ export default function ServicesPage() {
                     <CardDescription className="text-foreground/80">{service.description}</CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary transition-colors w-full md:w-auto">
+                    <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
                       <Link href={service.learnMoreLink}>
                         Learn More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>

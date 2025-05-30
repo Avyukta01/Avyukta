@@ -1,3 +1,4 @@
+
 "use client";
 
 import * as React from "react";
@@ -24,15 +25,7 @@ const Footer = () => {
               Voxaiomni: Itf'y your business with revolution IT solutions.
             </p>
           </div>
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Useful Links</h3>
-            <ul className="space-y-2">
-              <li><Link href="/about" className="hover:text-primary transition-colors text-sm">About Us</Link></li>
-              <li><Link href="/services" className="hover:text-primary transition-colors text-sm">Services</Link></li>
-              <li><Link href="/company/careers" className="hover:text-primary transition-colors text-sm">Careers</Link></li>
-              <li><Link href="/contact" className="hover:text-primary transition-colors text-sm">Contact</Link></li>
-            </ul>
-          </div>
+          {/* Removed Useful Links Column */}
           <div>
             <h3 className="text-lg font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2">
@@ -60,13 +53,7 @@ const Footer = () => {
               <li><Link href="/privacy-policy" className="hover:text-primary transition-colors text-sm">Privacy Policy</Link></li>
             </ul>
           </div>
-          
-        </div>
-         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8"> {/* New row for Subscribe and Social */}
-            <div> {/* Empty div for spacing if needed, or other content */} </div>
-            <div> {/* Empty div for spacing */} </div>
-            <div> {/* Empty div for spacing */} </div>
-            <div>
+           <div>
                  <h3 className="text-lg font-semibold mb-4">Subscribe Us</h3>
                 <p className="text-sm text-muted-foreground mb-2">
                 Get the latest updates and offers.
@@ -92,6 +79,7 @@ const Footer = () => {
                 </div>
             </div>
         </div>
+        
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           {currentYear ? (
             <p>&copy; {currentYear} Voxaiomni. All rights reserved.</p>

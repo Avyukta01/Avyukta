@@ -2,11 +2,11 @@
 import Image from "next/image";
 
 const logos = [
-  { name: "Zoho", src: "https://placehold.co/150x60.png", hint: "Zoho logo" },
-  { name: "Genesys", src: "https://placehold.co/150x60.png", hint: "Genesys logo" },
-  { name: "Bitrix24", src: "https://placehold.co/150x60.png", hint: "Bitrix24 logo" },
-  { name: "TechCorp", src: "https://placehold.co/150x60.png", hint: "TechCorp client" }, 
-  { name: "InnovateX", src: "https://placehold.co/150x60.png", hint: "InnovateX client" },
+  { name: "Zoho", src: "/logos/zoho-logo.png", hint: "Zoho logo" },
+  { name: "Genesys", src: "/logos/genesys-logo.png", hint: "Genesys logo" },
+  { name: "Bitrix24", src: "/logos/bitrix24-logo.png", hint: "Bitrix24 logo" },
+  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
+  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
 ];
 
 const TrustedBySection = () => {
@@ -36,3 +36,4 @@ const TrustedBySection = () => {
 };
 
 export default TrustedBySection;
+

@@ -1,8 +1,7 @@
-
 "use client";
 
-import { Lightbulb, Smartphone, Globe, Code2, BrainCircuit, ArrowRightCircle, Blocks, CloudCog, GitMerge } from "lucide-react"; // Replaced Cube with Blocks
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
+import { Lightbulb, Smartphone, Globe, Code2, BrainCircuit, ArrowRightCircle, Blocks, CloudCog, GitMerge, ArrowRight } from "lucide-react";
+import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
@@ -10,6 +9,7 @@ interface ExpertiseItem {
   title: string;
   icon: React.ElementType;
   description: string;
+  learnMoreLink: string;
 }
 
 const expertiseData: ExpertiseItem[] = [
@@ -17,41 +17,49 @@ const expertiseData: ExpertiseItem[] = [
     title: "Ideation & Design",
     icon: Lightbulb,
     description: "Our design process involves deep research, wireframing, prototyping, and user testing to ensure intuitive and engaging digital experiences. We focus on UI/UX best practices to create products that are not only beautiful but also highly functional, captivating, and convert.",
+    learnMoreLink: "/services/ideation-design",
   },
   {
     title: "Mobile App Development",
     icon: Smartphone,
     description: "We build high-performance native and cross-platform mobile applications for iOS and Android. Leveraging technologies like Swift, Kotlin, React Native, and Flutter, our apps are scalable, secure, and optimized for performance.",
+    learnMoreLink: "/services/mobile-apps",
   },
   {
     title: "Web Development",
     icon: Globe,
     description: "From complex web applications to e-commerce platforms and corporate websites, we develop responsive and scalable solutions. Using modern frameworks like Next.js and React, we ensure optimal performance, security, and SEO-friendliness for modern businesses.",
+    learnMoreLink: "/services/web-development",
   },
   {
     title: "Software Development",
     icon: Code2,
     description: "Our team specializes in creating bespoke software solutions tailored to your unique business requirements, including enterprise systems, SaaS products, and APIs. We follow agile methodologies to deliver high-quality software.",
+    learnMoreLink: "/services/software-development",
   },
   {
     title: "AI Development",
     icon: BrainCircuit,
     description: "We provide AI-powered solutions including machine learning models, natural language processing, computer vision, and predictive analytics. Our AI expertise helps businesses automate processes, gain insights, and innovate to unlock new possibilities.",
+    learnMoreLink: "/services/ai-solutions",
   },
   {
     title: "Blockchain Development",
-    icon: Blocks, // Changed from Cube to Blocks
+    icon: Blocks,
     description: "We develop custom blockchain applications, smart contracts, and DApps for enhanced security and transparency. Our expertise covers various platforms like Ethereum, Hyperledger, and Solana, helping businesses leverage the power of distributed ledger technology.",
+    learnMoreLink: "/services/blockchain-development",
   },
   {
     title: "Cloud Solutions",
     icon: CloudCog,
     description: "Partner with us for cloud strategy, migration, and management services across AWS, Google Cloud, and Azure. Our solutions optimize costs, improve scalability, and enhance security for your cloud-based applications.",
+    learnMoreLink: "/services/cloud-solutions",
   },
   {
     title: "DevOps & CI/CD",
     icon: GitMerge,
     description: "We implement robust DevOps practices, including continuous integration and continuous deployment (CI/CD) pipelines, infrastructure as code, and automated testing to accelerate your development lifecycle and improve software quality.",
+    learnMoreLink: "/services/devops-cicd",
   },
 ];
 
@@ -82,6 +90,13 @@ const ExpertiseSection = () => {
               <CardContent className="flex-grow">
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </CardContent>
+              <CardFooter>
+                <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
+                  <Link href={item.learnMoreLink}>
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
+                </Button>
+              </CardFooter>
             </Card>
           ))}
           <Card 

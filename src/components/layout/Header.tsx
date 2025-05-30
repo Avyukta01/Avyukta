@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -23,6 +22,14 @@ import {
   Handshake,
   Sun,
   Moon,
+  Globe,
+  Smartphone,
+  BrainCircuit,
+  Code2,
+  Blocks,
+  CloudCog,
+  GitMerge,
+  Lightbulb,
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -52,9 +59,14 @@ const navLinks: NavLink[] = [
     href: "/services",
     label: "Services",
     desktopSubLinks: [
-      { href: "/services/web-development", label: "Web Development" },
-      { href: "/services/mobile-apps", label: "Mobile Apps" },
-      { href: "/services/ai-solutions", label: "AI Solutions" },
+      { href: "/services/web-development", label: "Web Development", icon: Globe },
+      { href: "/services/mobile-apps", label: "Mobile Apps", icon: Smartphone },
+      { href: "/services/ai-solutions", label: "AI Solutions", icon: BrainCircuit },
+      { href: "/services/ideation-design", label: "Ideation & Design", icon: Lightbulb },
+      { href: "/services/software-development", label: "Software Development", icon: Code2 },
+      { href: "/services/blockchain-development", label: "Blockchain Development", icon: Blocks },
+      { href: "/services/cloud-solutions", label: "Cloud Solutions", icon: CloudCog },
+      { href: "/services/devops-cicd", label: "DevOps & CI/CD", icon: GitMerge },
     ],
   },
   {
@@ -71,7 +83,7 @@ const navLinks: NavLink[] = [
     desktopSubLinks: [
       { href: "/about", label: "About Us", icon: Building },
       { href: "/company/pricing", label: "Pricing", icon: DollarSign },
-      { href: "/company/consulting", label: "Consulting", icon: Award }, // Corrected from Award icon
+      { href: "/company/consulting", label: "Consulting", icon: Award },
       { href: "/contact", label: "Contact Us", icon: Mail },
       { href: "/company/careers", label: "Careers", icon: Briefcase },
       { href: "/company/team", label: "Our Team", icon: Users },
@@ -109,13 +121,13 @@ const Header = () => {
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="text-sm font-medium text-foreground/80 hover:text-foreground data-[state=open]:text-primary focus-visible:text-primary hover:bg-transparent data-[state=open]:bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 px-1 transition-colors"
+                    className="text-sm font-medium text-foreground/80 hover:text-foreground data-[state=open]:text-primary focus-visible:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 px-1 transition-colors"
                   >
                     {link.label}
                     <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-56" align="start">
+                <DropdownMenuContent className="w-60" align="start"> {/* Increased width */}
                   {link.desktopSubLinks.map((subLink) => (
                     <DropdownMenuItem key={subLink.href} asChild>
                       <Link href={subLink.href} className="w-full flex items-center">
@@ -139,7 +151,7 @@ const Header = () => {
         </nav>
         <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
-          <AnimatedButton pulseAnimation className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <AnimatedButton className="bg-accent text-accent-foreground hover:bg-accent/90">
             Talk to Us
           </AnimatedButton>
         </div>
@@ -177,7 +189,7 @@ const Header = () => {
                     </React.Fragment>
                   ))}
                 </nav>
-                <AnimatedButton pulseAnimation className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                <AnimatedButton className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                   Talk to Us
                 </AnimatedButton>
               </div>

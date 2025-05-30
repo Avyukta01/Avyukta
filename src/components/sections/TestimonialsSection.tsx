@@ -52,7 +52,7 @@ const testimonials = [
   {
     quote: "The project management and communication from Voxaiomni were excellent throughout the development lifecycle.",
     name: "David Lee",
-    title: "CTO, Innovate Ltd.", // Keep "Innovate Ltd." if it's a client name, change if it refers to the old company name
+    title: "CTO, FutureForward Inc.", 
     avatar: "https://placehold.co/100x100.png",
     stars: 4,
     aiHint: "tech executive"

@@ -91,8 +91,8 @@ export default function WebinarsEventsPage() {
                     animate-fade-in-up animation-delay-${(index * 100) + 200} 
                     group 
                     bg-gradient-to-r from-card via-secondary/70 to-card 
-                    group-hover:from-secondary/50 group-hover:via-primary group-hover:to-secondary/50 
-                    focus-within:from-secondary/50 focus-within:via-primary focus-within:to-secondary/50 
+                    group-hover:from-secondary/50 group-hover:via-primary group-hover:to-secondary/50 group-hover:text-primary-foreground
+                    focus-within:from-secondary/50 focus-within:via-primary focus-within:to-secondary/50 focus-within:text-primary-foreground
                     bg-[length:200%_auto] animate-background-pan
                   `}
                 >
@@ -116,15 +116,15 @@ export default function WebinarsEventsPage() {
                     <Link href={event.slug} className="block group-focus-within:underline">
                       <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors">{event.title}</CardTitle>
                     </Link>
-                    <CardDescription className="text-sm font-medium text-muted-foreground">
+                    <CardDescription className="text-sm font-medium text-muted-foreground group-hover:text-primary-foreground/80 transition-colors">
                       {event.date} {event.time && `| ${event.time}`}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-foreground/80">{event.excerpt}</p>
+                    <p className="text-foreground/80 group-hover:text-primary-foreground/90 transition-colors">{event.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary group-hover:text-primary-foreground transition-colors w-full md:w-auto">
+                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-background group-hover:text-primary transition-colors w-full md:w-auto">
                       <Link href={event.slug}>
                         Register Now <Ticket className="ml-2 h-4 w-4" />
                       </Link>
@@ -157,8 +157,8 @@ export default function WebinarsEventsPage() {
                     animate-fade-in-up animation-delay-${(index * 100) + 200} 
                     group 
                     bg-gradient-to-r from-card via-muted/70 to-card 
-                    group-hover:from-muted/50 group-hover:via-secondary group-hover:to-muted/50 
-                    focus-within:from-muted/50 focus-within:via-secondary focus-within:to-muted/50 
+                    group-hover:from-muted/50 group-hover:via-secondary group-hover:to-muted/50 group-hover:text-foreground
+                    focus-within:from-muted/50 focus-within:via-secondary focus-within:to-muted/50 focus-within:text-foreground
                     bg-[length:200%_auto] animate-background-pan
                   `}
                 >
@@ -182,15 +182,15 @@ export default function WebinarsEventsPage() {
                     <Link href={event.slug} className="block group-focus-within:underline">
                       <CardTitle className="text-2xl text-primary group-hover:text-accent transition-colors">{event.title}</CardTitle>
                     </Link>
-                    <CardDescription className="text-sm font-medium text-muted-foreground">
+                    <CardDescription className="text-sm font-medium text-muted-foreground group-hover:text-foreground/80 transition-colors">
                       {event.date}
                     </CardDescription>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <p className="text-foreground/80">{event.excerpt}</p>
+                    <p className="text-foreground/80 group-hover:text-foreground/90 transition-colors">{event.excerpt}</p>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="outline" className="border-primary text-primary hover:bg-accent hover:text-accent-foreground w-full md:w-auto">
+                    <Button asChild variant="outline" className="border-primary text-primary hover:bg-accent hover:text-accent-foreground group-hover:bg-accent group-hover:text-accent-foreground w-full md:w-auto">
                       <Link href={event.slug}>
                         Watch Recording <Video className="ml-2 h-4 w-4" />
                       </Link>

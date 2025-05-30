@@ -58,7 +58,7 @@ export default function CaseStudiesPage() {
           <div className="container-max">
             <Award className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Innovatech Success Stories
+              Voxaiomni Success Stories
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Discover how we've helped businesses like yours achieve remarkable results through technology and innovation.
@@ -125,7 +125,7 @@ export default function CaseStudiesPage() {
               Ready to Write Your Success Story?
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
-              Let's discuss how Innovatech can help you achieve your business goals and overcome challenges with our tailored solutions.
+              Let's discuss how Voxaiomni can help you achieve your business goals and overcome challenges with our tailored solutions.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=ProjectInquiry">Start Your Project</Link>

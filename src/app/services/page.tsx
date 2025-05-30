@@ -5,18 +5,18 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Globe, Smartphone, BrainCircuit, ArrowRight, Settings, Lightbulb, Code2, Blocks, CloudCog, GitMerge } from "lucide-react";
+import { Globe, Smartphone, BrainCircuit, ArrowRight, Settings, Lightbulb, Code2, Blocks, CloudCog, GitMerge, Layers3 } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
 const services = [
   {
-    title: "Web Development",
-    icon: Globe,
-    description: "We craft exceptional digital experiences. Our web development services include building responsive e-commerce platforms, custom enterprise portals, dynamic single-page applications (SPAs), and content management systems (CMS). We leverage modern technologies like Next.js, React, and Node.js to create scalable, high-performance, and secure web solutions tailored to your specific business goals. Whether you need a Progressive Web App (PWA) or a complex data-driven application, we deliver excellence.",
+    title: "Ideation & Design",
+    icon: Lightbulb,
+    description: "Transforming innovative ideas into impactful digital products. Our process involves deep research, user journey mapping, wireframing, prototyping, and user testing. We focus on creating intuitive, accessible, and aesthetically pleasing UI/UX designs that align with your brand and captivate your target audience, ensuring a seamless user experience from start to finish.",
     image: "https://placehold.co/600x400.png",
-    aiHint: "web development code",
-    learnMoreLink: "/services/web-development" 
+    aiHint: "design thinking lightbulb",
+    learnMoreLink: "/services/ideation-design"
   },
   {
     title: "Mobile App Development",
@@ -27,28 +27,28 @@ const services = [
     learnMoreLink: "/services/mobile-apps"
   },
   {
+    title: "Web Development",
+    icon: Globe,
+    description: "We craft exceptional digital experiences. Our web development services include building responsive e-commerce platforms, custom enterprise portals, dynamic single-page applications (SPAs), and content management systems (CMS). We leverage modern technologies like Next.js, React, and Node.js to create scalable, high-performance, and secure web solutions tailored to your specific business goals. Whether you need a Progressive Web App (PWA) or a complex data-driven application, we deliver excellence.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "web development code",
+    learnMoreLink: "/services/web-development" 
+  },
+  {
+    title: "Software Development",
+    icon: Layers3, 
+    description: "Delivering custom software solutions tailored to your unique business needs. We specialize in enterprise systems, SaaS products, and robust API development. Our agile methodologies ensure high-quality software that is scalable, secure, and perfectly aligned with your strategic objectives, driving efficiency and growth.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "software code screen",
+    learnMoreLink: "/services/software-development"
+  },
+  {
     title: "AI & ML Solutions",
     icon: BrainCircuit,
     description: "Unlock the power of Artificial Intelligence and Machine Learning. We develop custom AI models for predictive analytics, natural language processing (NLP), computer vision, and intelligent automation. Our solutions help businesses gain deep insights from data, optimize complex processes, enhance customer experiences, and drive innovation to achieve a significant competitive edge.",
     image: "https://placehold.co/600x400.png",
     aiHint: "ai abstract brain",
     learnMoreLink: "/services/ai-solutions"
-  },
-  {
-    title: "Ideation & Design",
-    icon: Lightbulb,
-    description: "Transforming innovative ideas into impactful digital products. Our process involves deep research, user journey mapping, wireframing, prototyping, and user testing. We focus on creating intuitive, accessible, and aesthetically pleasing UI/UX designs that align with your brand and captivate your target audience, ensuring a seamless user experience from start to finish.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "design thinking lightbulb",
-    learnMoreLink: "/services/ideation-design"
-  },
-  {
-    title: "Software Development",
-    icon: Code2,
-    description: "Delivering custom software solutions tailored to your unique business needs. We specialize in enterprise systems, SaaS products, and robust API development. Our agile methodologies ensure high-quality software that is scalable, secure, and perfectly aligned with your strategic objectives, driving efficiency and growth.",
-    image: "https://placehold.co/600x400.png",
-    aiHint: "software code screen",
-    learnMoreLink: "/services/software-development"
   },
   {
     title: "Blockchain Development",

@@ -12,14 +12,14 @@ const Logo = ({ className }: { className?: string }) => {
       )}
     >
       <Image
-        src="/logos/voxaiomni-logo.png" // Assumes your logo is here
+        src="/logos/voxaiomni-logo.png" 
         alt="Voxaiomni Logo"
-        width={40} // Adjust width as needed
-        height={40} // Adjust height as needed
-        className="h-8 w-auto md:h-10" // Responsive height, auto width
+        width={40} 
+        height={40} 
+        className="h-8 w-auto md:h-10" 
         data-ai-hint="company logo"
       />
-      <span className="hidden sm:inline">Voxaiomni</span> {/* Optionally show text next to logo */}
+      <span className="hidden sm:inline">Voxaiomni</span>
     </Link>
   );
 };

@@ -1,10 +1,9 @@
-
 "use client";
 
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ArrowRight, Phone } from "lucide-react";
 import Link from "next/link";
-import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet"; // Import the new component
+import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet"; 
 
 const HeroSection = () => {
   return (

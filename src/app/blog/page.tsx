@@ -72,7 +72,7 @@ export default function BlogPage() {
           <div className="container-max">
             <Newspaper className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Innovatech Insights
+              Voxaiomni Insights
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Explore our latest articles, trends, and expert opinions on technology, innovation, and digital transformation.

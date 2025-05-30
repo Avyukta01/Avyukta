@@ -30,7 +30,7 @@ const tutorials = [
   },
   {
     title: "Integrating Our API with Your Application",
-    excerpt: "A step-by-step guide to seamlessly integrate Innovatech's API into your existing software stack.",
+    excerpt: "A step-by-step guide to seamlessly integrate Voxaiomni's API into your existing software stack.",
     image: "https://placehold.co/600x400.png",
     slug: "/resources/tutorials/api-integration-guide", // Placeholder slug
     aiHint: "api integration code",
@@ -49,7 +49,7 @@ export default function TutorialsPage() {
           <div className="container-max">
             <BookOpen className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Innovatech Tutorials & How-tos
+              Voxaiomni Tutorials & How-tos
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Learn how to make the most of our products and services with our step-by-step guides and expert tips.

@@ -1,5 +1,5 @@
 
-"use client"; // Required for animations and interactivity if any client-side hooks were used
+"use client"; 
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";

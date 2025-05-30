@@ -21,14 +21,19 @@ const TrustedBySection = () => {
         </h2>
         <div className="flex flex-wrap justify-center items-center gap-8 md:gap-12">
           {logos.map((logo) => (
-            <div key={logo.name} className="grayscale hover:grayscale-0 transition-all duration-300" title={logo.name}>
+            <div
+              key={logo.name}
+              className="grayscale hover:grayscale-0 transition-all duration-300"
+              title={logo.name}
+            >
               <Image
                 src={logo.src}
                 alt={`${logo.name} Logo`}
                 width={150}
                 height={60}
-                objectFit="contain"
+                style={{ objectFit: 'contain' }}
                 data-ai-hint={logo.hint}
+                className="rounded-md" // Added rounded corners
               />
             </div>
           ))}

@@ -2,60 +2,39 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { LucideIcon } from "lucide-react";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Star } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { Quote } from "lucide-react"; // Imported Quote icon
 
-const testimonials = [
+const testimonialsData = [
   {
-    quote: "Voxaiomni transformed our online presence. Their team is professional, skilled, and delivered beyond our expectations!",
-    name: "Jane Doe",
-    title: "CEO, TechSolutions Inc.",
-    avatar: "https://placehold.co/100x100.png",
-    stars: 5,
-    aiHint: "professional portrait"
+    quote: "Dialer CRM for my recruiting consultancy as committed by Avyukta has enabled me to attain ROI within 3 months of complete deployment with all voice recordings, transparency, staff performance analysis, structured reporting and 600% better output with same resources.",
+    name: "Mr. J K Sarolia",
+    role: "Managing Director",
+    company: "Mumbai Job Junction",
   },
   {
-    quote: "The AI chatbot developed by Voxaiomni has significantly improved our customer service efficiency. Highly recommended.",
-    name: "John Smith",
-    title: "COO, GlobalMart",
-    avatar: "https://placehold.co/100x100.png",
-    stars: 5,
-    aiHint: "business person"
+    quote: "The AI-powered analytics from Voxaiomni helped us understand our customer behavior deeply, leading to a 25% increase in sales in just one quarter. Their team's support was exceptional throughout the process.",
+    name: "Ms. Priya Sharma",
+    role: "Marketing Head",
+    company: "Bangalore Retail Co.",
   },
   {
-    quote: "Exceptional web development services. Our new website is fast, responsive, and looks fantastic.",
-    name: "Alice Brown",
-    title: "Marketing Director, CreativeCo",
-    avatar: "https://placehold.co/100x100.png",
-    stars: 4,
-    aiHint: "marketing professional"
+    quote: "Voxaiomni's custom software solution streamlined our complex logistics operations. We've seen a significant reduction in errors and improved delivery times. Truly a game-changer for our supply chain.",
+    name: "Mr. Arjun Reddy",
+    role: "Operations Chief",
+    company: "Delhi Logistics Ltd.",
   },
   {
-    quote: "Their expertise in mobile app development is top-notch. The app they built for us is a huge success.",
-    name: "Robert Green",
-    title: "Founder, AppStart",
-    avatar: "https://placehold.co/100x100.png",
-    stars: 5,
-    aiHint: "startup founder"
-  },
-  // Adding a few more unique testimonials for variety
-  {
-    quote: "Voxaiomni's AI solutions provided deep insights that were previously unavailable to us. A game changer!",
-    name: "Maria Garcia",
-    title: "Data Scientist, FutureAI Corp",
-    avatar: "https://placehold.co/100x100.png",
-    stars: 5,
-    aiHint: "data scientist"
+    quote: "Their web development team delivered a world-class e-commerce platform that is both robust and user-friendly. Our online revenue has tripled since the launch. Highly recommend Voxaiomni for digital transformation!",
+    name: "Mrs. Ananya Deshpande",
+    role: "Founder & CEO",
+    company: "PuneCrafts Online",
   },
   {
-    quote: "The project management and communication from Voxaiomni were excellent throughout the development lifecycle.",
-    name: "David Lee",
-    title: "CTO, FutureForward Inc.", 
-    avatar: "https://placehold.co/100x100.png",
-    stars: 4,
-    aiHint: "tech executive"
+    quote: "Working with Voxaiomni on our cloud migration was a seamless experience. Their expertise ensured minimal downtime and optimized our infrastructure for better performance and cost savings.",
+    name: "Mr. Vikram Singh",
+    role: "IT Director",
+    company: "Hyderabad Tech Solutions",
   }
 ];
 
@@ -64,15 +43,15 @@ const TestimonialsSection = () => {
   const [isTransitioning, setIsTransitioning] = useState(false);
 
   useEffect(() => {
-    if (testimonials.length <= 1) return;
+    if (testimonialsData.length <= 1) return;
 
-    const cycleDuration = 5000; 
+    const cycleDuration = 6000; // Increased duration for readability
     const transitionDuration = 500;
 
     const timer = setInterval(() => {
       setIsTransitioning(true);
       setTimeout(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonials.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % testimonialsData.length);
         setIsTransitioning(false);
       }, transitionDuration);
     }, cycleDuration + transitionDuration);
@@ -80,11 +59,11 @@ const TestimonialsSection = () => {
     return () => clearInterval(timer);
   }, []);
 
-  if (!testimonials || testimonials.length === 0) {
+  if (!testimonialsData || testimonialsData.length === 0) {
     return null;
   }
 
-  const testimonial = testimonials[currentIndex];
+  const testimonial = testimonialsData[currentIndex];
 
   return (
     <section className="section-padding bg-secondary text-secondary-foreground">
@@ -97,46 +76,31 @@ const TestimonialsSection = () => {
             Hear directly from businesses that have partnered with Voxaiomni to achieve their goals.
           </p>
         </div>
-        <div className="flex justify-center items-center min-h-[320px]">
+        <div className="flex justify-center items-center min-h-[280px] md:min-h-[320px]">
           {testimonial && (
             <Card
               key={testimonial.name} 
               className={`
-                w-full max-w-lg md:max-w-xl 
-                min-h-[280px] 
+                w-full max-w-2xl 
                 bg-background text-foreground shadow-xl 
                 transition-opacity duration-500 ease-in-out
-                flex flex-col 
+                flex flex-col rounded-lg
                 ${isTransitioning ? 'opacity-0' : 'opacity-100'}
               `}
             >
-              <CardHeader className="pb-4">
-                <div className="flex items-start space-x-4">
-                  <Avatar className="w-12 h-12 border-2 border-primary shrink-0">
-                    <AvatarImage src={testimonial.avatar} alt={testimonial.name} data-ai-hint={testimonial.aiHint} />
-                    <AvatarFallback>{testimonial.name.substring(0, 2).toUpperCase()}</AvatarFallback>
-                  </Avatar>
-                  <div className="flex-1">
-                    <CardTitle className="text-lg font-semibold">{testimonial.name}</CardTitle>
-                    <p className="text-sm text-muted-foreground">{testimonial.title}</p>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="flex-grow flex flex-col justify-center pt-2">
-                <div>
-                  <div className="flex mb-3">
-                    {Array(5).fill(0).map((_, i) => (
-                      <Star
-                        key={i}
-                        className={`h-5 w-5 ${i < testimonial.stars ? 'text-yellow-400 fill-yellow-400' : 'text-gray-300'}`}
-                      />
-                    ))}
-                  </div>
-                  <p className="text-base text-foreground/90 italic leading-relaxed">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                </div>
+              <CardContent className="pt-10 pb-4 text-center relative flex-grow flex flex-col justify-center">
+                <Quote className="absolute top-4 left-4 md:left-6 h-10 w-10 md:h-12 md:w-12 text-muted-foreground/20 transform -translate-x-1 -translate-y-1" />
+                <p className="text-md md:text-lg text-foreground/80 leading-relaxed mx-auto max-w-xl px-4 md:px-8">
+                  {testimonial.quote}
+                </p>
+                <Quote className="absolute bottom-2 right-4 md:right-6 h-10 w-10 md:h-12 md:w-12 text-muted-foreground/20 transform translate-x-1 translate-y-1 rotate-180" />
               </CardContent>
+              <div className="text-center pt-2 pb-8 px-6">
+                <p className="text-lg font-bold text-destructive mt-4">{testimonial.name}</p>
+                <p className="text-sm text-muted-foreground">
+                  {testimonial.role}, <span className="font-medium text-destructive">{testimonial.company}</span>
+                </p>
+              </div>
             </Card>
           )}
         </div>

@@ -1,10 +1,11 @@
+
 "use client";
 
 import * as React from "react";
 import Link from "next/link";
-import { 
-  MoreHorizontal, 
-  X, 
+import {
+  MoreHorizontal,
+  X,
   ChevronDown,
   Newspaper,
   FileText,
@@ -14,10 +15,10 @@ import {
   HelpCircle,
   BookOpen,
   Mail,
-  Briefcase, 
-  Users, 
-  Award, 
-  DollarSign, 
+  Briefcase,
+  Users,
+  Award,
+  DollarSign,
   Building,
   Handshake,
   Sun,
@@ -30,6 +31,8 @@ import {
   CloudCog,
   GitMerge,
   Lightbulb,
+  Layers3, // For Software Development (stack icon)
+  ArrowRight,
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -40,15 +43,31 @@ import {
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuSeparator,
 } from "@/components/ui/dropdown-menu";
 import type { LucideIcon } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { cn } from "@/lib/utils";
+
+interface NavSubLink {
+  href: string;
+  label: string;
+  icon?: LucideIcon;
+}
+
+interface NavServiceCategory {
+  title: string;
+  icon: LucideIcon;
+  href: string; // For "See All" link
+  subServices: string[];
+}
 
 interface NavLink {
   href: string;
   label: string;
-  icon?: LucideIcon; 
-  desktopSubLinks?: NavLink[];
+  icon?: LucideIcon;
+  desktopSubLinks?: NavSubLink[];
+  desktopServiceCategories?: NavServiceCategory[]; // For the new services mega menu
 }
 
 
@@ -58,15 +77,55 @@ const navLinks: NavLink[] = [
   {
     href: "/services",
     label: "Services",
-    desktopSubLinks: [
-      { href: "/services/web-development", label: "Web Development", icon: Globe },
-      { href: "/services/mobile-apps", label: "Mobile Apps", icon: Smartphone },
-      { href: "/services/ai-solutions", label: "AI Solutions", icon: BrainCircuit },
-      { href: "/services/ideation-design", label: "Ideation & Design", icon: Lightbulb },
-      { href: "/services/software-development", label: "Software Development", icon: Code2 },
-      { href: "/services/blockchain-development", label: "Blockchain Development", icon: Blocks },
-      { href: "/services/cloud-solutions", label: "Cloud Solutions", icon: CloudCog },
-      { href: "/services/devops-cicd", label: "DevOps & CI/CD", icon: GitMerge },
+    desktopServiceCategories: [
+      {
+        title: "Ideation & Design",
+        icon: Lightbulb,
+        href: "/services/ideation-design",
+        subServices: ["UI/UX Design", "Product Roadmap", "Design Thinking Workshops", "User Research & Personas"],
+      },
+      {
+        title: "Mobile App Development",
+        icon: Smartphone,
+        href: "/services/mobile-apps",
+        subServices: ["Android App Development", "iOS App Development", "Cross-Platform App Development", "Progressive Web Apps (PWA)"],
+      },
+      {
+        title: "Web Development",
+        icon: Globe,
+        href: "/services/web-development",
+        subServices: ["Website Development", "Web App Development", "E-Commerce Development", "Frontend Development"],
+      },
+      {
+        title: "Software Development",
+        icon: Layers3,
+        href: "/services/software-development",
+        subServices: ["Custom Software Development", "Enterprise Software Development", "SaaS Product Development", "ERP & CRM Solutions"],
+      },
+      {
+        title: "AI Development",
+        icon: BrainCircuit,
+        href: "/services/ai-solutions",
+        subServices: ["AI Consulting", "AI Agent Development", "AI Chatbot Development", "Adaptive AI Systems"],
+      },
+      {
+        title: "Blockchain Development",
+        icon: Blocks,
+        href: "/services/blockchain-development",
+        subServices: ["ICO Development", "Smart Contract Development", "Wallet Development", "NFT Development"],
+      },
+      {
+        title: "Cloud & DevOps Services",
+        icon: CloudCog,
+        href: "/services/devops-cicd", // Combined DevOps and Cloud link
+        subServices: ["Cloud Migration", "Infrastructure as Code (IaC)", "CI/CD Pipelines", "Containerization & Orchestration"],
+      },
+      {
+        title: "Tech Consultancy",
+        icon: Users, // Using Users icon as per image hint
+        href: "/company/consulting", // Link to existing consulting page
+        subServices: ["Digital Transformation Strategy", "Technology Stack Advisory", "IT Architecture Planning", "Cybersecurity Consulting"],
+      },
     ],
   },
   {
@@ -78,17 +137,17 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    href: "/company", 
+    href: "/company",
     label: "Company",
     desktopSubLinks: [
       { href: "/about", label: "About Us", icon: Building },
       { href: "/company/pricing", label: "Pricing", icon: DollarSign },
-      { href: "/company/consulting", label: "Consulting", icon: Award },
+      { href: "/company/consulting", label: "Consulting", icon: Award }, // Kept for direct access
       { href: "/contact", label: "Contact Us", icon: Mail },
       { href: "/company/careers", label: "Careers", icon: Briefcase },
       { href: "/company/team", label: "Our Team", icon: Users },
-      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Award }, 
-      { href: "/company/partners", label: "Partners & Affiliations", icon: Handshake }, 
+      { href: "/company/why-choose-us", label: "Why Choose Us", icon: Award },
+      { href: "/company/partners", label: "Partners & Affiliations", icon: Handshake },
     ],
   },
   {
@@ -116,18 +175,61 @@ const Header = () => {
         <Logo />
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navLinks.map((link) =>
-            link.desktopSubLinks ? (
+            link.desktopServiceCategories ? (
               <DropdownMenu key={link.label}>
                 <DropdownMenuTrigger asChild>
                   <Button
                     variant="ghost"
-                    className="text-sm font-medium text-foreground/80 hover:text-foreground data-[state=open]:text-primary focus-visible:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 px-1 transition-colors"
+                    className="text-sm font-medium text-foreground/80 hover:text-primary focus-visible:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 data-[state=open]:text-primary px-1 transition-colors"
                   >
                     {link.label}
                     <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-60" align="start"> {/* Increased width */}
+                <DropdownMenuContent 
+                  className="md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-6" 
+                  align="start"
+                >
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
+                    {link.desktopServiceCategories.map((category) => (
+                      <div key={category.title} className="flex flex-col space-y-2">
+                        <Link href={category.href} passHref legacyBehavior>
+                          <a className="group inline-flex items-center space-x-2">
+                            <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
+                            <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
+                          </a>
+                        </Link>
+                        <ul className="space-y-1.5">
+                          {category.subServices.map((subService) => (
+                            <li key={subService}>
+                              <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default"> {/* Making sub-services non-clickable for now as per design */}
+                                {subService}
+                              </span>
+                            </li>
+                          ))}
+                        </ul>
+                        <Link href={category.href} passHref legacyBehavior>
+                          <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                            See All <ArrowRight className="ml-1 h-4 w-4" />
+                          </a>
+                        </Link>
+                      </div>
+                    ))}
+                  </div>
+                </DropdownMenuContent>
+              </DropdownMenu>
+            ) : link.desktopSubLinks ? (
+              <DropdownMenu key={link.label}>
+                <DropdownMenuTrigger asChild>
+                  <Button
+                    variant="ghost"
+                    className="text-sm font-medium text-foreground/80 hover:text-primary focus-visible:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 data-[state=open]:text-primary px-1 transition-colors"
+                  >
+                    {link.label}
+                    <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
+                  </Button>
+                </DropdownMenuTrigger>
+                <DropdownMenuContent className="w-60" align="start">
                   {link.desktopSubLinks.map((subLink) => (
                     <DropdownMenuItem key={subLink.href} asChild>
                       <Link href={subLink.href} className="w-full flex items-center">
@@ -142,7 +244,7 @@ const Header = () => {
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-foreground focus-visible:text-primary focus-visible:outline-none transition-colors"
+                className="text-sm font-medium text-foreground/80 hover:text-primary focus-visible:text-primary focus-visible:outline-none transition-colors"
               >
                 {link.label}
               </Link>
@@ -180,7 +282,7 @@ const Header = () => {
                      <React.Fragment key={link.href}>
                       <SheetClose asChild>
                         <Link
-                          href={link.href} 
+                          href={link.href}
                           className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
                         >
                           {link.label}

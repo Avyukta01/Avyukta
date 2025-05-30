@@ -1,3 +1,4 @@
+
 // src/components/sections/TrustedBySection.tsx
 "use client";
 
@@ -23,7 +24,7 @@ const TrustedBySection = () => {
             <div key={logo.name} className="grayscale hover:grayscale-0 transition-all duration-300" title={logo.name}>
               <Image
                 src={logo.src}
-                alt={logo.name}
+                alt={`${logo.name} Logo`}
                 width={150}
                 height={60}
                 objectFit="contain"

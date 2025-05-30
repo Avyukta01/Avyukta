@@ -5,7 +5,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
-import { Globe, Smartphone, BrainCircuit, ArrowRight, Settings } from "lucide-react";
+import { Globe, Smartphone, BrainCircuit, ArrowRight, Settings, Lightbulb, Code2, Blocks, CloudCog, GitMerge } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -33,6 +33,46 @@ const services = [
     image: "https://placehold.co/600x400.png",
     aiHint: "ai abstract brain",
     learnMoreLink: "/services/ai-solutions"
+  },
+  {
+    title: "Ideation & Design",
+    icon: Lightbulb,
+    description: "Transforming innovative ideas into impactful digital products. Our process involves deep research, user journey mapping, wireframing, prototyping, and user testing. We focus on creating intuitive, accessible, and aesthetically pleasing UI/UX designs that align with your brand and captivate your target audience, ensuring a seamless user experience from start to finish.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "design thinking lightbulb",
+    learnMoreLink: "/services/ideation-design"
+  },
+  {
+    title: "Software Development",
+    icon: Code2,
+    description: "Delivering custom software solutions tailored to your unique business needs. We specialize in enterprise systems, SaaS products, and robust API development. Our agile methodologies ensure high-quality software that is scalable, secure, and perfectly aligned with your strategic objectives, driving efficiency and growth.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "software code screen",
+    learnMoreLink: "/services/software-development"
+  },
+  {
+    title: "Blockchain Development",
+    icon: Blocks,
+    description: "Leveraging distributed ledger technology to build secure, transparent, and transformative solutions. We develop custom blockchain applications, smart contracts, and DApps on platforms like Ethereum and Hyperledger. Our expertise helps businesses enhance security, traceability, and efficiency through decentralized systems.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "blockchain network abstract",
+    learnMoreLink: "/services/blockchain-development"
+  },
+  {
+    title: "Cloud Solutions",
+    icon: CloudCog,
+    description: "Empowering your business with flexible, robust, and cost-effective cloud services. We offer cloud strategy, migration, cloud-native development, and management services across AWS, Google Cloud, and Azure. Our solutions optimize costs, improve scalability, and enhance security for your cloud infrastructure.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "cloud computing servers",
+    learnMoreLink: "/services/cloud-solutions"
+  },
+  {
+    title: "DevOps & CI/CD",
+    icon: GitMerge,
+    description: "Streamlining your development lifecycle with expert DevOps solutions. We implement CI/CD pipelines, infrastructure as code (IaC), automated testing, and comprehensive monitoring to accelerate delivery, improve software quality, and foster collaboration between development and operations teams.",
+    image: "https://placehold.co/600x400.png",
+    aiHint: "devops pipeline cycle",
+    learnMoreLink: "/services/devops-cicd"
   },
 ];
 

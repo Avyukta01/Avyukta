@@ -11,16 +11,16 @@ import Link from "next/link";
 
 const faqItems = [
   {
-    question: "What services does Innovatech offer?",
-    answer: "Innovatech offers a wide range of technology solutions including custom software development, AI and machine learning services, web and mobile application development, cloud consulting, and IT strategy services. We tailor our solutions to meet the unique needs of each client.",
+    question: "What services does Voxaiomni offer?",
+    answer: "Voxaiomni offers a wide range of technology solutions including custom software development, AI and machine learning services, web and mobile application development, cloud consulting, and IT strategy services. We tailor our solutions to meet the unique needs of each client.",
   },
   {
     question: "How can I get a quote for my project?",
     answer: "You can request a quote by visiting our 'Contact Us' page and filling out the inquiry form with details about your project. Alternatively, you can call us directly. We aim to respond to all inquiries within 24-48 business hours.",
   },
   {
-    question: "What industries does Innovatech specialize in?",
-    answer: "While we have experience across various sectors, Innovatech has particular expertise in FinTech, Healthcare, Retail, and SaaS. Our adaptable approach allows us to deliver impactful solutions for businesses of all sizes in diverse industries.",
+    question: "What industries does Voxaiomni specialize in?",
+    answer: "While we have experience across various sectors, Voxaiomni has particular expertise in FinTech, Healthcare, Retail, and SaaS. Our adaptable approach allows us to deliver impactful solutions for businesses of all sizes in diverse industries.",
   },
   {
     question: "How long does a typical project take to complete?",
@@ -45,7 +45,7 @@ export default function FaqPage() {
               Help Center & Frequently Asked Questions
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Find answers to common questions about Innovatech, our services, and products.
+              Find answers to common questions about Voxaiomni, our services, and products.
             </p>
           </div>
         </section>

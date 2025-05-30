@@ -1,3 +1,4 @@
+
 "use client";
 
 import Image from "next/image";
@@ -13,7 +14,7 @@ const VideoSection = () => {
     <section className="section-padding bg-background">
       <div className="container-max text-center">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          See Innovatech in Action
+          See Voxaiomni in Action
         </h2>
         <p className="text-muted-foreground mb-12 max-w-xl mx-auto">
           Discover how our innovative solutions can transform your business. Watch our latest highlights and offerings.

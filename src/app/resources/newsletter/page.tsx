@@ -49,7 +49,7 @@ export default function NewsletterPage() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     toast({
       title: "Successfully Subscribed!",
-      description: "Thank you for subscribing to the Innovatech newsletter.",
+      description: "Thank you for subscribing to the Voxaiomni newsletter.",
     });
     form.reset();
   }
@@ -66,7 +66,7 @@ export default function NewsletterPage() {
               Subscribe to Our Newsletter
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Get the latest news, product updates, and exclusive insights from Innovatech directly to your inbox.
+              Get the latest news, product updates, and exclusive insights from Voxaiomni directly to your inbox.
             </p>
           </div>
         </section>

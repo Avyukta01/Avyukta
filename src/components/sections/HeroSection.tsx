@@ -28,7 +28,7 @@ const HeroSection = () => {
           Powering Your Digital Transformation
         </h1>
         <p className="text-lg md:text-xl text-primary-foreground/80 mb-10 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-          Innovatech delivers cutting-edge solutions in AI, web, and mobile development to elevate your business.
+          Voxaiomni: Itf'y your business with revolution IT solutions in AI, web, and mobile development.
         </p>
         <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4 animate-fade-in-up animation-delay-300">
           <AnimatedButton

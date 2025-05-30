@@ -9,7 +9,7 @@ import { Star } from "lucide-react";
 
 const testimonials = [
   {
-    quote: "Innovatech transformed our online presence. Their team is professional, skilled, and delivered beyond our expectations!",
+    quote: "Voxaiomni transformed our online presence. Their team is professional, skilled, and delivered beyond our expectations!",
     name: "Jane Doe",
     title: "CEO, TechSolutions Inc.",
     avatar: "https://placehold.co/100x100.png",
@@ -17,7 +17,7 @@ const testimonials = [
     aiHint: "professional portrait"
   },
   {
-    quote: "The AI chatbot developed by Innovatech has significantly improved our customer service efficiency. Highly recommended.",
+    quote: "The AI chatbot developed by Voxaiomni has significantly improved our customer service efficiency. Highly recommended.",
     name: "John Smith",
     title: "COO, GlobalMart",
     avatar: "https://placehold.co/100x100.png",
@@ -42,7 +42,7 @@ const testimonials = [
   },
   // Adding a few more unique testimonials for variety
   {
-    quote: "Innovatech's AI solutions provided deep insights that were previously unavailable to us. A game changer!",
+    quote: "Voxaiomni's AI solutions provided deep insights that were previously unavailable to us. A game changer!",
     name: "Maria Garcia",
     title: "Data Scientist, FutureAI Corp",
     avatar: "https://placehold.co/100x100.png",
@@ -50,9 +50,9 @@ const testimonials = [
     aiHint: "data scientist"
   },
   {
-    quote: "The project management and communication from Innovatech were excellent throughout the development lifecycle.",
+    quote: "The project management and communication from Voxaiomni were excellent throughout the development lifecycle.",
     name: "David Lee",
-    title: "CTO, Innovate Ltd.",
+    title: "CTO, Innovate Ltd.", // Keep "Innovate Ltd." if it's a client name, change if it refers to the old company name
     avatar: "https://placehold.co/100x100.png",
     stars: 4,
     aiHint: "tech executive"
@@ -94,13 +94,13 @@ const TestimonialsSection = () => {
             What Our Clients Say
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Hear directly from businesses that have partnered with Innovatech to achieve their goals.
+            Hear directly from businesses that have partnered with Voxaiomni to achieve their goals.
           </p>
         </div>
         <div className="flex justify-center items-center min-h-[320px]">
           {testimonial && (
             <Card
-              key={testimonial.name} // Added key here
+              key={testimonial.name} 
               className={`
                 w-full max-w-lg md:max-w-xl 
                 min-h-[280px] 

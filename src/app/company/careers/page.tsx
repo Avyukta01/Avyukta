@@ -50,7 +50,7 @@ export default function CareerPage() {
           <div className="container-max">
             <Briefcase className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Shape the Future with Innovatech
+              Shape the Future with Voxaiomni
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Explore exciting career opportunities and grow with a team passionate about innovation and excellence.
@@ -97,7 +97,7 @@ export default function CareerPage() {
         </section>
 
 
-        {/* Life at Innovatech Section */}
+        {/* Life at Voxaiomni Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left animation-delay-100">
@@ -111,7 +111,7 @@ export default function CareerPage() {
               />
             </div>
             <div className="animate-fade-in-right">
-              <h2 className="text-3xl font-bold text-primary mb-6">Life at Innovatech</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6">Life at Voxaiomni</h2>
               <p className="text-muted-foreground mb-4">
                 We foster a vibrant and inclusive workplace where creativity thrives. Our team enjoys a balance of challenging projects, continuous learning, and a supportive community.
               </p>
@@ -136,7 +136,7 @@ export default function CareerPage() {
               While we may not have specific roles listed at this moment, we are always on the lookout for passionate and talented individuals. If you believe your skills and aspirations align with our vision, we'd love to hear from you.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=CareerInquiry&message=I'm interested in career opportunities at Innovatech.">Submit Your Resume</Link>
+              <Link href="/contact?subject=CareerInquiry&message=I'm interested in career opportunities at Voxaiomni.">Submit Your Resume</Link>
             </Button>
           </div>
         </section>

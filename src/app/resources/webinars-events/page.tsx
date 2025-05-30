@@ -22,7 +22,7 @@ const upcomingEvents = [
     icon: Lightbulb,
   },
   {
-    title: "Innovatech Annual Tech Summit 2024",
+    title: "Voxaiomni Annual Tech Summit 2024",
     date: "January 15-17, 2024",
     time: "Full Day Event",
     type: "Conference",
@@ -67,7 +67,7 @@ export default function WebinarsEventsPage() {
           <div className="container-max">
             <CalendarClock className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Innovatech Webinars &amp; Events
+              Voxaiomni Webinars &amp; Events
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Join us for insightful discussions, workshops, and conferences. Stay ahead with the latest trends and innovations.

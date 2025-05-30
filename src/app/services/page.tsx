@@ -49,7 +49,7 @@ export default function ServicesPage() {
               Our Comprehensive Services
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Innovatech provides a wide range of technology solutions to empower your business and drive digital transformation.
+              Voxaiomni provides a wide range of technology solutions to empower your business and drive digital transformation.
             </p>
           </div>
         </section>

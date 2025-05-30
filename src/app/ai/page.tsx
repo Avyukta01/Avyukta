@@ -81,7 +81,7 @@ export default function AIPage() {
           <div className="container-max">
             <BrainCircuit className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Innovatech AI: Engineering the Future, Intelligently
+              Voxaiomni AI: Itf'y your business with revolution IT solutions.
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Leverage the power of Artificial Intelligence to transform your business, unlock new opportunities, and drive unprecedented growth.
@@ -153,7 +153,7 @@ export default function AIPage() {
               Ethical & Responsible AI
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              At Innovatech, we are committed to developing AI solutions that are fair, transparent, and accountable. We prioritize ethical considerations throughout the AI lifecycle, ensuring our technology serves humanity responsibly.
+              At Voxaiomni, we are committed to developing AI solutions that are fair, transparent, and accountable. We prioritize ethical considerations throughout the AI lifecycle, ensuring our technology serves humanity responsibly.
             </p>
           </div>
         </section>
@@ -166,7 +166,7 @@ export default function AIPage() {
               Ready to Unlock Your AI Potential?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Let's discuss how Innovatech's AI expertise can revolutionize your business.
+              Let's discuss how Voxaiomni's AI expertise can revolutionize your business.
             </p>
             <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=AIProjectInquiry">Talk to Our AI Experts</Link>

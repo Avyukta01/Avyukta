@@ -22,7 +22,7 @@ const Footer = () => {
           <div>
             <Logo className="text-primary mb-4" />
             <p className="text-sm text-muted-foreground">
-              Innovating the future with cutting-edge technology solutions.
+              Voxaiomni: Itf'y your business with revolution IT solutions.
             </p>
           </div>
           <div>
@@ -76,9 +76,9 @@ const Footer = () => {
         </div>
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           {currentYear ? (
-            <p>&copy; {currentYear} Innovatech. All rights reserved.</p>
+            <p>&copy; {currentYear} Voxaiomni. All rights reserved.</p>
           ) : (
-            <p>&copy; Innovatech. All rights reserved.</p> 
+            <p>&copy; Voxaiomni. All rights reserved.</p> 
           )}
         </div>
       </div>

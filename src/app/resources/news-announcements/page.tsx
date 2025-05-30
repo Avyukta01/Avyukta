@@ -11,7 +11,7 @@ import Link from "next/link";
 
 const newsItems = [
   {
-    title: "Innovatech Launches New AI-Powered Analytics Platform",
+    title: "Voxaiomni Launches New AI-Powered Analytics Platform",
     date: "November 15, 2023",
     excerpt: "Our groundbreaking AI platform is set to revolutionize how businesses approach data analytics, offering unprecedented insights.",
     image: "https://placehold.co/600x400.png",
@@ -19,7 +19,7 @@ const newsItems = [
     aiHint: "ai analytics platform",
   },
   {
-    title: "Innovatech Awarded 'Top Tech Innovator 2023'",
+    title: "Voxaiomni Awarded 'Top Tech Innovator 2023'",
     date: "October 28, 2023",
     excerpt: "We are honored to be recognized for our contributions to technology and innovation by the Global Tech Council.",
     image: "https://placehold.co/600x400.png",
@@ -29,7 +29,7 @@ const newsItems = [
   {
     title: "Partnership Announced with CloudPioneers Inc.",
     date: "September 30, 2023",
-    excerpt: "Innovatech and CloudPioneers Inc. join forces to deliver enhanced cloud solutions and services to a wider audience.",
+    excerpt: "Voxaiomni and CloudPioneers Inc. join forces to deliver enhanced cloud solutions and services to a wider audience.",
     image: "https://placehold.co/600x400.png",
     slug: "/news/cloudpioneers-partnership", // Placeholder slug
     aiHint: "business handshake partnership",
@@ -57,7 +57,7 @@ export default function NewsAnnouncementsPage() {
               Latest News & Announcements
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Stay updated with the latest happenings, breakthroughs, and important updates from Innovatech.
+              Stay updated with the latest happenings, breakthroughs, and important updates from Voxaiomni.
             </p>
           </div>
         </section>
@@ -121,7 +121,7 @@ export default function NewsAnnouncementsPage() {
               Don't Miss Out!
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
-              Subscribe to our newsletter for the latest Innovatech news, insights, and event invitations delivered directly to your inbox.
+              Subscribe to our newsletter for the latest Voxaiomni news, insights, and event invitations delivered directly to your inbox.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/resources/newsletter">Subscribe Now</Link>

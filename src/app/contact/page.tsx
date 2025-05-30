@@ -180,7 +180,7 @@ export default function ContactPage() {
                   <CardContent className="space-y-3 text-muted-foreground">
                     <div className="flex items-start">
                       <MapPin className="h-5 w-5 mr-3 mt-1 text-primary flex-shrink-0" />
-                      <span>123 Innovatech Drive, Tech City, CA 94000, USA</span>
+                      <span>123 Voxaiomni Drive, Tech City, CA 94000, USA</span>
                     </div>
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
@@ -188,7 +188,7 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-                      <span>contact@innovatech.com</span>
+                      <span>contact@voxaiomni.com</span>
                     </div>
                   </CardContent>
                 </Card>
@@ -205,7 +205,7 @@ export default function ContactPage() {
                      </Button>
                      <br />
                      <Button variant="link" asChild className="p-0 text-muted-foreground hover:text-primary">
-                       <Link href="/company/careers">Explore Careers</Link>
+                       <Link href="/company/careers?subject=CareerInquiry&message=I'm interested in career opportunities at Voxaiomni.">Explore Careers</Link>
                      </Button>
                   </CardContent>
                 </Card>
@@ -223,7 +223,7 @@ export default function ContactPage() {
             <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden animate-fade-in-up animation-delay-200">
               <Image
                 src="https://placehold.co/1200x675.png" 
-                alt="Map placeholder showing Innovatech office location"
+                alt="Map placeholder showing Voxaiomni office location"
                 width={1200}
                 height={675}
                 className="w-full h-full object-cover"

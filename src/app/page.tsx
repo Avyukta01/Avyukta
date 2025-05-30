@@ -15,10 +15,12 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
+        {/* Swapped Order: FeaturedAISection now comes before TrustedBySection */}
+        <FeaturedAISection /> 
         <TrustedBySection />
         <ExpertiseSection />
         <VideoSection />
-        <FeaturedAISection />
+        {/* Original position of FeaturedAISection was here, it's now above TrustedBySection */}
         <TechStackSection />
         <TestimonialsSection />
         <BlogSection />

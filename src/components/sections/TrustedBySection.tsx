@@ -7,6 +7,9 @@ const logos = [
   { name: "Zoho", src: "/logos/Zoho.png", hint: "Zoho logo" },
   { name: "Genesys", src: "/logos/Genesys.png", hint: "Genesys logo" },
   { name: "Bitrix24", src: "/logos/Bitrix24.png", hint: "Bitrix24 logo" },
+  // Keep these as placeholders or replace with actual local paths if you have them
+  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
+  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
 ];
 
 const TrustedBySection = () => {
@@ -16,24 +19,26 @@ const TrustedBySection = () => {
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80 mb-12">
           Our Channel Partner
         </h2>
-        <div className="flex flex-wrap justify-center items-center gap-y-12 gap-x-24 md:gap-x-40">
-          {logos.map((logo) => (
-            <div
-              key={logo.name}
-              className="grayscale hover:grayscale-0 transition-all duration-300"
-              title={logo.name}
-            >
-              <Image
-                src={logo.src}
-                alt={`${logo.name} Logo`}
-                width={250} 
-                height={80}
-                style={{ objectFit: 'contain' }}
-                data-ai-hint={logo.hint}
-                className="rounded-md"
-              />
-            </div>
-          ))}
+        <div className="marquee">
+          <div className="marquee-content marquee-content-hover">
+            {[...logos, ...logos].map((logo, index) => ( // Duplicate logos for seamless loop
+              <div
+                key={`${logo.name}-${index}`} // Unique key for duplicated items
+                className="inline-block grayscale hover:grayscale-0 transition-all duration-300 mx-10 md:mx-16 align-middle" // Added margins for spacing
+                title={logo.name}
+              >
+                <Image
+                  src={logo.src}
+                  alt={`${logo.name} Logo`}
+                  width={200}
+                  height={80}
+                  style={{ objectFit: 'contain' }}
+                  data-ai-hint={logo.hint}
+                  className="rounded-md"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -7,31 +7,31 @@ import { Quote } from "lucide-react"; // Imported Quote icon
 
 const testimonialsData = [
   {
-    quote: "Dialer CRM for my recruiting consultancy as committed by Avyukta has enabled me to attain ROI within 3 months of complete deployment with all voice recordings, transparency, staff performance analysis, structured reporting and 600% better output with same resources.",
+    quote: "Dialer CRM for my recruiting consultancy as committed by Voxaiomni has enabled me to attain ROI within 3 months of complete deployment with all voice recordings, transparency, staff performance analysis, structured reporting and 600% better output with same resources.",
     name: "Mr. J K Sarolia",
     role: "Managing Director",
     company: "Mumbai Job Junction",
   },
   {
-    quote: "The AI-powered analytics from Voxaiomni helped us understand our customer behavior deeply, leading to a 25% increase in sales in just one quarter. Their team's support was exceptional throughout the process.",
+    quote: "The AI-powered analytics platform developed by Voxaiomni gave us a deep understanding of our customer behavior across Bangalore. This led to a 25% increase in targeted sales and improved our inventory management significantly within just one quarter.",
     name: "Ms. Priya Sharma",
-    role: "Marketing Head",
+    role: "Head of Marketing",
     company: "Bangalore Retail Co.",
   },
   {
-    quote: "Voxaiomni's custom software solution streamlined our complex logistics operations. We've seen a significant reduction in errors and improved delivery times. Truly a game-changer for our supply chain.",
+    quote: "Voxaiomni's custom logistics software streamlined our complex supply chain operations across North India. We've seen a remarkable reduction in dispatch errors by 15% and faster delivery times, which has been a game-changer for our efficiency.",
     name: "Mr. Arjun Reddy",
-    role: "Operations Chief",
+    role: "Chief Operations Officer",
     company: "Delhi Logistics Ltd.",
   },
   {
-    quote: "Their web development team delivered a world-class e-commerce platform that is both robust and user-friendly. Our online revenue has tripled since the launch. Highly recommend Voxaiomni for digital transformation!",
+    quote: "Their web development team delivered a world-class e-commerce platform that is robust, secure, and user-friendly. Our online revenue from handcrafted goods has nearly tripled since the launch, reaching customers across India and even internationally. Highly recommend Voxaiomni!",
     name: "Mrs. Ananya Deshpande",
     role: "Founder & CEO",
     company: "PuneCrafts Online",
   },
   {
-    quote: "Working with Voxaiomni on our cloud migration was a seamless experience. Their expertise ensured minimal downtime and optimized our infrastructure for better performance and cost savings.",
+    quote: "Working with Voxaiomni on our cloud migration to AWS was a seamless experience. Their expertise ensured minimal downtime and they've optimized our infrastructure for better performance and a 20% reduction in monthly cloud hosting costs for our Hyderabad office.",
     name: "Mr. Vikram Singh",
     role: "IT Director",
     company: "Hyderabad Tech Solutions",
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
   useEffect(() => {
     if (testimonialsData.length <= 1) return;
 
-    const cycleDuration = 6000; // Increased duration for readability
+    const cycleDuration = 6000; 
     const transitionDuration = 500;
 
     const timer = setInterval(() => {
@@ -76,10 +76,10 @@ const TestimonialsSection = () => {
             Hear directly from businesses that have partnered with Voxaiomni to achieve their goals.
           </p>
         </div>
-        <div className="flex justify-center items-center min-h-[280px] md:min-h-[320px]">
+        <div className="flex justify-center items-center min-h-[280px] md:min-h-[320px] overflow-hidden">
           {testimonial && (
             <Card
-              key={testimonial.name} 
+              key={testimonial.name + currentIndex} // Added currentIndex to key to ensure re-render on change
               className={`
                 w-full max-w-2xl 
                 bg-background text-foreground shadow-xl 

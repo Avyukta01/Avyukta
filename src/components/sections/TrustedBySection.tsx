@@ -4,11 +4,11 @@
 import Image from "next/image";
 
 const logos = [
-  { name: "Zoho", src: "/home/user/studio/public/Bitrix24logo.png", hint: "Zoho logo" },
-  { name: "Genesys", src: "/home/user/studio/public/Genesyslogo.png", hint: "Genesys logo" },
-  { name: "Bitrix24", src: "/home/user/studio/public/Bitrix24logo.png", hint: "Bitrix24 logo" },
-  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" }, // Placeholder, ensure this file exists if used or replace
-  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" }, // Placeholder, ensure this file exists if used or replace
+  { name: "Zoho", src: "/logos/Zoho.png", hint: "Zoho logo" },
+  { name: "Genesys", src: "/logos/Genesys.png", hint: "Genesys logo" },
+  { name: "Bitrix24", src: "/logos/Bitrix24.png", hint: "Bitrix24 logo" },
+  { name: "TechCorp", src: "/logos/techcorp-logo.png", hint: "TechCorp logo" },
+  { name: "InnovateX", src: "/logos/innovatex-logo.png", hint: "InnovateX logo" },
 ];
 
 const TrustedBySection = () => {

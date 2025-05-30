@@ -3,7 +3,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Facebook, Twitter, Linkedin, Instagram, Send, Youtube } from "lucide-react"; // Added Youtube
+import { Facebook, Twitter, Linkedin, Instagram, Send, Youtube } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
@@ -74,7 +74,7 @@ const Footer = () => {
                     <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary transition-colors"><Twitter size={20} /></Link>
                     <Link href="https://www.linkedin.com/company/avyukta-intellicall1/about/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="text-muted-foreground hover:text-primary transition-colors"><Linkedin size={20} /></Link>
                     <Link href="https://www.youtube.com/channel/UCAsFNU9xLxzQYixHDnronAw/videos" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="text-muted-foreground hover:text-primary transition-colors"><Youtube size={20} /></Link>
-                    <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={20} /></Link>
+                    <Link href="YOUR_INSTAGRAM_LINK_HERE" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="text-muted-foreground hover:text-primary transition-colors"><Instagram size={20} /></Link>
                 </div>
                 </div>
             </div>
@@ -93,3 +93,5 @@ const Footer = () => {
 };
 
 export default Footer;
+
+    

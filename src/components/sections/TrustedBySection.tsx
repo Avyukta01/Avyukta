@@ -5,8 +5,8 @@ const logos = [
   { name: "Zoho", src: "https://placehold.co/150x60.png", hint: "Zoho logo" },
   { name: "Genesys", src: "https://placehold.co/150x60.png", hint: "Genesys logo" },
   { name: "Bitrix24", src: "https://placehold.co/150x60.png", hint: "Bitrix24 logo" },
-  { name: "TechCorp", src: "https://placehold.co/150x60.png", hint: "TechCorp logo" },
-  { name: "InnovateX", src: "https://placehold.co/150x60.png", hint: "InnovateX logo" },
+  { name: "TechCorp", src: "https://placehold.co/150x60.png", hint: "TechCorp generic" }, // Kept a couple of generic placeholders
+  { name: "InnovateX", src: "https://placehold.co/150x60.png", hint: "InnovateX generic" },
 ];
 
 const TrustedBySection = () => {
@@ -25,7 +25,7 @@ const TrustedBySection = () => {
                 width={150}
                 height={60}
                 objectFit="contain"
-                data-ai-hint={logo.hint}
+                data-ai-hint={logo.hint.toLowerCase().replace(' logo', '').replace(' generic', '')} // Updated to use the specific company name for AI hint
               />
             </div>
           ))}

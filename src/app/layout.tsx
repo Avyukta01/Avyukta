@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({ // Corrected usage
 });
 
 export const metadata: Metadata = {
-  title: 'Innovatech Digital Presence',
-  description: 'Innovating the future with technology solutions.',
+  title: "Voxaiomni : Itf'y your business with revolution IT solutions",
+  description: "Itf'y your business with revolution IT solutions.",
 };
 
 export default function RootLayout({

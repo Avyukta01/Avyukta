@@ -26,7 +26,7 @@ const TrustedBySection = () => {
               <Image
                 src={logo.src}
                 alt={`${logo.name} Logo`}
-                width={200} 
+                width={250} 
                 height={80}
                 style={{ objectFit: 'contain' }}
                 data-ai-hint={logo.hint}

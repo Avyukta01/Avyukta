@@ -15,7 +15,7 @@ const brochures = [
     description: "Get a comprehensive overview of Voxaiomni, our mission, services, and success stories.",
     image: "https://placehold.co/600x400.png",
     aiHint: "brochure cover design",
-    downloadLink: "/placeholder/company-brochure.pdf", // Placeholder link
+    downloadLink: "/brochure/avyukta_brochur.pdf", // Updated link
   },
   {
     title: "AI Solutions Brochure",

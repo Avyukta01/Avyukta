@@ -3,12 +3,12 @@
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Star } from "lucide-react"; // Imported Star icon
-import Image from "next/image"; // Keep if used, otherwise remove
+import { Star } from "lucide-react"; 
+import Image from "next/image"; 
 
 const testimonialsData = [
   {
-    quote: "Dialer CRM for my recruiting consultancy as committed by Voxaiomni has enabled me to attain ROI within 3 months of complete deployment with all voice recordings, transparency, staff performance analysis, structured reporting and 600% better output with same resources.",
+    quote: "Voxaiomni's Dialer CRM delivered ROI in 3 months with 600% better output and full transparency. Highly effective for our recruiting consultancy.",
     name: "Mr. J K Sarolia",
     role: "Managing Director",
     company: "Mumbai Job Junction",
@@ -17,7 +17,7 @@ const testimonialsData = [
     stars: 5,
   },
   {
-    quote: "The AI-powered analytics platform developed by Voxaiomni gave us a deep understanding of our customer behavior across Bangalore. This led to a 25% increase in targeted sales and improved our inventory management significantly within just one quarter.",
+    quote: "Their AI analytics platform boosted sales by 25% and improved inventory management. Deep customer insights achieved for our Bangalore stores!",
     name: "Ms. Priya Sharma",
     role: "Head of Marketing",
     company: "Bangalore Retail Co.",
@@ -26,7 +26,7 @@ const testimonialsData = [
     stars: 5,
   },
   {
-    quote: "Voxaiomni's custom logistics software streamlined our complex supply chain operations across North India. We've seen a remarkable reduction in dispatch errors by 15% and faster delivery times, which has been a game-changer for our efficiency.",
+    quote: "Custom logistics software streamlined our North India operations, cut dispatch errors by 15%, and sped up deliveries. A real game-changer for efficiency.",
     name: "Mr. Arjun Reddy",
     role: "Chief Operations Officer",
     company: "Delhi Logistics Ltd.",
@@ -35,7 +35,7 @@ const testimonialsData = [
     stars: 4,
   },
   {
-    quote: "Their web development team delivered a world-class e-commerce platform that is robust, secure, and user-friendly. Our online revenue from handcrafted goods has nearly tripled since the launch, reaching customers across India and even internationally. Highly recommend Voxaiomni!",
+    quote: "A world-class e-commerce platform from Voxaiomni tripled our online revenue. Robust, secure, user-friendly, and perfect for our handcrafted goods.",
     name: "Mrs. Ananya Deshpande",
     role: "Founder & CEO",
     company: "PuneCrafts Online",
@@ -44,7 +44,7 @@ const testimonialsData = [
     stars: 5,
   },
   {
-    quote: "Working with Voxaiomni on our cloud migration to AWS was a seamless experience. Their expertise ensured minimal downtime and they've optimized our infrastructure for better performance and a 20% reduction in monthly cloud hosting costs for our Hyderabad office.",
+    quote: "Seamless AWS cloud migration by Voxaiomni. Minimal downtime, better performance, and 20% cost reduction for our Hyderabad tech office.",
     name: "Mr. Vikram Singh",
     role: "IT Director",
     company: "Hyderabad Tech Solutions",
@@ -77,7 +77,7 @@ const TestimonialsSection = () => {
           <div className="marquee-content marquee-content-hover">
             {duplicatedTestimonials.map((testimonial, index) => (
               <Card
-                key={`${testimonial.name}-${index}`} // Unique key for duplicated items
+                key={`${testimonial.name}-${index}`} 
                 className="inline-block w-[300px] md:w-[350px] bg-background text-foreground shadow-lg flex-shrink-0 mx-3 my-3"
               >
                 <CardHeader className="pb-4">

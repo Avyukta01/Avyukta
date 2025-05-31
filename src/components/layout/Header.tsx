@@ -50,7 +50,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { LucideIcon } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
-import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet"; // Added import
+import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet";
 
 interface NavSubLink {
   href: string;
@@ -137,6 +137,8 @@ const navLinks: NavLink[] = [
     desktopSubLinks: [
       { href: "/products/aichatbotpro", label: "AIChatBotPro", icon: Bot },
       { href: "/products/aivoicecaller", label: "AI Voice Caller", icon: PhoneCall },
+      { href: "/products/crm", label: "CRM", icon: Users },
+      { href: "/products/dialer-india", label: "DialerIndia", icon: PhoneCall },
     ],
   },
   {

@@ -6,7 +6,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import * as z from "zod";
 import Link from "next/link";
-import Image from "next/image";
+// Removed Image import as it's no longer used for the map
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -229,14 +229,16 @@ export default function ContactPage() {
               Find Us Here
             </h2>
             <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden animate-fade-in-up animation-delay-200">
-              <Image
-                src="https://placehold.co/1200x675.png" 
-                alt="Map placeholder showing Voxaiomni office location in Jaipur"
-                width={1200}
-                height={675}
-                className="w-full h-full object-cover"
-                data-ai-hint="city map office"
-              />
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3559.7056559404636!2d75.7245516759058!3d26.852304500000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396db594f1a6ce81%3A0xb8fd04b8a75e3364!2sAVYUKTA%20INTELLICALL%20CONSULTING%20PRIVATE%20LIMITED!5e0!3m2!1sen!2sin!4v1717765289505!5m2!1sen!2sin"
+                width="100%"
+                height="100%"
+                style={{ border: 0 }}
+                allowFullScreen={true}
+                loading="lazy"
+                referrerPolicy="no-referrer-when-downgrade"
+                title="Voxaiomni Office Location"
+              ></iframe>
             </div>
           </div>
         </section>
@@ -245,3 +247,5 @@ export default function ContactPage() {
     </div>
   );
 }
+
+    

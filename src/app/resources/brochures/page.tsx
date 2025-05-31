@@ -15,21 +15,24 @@ const brochures = [
     description: "Get a comprehensive overview of Voxaiomni, our mission, services, and success stories.",
     image: "https://placehold.co/600x400.png",
     aiHint: "brochure cover design",
-    downloadLink: "/brochure/avyukta_brochur.pdf", // Updated link
+    downloadLink: "/brochure/avyukta_brochur.pdf",
+    suggestedFilename: "Voxaiomni_Company_Overview.pdf", // Or use "avyukta_brochur.pdf" if preferred
   },
   {
     title: "AI Solutions Brochure",
     description: "Explore our cutting-edge AI and Machine Learning solutions tailored for various industries.",
     image: "https://placehold.co/600x400.png",
     aiHint: "ai technology brochure",
-    downloadLink: "/placeholder/ai-solutions-brochure.pdf", // Placeholder link
+    downloadLink: "/placeholder/ai-solutions-brochure.pdf", 
+    suggestedFilename: "Voxaiomni_AI_Solutions_Brochure.pdf",
   },
   {
     title: "Web Development Services Brochure",
     description: "Discover our web development capabilities, from custom applications to e-commerce platforms.",
     image: "https://placehold.co/600x400.png",
     aiHint: "web design brochure",
-    downloadLink: "/placeholder/web-development-brochure.pdf", // Placeholder link
+    downloadLink: "/placeholder/web-development-brochure.pdf", 
+    suggestedFilename: "Voxaiomni_Web_Development_Brochure.pdf",
   },
 ];
 
@@ -79,7 +82,12 @@ export default function BrochuresPage() {
                   </CardContent>
                   <CardFooter>
                     <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary transition-colors w-full md:w-auto">
-                      <a href={brochure.downloadLink} target="_blank" rel="noopener noreferrer">
+                      <a 
+                        href={brochure.downloadLink} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        download={brochure.suggestedFilename} // Added download attribute
+                      >
                         Download PDF <DownloadCloud className="ml-2 h-4 w-4" />
                       </a>
                     </Button>

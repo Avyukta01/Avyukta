@@ -14,7 +14,19 @@ export async function POST(request: NextRequest) {
     let transporter;
     let isEthereal = false;
 
-    if (process.env.SMTP_HOST && process.env.SMTP_USER && process.env.SMTP_PASS) {
+    console.log("Attempting to configure email transport...");
+    // Check if essential SMTP environment variables are set
+    const smtpHostSet = !!process.env.SMTP_HOST;
+    const smtpUserSet = !!process.env.SMTP_USER;
+    const smtpPassSet = !!process.env.SMTP_PASS; // Check for presence, not value
+
+    console.log("SMTP_HOST environment variable:", smtpHostSet ? "Set" : "Not Set");
+    console.log("SMTP_USER environment variable:", smtpUserSet ? "Set" : "Not Set");
+    console.log("SMTP_PASS environment variable:", smtpPassSet ? "Set (exists)" : "Not Set (or empty)");
+
+
+    if (smtpHostSet && smtpUserSet && smtpPassSet) {
+      console.log("Attempting to use REAL SMTP server based on provided environment variables.");
       // Use real SMTP server if credentials are provided
       transporter = nodemailer.createTransport({
         host: process.env.SMTP_HOST,
@@ -28,7 +40,7 @@ export async function POST(request: NextRequest) {
     } else {
       // Use Ethereal for local testing if SMTP_HOST is not set
       isEthereal = true;
-      console.log("SMTP_HOST environment variable not found or incomplete. Using Ethereal for local email testing.");
+      console.warn("One or more SMTP environment variables (SMTP_HOST, SMTP_USER, SMTP_PASS) are not set. Falling back to Ethereal for local email testing.");
       const testAccount = await nodemailer.createTestAccount();
       transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
@@ -59,6 +71,13 @@ export async function POST(request: NextRequest) {
       `,
     };
 
+    console.log("Sending email with the following options:", {
+      from: mailOptions.from,
+      to: mailOptions.to,
+      subject: mailOptions.subject,
+      isEthereal: isEthereal,
+    });
+
     const info = await transporter.sendMail(mailOptions);
 
     if (isEthereal) {
@@ -71,6 +90,7 @@ export async function POST(request: NextRequest) {
       }, { status: 200 });
     }
 
+    console.log("Real email sent successfully via SMTP. Message ID:", info.messageId);
     return NextResponse.json({ message: 'Quote request submitted successfully! Email sent.' }, { status: 200 });
 
   } catch (error) {

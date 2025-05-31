@@ -5,37 +5,46 @@
 
 body {
   font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  background-image: linear-gradient(to bottom right, hsl(var(--gradient-start-color)), hsl(var(--gradient-end-color)));
+  background-attachment: fixed;
+  background-repeat: no-repeat;
 }
 
 @layer base {
   :root {
-    --background: 210 60% 97%; /* Very light blue-gray */
-    --foreground: 215 40% 20%; /* Dark, slightly desaturated blue for text */
+    /* Gradient Colors - Light Mode */
+    --gradient-start-color: 190 69% 59%; /* #4ec6de */
+    --gradient-end-color: 207 75% 43%;   /* #1b75bf */
 
-    --card: 0 0% 100%; /* White cards */
-    --card-foreground: 215 40% 20%;
+    /* Base Theme - Light Mode */
+    /* --background is for elements ON TOP of the body gradient (cards, popovers) */
+    --background: 0 0% 100%; /* White for cards */
+    --foreground: 207 70% 22%; /* Dark blue text for readability on white */
+
+    --card: 0 0% 100%;
+    --card-foreground: 207 70% 22%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 215 40% 20%;
+    --popover-foreground: 207 70% 22%;
 
-    --primary: 205 75% 48%; /* Vibrant medium blue */
+    --primary: 207 75% 43%; /* Darker blue from gradient for primary actions */
     --primary-foreground: 0 0% 100%; /* White text on primary */
 
-    --secondary: 205 60% 90%; /* Lighter shade of primary blue */
-    --secondary-foreground: 205 75% 35%; /* Darker blue for text on secondary */
+    --secondary: 190 70% 95%; /* Very light cyan for secondary backgrounds */
+    --secondary-foreground: 207 70% 30%; /* Darker blue text on secondary */
 
-    --muted: 205 50% 94%; /* Very light blue-gray for less emphasis */
-    --muted-foreground: 205 30% 55%; /* Mid-tone blue-gray for muted text */
+    --muted: 190 60% 92%; 
+    --muted-foreground: 207 40% 50%; 
 
-    --accent: 195 85% 65%; /* Lighter, cyan highlight blue */
-    --accent-foreground: 215 40% 15%; /* Dark color for text on accent */
+    --accent: 190 69% 59%; /* Lighter cyan from gradient for accents */
+    --accent-foreground: 207 75% 20%; /* Dark text on accent for contrast */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 205 50% 88%; /* Light blue-gray border */
-    --input: 205 50% 92%; /* Input background */
-    --ring: 205 75% 48%; /* Primary color for rings */
+    --border: 190 50% 88%; 
+    --input: 190 50% 92%;  
+    --ring: 190 69% 59%;   /* Accent color for rings */
 
     --chart-1: 12 76% 61%;
     --chart-2: 173 58% 39%;
@@ -45,44 +54,49 @@ body {
     --radius: 0.5rem;
 
     /* Sidebar specific */
-    --sidebar-background: 205 70% 40%; /* Darker shade of primary blue */
-    --sidebar-foreground: 210 60% 95%;
-    --sidebar-primary: 195 85% 65%; /* Accent color for sidebar primary elements */
-    --sidebar-primary-foreground: 205 70% 30%; 
-    --sidebar-accent: 205 70% 50%;
-    --sidebar-accent-foreground: 210 60% 95%;
-    --sidebar-border: 205 70% 35%;
-    --sidebar-ring: 195 85% 65%;
+    --sidebar-background: hsl(var(--gradient-end-color)); 
+    --sidebar-foreground: 0 0% 95%; 
+    --sidebar-primary: hsl(var(--gradient-start-color)); 
+    --sidebar-primary-foreground: hsl(var(--gradient-end-color));  
+    --sidebar-accent: hsl(var(--gradient-start-color) / 0.1); 
+    --sidebar-accent-foreground: 0 0% 95%;
+    --sidebar-border: hsl(var(--gradient-end-color) / 0.5);
+    --sidebar-ring: hsl(var(--gradient-start-color));
   }
 
   .dark {
-    --background: 210 20% 10%; 
-    --foreground: 205 30% 90%;
+    /* Gradient Colors - Dark Mode */
+    --gradient-start-color: 190 65% 35%; /* Darker, slightly muted cyan */
+    --gradient-end-color: 207 60% 25%;   /* Darker, slightly muted deep blue */
 
-    --card: 210 20% 15%;
-    --card-foreground: 205 30% 90%;
+    /* Base Theme - Dark Mode */
+    --background: 207 50% 10%; /* Dark deep blue for cards */
+    --foreground: 190 60% 88%; /* Light cyan-ish text */
 
-    --popover: 210 20% 15%;
-    --popover-foreground: 205 30% 90%;
+    --card: 207 50% 10%;
+    --card-foreground: 190 60% 88%;
 
-    --primary: 195 80% 65%; /* Light theme accent becomes primary */
-    --primary-foreground: 210 25% 15%; 
+    --popover: 207 50% 10%;
+    --popover-foreground: 190 60% 88%;
 
-    --secondary: 210 20% 25%;
-    --secondary-foreground: 195 80% 70%;
+    --primary: 190 69% 59%; /* Lighter cyan (from light mode accent) becomes primary */
+    --primary-foreground: 207 75% 12%; /* Very dark blue text on primary */
 
-    --muted: 210 20% 20%;
-    --muted-foreground: 205 25% 65%;
+    --secondary: 207 50% 15%; /* Slightly lighter than card background */
+    --secondary-foreground: 190 50% 78%; /* Muted cyan text */
 
-    --accent: 205 70% 55%; /* Light theme primary becomes accent */
-    --accent-foreground: 0 0% 100%;
+    --muted: 207 50% 20%;
+    --muted-foreground: 190 40% 65%;
+
+    --accent: 207 75% 43%; /* Original light mode primary (darker blue) becomes accent */
+    --accent-foreground: 0 0% 98%; /* White text on accent */
 
     --destructive: 0 70% 50%;
     --destructive-foreground: 0 0% 98%;
 
-    --border: 210 20% 30%;
-    --input: 210 20% 22%;
-    --ring: 195 80% 65%;
+    --border: 207 50% 22%;
+    --input: 207 50% 18%;
+    --ring: 190 69% 59%; 
 
     --chart-1: 220 70% 50%;
     --chart-2: 160 60% 45%;
@@ -91,14 +105,14 @@ body {
     --chart-5: 340 75% 55%;
 
     /* Sidebar specific dark */
-    --sidebar-background: 210 20% 12%;
-    --sidebar-foreground: 205 30% 90%;
-    --sidebar-primary: 195 80% 65%;
-    --sidebar-primary-foreground: 210 25% 15%;
-    --sidebar-accent: 210 20% 20%;
-    --sidebar-accent-foreground: 195 80% 70%;
-    --sidebar-border: 210 20% 25%;
-    --sidebar-ring: 195 80% 65%;
+    --sidebar-background: hsl(var(--gradient-end-color)); 
+    --sidebar-foreground: 190 60% 88%; 
+    --sidebar-primary: hsl(var(--gradient-start-color)); 
+    --sidebar-primary-foreground: hsl(var(--gradient-end-color) / 0.8); 
+    --sidebar-accent: hsl(var(--gradient-start-color) / 0.15);
+    --sidebar-accent-foreground: 190 60% 88%;
+    --sidebar-border: hsl(var(--gradient-end-color) / 0.4);
+    --sidebar-ring: hsl(var(--gradient-start-color));
   }
 }
 
@@ -107,7 +121,8 @@ body {
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    /* bg-background is removed as body background is now a direct gradient */
+    @apply text-foreground; /* Default text color on the gradient background */
     @apply antialiased;
   }
 }
@@ -120,7 +135,7 @@ body {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
   .animated-button-pulse {
-    @apply animate-pulse-slow; /* Custom pulse animation */
+    @apply animate-pulse-slow;
   }
 
   .marquee {
@@ -131,7 +146,7 @@ body {
 
   .marquee-content {
     display: inline-block;
-    animation: marquee 15s linear infinite; /* Updated duration from 30s to 15s */
+    animation: marquee 15s linear infinite;
   }
   
   .marquee-content-hover:hover {
@@ -152,13 +167,12 @@ body {
     overflow: hidden;
   }
 
-
   @keyframes marquee {
     0% {
       transform: translateX(0%);
     }
     100% {
-      transform: translateX(-50%); /* If content is duplicated once, translate by half its total width */
+      transform: translateX(-50%); 
     }
   }
    @keyframes pulse-slow { 
@@ -195,11 +209,7 @@ body {
       transform: translateX(0);
     }
   }
-  @keyframes background-pan {
-    0% { background-position: 0% center; }
-    50% { background-position: 100% center; }
-    100% { background-position: 0% center; }
-  }
+  /* Removed background-pan keyframes and associated utility class */
 
   .animate-fade-in-up {
     animation: fade-in-up 0.6s ease-out forwards;
@@ -212,8 +222,5 @@ body {
   .animate-fade-in-right {
     animation: fade-in-right 0.6s ease-out forwards;
     opacity: 0;
-  }
-  .animate-background-pan {
-    animation: background-pan 10s linear infinite;
   }
 }

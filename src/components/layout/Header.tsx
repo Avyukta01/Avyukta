@@ -51,6 +51,7 @@ import {
 import type { LucideIcon } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet";
+import { ScrollArea } from "@/components/ui/scroll-area"; // Added ScrollArea import
 
 interface NavSubLink {
   href: string;
@@ -171,7 +172,7 @@ const navLinks: NavLink[] = [
       {
         title: "DialerIndia",
         icon: PhoneCall,
-        href: "/products/dialer-india", // Placeholder, assuming new page needed
+        href: "/products/dialer-india",
         subServices: [
           "Automated & Predictive Dialing",
           "Call Recording & Monitoring",
@@ -221,7 +222,7 @@ const Header = () => {
         <Logo />
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navLinks.map((link) =>
-            (link.desktopServiceCategories) ? ( // Unified check for multi-column dropdowns
+            (link.desktopServiceCategories) ? ( 
               <DropdownMenu key={link.label}>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -235,54 +236,85 @@ const Header = () => {
                 <DropdownMenuContent
                   className={
                     link.label === "Services"
-                      ? "md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-6" // Services (up to 4 cols)
+                      ? "md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-0" // Removed p-6 for Services
                       : link.label === "Products"
-                        ? "md:w-auto md:min-w-[45rem] p-6" // Products (2 cols)
+                        ? "md:w-auto md:min-w-[45rem] p-6" 
                         : link.label === "Company"
-                          ? "md:w-auto md:min-w-[40rem] p-6" // Company (2 cols)
+                          ? "md:w-auto md:min-w-[40rem] p-6" 
                           : link.label === "Resources"
-                            ? "md:w-auto md:min-w-[60rem] p-6" // Resources (3 cols)
-                            : "w-60" // Fallback (should not be hit if logic is correct)
+                            ? "md:w-auto md:min-w-[60rem] p-6" 
+                            : "w-60 p-1" // Default padding for non-category dropdowns
                   }
                   align="start"
                 >
                   {link.desktopServiceCategories && (
-                    <div className={`grid grid-cols-1 ${
-                      link.label === 'Services' ? 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4'
-                      : link.label === 'Products' ? 'md:grid-cols-2'
-                      : link.label === 'Company' ? 'md:grid-cols-2'
-                      : link.label === 'Resources' ? 'md:grid-cols-3'
-                      : 'md:grid-cols-1' // Fallback
-                    } gap-x-8 gap-y-6`}>
-                      {link.desktopServiceCategories.map((category) => (
-                        <div key={category.title} className="flex flex-col space-y-2">
-                          <Link href={category.href} passHref legacyBehavior>
-                            <a className="group inline-flex items-center space-x-2">
-                              <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
-                              <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
-                            </a>
-                          </Link>
-                          {category.subServices && category.subServices.length > 0 && (
-                            <ul className="space-y-1.5">
-                              {category.subServices.slice(0, 3).map((subService) => ( // Show up to 3 key points
-                                <li key={subService}>
-                                  <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
-                                    {subService}
-                                  </span>
-                                </li>
-                              ))}
-                            </ul>
-                          )}
-                          <Link href={category.href} passHref legacyBehavior>
-                            <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
-                              Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                            </a>
-                          </Link>
+                    link.label === "Services" ? (
+                      <ScrollArea className="max-h-[70vh] p-6"> 
+                        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6`}>
+                          {link.desktopServiceCategories.map((category) => (
+                            <div key={category.title} className="flex flex-col space-y-2">
+                              <Link href={category.href} passHref legacyBehavior>
+                                <a className="group inline-flex items-center space-x-2">
+                                  <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
+                                  <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
+                                </a>
+                              </Link>
+                              {category.subServices && category.subServices.length > 0 && (
+                                <ul className="space-y-1.5">
+                                  {category.subServices.slice(0, 3).map((subService) => ( 
+                                    <li key={subService}>
+                                      <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
+                                        {subService}
+                                      </span>
+                                    </li>
+                                  ))}
+                                </ul>
+                              )}
+                              <Link href={category.href} passHref legacyBehavior>
+                                <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                                </a>
+                              </Link>
+                            </div>
+                          ))}
                         </div>
-                      ))}
-                    </div>
+                      </ScrollArea>
+                    ) : (
+                      <div className={`grid grid-cols-1 ${
+                        link.label === 'Products' ? 'md:grid-cols-2'
+                        : link.label === 'Company' ? 'md:grid-cols-2'
+                        : link.label === 'Resources' ? 'md:grid-cols-3'
+                        : 'md:grid-cols-1'
+                      } gap-x-8 gap-y-6`}>
+                        {link.desktopServiceCategories.map((category) => (
+                          <div key={category.title} className="flex flex-col space-y-2">
+                            <Link href={category.href} passHref legacyBehavior>
+                              <a className="group inline-flex items-center space-x-2">
+                                <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
+                                <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
+                              </a>
+                            </Link>
+                            {category.subServices && category.subServices.length > 0 && (
+                              <ul className="space-y-1.5">
+                                {category.subServices.slice(0, 3).map((subService) => (
+                                  <li key={subService}>
+                                    <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
+                                      {subService}
+                                    </span>
+                                  </li>
+                                ))}
+                              </ul>
+                            )}
+                            <Link href={category.href} passHref legacyBehavior>
+                              <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                                Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                              </a>
+                            </Link>
+                          </div>
+                        ))}
+                      </div>
+                    )
                   )}
-                   {/* Fallback for old desktopSubLinks structure if any NavLink still uses it (should be removed for Company/Resources) */}
                   {link.desktopSubLinks && !link.desktopServiceCategories && (
                     link.desktopSubLinks.map((subLink) => (
                       <DropdownMenuItem key={subLink.href} asChild>
@@ -363,5 +395,3 @@ const Header = () => {
 };
 
 export default Header;
-
-    

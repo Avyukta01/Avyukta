@@ -1,15 +1,9 @@
 
 "use client";
 
-import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
-import { PlayCircle } from "lucide-react";
 
 const VideoSection = () => {
-  // In a real app, you'd use a YouTube embed iframe or a video player component.
-  // For this placeholder, we'll simulate a video thumbnail.
-  const videoId = "dQw4w9WgXcQ"; // Example YouTube video ID
-
   return (
     <section className="section-padding bg-background">
       <div className="container-max text-center">
@@ -19,28 +13,21 @@ const VideoSection = () => {
         <p className="text-muted-foreground mb-12 max-w-xl mx-auto">
           Discover how our innovative solutions can transform your business. Watch our latest highlights and offerings.
         </p>
-        <Card className="overflow-hidden shadow-2xl group transform hover:scale-105 transition-transform duration-500 ease-out">
+        <Card className="overflow-hidden shadow-2xl max-w-3xl mx-auto">
           <CardContent className="p-0 aspect-video relative">
-            {/* Replace with actual YouTube embed for functionality */}
-            <a 
-              href={`https://www.youtube.com/watch?v=${videoId}`} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Watch video on YouTube"
-              className="block w-full h-full"
+            <video
+              controls // Added controls for user interaction
+              autoPlay
+              loop
+              muted // Recommended for autoplay to work in most browsers
+              playsInline
+              className="w-full h-full object-cover"
+              poster="/videos/video.png" // Ensure this poster image exists
+              data-ai-hint="company showcase video"
             >
-              <Image
-                src={`https://placehold.co/1280x720.png`} // Placeholder for video thumbnail
-                alt="Video placeholder"
-                layout="fill"
-                objectFit="cover"
-                data-ai-hint="video player interface"
-                className="group-hover:opacity-80 transition-opacity"
-              />
-              <div className="absolute inset-0 flex items-center justify-center bg-black/30 group-hover:bg-black/50 transition-colors">
-                <PlayCircle className="h-16 w-16 md:h-24 md:w-24 text-white opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-300" />
-              </div>
-            </a>
+              <source src="/videos/video.mp4" type="video/mp4" />
+              Your browser does not support the video tag.
+            </video>
           </CardContent>
         </Card>
       </div>

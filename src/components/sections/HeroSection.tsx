@@ -9,22 +9,7 @@ import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet";
 const HeroSection = () => {
   return (
     <section className="relative bg-primary text-primary-foreground section-padding min-h-[70vh] flex items-center overflow-hidden">
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="w-full h-full object-cover"
-          poster="/videos/hero-poster.png" // Updated poster path
-          data-ai-hint="technology business abstract" // Updated hint for local poster
-        >
-          {/* Make sure 'hero-background.mp4' is in your public/videos/ folder */}
-          <source src="/videos/hero-background.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
-        <div className="absolute inset-0 bg-black/50 z-10"></div>
-      </div>
+      {/* Removed video background and overlay */}
       <div className="container-max relative z-20 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
           Powering Your Digital Transformation
@@ -47,7 +32,7 @@ const HeroSection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary-foreground text-primary hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
+              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <span>
                 Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />

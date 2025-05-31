@@ -62,7 +62,7 @@ interface NavServiceCategory {
   title: string;
   icon: LucideIcon;
   href: string; 
-  subServices: string[];
+  subServices: string[]; // Re-using this for key product features
 }
 
 interface NavLink {
@@ -132,13 +132,53 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    href: "/products", // Main link for products overview (can be created later)
+    href: "/products",
     label: "Products",
-    desktopSubLinks: [
-      { href: "/products/aichatbotpro", label: "AIChatBotPro", icon: Bot },
-      { href: "/products/aivoicecaller", label: "AI Voice Caller", icon: PhoneCall },
-      { href: "/products/crm", label: "CRM", icon: Users },
-      { href: "/products/dialer-india", label: "DialerIndia", icon: PhoneCall },
+    desktopServiceCategories: [ // Changed from desktopSubLinks to desktopServiceCategories
+      {
+        title: "AIChatBotPro",
+        icon: Bot,
+        href: "/products/aichatbotpro",
+        subServices: [ // Key features for AIChatBotPro
+          "Natural Language Understanding",
+          "Multi-Platform Integration",
+          "24/7 Customer Support",
+          "Lead Generation Tools",
+        ],
+      },
+      {
+        title: "AI Voice Caller",
+        icon: PhoneCall,
+        href: "/products/aivoicecaller",
+        subServices: [ // Key features for AI Voice Caller
+          "Intelligent Outbound Campaigns",
+          "Conversational IVR",
+          "Real-time Voice Analytics",
+          "CRM Integration",
+        ],
+      },
+      {
+        title: "CRM",
+        icon: Users,
+        href: "/products/crm", // Assuming this page will exist or be created
+        subServices: [ // Key features for CRM
+          "Contact & Lead Management",
+          "Sales Pipeline Tracking",
+          "Task & Deal Automation",
+          "Reporting & Analytics",
+        ],
+      },
+      {
+        title: "DialerIndia",
+        icon: PhoneCall,
+        href: "/products/dialer-india", // Assuming this page will exist or be created
+        subServices: [ // Key features for DialerIndia
+          "Automated & Predictive Dialing",
+          "Call Recording & Monitoring",
+          "Real-time Call Analytics",
+          "Lead Management System",
+        ],
+      },
     ],
   },
   {
@@ -181,7 +221,7 @@ const Header = () => {
         <Logo />
         <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
           {navLinks.map((link) =>
-            link.desktopServiceCategories ? (
+            (link.desktopServiceCategories || link.desktopSubLinks) ? (
               <DropdownMenu key={link.label}>
                 <DropdownMenuTrigger asChild>
                   <Button
@@ -192,58 +232,50 @@ const Header = () => {
                     <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent 
-                  className="md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-6" 
-                  align="start"
-                >
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6">
-                    {link.desktopServiceCategories.map((category) => (
-                      <div key={category.title} className="flex flex-col space-y-2">
-                        <Link href={category.href} passHref legacyBehavior>
-                          <a className="group inline-flex items-center space-x-2">
-                            <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
-                            <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
-                          </a>
-                        </Link>
-                        <ul className="space-y-1.5">
-                          {category.subServices.map((subService) => (
-                            <li key={subService}>
-                              <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
-                                {subService}
-                              </span>
-                            </li>
-                          ))}
-                        </ul>
-                        <Link href={category.href} passHref legacyBehavior>
-                          <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
-                            See All <ArrowRight className="ml-1 h-4 w-4" />
-                          </a>
-                        </Link>
-                      </div>
-                    ))}
-                  </div>
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : link.desktopSubLinks ? (
-              <DropdownMenu key={link.label}>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="text-sm font-medium text-foreground/80 hover:text-primary focus-visible:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 data-[state=open]:text-primary px-1 transition-colors"
-                  >
-                    {link.label}
-                    <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent 
+                <DropdownMenuContent
                   className={
-                    link.label === "Company" ? "md:w-auto md:min-w-[32rem] p-6" 
-                    : link.label === "Products" ? "w-60" // Standard width for Products
-                    : "w-60" // Default for Resources, etc.
-                  } 
+                    link.desktopServiceCategories // For Services OR Products
+                      ? link.label === "Services"
+                        ? "md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-6" // Services (up to 4 cols)
+                        : "md:w-auto md:min-w-[45rem] p-6" // Products (2 cols)
+                      : link.desktopSubLinks && link.label === "Company" // For Company (2 cols)
+                        ? "md:w-auto md:min-w-[32rem] p-6"
+                        : "w-60" // Default for Resources (1 col)
+                  }
                   align="start"
                 >
-                  {link.label === "Company" ? (
+                  {link.desktopServiceCategories && (
+                    <div className={`grid grid-cols-1 ${
+                      link.label === 'Services' ? 'md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4' // Services column layout
+                      : 'md:grid-cols-2' // Products column layout (2 columns)
+                    } gap-x-8 gap-y-6`}>
+                      {link.desktopServiceCategories.map((category) => (
+                        <div key={category.title} className="flex flex-col space-y-2">
+                          <Link href={category.href} passHref legacyBehavior>
+                            <a className="group inline-flex items-center space-x-2">
+                              <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
+                              <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
+                            </a>
+                          </Link>
+                          <ul className="space-y-1.5">
+                            {category.subServices.map((subService) => ( // subServices is used for key features for Products too
+                              <li key={subService}>
+                                <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
+                                  {subService}
+                                </span>
+                              </li>
+                            ))}
+                          </ul>
+                          <Link href={category.href} passHref legacyBehavior>
+                            <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                              Learn More <ArrowRight className="ml-1 h-4 w-4" />
+                            </a>
+                          </Link>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                  {link.desktopSubLinks && link.label === "Company" && (
                      <div className="grid grid-cols-2 gap-x-6 gap-y-3">
                       {link.desktopSubLinks.map((subLink) => (
                         <DropdownMenuItem key={subLink.href} asChild className="p-0">
@@ -254,7 +286,8 @@ const Header = () => {
                         </DropdownMenuItem>
                       ))}
                     </div>
-                  ) : ( // For Products and Resources
+                  )}
+                   {link.desktopSubLinks && link.label !== "Company" && link.label !== "Products" && ( // For Resources
                     link.desktopSubLinks.map((subLink) => (
                       <DropdownMenuItem key={subLink.href} asChild>
                         <Link href={subLink.href} className="w-full flex items-center">

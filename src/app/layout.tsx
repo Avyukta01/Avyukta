@@ -4,6 +4,7 @@ import { Geist, Geist_Mono } from 'next/font/google'; // Corrected import for Ge
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // Added Toaster
 import { ThemeProvider } from 'next-themes'; // Added ThemeProvider
+import FloatingWhatsAppButton from '@/components/ui/FloatingWhatsAppButton'; // Import the new button
 
 const geistSans = Geist({ // Corrected usage
   variable: '--font-geist-sans',
@@ -124,6 +125,7 @@ export default function RootLayout({
         >
           {children}
           <Toaster />
+          <FloatingWhatsAppButton />
         </ThemeProvider>
       </body>
     </html>

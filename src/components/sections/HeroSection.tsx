@@ -31,8 +31,8 @@ const HeroSection = () => {
             <AnimatedButton
               asChild
               size="lg"
-              variant="outline"
-              className="border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
+              // Removed variant="outline", will use default with overrides
+              className="border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <span>
                 Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />

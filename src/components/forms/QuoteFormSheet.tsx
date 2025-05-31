@@ -94,39 +94,40 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
   });
 
   async function onSubmit(data: QuoteFormValues) {
-    // Simulate API call - In a real application, you would send this data to your backend
-    // which would then handle sending an email via SMTP or an email service.
-    console.log("Quote Request Data:", data);
-    
-    // Example of what you might do if you had an API endpoint:
-    // try {
-    //   const response = await fetch('/api/send-quote-request', {
-    //     method: 'POST',
-    //     headers: { 'Content-Type': 'application/json' },
-    //     body: JSON.stringify(data),
-    //   });
-    //   if (!response.ok) throw new Error('Network response was not ok.');
-    //   const result = await response.json();
-    //   toast({
-    //     title: "Quote Request Submitted!",
-    //     description: "Thank you! We've received your request and will be in touch soon.",
-    //   });
-    // } catch (error) {
-    //   toast({
-    //     title: "Submission Failed",
-    //     description: "Could not submit your quote request. Please try again later.",
-    //     variant: "destructive",
-    //   });
-    // }
+    try {
+      const response = await fetch('/api/send-quote-request', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulating network delay
-    toast({
-      title: "Quote Request Submitted!",
-      description: "Thank you! We've received your request and will be in touch soon.",
-      variant: "default",
-    });
-    form.reset();
-    setIsOpen(false); // Close the sheet after submission
+      const result = await response.json();
+
+      if (!response.ok) {
+        throw new Error(result.message || 'Failed to submit quote request.');
+      }
+
+      toast({
+        title: "Quote Request Submitted!",
+        description: "Thank you! We've received your request and will be in touch soon.",
+        variant: "default",
+      });
+      form.reset();
+      setIsOpen(false); // Close the sheet after submission
+    } catch (error) {
+      let errorMessage = "Could not submit your quote request. Please try again later.";
+      if (error instanceof Error) {
+        errorMessage = error.message;
+      }
+      toast({
+        title: "Submission Failed",
+        description: errorMessage,
+        variant: "destructive",
+      });
+      console.error("Error submitting quote form:", error);
+    }
   }
 
   return (
@@ -255,4 +256,3 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
     </Sheet>
   );
 }
-

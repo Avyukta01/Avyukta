@@ -27,18 +27,16 @@ const HeroSection = () => {
               Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
             </AnimatedButton>
           </QuoteFormSheet>
-          <Link href="/contact" passHref>
+          <QuoteFormSheet>
             <AnimatedButton
-              asChild
               size="lg"
-              // Removed variant="outline", will use default with overrides
               className="border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <span>
                 Talk to Us 24/7 <Phone className="ml-2 h-5 w-5" />
               </span>
             </AnimatedButton>
-          </Link>
+          </QuoteFormSheet>
         </div>
       </div>
     </section>
@@ -46,3 +44,4 @@ const HeroSection = () => {
 };
 
 export default HeroSection;
+

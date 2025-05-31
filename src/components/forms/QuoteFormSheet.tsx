@@ -94,9 +94,32 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
   });
 
   async function onSubmit(data: QuoteFormValues) {
-    // Simulate API call
+    // Simulate API call - In a real application, you would send this data to your backend
+    // which would then handle sending an email via SMTP or an email service.
     console.log("Quote Request Data:", data);
-    await new Promise(resolve => setTimeout(resolve, 1000));
+    
+    // Example of what you might do if you had an API endpoint:
+    // try {
+    //   const response = await fetch('/api/send-quote-request', {
+    //     method: 'POST',
+    //     headers: { 'Content-Type': 'application/json' },
+    //     body: JSON.stringify(data),
+    //   });
+    //   if (!response.ok) throw new Error('Network response was not ok.');
+    //   const result = await response.json();
+    //   toast({
+    //     title: "Quote Request Submitted!",
+    //     description: "Thank you! We've received your request and will be in touch soon.",
+    //   });
+    // } catch (error) {
+    //   toast({
+    //     title: "Submission Failed",
+    //     description: "Could not submit your quote request. Please try again later.",
+    //     variant: "destructive",
+    //   });
+    // }
+
+    await new Promise(resolve => setTimeout(resolve, 1000)); // Simulating network delay
     toast({
       title: "Quote Request Submitted!",
       description: "Thank you! We've received your request and will be in touch soon.",
@@ -127,7 +150,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., John Doe" {...field} />
+                        <Input placeholder="e.g., Avyukta" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -140,7 +163,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="e.g., you@example.com" {...field} />
+                        <Input type="email" placeholder="e.g., dineshbaghel6251@gmail.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -166,7 +189,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Phone Number (Optional)</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="e.g., +1 555-123-4567" {...field} />
+                        <Input type="tel" placeholder="e.g., +91 9588922752" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -232,3 +255,4 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
     </Sheet>
   );
 }
+

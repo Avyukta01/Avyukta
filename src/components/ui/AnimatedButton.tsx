@@ -15,7 +15,7 @@ const AnimatedButton = React.forwardRef<HTMLButtonElement, AnimatedButtonProps>(
       <Button
         ref={ref}
         className={cn(
-          pulseAnimation && "animate-pulse-slow", // Changed from animate-pulse
+          pulseAnimation && "animate-pulse-glow", // Changed from animate-pulse-slow
           className
         )}
         {...props}

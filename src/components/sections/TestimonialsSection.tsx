@@ -8,7 +8,7 @@ import Image from "next/image";
 
 const testimonialsData = [
   {
-    quote: "Voxaiomni's Dialer CRM delivered ROI in 3 months with 600% better output and full transparency. Highly effective for our recruiting consultancy.",
+    quote: "Voxaiomni's Dialer CRM delivered ROI in 3 months with 600% better output and full transparency. Highly effective for our recruiting consultancy in Mumbai!",
     name: "Mr. J K Sarolia",
     role: "Managing Director",
     company: "Mumbai Job Junction",
@@ -17,7 +17,7 @@ const testimonialsData = [
     stars: 5,
   },
   {
-    quote: "Their AI analytics platform boosted sales by 25% and improved inventory management. Deep customer insights achieved for our Bangalore stores!",
+    quote: "Their AI analytics platform boosted our Bangalore store sales by 25% and greatly improved inventory management. The customer insights are invaluable.",
     name: "Ms. Priya Sharma",
     role: "Head of Marketing",
     company: "Bangalore Retail Co.",
@@ -26,7 +26,7 @@ const testimonialsData = [
     stars: 5,
   },
   {
-    quote: "Custom logistics software streamlined our North India operations, cut dispatch errors by 15%, and sped up deliveries. A real game-changer for efficiency.",
+    quote: "The custom logistics software streamlined our North India operations, cut dispatch errors by 15%, and notably sped up deliveries. A game-changer for us in Delhi.",
     name: "Mr. Arjun Reddy",
     role: "Chief Operations Officer",
     company: "Delhi Logistics Ltd.",
@@ -35,7 +35,7 @@ const testimonialsData = [
     stars: 4,
   },
   {
-    quote: "A world-class e-commerce platform from Voxaiomni tripled our online revenue. Robust, secure, user-friendly, and perfect for our handcrafted goods.",
+    quote: "A world-class e-commerce platform from Voxaiomni tripled our online revenue for handcrafted goods. It's robust, secure, and so user-friendly for our Pune customers.",
     name: "Mrs. Ananya Deshpande",
     role: "Founder & CEO",
     company: "PuneCrafts Online",
@@ -44,12 +44,30 @@ const testimonialsData = [
     stars: 5,
   },
   {
-    quote: "Seamless AWS cloud migration by Voxaiomni. Minimal downtime, better performance, and 20% cost reduction for our Hyderabad tech office.",
+    quote: "We experienced a seamless AWS cloud migration. Minimal downtime, significantly better performance, and a 20% cost reduction for our Hyderabad tech office.",
     name: "Mr. Vikram Singh",
     role: "IT Director",
     company: "Hyderabad Tech Solutions",
     image: "https://placehold.co/100x100.png",
     aiHint: "male IT director",
+    stars: 4,
+  },
+  {
+    quote: "The mobile app developed by Voxaiomni for our Chennai-based educational services has seen a 50% increase in student engagement. Fantastic UI/UX!",
+    name: "Dr. R. Meenakshi",
+    role: "Director of E-Learning",
+    company: "Chennai EduTech",
+    image: "https://placehold.co/100x100.png",
+    aiHint: "female director education",
+    stars: 5,
+  },
+  {
+    quote: "Their blockchain solution brought much-needed transparency to our supply chain in Kolkata. Tracking materials from source to consumer is now effortless and secure.",
+    name: "Mr. Sameer Basu",
+    role: "Supply Chain Head",
+    company: "Kolkata Goods Co.",
+    image: "https://placehold.co/100x100.png",
+    aiHint: "male supply chain manager",
     stars: 4,
   }
 ];
@@ -105,7 +123,7 @@ const TestimonialsSection = () => {
                       />
                     ))}
                   </div>
-                  <p className="text-sm text-foreground/80 italic leading-relaxed">
+                  <p className="text-sm text-foreground/80 italic leading-relaxed line-clamp-3">
                     "{testimonial.quote}"
                   </p>
                 </CardContent>

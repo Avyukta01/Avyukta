@@ -35,8 +35,8 @@ import {
   ArrowRight,
   Sparkles, 
   DownloadCloud,
-  Bot, // Added for AIChatBotPro
-  PhoneCall // Added for AIVoiceCaller
+  Bot, 
+  PhoneCall 
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -50,6 +50,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { LucideIcon } from "lucide-react";
 import { ThemeToggle } from "@/components/ui/ThemeToggle";
+import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet"; // Added import
 
 interface NavSubLink {
   href: string;
@@ -276,9 +277,11 @@ const Header = () => {
         </nav>
         <div className="hidden md:flex items-center space-x-2">
           <ThemeToggle />
-          <AnimatedButton className="bg-accent text-accent-foreground hover:bg-accent/90">
-            Talk to Us
-          </AnimatedButton>
+          <QuoteFormSheet>
+            <AnimatedButton className="bg-accent text-accent-foreground hover:bg-accent/90">
+              Talk to Us
+            </AnimatedButton>
+          </QuoteFormSheet>
         </div>
         <div className="md:hidden flex items-center space-x-2">
           <ThemeToggle />
@@ -314,9 +317,11 @@ const Header = () => {
                     </React.Fragment>
                   ))}
                 </nav>
-                <AnimatedButton className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                  Talk to Us
-                </AnimatedButton>
+                <QuoteFormSheet>
+                  <AnimatedButton className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
+                    Talk to Us
+                  </AnimatedButton>
+                </QuoteFormSheet>
               </div>
             </SheetContent>
           </Sheet>

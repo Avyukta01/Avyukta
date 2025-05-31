@@ -33,7 +33,7 @@ const HeroSection = () => {
               className="border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
             >
               <span>
-                Talk to Us <Phone className="ml-2 h-5 w-5" />
+                Talk to Us <Phone className="ml-2 h-5 w-5"  />
               </span>
             </AnimatedButton>
           </QuoteFormSheet>

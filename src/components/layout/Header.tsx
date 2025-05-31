@@ -31,10 +31,12 @@ import {
   CloudCog,
   GitMerge,
   Lightbulb,
-  Layers3, // For Software Development (stack icon)
+  Layers3, 
   ArrowRight,
-  Sparkles, // Added Sparkles
-  DownloadCloud, // Added DownloadCloud
+  Sparkles, 
+  DownloadCloud,
+  Bot, // Added for AIChatBotPro
+  PhoneCall // Added for AIVoiceCaller
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -58,7 +60,7 @@ interface NavSubLink {
 interface NavServiceCategory {
   title: string;
   icon: LucideIcon;
-  href: string; // For "See All" link
+  href: string; 
   subServices: string[];
 }
 
@@ -67,7 +69,7 @@ interface NavLink {
   label: string;
   icon?: LucideIcon;
   desktopSubLinks?: NavSubLink[];
-  desktopServiceCategories?: NavServiceCategory[]; // For the new services mega menu
+  desktopServiceCategories?: NavServiceCategory[]; 
 }
 
 
@@ -129,11 +131,11 @@ const navLinks: NavLink[] = [
     ],
   },
   {
-    href: "/products",
+    href: "/products", // Main link for products overview (can be created later)
     label: "Products",
     desktopSubLinks: [
-      { href: "/products/crm", label: "CRM" },
-      { href: "/products/dialer", label: "Dialer" },
+      { href: "/products/aichatbotpro", label: "AIChatBotPro", icon: Bot },
+      { href: "/products/aivoicecaller", label: "AI Voice Caller", icon: PhoneCall },
     ],
   },
   {
@@ -231,7 +233,11 @@ const Header = () => {
                   </Button>
                 </DropdownMenuTrigger>
                 <DropdownMenuContent 
-                  className={link.label === "Company" ? "md:w-auto md:min-w-[32rem] p-6" : "w-60"} // Adjusted width for Company
+                  className={
+                    link.label === "Company" ? "md:w-auto md:min-w-[32rem] p-6" 
+                    : link.label === "Products" ? "w-60" // Standard width for Products
+                    : "w-60" // Default for Resources, etc.
+                  } 
                   align="start"
                 >
                   {link.label === "Company" ? (
@@ -245,7 +251,7 @@ const Header = () => {
                         </DropdownMenuItem>
                       ))}
                     </div>
-                  ) : (
+                  ) : ( // For Products and Resources
                     link.desktopSubLinks.map((subLink) => (
                       <DropdownMenuItem key={subLink.href} asChild>
                         <Link href={subLink.href} className="w-full flex items-center">

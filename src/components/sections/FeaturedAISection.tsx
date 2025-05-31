@@ -1,26 +1,44 @@
+
 "use client";
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { Bot, BarChart3, ArrowRight } from "lucide-react";
+import { Bot, PhoneCall, ArrowRight } from "lucide-react"; // Changed BarChart3 to PhoneCall
 import Image from "next/image";
+import Link from "next/link"; // Added Link
 
 const aiInnovations = [
   {
     title: "AIChatBotPro",
     icon: Bot,
-    description: "Revolutionize customer engagement with our intelligent, 24/7 AI chatbot.",
+    description: "Elevate customer interactions and automate support with our intelligent, 24/7 AI-powered chatbot solution.",
     image: "https://placehold.co/600x400.png",
     imageHint: "ai chatbot interface",
-    features: ["Natural Language Understanding", "Multi-platform Integration", "Customizable Workflows", "Analytics Dashboard"]
+    features: [
+      "Natural Language Understanding (NLU)", 
+      "Multi-platform Integration (Web, Mobile, Social)", 
+      "Customizable Conversation Flows", 
+      "Seamless Human Agent Handoff",
+      "Lead Generation & Qualification Tools",
+      "Analytics & Performance Tracking"
+    ],
+    learnMoreLink: "/products/aichatbotpro"
   },
   {
-    title: "AnalyticsMaster",
-    icon: BarChart3,
-    description: "Unlock actionable insights from your data with our advanced AI-driven analytics platform.",
+    title: "AI Voice Caller",
+    icon: PhoneCall, // Changed from BarChart3
+    description: "Transform your voice communications with our AI Voice Caller, automating outbound calls and enhancing inbound interactions.",
     image: "https://placehold.co/600x400.png",
-    imageHint: "data analytics dashboard",
-    features: ["Predictive Modeling", "Real-time Data Visualization", "Automated Reporting", "Anomaly Detection"]
+    imageHint: "ai voice call dashboard",
+    features: [
+      "Intelligent Outbound Dialing Campaigns", 
+      "Conversational IVR & Self-Service", 
+      "Real-time Voice Transcription & Analytics", 
+      "Sentiment Analysis on Calls",
+      "CRM Integration for Personalized Interactions",
+      "Automated Appointment Reminders & Follow-ups"
+    ],
+    learnMoreLink: "/products/aivoicecaller"
   }
 ];
 
@@ -29,11 +47,11 @@ const FeaturedAISection = () => {
     <section className="section-padding bg-background">
       <div className="container-max">
         <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
             Featured AI Innovations
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Explore our groundbreaking AI solutions designed to drive efficiency and growth for your business.
+            Explore our groundbreaking AI solutions designed to drive efficiency, enhance engagement, and unlock new growth opportunities for your business.
           </p>
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -62,16 +80,20 @@ const FeaturedAISection = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button variant="link" className="text-primary p-0">
-                  Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
+                  <Link href={item.learnMoreLink}>
+                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
           ))}
         </div>
         <div className="text-center">
-          <Button size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90">
-            Explore All AI Solutions <ArrowRight className="ml-2 h-5 w-5" />
+          <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Link href="/ai">
+             Explore All AI Solutions <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
           </Button>
         </div>
       </div>

@@ -45,7 +45,7 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: `"${fullName} via Voxaiomni Quote" <${process.env.EMAIL_FROM || 'quote-form@voxaiomni.com'}>`,
       replyTo: email,
-      to: process.env.EMAIL_TO || 'dineshbaghel6251@gmail.com', // This will be the recipient shown in Ethereal
+      to: process.env.EMAIL_TO || 'dineshbaghel6251@gmail.com', // This will be the recipient.
       subject: `New Quote Request: ${interestedService} from ${companyName || fullName}`,
       html: `
         <h1>New Quote Request</h1>
@@ -82,4 +82,3 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Failed to send quote request.', error: errorMessage }, { status: 500 });
   }
 }
-

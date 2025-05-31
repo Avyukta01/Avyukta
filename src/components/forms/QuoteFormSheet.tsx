@@ -109,7 +109,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
         throw new Error(result.message || 'Failed to submit quote request.');
       }
 
-      if (result.previewUrl) { // Check if Ethereal was used (API sends previewUrl if so)
+      if (result.previewUrl) { 
         toast({
           title: "Test Email Processed (Ethereal)!",
           description: (
@@ -120,7 +120,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
             )
           ),
           variant: "default",
-          duration: 10000, // Longer duration for this important message
+          duration: 10000, 
         });
       } else {
         toast({
@@ -130,7 +130,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
         });
       }
       form.reset();
-      setIsOpen(false); // Close the sheet after submission
+      setIsOpen(false); 
     } catch (error) {
       let errorMessage = "Could not submit your quote request. Please try again later.";
       if (error instanceof Error) {

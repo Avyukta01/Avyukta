@@ -14,41 +14,43 @@ export async function POST(request: NextRequest) {
     let transporter;
     let isEthereal = false;
 
+    console.log("--- Checking SMTP Configuration ---");
     console.log("Attempting to configure email transport...");
-    // Check if essential SMTP environment variables are set
-    const smtpHostSet = !!process.env.SMTP_HOST;
-    const smtpUserSet = !!process.env.SMTP_USER;
-    const smtpPassSet = !!process.env.SMTP_PASS; // Check for presence, not value
 
-    console.log("SMTP_HOST environment variable:", smtpHostSet ? "Set" : "Not Set");
-    console.log("SMTP_USER environment variable:", smtpUserSet ? "Set" : "Not Set");
-    console.log("SMTP_PASS environment variable:", smtpPassSet ? "Set (exists)" : "Not Set (or empty)");
+    const envSmtpHost = process.env.SMTP_HOST;
+    const envSmtpUser = process.env.SMTP_USER;
+    const envSmtpPass = process.env.SMTP_PASS;
+
+    console.log(`Value of SMTP_HOST: ${envSmtpHost || 'Not Set/Empty'}`);
+    console.log(`Value of SMTP_USER: ${envSmtpUser || 'Not Set/Empty'}`);
+    console.log(`SMTP_PASS is present and non-empty: ${!!envSmtpPass}`);
 
 
-    if (smtpHostSet && smtpUserSet && smtpPassSet) {
+    if (envSmtpHost && envSmtpUser && envSmtpPass) {
       console.log("Attempting to use REAL SMTP server based on provided environment variables.");
-      // Use real SMTP server if credentials are provided
       transporter = nodemailer.createTransport({
-        host: process.env.SMTP_HOST,
+        host: envSmtpHost,
         port: Number(process.env.SMTP_PORT) || 587,
-        secure: process.env.SMTP_SECURE === 'true', // true for 465, false for other ports
+        secure: process.env.SMTP_SECURE === 'true',
         auth: {
-          user: process.env.SMTP_USER,
-          pass: process.env.SMTP_PASS,
+          user: envSmtpUser,
+          pass: envSmtpPass,
         },
+        // Adding timeout options for debugging
+        connectionTimeout: 10000, // 10 seconds
+        socketTimeout: 10000, // 10 seconds
       });
     } else {
-      // Use Ethereal for local testing if SMTP_HOST is not set
       isEthereal = true;
-      console.warn("One or more SMTP environment variables (SMTP_HOST, SMTP_USER, SMTP_PASS) are not set. Falling back to Ethereal for local email testing.");
+      console.warn("One or more SMTP environment variables (SMTP_HOST, SMTP_USER, SMTP_PASS) are not set or are empty. Falling back to Ethereal for local email testing.");
       const testAccount = await nodemailer.createTestAccount();
       transporter = nodemailer.createTransport({
         host: 'smtp.ethereal.email',
         port: 587,
-        secure: false, // Ethereal uses port 587 with STARTTLS
+        secure: false,
         auth: {
-          user: testAccount.user, // Generated Ethereal user
-          pass: testAccount.pass, // Generated Ethereal password
+          user: testAccount.user,
+          pass: testAccount.pass,
         },
       });
       console.log("Ethereal test account created: User - %s, Pass - %s", testAccount.user, testAccount.pass);
@@ -57,7 +59,7 @@ export async function POST(request: NextRequest) {
     const mailOptions = {
       from: `"${fullName} via Voxaiomni Quote" <${process.env.EMAIL_FROM || 'quote-form@voxaiomni.com'}>`,
       replyTo: email,
-      to: process.env.EMAIL_TO || 'dineshbaghel6251@gmail.com', // This will be the recipient.
+      to: process.env.EMAIL_TO || 'dineshbaghel6251@gmail.com',
       subject: `New Quote Request: ${interestedService} from ${companyName || fullName}`,
       html: `
         <h1>New Quote Request</h1>
@@ -83,7 +85,6 @@ export async function POST(request: NextRequest) {
     if (isEthereal) {
       const previewUrl = nodemailer.getTestMessageUrl(info);
       console.log('Message sent via Ethereal! Preview URL: %s', previewUrl);
-      // It's good practice to include the preview URL in the response for easier testing if needed
       return NextResponse.json({
         message: 'Quote request processed using local test service (Ethereal). Check your server console for the email preview URL.',
         previewUrl: previewUrl
@@ -99,6 +100,8 @@ export async function POST(request: NextRequest) {
     if (error instanceof Error) {
         errorMessage = error.message;
     }
+    // If it's an Ethereal error, it's less critical for the user than a real SMTP error.
+    // However, the generic message remains.
     return NextResponse.json({ message: 'Failed to send quote request.', error: errorMessage }, { status: 500 });
   }
 }

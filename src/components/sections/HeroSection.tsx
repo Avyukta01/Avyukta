@@ -1,3 +1,4 @@
+
 "use client";
 
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -15,10 +16,11 @@ const HeroSection = () => {
           muted
           playsInline
           className="w-full h-full object-cover"
-          poster="https://placehold.co/1920x1080.png"
-          data-ai-hint="technology business"
+          poster="/videos/hero-poster.png" // Updated poster path
+          data-ai-hint="technology business abstract" // Updated hint for local poster
         >
-          <source src="https://storage.googleapis.com/gtv-videos-bucket/sample/%E7%85%99%E7%AA%81%E3%81%8B%E3%82%89%E7%85%99%E3%81%8B%E3%82%99%E5%A4%9A%E3%81%8F%E5%87%BA%E3%81%A6%E3%81%84%E3%81%BE%E3%81%99%E3%80%82.mp4" type="video/mp4" />
+          {/* Make sure 'hero-background.mp4' is in your public/videos/ folder */}
+          <source src="/videos/hero-background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
         <div className="absolute inset-0 bg-black/50 z-10"></div>

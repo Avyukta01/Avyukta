@@ -12,7 +12,7 @@ const Logo = ({ className }: { className?: string }) => {
       )}
     >
       <Image
-        src="/logos/voxaiomni-logo.png" 
+        src="/companylogo/omnilogo.png" 
         alt="Voxaiomni Logo"
         width={40} 
         height={40} 

@@ -84,10 +84,10 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
     defaultValues: {
-      fullName: "",
-      email: "",
+      fullName: "Avyukta",
+      email: "dineshbaghel6251@gmail.com",
       companyName: "",
-      phoneNumber: "",
+      phoneNumber: "+91 9588922752",
       interestedService: undefined,
       projectDetails: "",
     },
@@ -109,11 +109,26 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
         throw new Error(result.message || 'Failed to submit quote request.');
       }
 
-      toast({
-        title: "Quote Request Submitted!",
-        description: "Thank you! We've received your request and will be in touch soon.",
-        variant: "default",
-      });
+      if (result.previewUrl) { // Check if Ethereal was used (API sends previewUrl if so)
+        toast({
+          title: "Test Email Processed (Ethereal)!",
+          description: (
+            React.createElement('div', null,
+              React.createElement('p', null, "Your quote request was processed using a local test service."),
+              React.createElement('p', {className: "font-semibold mt-2"}, "Please check your server console (the terminal where 'npm run dev' is running) for the Ethereal preview URL to view the email content."),
+              React.createElement('p', {className: "mt-1 text-xs"}, "No actual email was delivered to an inbox.")
+            )
+          ),
+          variant: "default",
+          duration: 10000, // Longer duration for this important message
+        });
+      } else {
+        toast({
+          title: "Quote Request Submitted!",
+          description: result.message || "Thank you! We've received your request and will be in touch soon.",
+          variant: "default",
+        });
+      }
       form.reset();
       setIsOpen(false); // Close the sheet after submission
     } catch (error) {

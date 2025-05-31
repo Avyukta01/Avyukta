@@ -66,12 +66,12 @@ export async function POST(request: NextRequest) {
       console.log('Message sent via Ethereal! Preview URL: %s', previewUrl);
       // It's good practice to include the preview URL in the response for easier testing if needed
       return NextResponse.json({
-        message: 'Quote request submitted! Email sent to local test inbox. Check server console for preview URL.',
-        previewUrl: previewUrl 
+        message: 'Quote request processed using local test service (Ethereal). Check your server console for the email preview URL.',
+        previewUrl: previewUrl
       }, { status: 200 });
     }
 
-    return NextResponse.json({ message: 'Quote request submitted successfully!' }, { status: 200 });
+    return NextResponse.json({ message: 'Quote request submitted successfully! Email sent.' }, { status: 200 });
 
   } catch (error) {
     console.error('Error sending email:', error);
@@ -82,3 +82,4 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: 'Failed to send quote request.', error: errorMessage }, { status: 500 });
   }
 }
+

@@ -19,7 +19,7 @@ const WhatsAppIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 const FloatingWhatsAppButton = () => {
-  const phoneNumber = "917852010838"; // India country code + number, no '+' or spaces
+  const phoneNumber = "918560000600"; // Updated WhatsApp number
   const whatsappLink = `https://wa.me/${phoneNumber}`;
 
   return (

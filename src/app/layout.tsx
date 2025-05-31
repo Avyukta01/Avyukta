@@ -85,19 +85,19 @@ const organizationSchema = {
   ],
   "contactPoint": {
     "@type": "ContactPoint",
-    "telephone": "+1-555-123-4567", // IMPORTANT: Replace with actual primary business phone
-    "contactType": "Customer Service", // Or "Sales", "Technical Support" etc.
-    "email": "contact@voxaiomni.com", // IMPORTANT: Replace with actual primary contact email
-    "areaServed": ["IN", "US", "KR"], // Targeting India, US, South Korea
-    "availableLanguage": ["English", "Korean"] // Languages spoken
+    "telephone": "+91 856-000-0600", 
+    "contactType": "Customer Service", 
+    "email": "contact@voxaiomni.com", 
+    "areaServed": ["IN", "US", "PH", "KR"], 
+    "availableLanguage": ["English", "Korean"] 
   },
-  "address": { // Using US address from contact page as primary
+  "address": { 
     "@type": "PostalAddress",
-    "streetAddress": "123 Voxaiomni Drive",
-    "addressLocality": "Tech City",
-    "addressRegion": "CA",
-    "postalCode": "94000",
-    "addressCountry": "US"
+    "streetAddress": "A-26, Laxminarayan Vihar, Between Mahadev Mandir and Kirana, Near Kotecha Building, Vande Mataram Road, Bharat Mata Circle",
+    "addressLocality": "Jaipur",
+    "addressRegion": "Rajasthan",
+    "postalCode": "302020",
+    "addressCountry": "IN"
   }
 };
 

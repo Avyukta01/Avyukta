@@ -180,11 +180,19 @@ export default function ContactPage() {
                   <CardContent className="space-y-3 text-muted-foreground">
                     <div className="flex items-start">
                       <MapPin className="h-5 w-5 mr-3 mt-1 text-primary flex-shrink-0" />
-                      <span>123 Voxaiomni Drive, Tech City, CA 94000, USA</span>
+                      <span>A-26, Laxminarayan Vihar, Between Mahadev Mandir and Kirana, Near Kotecha Building, Vande Mataram Road, Bharat Mata Circle, Jaipur, 302020 Rajasthan, India.</span>
                     </div>
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-                      <span>+1 (555) 123-4567</span>
+                      <span>US: +1-408-426-2726</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>IND: +91 856-000-0600</span>
+                    </div>
+                    <div className="flex items-center">
+                      <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                      <span>PHI: +63 9554586720</span>
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
@@ -223,7 +231,7 @@ export default function ContactPage() {
             <div className="aspect-video w-full max-w-4xl mx-auto rounded-lg shadow-2xl overflow-hidden animate-fade-in-up animation-delay-200">
               <Image
                 src="https://placehold.co/1200x675.png" 
-                alt="Map placeholder showing Voxaiomni office location"
+                alt="Map placeholder showing Voxaiomni office location in Jaipur"
                 width={1200}
                 height={675}
                 className="w-full h-full object-cover"

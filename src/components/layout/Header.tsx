@@ -120,7 +120,7 @@ const navLinks: NavLink[] = [
       {
         title: "Cloud & DevOps Services",
         icon: CloudCog,
-        href: "/services/devops-cicd",
+        href: "/services/devops-cicd", // Corrected link
         subServices: ["Cloud Migration", "Infrastructure as Code (IaC)", "CI/CD Pipelines", "Containerization & Orchestration"],
       },
       {
@@ -162,16 +162,16 @@ const navLinks: NavLink[] = [
         icon: Users,
         href: "/products/crm",
         subServices: [
-          "Contact & Lead Management",
-          "Sales Pipeline Tracking",
-          "Task & Deal Automation",
-          "Reporting & Analytics",
+          "Omni-channel Single Sign-On",
+          "Sales & Lead Management",
+          "Task Automation & Triggers",
+          "Detailed Reporting Modules",
         ],
       },
       {
         title: "DialerIndia",
         icon: PhoneCall,
-        href: "/products/dialer-india",
+        href: "/products/dialer-india", // Placeholder, assuming new page needed
         subServices: [
           "Automated & Predictive Dialing",
           "Call Recording & Monitoring",

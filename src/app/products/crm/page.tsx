@@ -6,7 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { 
-  Users, Target, Bell, MessageSquare, DollarSign, Filter, Mail, Briefcase, ShieldCheck, SlidersHorizontal, LogIn, LogOut, CalendarPlus, UserCheck, MailCheck, BarChart3, MapPin, AlertTriangle, Volume2, EyeOff, Zap, TrendingUp, Settings2, Activity, PieChart, CheckCircle, Info, ArrowRight, GitMerge
+  Users, Target, Bell, MessageSquare, DollarSign, Filter, Mail, Briefcase, ShieldCheck, SlidersHorizontal, LogIn, LogOut, CalendarPlus, UserCheck, MailCheck, BarChart3, MapPin, AlertTriangle, Volume2, EyeOff, Zap, TrendingUp, Settings2, Activity, PieChart, CheckCircle, Info, ArrowRight, GitMerge, CalendarDays
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,7 +34,7 @@ const crmFeatures = [
     title: "Omni Channelled Unified Communication",
     description: "Centralize all customer interactions from various channels into one unified platform.",
     icon: MessageSquare,
-    secondaryIcon: GitMerge, // Represents merging channels
+    secondaryIcon: GitMerge,
   },
   {
     title: "Sales CRM",
@@ -52,7 +52,6 @@ const crmFeatures = [
     title: "Google Modules and Emails Integrations",
     description: "Seamlessly integrate with Google Workspace modules and email services for enhanced productivity.",
     icon: Mail,
-    // No direct Google icon in lucide, Mail is primary
   },
   {
     title: "Attendance, Leave, Task, Salary, Incentive Management",

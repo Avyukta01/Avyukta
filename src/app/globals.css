@@ -5,61 +5,70 @@
 
 @layer base {
   :root {
-    /* Light Theme Based on Provided Image - Gray Background, Orange Neon */
+    /* Dark Theme - Black Base with Neon Blue Accents & White Glow */
 
-    /* Background Colors - Neutral Grays */
-    --gradient-start-color-hsl: 0 0% 88%; /* Lighter Gray */
-    --gradient-end-color-hsl: 0 0% 78%;   /* Darker Gray */
-    --background-hsl: 0 0% 83%;          /* Main component background (e.g., popovers, slightly off main page bg) */
+    /* Background Colors - Very Dark Grays / Black */
+    --gradient-start-color-hsl: 210 10% 10%; /* Darker Cool Gray */
+    --gradient-end-color-hsl: 210 10% 5%;   /* Near Black Cool Gray */
+    --background-hsl: 210 10% 8%;          /* Main component background (e.g., popovers, slightly off main page bg) */
     
     /* Foreground (Main Text) */
-    --foreground-hsl: 0 0% 15%;          /* Dark Gray for body text */
+    --foreground-hsl: 0 0% 85%;          /* Light Gray for body text */
 
-    /* Card Base (like the 'VOX' letters) & Foreground */
-    --card-base-hsl: 0 0% 97%;            /* Very Light Gray / Off-White */
-    --card-foreground-hsl: var(--foreground-hsl); /* Dark Gray for text in cards */
+    /* Card Base & Foreground */
+    --card-base-hsl: 210 10% 12%;            /* Dark Gray for cards */
+    --card-foreground-hsl: var(--foreground-hsl); /* Light Gray for text in cards */
 
     /* Popover Base & Foreground */
-    --popover-base-hsl: 0 0% 95%;         /* Light Gray for popovers */
+    --popover-base-hsl: 210 10% 10%;         /* Dark Gray for popovers */
     --popover-foreground-hsl: var(--foreground-hsl);
 
-    /* Primary/Accent Colors - Neon Orange/Yellow */
-    --neon-glow-orange-color-hsl: 33 100% 58%; /* Vibrant Orange-Yellow */
-    --primary-hsl: var(--neon-glow-orange-color-hsl);
+    /* Primary/Accent Colors - Neon Blue */
+    --neon-glow-primary-color-hsl: 200 100% 50%; /* Vibrant Blue */
+    --primary-hsl: var(--neon-glow-primary-color-hsl);
     --primary-foreground-hsl: 0 0% 100%;  /* White text on primary/accent */
 
     /* Secondary Colors */
-    --secondary-hsl: 0 0% 70%;           /* Medium Gray for secondary elements */
-    --secondary-foreground-hsl: var(--foreground-hsl); /* Dark Gray text on secondary */
+    --secondary-hsl: 210 10% 15%;           /* Darker Gray for secondary elements */
+    --secondary-foreground-hsl: var(--foreground-hsl); /* Light Gray text on secondary */
 
     /* Muted Colors */
-    --muted-hsl: 0 0% 90%;               /* Lighter Gray for muted elements */
-    --muted-foreground-hsl: 0 0% 40%;    /* Medium-Dark Gray for muted text */
+    --muted-hsl: 210 10% 20%;               /* Dark Gray for muted elements */
+    --muted-foreground-hsl: 0 0% 55%;    /* Medium-Dark Gray for muted text */
 
     /* Accent (same as primary for this theme) */
     --accent-hsl: var(--primary-hsl);
     --accent-foreground-hsl: var(--primary-foreground-hsl);
 
+    /* Light Glow Color for Borders/Highlights */
+    --border-glow-light-color-hsl: 200 30% 90%; /* Very light, slightly desaturated blue/white */
+    --neon-glow-light-color-hsl: 0 0% 98%; /* Almost white for glow emanation */
+
+
     /* Borders & Rings */
     --border-accent-hsl: var(--primary-hsl); 
-    --border-subtle-hsl: 0 0% 75%;       /* Subtle border for inputs, etc. */
+    --border-subtle-hsl: 210 10% 25%;       /* Subtle border for inputs, etc. */
     --ring-hsl: var(--primary-hsl);   
     
-    /* Neon Glow Effects (Orange/Yellow) */
-    --neon-glow-orange-box-shadow:
-      0 0 4px hsla(var(--neon-glow-orange-color-hsl), 0.7),
-      0 0 8px hsla(var(--neon-glow-orange-color-hsl), 0.5),
-      0 0 12px hsla(var(--neon-glow-orange-color-hsl), 0.3),
-      0 0 1px #FFF3E0; /* Subtle inner highlight for the glow */
+    /* Neon Glow Effects (Primary - Blue) */
+    --neon-glow-primary-box-shadow:
+      0 0 5px hsla(var(--neon-glow-primary-color-hsl), 0.7),
+      0 0 10px hsla(var(--neon-glow-primary-color-hsl), 0.5),
+      0 0 15px hsla(var(--neon-glow-primary-color-hsl), 0.3);
 
-    --neon-glow-orange-text-shadow:
-      0 0 3px hsla(var(--neon-glow-orange-color-hsl), 0.95),
-      0 0 5px hsla(var(--neon-glow-orange-color-hsl), 0.8),
-      0 0 8px hsla(var(--neon-glow-orange-color-hsl), 0.6),
-      0 0 1px #ffffff; /* White base for text glow */
+    --neon-glow-primary-text-shadow:
+      0 0 4px hsla(var(--neon-glow-primary-color-hsl), 0.95),
+      0 0 7px hsla(var(--neon-glow-primary-color-hsl), 0.8),
+      0 0 10px hsla(var(--neon-glow-primary-color-hsl), 0.6);
 
-    /* Title Text Color (Off-White base for neon titles) */
-    --title-text-color-hsl: 0 0% 96%;
+    /* Neon Glow Effects (Light/White for Borders) */
+    --neon-glow-light-box-shadow:
+      0 0 3px hsla(var(--neon-glow-light-color-hsl), 0.6), /* More subtle base glow */
+      0 0 6px hsla(var(--neon-glow-light-color-hsl), 0.4),
+      0 0 9px hsla(var(--neon-glow-light-color-hsl), 0.2);
+
+    /* Title Text Color (If a specific glowing title is needed, otherwise use foreground) */
+    --title-text-color-hsl: 0 0% 96%; /* Off-white for potential text glow base */
 
     /* Destructive states HSL Definitions */
     --destructive-hsl: 0 70% 55%;
@@ -68,18 +77,18 @@
     /* Radius */
     --radius: 0.75rem; 
 
-    /* Chart colors - adapted for light theme with orange accent */
-    --chart-1-hsl: var(--primary-hsl);                      /* Neon Orange */
-    --chart-2-hsl: 30 90% 65%;                             /* Lighter Orange */
-    --chart-3-hsl: 45 80% 60%;                             /* Golden Yellow */
+    /* Chart colors - adapted for dark theme with blue accent */
+    --chart-1-hsl: var(--primary-hsl);                      /* Neon Blue */
+    --chart-2-hsl: 210 80% 65%;                             /* Lighter Blue */
+    --chart-3-hsl: 180 70% 60%;                             /* Cyan/Teal */
     --chart-4-hsl: 0 0% 50%;                               /* Medium Gray */
-    --chart-5-hsl: 0 0% 30%;                               /* Darker Gray */
+    --chart-5-hsl: 0 0% 70%;                               /* Lighter Gray */
 
     /* Final CSS Color Variables from HSL */
     --background: hsl(var(--background-hsl));
     --foreground: hsl(var(--foreground-hsl));
 
-    /* Cards: off-white with orange neon border glow */
+    /* Cards: dark base with light neon border glow */
     --card: hsla(var(--card-base-hsl), 0.98); 
     --card-foreground: hsl(var(--card-foreground-hsl));
 
@@ -108,78 +117,76 @@
     --chart-4: hsl(var(--chart-4-hsl));
     --chart-5: hsl(var(--chart-5-hsl));
 
-    /* Sidebar specific - light theme variant */
+    /* Sidebar specific - dark theme variant */
     --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.85); 
     --sidebar-foreground: hsl(var(--foreground-hsl));
     --sidebar-primary: hsl(var(--primary-hsl));
     --sidebar-primary-foreground: hsl(var(--primary-foreground-hsl));
-    --sidebar-accent: hsla(var(--primary-hsl), 0.15); /* Lighter accent for sidebar */
-    --sidebar-accent-foreground: hsl(var(--primary-hsl)); /* Orange text on light accent */
+    --sidebar-accent: hsla(var(--primary-hsl), 0.15); 
+    --sidebar-accent-foreground: hsl(var(--primary-hsl)); 
     --sidebar-border: hsla(var(--primary-hsl), 0.3); 
     --sidebar-ring: hsl(var(--primary-hsl));
   }
 
   .dark {
-    /* Dark Theme Variant with Orange Neon Accents */
-    --gradient-start-color-hsl: 210 10% 20%; 
-    --gradient-end-color-hsl: 210 10% 15%;  
+    /* Dark Theme (Can be same as :root or even darker if desired) */
+    --gradient-start-color-hsl: 210 10% 10%; 
+    --gradient-end-color-hsl: 210 10% 5%;  
+    --background-hsl: 210 10% 8%; 
+    --foreground-hsl: 0 0% 85%;
 
-    --background-hsl: 210 10% 18%; 
-    --foreground-hsl: 0 0% 85%; /* Light Gray for text */
-
-    --card-base-hsl: 210 10% 22%; 
+    --card-base-hsl: 210 10% 12%; 
     --card-foreground-hsl: var(--foreground-hsl);
 
-    --popover-base-hsl: 210 10% 17%; 
+    --popover-base-hsl: 210 10% 10%; 
     --popover-foreground-hsl: var(--foreground-hsl);
 
-    /* Accent Colors HSL Definitions - Orange Neon Remains */
-    --neon-glow-orange-color-hsl: 33 100% 58%;
-    --primary-hsl: var(--neon-glow-orange-color-hsl); 
+    --neon-glow-primary-color-hsl: 200 100% 50%;
+    --primary-hsl: var(--neon-glow-primary-color-hsl); 
     --primary-foreground-hsl: 0 0% 100%;
 
-    --secondary-hsl: 210 10% 25%; 
+    --secondary-hsl: 210 10% 15%; 
     --secondary-foreground-hsl: 0 0% 70%; 
 
-    --muted-hsl: 210 10% 28%;
+    --muted-hsl: 210 10% 20%;
     --muted-foreground-hsl: 0 0% 55%;
 
     --accent-hsl: var(--primary-hsl); 
     --accent-foreground-hsl: var(--primary-foreground-hsl);
     
-    /* Borders & Rings HSL Definitions */
+    --border-glow-light-color-hsl: 200 30% 90%;
+    --neon-glow-light-color-hsl: 0 0% 98%;
+
     --border-accent-hsl: var(--primary-hsl);
-    --border-subtle-hsl: 210 10% 30%; 
+    --border-subtle-hsl: 210 10% 25%; 
     --ring-hsl: var(--primary-hsl);   
 
-    /* Neon Glow Effects (Orange/Yellow) - same definition, different base */
-    --neon-glow-orange-box-shadow:
-      0 0 4px hsla(var(--neon-glow-orange-color-hsl), 0.7),
-      0 0 8px hsla(var(--neon-glow-orange-color-hsl), 0.5),
-      0 0 12px hsla(var(--neon-glow-orange-color-hsl), 0.3),
-      0 0 1px #FFF3E0;
+    --neon-glow-primary-box-shadow:
+      0 0 5px hsla(var(--neon-glow-primary-color-hsl), 0.7),
+      0 0 10px hsla(var(--neon-glow-primary-color-hsl), 0.5),
+      0 0 15px hsla(var(--neon-glow-primary-color-hsl), 0.3);
 
-    --neon-glow-orange-text-shadow:
-      0 0 3px hsla(var(--neon-glow-orange-color-hsl), 0.95),
-      0 0 5px hsla(var(--neon-glow-orange-color-hsl), 0.8),
-      0 0 8px hsla(var(--neon-glow-orange-color-hsl), 0.6),
-      0 0 1px #ffffff;
+    --neon-glow-primary-text-shadow:
+      0 0 4px hsla(var(--neon-glow-primary-color-hsl), 0.95),
+      0 0 7px hsla(var(--neon-glow-primary-color-hsl), 0.8),
+      0 0 10px hsla(var(--neon-glow-primary-color-hsl), 0.6);
+    
+    --neon-glow-light-box-shadow:
+      0 0 3px hsla(var(--neon-glow-light-color-hsl), 0.6),
+      0 0 6px hsla(var(--neon-glow-light-color-hsl), 0.4),
+      0 0 9px hsla(var(--neon-glow-light-color-hsl), 0.2);
       
-    /* Title Text Color (Off-White base for neon titles in dark mode) */
     --title-text-color-hsl: 0 0% 96%;
 
-    /* Destructive states HSL Definitions */
     --destructive-hsl: 0 70% 55%;
     --destructive-foreground-hsl: 0 0% 98%;
 
-    /* Chart colors for dark mode */
     --chart-1-hsl: var(--primary-hsl);
-    --chart-2-hsl: 30 90% 65%;
-    --chart-3-hsl: 45 80% 60%;
-    --chart-4-hsl: 0 0% 60%; /* Lighter Gray for dark mode charts */
-    --chart-5-hsl: 0 0% 45%; /* Medium Gray for dark mode charts */
+    --chart-2-hsl: 210 80% 65%;
+    --chart-3-hsl: 180 70% 60%;
+    --chart-4-hsl: 0 0% 50%; 
+    --chart-5-hsl: 0 0% 70%; 
 
-    /* Sidebar specific - dark theme variant */
     --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.85);
     --sidebar-foreground: hsl(var(--foreground-hsl));
     --sidebar-primary: hsl(var(--primary-hsl));
@@ -210,27 +217,25 @@
 }
 
 @layer components {
-  /* Card default style: border with orange neon glow */
+  /* Card default style: border with light/white neon glow */
   .bg-card { 
-    @apply border border-transparent; 
-    box-shadow: var(--neon-glow-orange-box-shadow); 
+    @apply border; 
+    border-color: hsla(var(--border-glow-light-color-hsl), 0.3); /* Subtle always-on border */
+    box-shadow: var(--neon-glow-light-box-shadow); 
   }
 
-  /* Primary buttons with orange neon glow effect */
-  .btn-primary-neon { /* This class can be applied to buttons needing this specific style */
+  /* Primary buttons with blue background and light/white neon glow effect on hover/focus */
+  .btn-primary-neon {
     @apply bg-primary text-primary-foreground; 
-    box-shadow: var(--neon-glow-orange-box-shadow); 
-    border: 1px solid hsla(var(--neon-glow-orange-color-hsl), 0.5);
+    /* Subtle base glow if desired, or none */
+    /* box-shadow: 0 0 2px hsla(var(--neon-glow-light-color-hsl), 0.2); */
+    border: 1px solid transparent; /* Start with transparent border */
     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   }
   .btn-primary-neon:hover, .btn-primary-neon:focus-visible {
     @apply bg-primary/90;
-    border-color: hsla(var(--neon-glow-orange-color-hsl), 0.8); 
-    box-shadow: 
-      0 0 6px hsla(var(--neon-glow-orange-color-hsl), 0.8),
-      0 0 12px hsla(var(--neon-glow-orange-color-hsl), 0.6),
-      0 0 18px hsla(var(--neon-glow-orange-color-hsl), 0.4),
-      0 0 2px #FFF3E0;
+    border-color: hsl(var(--border-glow-light-color-hsl)); 
+    box-shadow: var(--neon-glow-light-box-shadow);
   }
 }
 
@@ -242,17 +247,24 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Neon Text Glow Utility (Orange) */
-  .text-title-neon {
+  /* Neon Text Glow Utility (Primary - Blue) */
+  .text-title-glow-primary {
     color: hsl(var(--title-text-color-hsl)); /* Off-white text */
-    text-shadow: var(--neon-glow-orange-text-shadow); 
+    text-shadow: var(--neon-glow-primary-text-shadow); 
   }
   
-  /* Box Shadow Glow Utilities (Orange) */
-  .shadow-neon-glow-orange { 
-    box-shadow: var(--neon-glow-orange-box-shadow);
-    border-color: hsl(var(--neon-glow-orange-color-hsl)); /* Optional: if you want a solid border too */
+  /* Box Shadow Glow Utilities (Primary - Blue for general accents if needed) */
+  .shadow-neon-glow-primary { 
+    box-shadow: var(--neon-glow-primary-box-shadow);
+    /* border-color: hsl(var(--neon-glow-primary-color-hsl)); Optional */
   }
+  
+  /* Box Shadow Glow Utilities (Light/White, e.g. for card borders) */
+  .shadow-neon-glow-light {
+    box-shadow: var(--neon-glow-light-box-shadow);
+    /* border-color: hsl(var(--border-glow-light-color-hsl)); Optional */
+  }
+
 
   /* Animation delay utilities */
   .animation-delay-100 { animation-delay: 0.1s; }
@@ -291,14 +303,14 @@
       transform: translateX(-50%); 
     }
   }
-   /* Updated pulse-glow animation for buttons or other elements to use orange glow */
+   /* Updated pulse-glow animation for buttons or other elements to use light/white glow */
    @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 4px hsla(var(--neon-glow-orange-color-hsl), 0.6), 0 0 8px hsla(var(--neon-glow-orange-color-hsl), 0.4);
+      box-shadow: 0 0 3px hsla(var(--neon-glow-light-color-hsl), 0.5), 0 0 6px hsla(var(--neon-glow-light-color-hsl), 0.3);
       opacity: 0.8;
     }
     50% {
-      box-shadow: var(--neon-glow-orange-box-shadow);
+      box-shadow: var(--neon-glow-light-box-shadow);
       opacity: 1;
     }
   }
@@ -350,7 +362,7 @@
     opacity: 0;
   }
 
-  /* Particle effect for Hero Section - Updated to use orange neon */
+  /* Particle effect for Hero Section - Updated to use primary neon blue */
   .particle-background-hero::before {
     content: '';
     position: absolute;
@@ -359,14 +371,13 @@
     right: 0;
     bottom: 0;
     background-image:
-      radial-gradient(hsla(var(--neon-glow-orange-color-hsl), 0.1) 0.5px, transparent 0.5px), 
-      /* Optional: Add a secondary subtle particle color, e.g., a very light yellow or white */
-      radial-gradient(hsla(50, 100%, 80%, 0.07) 0.5px, transparent 0.5px);
+      radial-gradient(hsla(var(--neon-glow-primary-color-hsl), 0.1) 0.5px, transparent 0.5px), 
+      radial-gradient(hsla(var(--neon-glow-primary-color-hsl), 0.07) 0.5px, transparent 0.5px); /* Can use a lighter shade or white here */
     background-size: 30px 30px, 50px 50px; 
     background-position: 0 0, 15px 15px; 
     animation: particles-drift 45s linear infinite; 
     z-index: 1; 
-    opacity: 0.6; /* Adjust opacity as needed */
+    opacity: 0.6; 
     pointer-events: none; 
   }
 

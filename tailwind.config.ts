@@ -84,13 +84,13 @@ export default {
   					height: '0'
   				}
   			},
-        'pulse-glow': {
+        'pulse-glow': { /* Updated to use light/white glow */
           '0%, 100%': {
-            boxShadow: '0 0 4px hsla(var(--neon-glow-orange-color-hsl), 0.6), 0 0 8px hsla(var(--neon-glow-orange-color-hsl), 0.4)',
+            boxShadow: '0 0 3px hsla(var(--neon-glow-light-color-hsl), 0.5), 0 0 6px hsla(var(--neon-glow-light-color-hsl), 0.3)',
             opacity: '0.8'
           },
           '50%': {
-            boxShadow: 'var(--neon-glow-orange-box-shadow)', 
+            boxShadow: 'var(--neon-glow-light-box-shadow)', 
             opacity: '1'
           },
         },

@@ -75,7 +75,7 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "Voxaiomni",
   "url": siteUrl,
-  "logo": `${siteUrl}/companylogo/omnilogo.png`,
+  "logo": `${siteUrl}/companylogo/voxaiomni_logo.png`,
   "sameAs": [
     "https://www.facebook.com/Avyuktaintellicalldialer",
     "https://x.com/avyukta_ecall",

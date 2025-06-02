@@ -14,7 +14,7 @@ const Logo = ({ className }: { className?: string }) => {
       aria-label="Voxaiomni Home" // Added aria-label for accessibility as text is removed
     >
       <Image
-        src="/companylogo/omnilogo.png" 
+        src="/companylogo/voxaiomni_logo.png" 
         alt="Voxaiomni Logo"
         width={40} 
         height={40} 

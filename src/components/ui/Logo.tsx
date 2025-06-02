@@ -20,6 +20,7 @@ const Logo = ({ className }: { className?: string }) => {
         height={40} 
         className="h-8 w-auto md:h-10" 
         data-ai-hint="company logo"
+        priority // Added priority to hint Next.js to prioritize loading this image
       />
       {/* <span className="hidden sm:inline">Voxaiomni</span> Removed this line */}
     </Link>

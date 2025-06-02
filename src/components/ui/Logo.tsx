@@ -11,7 +11,7 @@ const Logo = ({ className }: { className?: string }) => {
         "flex items-center space-x-2 text-2xl font-bold text-primary hover:text-accent transition-colors duration-300 ease-in-out",
         className
       )}
-      aria-label="Voxaiomni Home" // Added aria-label for accessibility as text is removed
+      aria-label="Voxaiomni Home"
     >
       <Image
         src="/companylogo/voxaiomni_logo.png" 
@@ -20,9 +20,8 @@ const Logo = ({ className }: { className?: string }) => {
         height={40} 
         className="h-8 w-auto md:h-10" 
         data-ai-hint="company logo"
-        priority // Added priority to hint Next.js to prioritize loading this image
+        // Removed priority, it's not directly related to cache busting of the content itself
       />
-      {/* <span className="hidden sm:inline">Voxaiomni</span> Removed this line */}
     </Link>
   );
 };

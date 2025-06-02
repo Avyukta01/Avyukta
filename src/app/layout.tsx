@@ -75,7 +75,7 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "Voxaiomni",
   "url": siteUrl,
-  "logo": `${siteUrl}/companylogo/voxaiomni_logo.png`,
+  "logo": `${siteUrl}/companylogo/voxaiomni_logo.png`, // Ensure this path is correct for your live site
   "sameAs": [
     "https://www.facebook.com/Avyuktaintellicalldialer",
     "https://x.com/avyukta_ecall",

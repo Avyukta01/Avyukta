@@ -5,30 +5,30 @@
 
 @layer base {
   :root {
-    /* Futuristic Dark Theme with Neon Blue Accent */
+    /* Futuristic Dark Theme with Neon Blue Accent - Updated Base Dark Color */
 
-    /* Gradient Background Colors - Darker for more contrast */
-    --gradient-start-color-hsl: 220 30% 8%; /* Darker Navy Blue */
-    --gradient-end-color-hsl: 220 25% 3%;   /* Nearer Black */
+    /* Gradient Background Colors - Based on #322f30 (HSL approx. 350, 3%, 19%) */
+    --gradient-start-color-hsl: 350 3% 20%; /* Slightly lighter variant of #322f30 */
+    --gradient-end-color-hsl: 350 3% 18%;   /* Slightly darker variant of #322f30 */
 
     /* Core Palette HSL Definitions */
-    --background-hsl: 220 25% 7%; /* Base for popovers, etc. (very dark) */
-    --foreground-hsl: 210 20% 90%; /* Light gray/off-white for text */
+    --background-hsl: 350 3% 19%; /* Base for popovers, etc. (matches #322f30) */
+    --foreground-hsl: 210 20% 90%; /* Light gray/off-white for text - REMAINS SAME for contrast */
 
-    --card-base-hsl: 220 25% 9%; /* Darker base color for cards before transparency */
+    --card-base-hsl: 350 3% 22%; /* Slightly lighter than main background for cards */
     --card-foreground-hsl: var(--foreground-hsl);
 
-    --popover-base-hsl: 220 20% 6%; /* Darker base for popovers */
+    --popover-base-hsl: 350 3% 17%; /* Darker than main background for popovers */
     --popover-foreground-hsl: var(--foreground-hsl);
 
-    /* Accent Colors HSL Definitions */
+    /* Accent Colors HSL Definitions - REMAINS SAME to preserve particle style */
     --primary-hsl: 209 78% 40%; /* #1656b5 - Bold Blue */
     --primary-foreground-hsl: 210 20% 95%; /* White/very light for text on primary */
 
-    --secondary-hsl: 220 20% 15%; /* Darker gray for secondary elements */
+    --secondary-hsl: 350 3% 15%; /* Darker gray for secondary elements, based on new dark */
     --secondary-foreground-hsl: 210 15% 70%; /* Muted light gray for text on secondary */
 
-    --muted-hsl: 220 15% 20%;
+    --muted-hsl: 350 3% 24%; /* Muted elements, slightly lighter than card base */
     --muted-foreground-hsl: 210 15% 55%;
 
     --accent-hsl: var(--primary-hsl); /* Using primary blue #1656b5 as main accent */
@@ -39,18 +39,18 @@
     --turquoise-green-hsl: 170 100% 50%; /* #00FFE0 */
 
     /* Borders & Rings HSL Definitions */
-    --border-accent-hsl: var(--primary-hsl); /* For general glowing/accented borders (original blue) */
-    --border-subtle-hsl: 220 20% 25%; /* Subtle border for inputs, general use */
-    --ring-hsl: var(--primary-hsl);   /* Ring color is accent blue */
+    --border-accent-hsl: var(--primary-hsl); 
+    --border-subtle-hsl: 350 3% 28%; /* Subtle border for inputs, derived from new dark, slightly lighter */
+    --ring-hsl: var(--primary-hsl);   
     
     /* New variables for White/Light Glow */
-    --border-glow-light-color-hsl: 210 40% 95%; /* Very light, almost white blue for border source of glow */
+    --border-glow-light-color-hsl: 210 40% 95%; 
     --neon-glow-light-box-shadow:
       0 0 3px hsl(var(--border-glow-light-color-hsl)),
       0 0 8px hsl(var(--border-glow-light-color-hsl)),
       0 0 12px hsl(var(--border-glow-light-color-hsl) / 0.8),
       0 0 18px hsl(var(--border-glow-light-color-hsl) / 0.6),
-      0 0 1px #ffffff; /* Inner sharp white touch */
+      0 0 1px #ffffff; 
 
     /* Original primary glow (blue) - kept for reference or other potential uses */
     --neon-glow-primary-box-shadow:
@@ -58,21 +58,21 @@
       0 0 8px hsl(var(--primary-hsl)),
       0 0 12px hsl(var(--primary-hsl) / 0.8),
       0 0 18px hsl(var(--primary-hsl) / 0.6),
-      0 0 1px #ccfaff; /* Inner sharp bright cyan/white touch for pop */
+      0 0 1px #ccfaff; 
 
     /* Destructive states HSL Definitions */
     --destructive-hsl: 0 70% 55%;
     --destructive-foreground-hsl: 0 0% 98%;
 
     /* Radius */
-    --radius: 0.75rem; /* Slightly more rounded for futuristic feel */
+    --radius: 0.75rem; 
 
     /* Chart colors - adapt to dark theme */
     --chart-1-hsl: var(--primary-hsl);
     --chart-2-hsl: var(--electric-purple-hsl);
     --chart-3-hsl: var(--turquoise-green-hsl);
-    --chart-4-hsl: 20 80% 60%; /* Orange */
-    --chart-5-hsl: 50 80% 60%; /* Yellow */
+    --chart-4-hsl: 20 80% 60%; 
+    --chart-5-hsl: 50 80% 60%; 
 
     /* Final CSS Color Variables from HSL */
     --background: hsl(var(--background-hsl));
@@ -96,8 +96,6 @@
     --destructive: hsl(var(--destructive-hsl));
     --destructive-foreground: hsl(var(--destructive-foreground-hsl));
 
-    /* Default border for elements like inputs uses subtle, non-glowing one */
-    /* Cards will override this for their glowing border */
     --border: hsl(var(--border-subtle-hsl)); 
     --input: hsl(var(--border-subtle-hsl));  
     --ring: hsl(var(--ring-hsl)); 
@@ -109,7 +107,7 @@
     --chart-4: hsl(var(--chart-4-hsl));
     --chart-5: hsl(var(--chart-5-hsl));
 
-    /* Sidebar specific - dark and matching theme */
+    /* Sidebar specific - uses new dark gradient */
     --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.7); 
     --sidebar-foreground: hsl(var(--foreground-hsl));
     --sidebar-primary: hsl(var(--primary-hsl));
@@ -121,28 +119,28 @@
   }
 
   .dark {
-    /* Gradient Background Colors - Darker for more contrast */
-    --gradient-start-color-hsl: 220 30% 8%; 
-    --gradient-end-color-hsl: 220 25% 3%;  
+    /* Gradient Background Colors - Based on #322f30 (HSL approx. 350, 3%, 19%) */
+    --gradient-start-color-hsl: 350 3% 20%; 
+    --gradient-end-color-hsl: 350 3% 18%;  
 
     /* Core Palette HSL Definitions */
-    --background-hsl: 220 25% 7%; 
+    --background-hsl: 350 3% 19%; 
     --foreground-hsl: 210 20% 90%; 
 
-    --card-base-hsl: 220 25% 9%; 
+    --card-base-hsl: 350 3% 22%; 
     --card-foreground-hsl: var(--foreground-hsl);
 
-    --popover-base-hsl: 220 20% 6%; 
+    --popover-base-hsl: 350 3% 17%; 
     --popover-foreground-hsl: var(--foreground-hsl);
 
-    /* Accent Colors HSL Definitions */
+    /* Accent Colors HSL Definitions - REMAINS SAME */
     --primary-hsl: 209 78% 40%; 
     --primary-foreground-hsl: 210 20% 95%;
 
-    --secondary-hsl: 220 20% 15%; 
+    --secondary-hsl: 350 3% 15%; 
     --secondary-foreground-hsl: 210 15% 70%; 
 
-    --muted-hsl: 220 15% 20%;
+    --muted-hsl: 350 3% 24%;
     --muted-foreground-hsl: 210 15% 55%;
 
     --accent-hsl: var(--primary-hsl); 
@@ -154,7 +152,7 @@
 
     /* Borders & Rings HSL Definitions */
     --border-accent-hsl: var(--primary-hsl);
-    --border-subtle-hsl: 220 20% 25%; 
+    --border-subtle-hsl: 350 3% 28%; 
     --ring-hsl: var(--primary-hsl);   
 
     /* New variables for White/Light Glow (ensure they are also in .dark) */
@@ -238,20 +236,20 @@
 @layer components {
   /* Card default style: border with light/white glow */
   .bg-card { 
- @apply border border-transparent; /* Card border is now light */
-    box-shadow: var(--neon-glow-light-box-shadow); /* Card shadow is light glow */
+ @apply border border-transparent; 
+    box-shadow: var(--neon-glow-light-box-shadow); 
   }
 
   /* Primary buttons with light neon glow effect */
   .btn-primary-neon {
-    @apply bg-primary text-primary-foreground; /* Assuming primary buttons are blue based */
-    box-shadow: var(--neon-glow-light-box-shadow); /* Subtle default light glow */
+    @apply bg-primary text-primary-foreground; 
+    box-shadow: var(--neon-glow-light-box-shadow); 
     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   }
   .btn-primary-neon:hover, .btn-primary-neon:focus-visible {
     @apply bg-primary/90;
-    border-color: hsl(var(--border-glow-light-color-hsl) / 0.7); /* Slightly visible light border on hover */
-    box-shadow: var(--neon-glow-light-box-shadow); /* Full light glow on hover/focus */
+    border-color: hsl(var(--border-glow-light-color-hsl) / 0.7); 
+    box-shadow: var(--neon-glow-light-box-shadow); 
   }
 }
 
@@ -265,7 +263,7 @@
 
   /* Neon Text Glow Utilities - Original primary (blue) glow */
   .text-neon-glow-primary {
-    text-shadow: var(--neon-glow-primary-box-shadow); /* This still uses the original blue glow */
+    text-shadow: var(--neon-glow-primary-box-shadow); 
     color: hsl(var(--primary-hsl)); 
   }
   .text-neon-glow-purple {
@@ -278,16 +276,16 @@
   }
   /* Utility for light/white text glow if needed */
   .text-neon-glow-light {
-    text-shadow: var(--neon-glow-light-box-shadow); /* This would be very bright on light text */
+    text-shadow: var(--neon-glow-light-box-shadow); 
     color: hsl(var(--border-glow-light-color-hsl));
   }
 
   /* Box Shadow Glow Utilities */
-  .shadow-neon-glow-primary { /* This applies the original blue glow */
+  .shadow-neon-glow-primary { 
     box-shadow: var(--neon-glow-primary-box-shadow);
     border-color: hsl(var(--primary-hsl)); 
   }
-  .shadow-neon-glow-light { /* New utility for light/white glow */
+  .shadow-neon-glow-light { 
     box-shadow: var(--neon-glow-light-box-shadow);
     border-color: hsl(var(--border-glow-light-color-hsl));
   }
@@ -406,15 +404,15 @@
     right: 0;
     bottom: 0;
     background-image:
-      radial-gradient(hsla(var(--accent-hsl), 0.1) 0.5px, transparent 0.5px), /* Thinner, more numerous dots for primary accent */
-      radial-gradient(hsla(var(--electric-purple-hsl), 0.07) 0.5px, transparent 0.5px), /* Thinner dots for secondary accent */
-      radial-gradient(hsla(var(--turquoise-green-hsl), 0.07) 0.5px, transparent 0.5px); /* Thinner dots for tertiary accent */
-    background-size: 30px 30px, 50px 50px, 70px 70px; /* Different sizes for depth */
-    background-position: 0 0, 15px 15px, 30px 30px; /* Offset layers */
-    animation: particles-drift 45s linear infinite; /* Slower, more subtle animation */
-    z-index: 1; /* Above bg-primary (which is z-0 by default on the section), below content (z-20) */
-    opacity: 0.4; /* Adjust for subtlety */
-    pointer-events: none; /* Ensure it doesn't interfere with interactions */
+      radial-gradient(hsla(var(--accent-hsl), 0.1) 0.5px, transparent 0.5px), 
+      radial-gradient(hsla(var(--electric-purple-hsl), 0.07) 0.5px, transparent 0.5px), 
+      radial-gradient(hsla(var(--turquoise-green-hsl), 0.07) 0.5px, transparent 0.5px); 
+    background-size: 30px 30px, 50px 50px, 70px 70px; 
+    background-position: 0 0, 15px 15px, 30px 30px; 
+    animation: particles-drift 45s linear infinite; 
+    z-index: 1; 
+    opacity: 0.4; 
+    pointer-events: none; 
   }
 
   @keyframes particles-drift {

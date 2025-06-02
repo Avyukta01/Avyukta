@@ -8,8 +8,8 @@ import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet";
 
 const HeroSection = () => {
   return (
-    <section className="relative bg-primary text-primary-foreground section-padding min-h-[70vh] flex items-center overflow-hidden">
-      {/* Removed video background and overlay */}
+    <section className="relative bg-primary text-primary-foreground section-padding min-h-[70vh] flex items-center overflow-hidden particle-background-hero">
+      {/* The particle-background-hero class will apply the ::before pseudo-element for the particle effect */}
       <div className="container-max relative z-20 text-center">
         <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight animate-fade-in-up">
           Powering Your Digital Transformation

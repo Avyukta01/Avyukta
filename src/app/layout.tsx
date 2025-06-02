@@ -106,6 +106,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const cacheBuster = new Date().getTime();
   return (
     <html lang="en" suppressHydrationWarning>
       <head>

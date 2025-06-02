@@ -89,10 +89,10 @@
     --foreground: hsl(var(--foreground-hsl));
 
     /* Cards: dark base with light neon border glow */
-    --card: hsla(var(--card-base-hsl), 0.98); 
+    --card: hsl(var(--card-base-hsl)); 
     --card-foreground: hsl(var(--card-foreground-hsl));
 
-    --popover: hsla(var(--popover-base-hsl), 0.95); 
+    --popover: hsl(var(--popover-base-hsl)); 
     --popover-foreground: hsl(var(--popover-foreground-hsl));
 
     --primary: hsl(var(--primary-hsl));
@@ -118,7 +118,7 @@
     --chart-5: hsl(var(--chart-5-hsl));
 
     /* Sidebar specific - dark theme variant */
-    --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.85); 
+    --sidebar-background: hsl(var(--gradient-end-color-hsl)); 
     --sidebar-foreground: hsl(var(--foreground-hsl));
     --sidebar-primary: hsl(var(--primary-hsl));
     --sidebar-primary-foreground: hsl(var(--primary-foreground-hsl));
@@ -187,7 +187,7 @@
     --chart-4-hsl: 0 0% 50%; 
     --chart-5-hsl: 0 0% 70%; 
 
-    --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.85);
+    --sidebar-background: hsl(var(--gradient-end-color-hsl));
     --sidebar-foreground: hsl(var(--foreground-hsl));
     --sidebar-primary: hsl(var(--primary-hsl));
     --sidebar-primary-foreground: hsl(var(--primary-foreground-hsl));

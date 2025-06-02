@@ -253,11 +253,9 @@ const Header = () => {
                         <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6 p-6`}> {/* Padding added to inner div */}
                           {link.desktopServiceCategories.map((category) => (
                             <div key={category.title} className="flex flex-col space-y-2">
-                              <Link href={category.href} passHref legacyBehavior>
-                                <a className="group inline-flex items-center space-x-2">
-                                  <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
-                                  <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
-                                </a>
+                              <Link href={category.href} className="group inline-flex items-center space-x-2">
+                                <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
+                                <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
                               </Link>
                               {category.subServices && category.subServices.length > 0 && (
                                 <ul className="space-y-1.5">
@@ -270,10 +268,8 @@ const Header = () => {
                                   ))}
                                 </ul>
                               )}
-                              <Link href={category.href} passHref legacyBehavior>
-                                <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
-                                  Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                                </a>
+                              <Link href={category.href} className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                                Learn More <ArrowRight className="ml-1 h-4 w-4" />
                               </Link>
                             </div>
                           ))}
@@ -288,11 +284,9 @@ const Header = () => {
                       } gap-x-8 gap-y-6`}>
                         {link.desktopServiceCategories.map((category) => (
                           <div key={category.title} className="flex flex-col space-y-2">
-                            <Link href={category.href} passHref legacyBehavior>
-                              <a className="group inline-flex items-center space-x-2">
-                                <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
-                                <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
-                              </a>
+                            <Link href={category.href} className="group inline-flex items-center space-x-2">
+                              <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
+                              <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
                             </Link>
                             {category.subServices && category.subServices.length > 0 && (
                               <ul className="space-y-1.5">
@@ -305,10 +299,8 @@ const Header = () => {
                                 ))}
                               </ul>
                             )}
-                            <Link href={category.href} passHref legacyBehavior>
-                              <a className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
-                                Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                              </a>
+                            <Link href={category.href} className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
+                              Learn More <ArrowRight className="ml-1 h-4 w-4" />
                             </Link>
                           </div>
                         ))}

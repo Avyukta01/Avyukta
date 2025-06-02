@@ -39,18 +39,20 @@
     --turquoise-green-hsl: 170 100% 50%; /* #00FFE0 */
 
     /* Borders & Rings HSL Definitions */
-    --border-accent-hsl: var(--primary-hsl); /* For glowing/accented borders */
+    --border-accent-hsl: var(--primary-hsl); /* For general glowing/accented borders (original blue) */
     --border-subtle-hsl: 220 20% 25%; /* Subtle border for inputs, general use */
     --ring-hsl: var(--primary-hsl);   /* Ring color is accent blue */
+    
+    /* New variables for White/Light Glow */
+    --border-glow-light-color-hsl: 210 40% 95%; /* Very light, almost white blue for border source of glow */
+    --neon-glow-light-box-shadow:
+      0 0 3px hsl(var(--border-glow-light-color-hsl)),
+      0 0 8px hsl(var(--border-glow-light-color-hsl)),
+      0 0 12px hsl(var(--border-glow-light-color-hsl) / 0.8),
+      0 0 18px hsl(var(--border-glow-light-color-hsl) / 0.6),
+      0 0 1px #ffffff; /* Inner sharp white touch */
 
-    /* Destructive states HSL Definitions */
-    --destructive-hsl: 0 70% 55%;
-    --destructive-foreground-hsl: 0 0% 98%;
-
-    /* Radius */
-    --radius: 0.75rem; /* Slightly more rounded for futuristic feel */
-
-    /* Enhanced Neon Glow Effect Variables for #1656b5 */
+    /* Original primary glow (blue) - kept for reference or other potential uses */
     --neon-glow-primary-box-shadow:
       0 0 3px hsl(var(--primary-hsl)),
       0 0 8px hsl(var(--primary-hsl)),
@@ -58,12 +60,12 @@
       0 0 18px hsl(var(--primary-hsl) / 0.6),
       0 0 1px #ccfaff; /* Inner sharp bright cyan/white touch for pop */
 
-    --neon-glow-primary-text-shadow:
-      0 0 2px hsl(var(--primary-hsl) / 0.9),
-      0 0 4px hsl(var(--primary-hsl) / 0.7),
-      0 0 6px hsl(var(--primary-hsl) / 0.5),
-      0 0 1px #e0f5ff; /* Inner sharp bright cyan/white touch for text */
+    /* Destructive states HSL Definitions */
+    --destructive-hsl: 0 70% 55%;
+    --destructive-foreground-hsl: 0 0% 98%;
 
+    /* Radius */
+    --radius: 0.75rem; /* Slightly more rounded for futuristic feel */
 
     /* Chart colors - adapt to dark theme */
     --chart-1-hsl: var(--primary-hsl);
@@ -76,11 +78,11 @@
     --background: hsl(var(--background-hsl));
     --foreground: hsl(var(--foreground-hsl));
 
-    /* Cards: semi-transparent with backdrop blur and neon border */
-    --card: hsla(var(--card-base-hsl), 0.65); /* Semi-transparent card background, slightly more opaque for content */
+    /* Cards: semi-transparent with backdrop blur and now light/white neon border */
+    --card: hsla(var(--card-base-hsl), 0.65); 
     --card-foreground: hsl(var(--card-foreground-hsl));
 
-    --popover: hsla(var(--popover-base-hsl), 0.85); /* More opaque popover */
+    --popover: hsla(var(--popover-base-hsl), 0.85); 
     --popover-foreground: hsl(var(--popover-foreground-hsl));
 
     --primary: hsl(var(--primary-hsl));
@@ -94,9 +96,11 @@
     --destructive: hsl(var(--destructive-hsl));
     --destructive-foreground: hsl(var(--destructive-foreground-hsl));
 
-    --border: hsl(var(--border-accent-hsl)); /* Default interactive border IS the accent for glow */
-    --input: hsl(var(--border-subtle-hsl));  /* Input uses a non-glowing subtle border */
-    --ring: hsl(var(--ring-hsl)); /* Focus rings use primary blue */
+    /* Default border for elements like inputs uses subtle, non-glowing one */
+    /* Cards will override this for their glowing border */
+    --border: hsl(var(--border-subtle-hsl)); 
+    --input: hsl(var(--border-subtle-hsl));  
+    --ring: hsl(var(--ring-hsl)); 
 
     /* Chart variables */
     --chart-1: hsl(var(--chart-1-hsl));
@@ -106,76 +110,73 @@
     --chart-5: hsl(var(--chart-5-hsl));
 
     /* Sidebar specific - dark and matching theme */
-    --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.7); /* Glassy sidebar */
+    --sidebar-background: hsla(var(--gradient-end-color-hsl), 0.7); 
     --sidebar-foreground: hsl(var(--foreground-hsl));
     --sidebar-primary: hsl(var(--primary-hsl));
     --sidebar-primary-foreground: hsl(var(--primary-foreground-hsl));
     --sidebar-accent: hsla(var(--primary-hsl), 0.2);
     --sidebar-accent-foreground: hsl(var(--primary-foreground-hsl));
-    --sidebar-border: hsla(var(--primary-hsl), 0.4); /* More visible neon-like border */
+    --sidebar-border: hsla(var(--primary-hsl), 0.4); 
     --sidebar-ring: hsl(var(--primary-hsl));
   }
 
-  /*
-    If a light theme toggle is desired, it would be defined here.
-    For now, the :root IS the dark theme.
-    If ThemeProvider is used with enableSystem, .dark class might still be applied.
-    Making .dark identical to :root for consistency if dark is the only theme.
-  */
   .dark {
     /* Gradient Background Colors - Darker for more contrast */
-    --gradient-start-color-hsl: 220 30% 8%; /* Darker Navy Blue */
-    --gradient-end-color-hsl: 220 25% 3%;   /* Nearer Black */
+    --gradient-start-color-hsl: 220 30% 8%; 
+    --gradient-end-color-hsl: 220 25% 3%;  
 
     /* Core Palette HSL Definitions */
-    --background-hsl: 220 25% 7%; /* Base for popovers, etc. (very dark) */
-    --foreground-hsl: 210 20% 90%; /* Light gray/off-white for text */
+    --background-hsl: 220 25% 7%; 
+    --foreground-hsl: 210 20% 90%; 
 
-    --card-base-hsl: 220 25% 9%; /* Darker base color for cards before transparency */
+    --card-base-hsl: 220 25% 9%; 
     --card-foreground-hsl: var(--foreground-hsl);
 
-    --popover-base-hsl: 220 20% 6%; /* Darker base for popovers */
+    --popover-base-hsl: 220 20% 6%; 
     --popover-foreground-hsl: var(--foreground-hsl);
 
     /* Accent Colors HSL Definitions */
-    --primary-hsl: 209 78% 40%; /* #1656b5 - Bold Blue */
-    --primary-foreground-hsl: 210 20% 95%; /* White/very light for text on primary */
+    --primary-hsl: 209 78% 40%; 
+    --primary-foreground-hsl: 210 20% 95%;
 
-    --secondary-hsl: 220 20% 15%; /* Darker gray for secondary elements */
-    --secondary-foreground-hsl: 210 15% 70%; /* Muted light gray for text on secondary */
+    --secondary-hsl: 220 20% 15%; 
+    --secondary-foreground-hsl: 210 15% 70%; 
 
     --muted-hsl: 220 15% 20%;
     --muted-foreground-hsl: 210 15% 55%;
 
-    --accent-hsl: var(--primary-hsl); /* Using primary blue #1656b5 as main accent */
+    --accent-hsl: var(--primary-hsl); 
     --accent-foreground-hsl: var(--primary-foreground-hsl);
     
     /* Optional Accent HSL Definitions */
-    --electric-purple-hsl: 266 93% 65%; /* #A855F7 */
-    --turquoise-green-hsl: 170 100% 50%; /* #00FFE0 */
+    --electric-purple-hsl: 266 93% 65%; 
+    --turquoise-green-hsl: 170 100% 50%; 
 
     /* Borders & Rings HSL Definitions */
-    --border-accent-hsl: var(--primary-hsl); /* For glowing/accented borders */
-    --border-subtle-hsl: 220 20% 25%; /* Subtle border for inputs, general use */
-    --ring-hsl: var(--primary-hsl);   /* Ring color is accent blue */
+    --border-accent-hsl: var(--primary-hsl);
+    --border-subtle-hsl: 220 20% 25%; 
+    --ring-hsl: var(--primary-hsl);   
 
-    /* Destructive states HSL Definitions */
-    --destructive-hsl: 0 70% 55%;
-    --destructive-foreground-hsl: 0 0% 98%;
+    /* New variables for White/Light Glow (ensure they are also in .dark) */
+    --border-glow-light-color-hsl: 210 40% 95%;
+    --neon-glow-light-box-shadow:
+      0 0 3px hsl(var(--border-glow-light-color-hsl)),
+      0 0 8px hsl(var(--border-glow-light-color-hsl)),
+      0 0 12px hsl(var(--border-glow-light-color-hsl) / 0.8),
+      0 0 18px hsl(var(--border-glow-light-color-hsl) / 0.6),
+      0 0 1px #ffffff;
 
-    /* Enhanced Neon Glow Effect Variables for #1656b5 - Ensure these are defined here too if not inheriting globally */
+    /* Original primary glow (blue) */
     --neon-glow-primary-box-shadow:
       0 0 3px hsl(var(--primary-hsl)),
       0 0 8px hsl(var(--primary-hsl)),
       0 0 12px hsl(var(--primary-hsl) / 0.8),
       0 0 18px hsl(var(--primary-hsl) / 0.6),
-      0 0 1px #ccfaff; 
+      0 0 1px #ccfaff;
 
-    --neon-glow-primary-text-shadow:
-      0 0 2px hsl(var(--primary-hsl) / 0.9),
-      0 0 4px hsl(var(--primary-hsl) / 0.7),
-      0 0 6px hsl(var(--primary-hsl) / 0.5),
-      0 0 1px #e0f5ff;
+    /* Destructive states HSL Definitions */
+    --destructive-hsl: 0 70% 55%;
+    --destructive-foreground-hsl: 0 0% 98%;
 
     /* Final CSS Color Variables from HSL */
     --background: hsl(var(--background-hsl));
@@ -194,7 +195,8 @@
     --accent-foreground: hsl(var(--accent-foreground-hsl));
     --destructive: hsl(var(--destructive-hsl));
     --destructive-foreground: hsl(var(--destructive-foreground-hsl));
-    --border: hsl(var(--border-accent-hsl));
+    
+    --border: hsl(var(--border-subtle-hsl));
     --input: hsl(var(--border-subtle-hsl));
     --ring: hsl(var(--ring-hsl));
 
@@ -215,9 +217,7 @@
   }
 
   * {
-    /* Default border for elements uses subtle, non-glowing one */
-    /* Specific components like Card will override this if they need glowing border */
-    border-color: hsl(var(--border-subtle-hsl)); 
+    border-color: hsl(var(--border)); 
   }
 
   body {
@@ -229,36 +229,32 @@
     @apply antialiased;
   }
 
-  /* Apply backdrop-filter for glassmorphism to cards and popovers */
   .bg-card, .bg-popover, .bg-sidebar {
-    backdrop-filter: blur(12px); /* Slightly increased blur */
-    -webkit-backdrop-filter: blur(12px); /* Safari support */
+    backdrop-filter: blur(12px); 
+    -webkit-backdrop-filter: blur(12px); 
   }
 }
 
 @layer components {
-  /* Card default style: border with neon glow */
+  /* Card default style: border with light/white glow */
   .bg-card { 
-    @apply border border-[hsl(var(--primary-hsl))]; /* Uses --primary as border color */
-    box-shadow: var(--neon-glow-primary-box-shadow); /* Apply neon glow */
+    @apply border; /* Applies Tailwind's default border width, etc. */
+    border-color: hsl(var(--border-glow-light-color-hsl)); /* Card border is now light */
+    box-shadow: var(--neon-glow-light-box-shadow); /* Card shadow is light glow */
   }
 
-  /* Primary buttons with neon glow on hover/focus for better interaction feedback */
+  /* Primary buttons with light neon glow effect */
   .btn-primary-neon {
-    @apply bg-primary text-primary-foreground;
-    box-shadow: 0 0 2px hsl(var(--primary-hsl)); /* Subtle default glow */
-    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out;
+    @apply bg-primary text-primary-foreground; /* Assuming primary buttons are blue based */
+    border: 1px solid transparent; /* Prepare for border appearance on hover */
+    box-shadow: 0 0 2px hsl(var(--border-glow-light-color-hsl) / 0.5); /* Subtle default light glow */
+    transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   }
   .btn-primary-neon:hover, .btn-primary-neon:focus-visible {
-    @apply bg-primary/90; /* Slightly change bg on hover */
-    box-shadow: var(--neon-glow-primary-box-shadow); /* Full neon glow on hover/focus */
+    @apply bg-primary/90;
+    border-color: hsl(var(--border-glow-light-color-hsl) / 0.7); /* Slightly visible light border on hover */
+    box-shadow: var(--neon-glow-light-box-shadow); /* Full light glow on hover/focus */
   }
-
-  /* Apply neon text glow to h1, h2, h3 by default if desired, or use utility */
-  h1, h2, h3 {
-    /* text-shadow: var(--neon-glow-primary-text-shadow); */ /* Uncomment to apply to all headings */
-  }
-
 }
 
 @layer utilities {
@@ -269,10 +265,10 @@
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Neon Text Glow Utilities - Can be applied to headings, icons etc. */
+  /* Neon Text Glow Utilities - Original primary (blue) glow */
   .text-neon-glow-primary {
-    text-shadow: var(--neon-glow-primary-text-shadow);
-    color: hsl(var(--primary-hsl)); /* Ensure text color is also the primary for consistency */
+    text-shadow: var(--neon-glow-primary-box-shadow); /* This still uses the original blue glow */
+    color: hsl(var(--primary-hsl)); 
   }
   .text-neon-glow-purple {
     text-shadow: 0 0 2px hsl(var(--electric-purple-hsl)/0.9), 0 0 4px hsl(var(--electric-purple-hsl)/0.7), 0 0 6px hsl(var(--electric-purple-hsl)/0.5), 0 0 1px #f0e6ff;
@@ -282,12 +278,20 @@
     text-shadow: 0 0 2px hsl(var(--turquoise-green-hsl)/0.9), 0 0 4px hsl(var(--turquoise-green-hsl)/0.7), 0 0 6px hsl(var(--turquoise-green-hsl)/0.5), 0 0 1px #d9fff8;
     color: hsl(var(--turquoise-green-hsl));
   }
+  /* Utility for light/white text glow if needed */
+  .text-neon-glow-light {
+    text-shadow: var(--neon-glow-light-box-shadow); /* This would be very bright on light text */
+    color: hsl(var(--border-glow-light-color-hsl));
+  }
 
-  /* Neon Border/Outline Glow - can be applied to various elements */
-  /* This is generally applied via .bg-card or specific button styles now */
-  .shadow-neon-glow-primary {
+  /* Box Shadow Glow Utilities */
+  .shadow-neon-glow-primary { /* This applies the original blue glow */
     box-shadow: var(--neon-glow-primary-box-shadow);
-    border-color: hsl(var(--primary-hsl)); /* Ensure border color matches */
+    border-color: hsl(var(--primary-hsl)); 
+  }
+  .shadow-neon-glow-light { /* New utility for light/white glow */
+    box-shadow: var(--neon-glow-light-box-shadow);
+    border-color: hsl(var(--border-glow-light-color-hsl));
   }
   .shadow-neon-glow-purple {
     box-shadow: 0 0 3px hsl(var(--electric-purple-hsl)), 0 0 8px hsl(var(--electric-purple-hsl)), 0 0 12px hsl(var(--electric-purple-hsl)/0.8), 0 0 18px hsl(var(--electric-purple-hsl)/0.6), 0 0 1px #f0e6ff;
@@ -336,18 +340,17 @@
       transform: translateX(-50%); 
     }
   }
-   /* Updated pulse-glow animation for buttons or other elements */
+   /* Updated pulse-glow animation for buttons or other elements to use light glow */
    @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 3px hsl(var(--primary-hsl)), 0 0 8px hsl(var(--primary-hsl));
+      box-shadow: 0 0 3px hsl(var(--border-glow-light-color-hsl)), 0 0 8px hsl(var(--border-glow-light-color-hsl));
       opacity: 0.8;
     }
     50% {
-      box-shadow: var(--neon-glow-primary-box-shadow);
+      box-shadow: var(--neon-glow-light-box-shadow);
       opacity: 1;
     }
   }
-  /* This class will be used by AnimatedButton.tsx or other elements */
   .animate-pulse-glow {
     animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
   }
@@ -396,5 +399,4 @@
     opacity: 0;
   }
 }
-
     

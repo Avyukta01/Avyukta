@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({ // Corrected usage
 const siteUrl = "https://{YOUR_DOMAIN_HERE}";
 
 export const metadata: Metadata = {
-  title: "Voxaiomni : Itf'y your business with revolution IT solutions",
+  title: "Voxaiomni : Itf'y your business with our innovative tech solutions",
   description: "Itf'y your business with revolution IT solutions. Specializing in AI, web, and mobile development for India, US, and South Korea markets.",
   metadataBase: new URL(siteUrl), // Set base URL for resolving relative asset paths
   alternates: {
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
     },
   },
   openGraph: {
-    title: "Voxaiomni : Itf'y your business with revolution IT solutions",
+    title: "Voxaiomni : Itf'y your business with our innovative tech solutions",
     description: "Itf'y your business with revolution IT solutions. Specializing in AI, web, and mobile development.",
     url: siteUrl,
     siteName: 'Voxaiomni',
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: "Voxaiomni : Itf'y your business with revolution IT solutions",
+    title: "Voxaiomni : Itf'y your business with our innovative tech solutions",
     description: "Itf'y your business with revolution IT solutions. Specializing in AI, web, and mobile development.",
     // siteId: '@yourTwitterHandle', // Optional: Add your Twitter handle ID
     // creator: '@creatorTwitterHandle', // Optional: Add creator's Twitter handle
@@ -75,7 +75,7 @@ const organizationSchema = {
   "@type": "Organization",
   "name": "Voxaiomni",
   "url": siteUrl,
-  "logo": `${siteUrl}/companylogo/voxaiomin_logonew.png`, // Ensure this path is correct for your live site
+  "logo": `${siteUrl}/companylogo/voxaiomni_logonew.png`, // Ensure this path is correct for your live site
   "sameAs": [
     "https://www.facebook.com/Avyuktaintellicalldialer",
     "https://x.com/avyukta_ecall",

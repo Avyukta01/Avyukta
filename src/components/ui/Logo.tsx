@@ -15,7 +15,7 @@ const Logo = ({ className }: { className?: string }) => {
       aria-label="Voxaiomni Home"
     >
       <Image
-        src={`/companylogo/voxaiomin_logonew.png?v=${cacheBuster}`} 
+        src={`/companylogo/voxaiomni_logonew.png?v=${cacheBuster}`} 
         alt="Voxaiomni Logo"
         width={40} 
         height={40} 

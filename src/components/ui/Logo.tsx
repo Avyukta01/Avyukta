@@ -1,10 +1,21 @@
 
+"use client";
+
+import * as React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const Logo = ({ className }: { className?: string }) => {
-  const cacheBuster = new Date().getTime(); // Add a timestamp for cache busting
+  const [clientCacheBuster, setClientCacheBuster] = React.useState<string | null>(null);
+
+  React.useEffect(() => {
+    setClientCacheBuster(new Date().getTime().toString());
+  }, []);
+
+  const logoSrc = "/companylogo/voxaiomni_logonew.png";
+  const finalSrc = clientCacheBuster ? `${logoSrc}?v=${clientCacheBuster}` : logoSrc;
+
   return (
     <Link
       href="/"
@@ -15,12 +26,13 @@ const Logo = ({ className }: { className?: string }) => {
       aria-label="Voxaiomni Home"
     >
       <Image
-        src={`/companylogo/voxaiomni_logonew.png?v=${cacheBuster}`} 
+        src={finalSrc} 
         alt="Voxaiomni Logo"
         width={40} 
         height={40} 
         className="h-8 w-auto md:h-10" 
         data-ai-hint="company logo"
+        key={finalSrc} // Adding key to help React differentiate if src changes
       />
     </Link>
   );

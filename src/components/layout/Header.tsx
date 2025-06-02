@@ -236,21 +236,21 @@ const Header = () => {
                 <DropdownMenuContent
                   className={
                     link.label === "Services"
-                      ? "md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-0" // Removed p-6 for Services
+                      ? "md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-0"
                       : link.label === "Products"
                         ? "md:w-auto md:min-w-[45rem] p-6" 
                         : link.label === "Company"
                           ? "md:w-auto md:min-w-[40rem] p-6" 
                           : link.label === "Resources"
                             ? "md:w-auto md:min-w-[60rem] p-6" 
-                            : "w-60 p-1" // Default padding for non-category dropdowns
+                            : "w-60 p-1" 
                   }
                   align="start"
                 >
                   {link.desktopServiceCategories && (
                     link.label === "Services" ? (
-                      <ScrollArea className="max-h-[70vh] p-6"> 
-                        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6`}>
+                      <ScrollArea className="max-h-[70vh]"> {/* Padding removed from ScrollArea */}
+                        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6 p-6`}> {/* Padding added to inner div */}
                           {link.desktopServiceCategories.map((category) => (
                             <div key={category.title} className="flex flex-col space-y-2">
                               <Link href={category.href} passHref legacyBehavior>

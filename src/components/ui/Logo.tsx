@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 
 const Logo = ({ className }: { className?: string }) => {
+  const cacheBuster = new Date().getTime(); // Add a timestamp for cache busting
   return (
     <Link
       href="/"
@@ -14,13 +15,12 @@ const Logo = ({ className }: { className?: string }) => {
       aria-label="Voxaiomni Home"
     >
       <Image
-        src="/companylogo/voxaiomni_logo.png" 
+        src={`/companylogo/voxaiomni_logo.png?v=${cacheBuster}`} 
         alt="Voxaiomni Logo"
         width={40} 
         height={40} 
         className="h-8 w-auto md:h-10" 
         data-ai-hint="company logo"
-        // Removed priority, it's not directly related to cache busting of the content itself
       />
     </Link>
   );

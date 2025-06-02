@@ -238,16 +238,14 @@
 @layer components {
   /* Card default style: border with light/white glow */
   .bg-card { 
-    @apply border; /* Applies Tailwind's default border width, etc. */
-    border-color: hsl(var(--border-glow-light-color-hsl)); /* Card border is now light */
+ @apply border border-transparent; /* Card border is now light */
     box-shadow: var(--neon-glow-light-box-shadow); /* Card shadow is light glow */
   }
 
   /* Primary buttons with light neon glow effect */
   .btn-primary-neon {
     @apply bg-primary text-primary-foreground; /* Assuming primary buttons are blue based */
-    border: 1px solid transparent; /* Prepare for border appearance on hover */
-    box-shadow: 0 0 2px hsl(var(--border-glow-light-color-hsl) / 0.5); /* Subtle default light glow */
+    box-shadow: var(--neon-glow-light-box-shadow); /* Subtle default light glow */
     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
   }
   .btn-primary-neon:hover, .btn-primary-neon:focus-visible {

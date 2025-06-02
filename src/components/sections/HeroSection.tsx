@@ -30,10 +30,10 @@ const HeroSection = () => {
           <QuoteFormSheet>
             <AnimatedButton
               size="lg"
-              className="w-full sm:w-56 border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300"
+              className="w-full sm:w-auto border border-primary-foreground bg-transparent text-primary-foreground hover:bg-primary-foreground hover:text-primary shadow-lg transform hover:scale-105 transition-transform duration-300 px-6" // Added px-6 for better spacing with longer text
             >
-              Talk to Us
-              <Phone className="h-5 w-5" />
+              Talk To Us 24*7
+              <Phone className="animate-pulse" /> {/* Icon size will be handled by AnimatedButton's default SVG styling */}
             </AnimatedButton>
           </QuoteFormSheet>
         </div>

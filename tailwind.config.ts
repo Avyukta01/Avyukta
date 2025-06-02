@@ -86,7 +86,7 @@ export default {
   			},
         'pulse-glow': { // Renamed from pulse-slow and updated for neon effect
           '0%, 100%': {
-            boxShadow: '0 0 3px hsl(var(--primary-hsl)), 0 0 6px hsl(var(--primary-hsl))', // Use HSL var for color
+            boxShadow: '0 0 3px hsl(var(--primary-hsl)), 0 0 8px hsl(var(--primary-hsl))', // Use HSL var for color
             opacity: '0.7'
           },
           '50%': {

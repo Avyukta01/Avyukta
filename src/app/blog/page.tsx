@@ -13,6 +13,22 @@ import Link from "next/link";
 // In a real app, this would likely come from a CMS or database
 const blogPosts = [
   {
+    title: "Maximizing Cost-Effectiveness: Strategies for Optimal Phone System Investments",
+    date: "December 10, 2023",
+    excerpt: "In the realm of business operations, cost-effectiveness is a critical factor in decision-making processes, especially when it comes to investing in phone system solutions. This comprehensive guide explores strategic approaches and best practices for maximizing cost-effectiveness...",
+    image: "https://placehold.co/600x400.png",
+    slug: "/blog/phone-system-investments",
+    aiHint: "business woman headset"
+  },
+  {
+    title: "Navigating the Future: Key Trends Shaping the BPO Industry",
+    date: "December 05, 2023",
+    excerpt: "In the ever-evolving landscape of Business Process Outsourcing (BPO), staying ahead of emerging trends is essential for driving innovation, enhancing service delivery, and maintaining a competitive edge in the market. This insightful guide explores the transformative trends...",
+    image: "https://placehold.co/600x400.png",
+    slug: "/blog/bpo-industry-trends",
+    aiHint: "call center agent"
+  },
+  {
     title: "The Future of AI in Business Automation",
     date: "October 26, 2023",
     excerpt: "Discover how AI is reshaping industries by automating complex tasks and driving efficiency across various sectors.",

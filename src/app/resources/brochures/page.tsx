@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -12,11 +11,11 @@ import Image from "next/image";
 const brochures = [
   {
     title: "Company Overview Brochure",
-    description: "Get a comprehensive overview of Voxaiomni, our mission, services, and success stories.",
+    description: "Get a comprehensive overview of Avyukta, our mission, services, and success stories.",
     image: "https://placehold.co/600x400.png",
     aiHint: "brochure cover design",
     downloadLink: "/brochures/avyukta_brouchre.pdf",
-    suggestedFilename: "Voxaiomni_Company_Overview.pdf", // Or use "avyukta_brochur.pdf" if preferred
+    suggestedFilename: "Avyukta_Company_Overview.pdf", // Or use "avyukta_brochur.pdf" if preferred
   },
   {
     title: "AI Solutions Brochure",
@@ -24,7 +23,7 @@ const brochures = [
     image: "https://placehold.co/600x400.png",
     aiHint: "ai technology brochure",
     downloadLink: "/placeholder/ai-solutions-brochure.pdf", 
-    suggestedFilename: "Voxaiomni_AI_Solutions_Brochure.pdf",
+    suggestedFilename: "Avyukta_AI_Solutions_Brochure.pdf",
   },
   {
     title: "Web Development Services Brochure",
@@ -32,7 +31,7 @@ const brochures = [
     image: "https://placehold.co/600x400.png",
     aiHint: "web design brochure",
     downloadLink: "/placeholder/web-development-brochure.pdf", 
-    suggestedFilename: "Voxaiomni_Web_Development_Brochure.pdf",
+    suggestedFilename: "Avyukta_Web_Development_Brochure.pdf",
   },
 ];
 
@@ -67,7 +66,7 @@ export default function BrochuresPage() {
                     <Image
                       src={brochure.image}
                       alt={brochure.title}
-                      layout="fill"
+                      fill
                       objectFit="cover"
                       data-ai-hint={brochure.aiHint}
                       className="group-hover:scale-105 transition-transform duration-500"

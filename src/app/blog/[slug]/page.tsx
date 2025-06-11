@@ -1,4 +1,3 @@
-
 // No "use client" directive here
 import type { Metadata } from 'next';
 import { blogPosts, type BlogPost } from "@/lib/blog-data";
@@ -14,7 +13,7 @@ import BlogPostClientPage from '@/components/blog/BlogPostClientPage';
 //     }
 //   }
 //   return {
-//     title: `${post.title} | Voxaiomni Blog`,
+//     title: `${post.title} | Avyukta Blog`,
 //     description: post.excerpt,
 //     openGraph: {
 //         title: post.title,

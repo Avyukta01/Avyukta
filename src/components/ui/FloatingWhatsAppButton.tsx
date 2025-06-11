@@ -1,4 +1,3 @@
-
 "use client";
 
 import Link from "next/link";
@@ -19,7 +18,7 @@ const WhatsAppIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => (
 );
 
 const FloatingWhatsAppButton = () => {
-  const phoneNumber = "918560000600"; // Updated WhatsApp number
+  const phoneNumber = "+918560000600"; // Updated WhatsApp number
   const whatsappLink = `https://wa.me/${phoneNumber}`;
 
   return (
@@ -27,7 +26,7 @@ const FloatingWhatsAppButton = () => {
       href={whatsappLink}
       target="_blank"
       rel="noopener noreferrer"
-      className="fixed bottom-6 right-6 z-50 p-3 bg-green-500 text-white rounded-full shadow-lg hover:bg-green-600 focus:outline-none focus:ring-2 focus:ring-green-400 focus:ring-offset-2 focus:ring-offset-background transition-colors duration-300 flex items-center justify-center"
+      className="fixed bottom-6 right-6 z-50 p-3 rounded-full shadow-lg focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background transition-all duration-300 flex items-center justify-center btn-primary-neon"
       aria-label="Chat on WhatsApp"
     >
       <WhatsAppIcon />

@@ -1,50 +1,93 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { Globe, Code2, ShoppingCart, Layers3, Smartphone, Server, CheckCircle, ArrowRight, MessageSquare } from "lucide-react";
-import Link from "next/link";
+import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
+import { Globe, Code2, Layers3, ShoppingCart, LayoutTemplate, Users, Shield, Rocket, CheckCircle, Lightbulb, TrendingUp, ArrowRight, Settings, CalendarClock } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const expertiseAreas = [
   {
-    title: "Frontend Development",
+    title: "Website Development",
+    description: "Building highly responsive, visually appealing, and SEO-optimized websites from scratch, ensuring an engaging user experience.",
+    icon: LayoutTemplate,
+    learnMoreLink: "/services/web-development/website-development",
+  },
+  {
+    title: "Web Application Development",
+    description: "Developing robust, scalable, and dynamic web applications tailored to your specific business processes and user interactions.",
     icon: Code2,
-    description: "Crafting responsive, high-performance, and user-friendly interfaces with modern JavaScript frameworks like Next.js and React. We focus on exceptional UI/UX and accessibility.",
-    details: ["Single Page Applications (SPAs)", "Progressive Web Apps (PWAs)", "Interactive User Interfaces", "Cross-browser Compatibility"]
+    learnMoreLink: "/services/web-development/web-app-development",
   },
   {
-    title: "Backend Development",
-    icon: Server,
-    description: "Building robust, scalable, and secure server-side logic and APIs using technologies like Node.js, Python, and various database solutions.",
-    details: ["RESTful & GraphQL APIs", "Microservices Architecture", "Database Design & Optimization", "Serverless Functions"]
-  },
-  {
-    title: "E-commerce Solutions",
+    title: "E-Commerce Development",
+    description: "Creating secure, user-friendly, and high-converting online stores that drive sales and provide seamless shopping experiences.",
     icon: ShoppingCart,
-    description: "Developing feature-rich online stores and e-commerce platforms tailored to your business needs, integrated with secure payment gateways and inventory management.",
-    details: ["Custom Shopping Cart Development", "Payment Gateway Integration", "Product Catalog Management", "Subscription Platforms"]
+    learnMoreLink: "/services/web-development/e-commerce-development",
   },
   {
-    title: "Custom Web Applications",
+    title: "Frontend Development",
+    description: "Crafting intuitive and visually appealing user interfaces (UI) using modern frameworks like React, Next.js, and Vue.js.",
     icon: Layers3,
-    description: "Designing and developing bespoke web applications to solve unique business challenges, from complex dashboards to enterprise-grade platforms.",
-    details: ["SaaS Product Development", "Enterprise Portals", "Data Visualization Tools", "Workflow Automation Systems"]
-  }
+    learnMoreLink: "/services/web-development/frontend-development",
+  },
+  {
+    title: "Backend & API Development",
+    description: "Building powerful, secure, and scalable server-side logic and APIs using Node.js, Python, or Ruby on Rails.",
+    icon: Settings,
+    learnMoreLink: "/services/web-development/backend-api-development", // Assuming this exists or will be created
+  },
+  {
+    title: "CMS Development",
+    description: "Implementing flexible and easy-to-manage Content Management Systems like WordPress, headless CMS, or custom solutions.",
+    icon: Users, // Represents content creators/users
+    learnMoreLink: "/services/web-development/cms-development", // Assuming this exists or will be created
+  },
 ];
 
-const techStack = ["Next.js", "React", "TypeScript", "Node.js", "Python", "Tailwind CSS", "Firebase", "Google Cloud", "AWS", "Docker"];
+const benefits = [
+  "Establish a strong online presence and brand identity.",
+  "Enhance user engagement and deliver seamless digital experiences.",
+  "Streamline business operations with custom web applications.",
+  "Improve SEO and discoverability to attract more organic traffic.",
+  "Ensure robust security and data protection for your web platforms.",
+  "Achieve scalability to support future growth and increased user loads."
+];
 
 const developmentProcess = [
-  { step: "01", title: "Discovery & Planning", description: "Understanding your vision, goals, and requirements through detailed consultation." },
-  { step: "02", title: "UI/UX Design", description: "Creating intuitive and engaging designs, wireframes, and prototypes." },
-  { step: "03", title: "Development", description: "Building your web solution using agile methodologies and best coding practices." },
-  { step: "04", title: "Testing & QA", description: "Ensuring quality through rigorous testing for functionality, performance, and security." },
-  { step: "05", title: "Deployment & Launch", description: "Seamlessly deploying your application to the live environment." },
-  { step: "06", title: "Support & Maintenance", description: "Providing ongoing support and updates to keep your solution running smoothly." },
+  {
+    step: "01",
+    title: "Discovery & Strategy",
+    description: "Understanding your vision, target audience, and business objectives to define the project scope.",
+  },
+  {
+    step: "02",
+    title: "UI/UX Design",
+    description: "Creating intuitive and engaging designs, focusing on user experience and visual appeal.",
+  },
+  {
+    step: "03",
+    title: "Development & Coding",
+    description: "Building your web solution with clean, efficient code and agile methodologies, ensuring scalability and performance.",
+  },
+  {
+    step: "04",
+    title: "Quality Assurance",
+    description: "Rigorous testing across various browsers and devices to guarantee a bug-free and high-performance application.",
+  },
+  {
+    step: "05",
+    title: "Deployment & Launch",
+    description: "Seamless deployment to your chosen hosting environment, ensuring a smooth and successful launch.",
+  },
+  {
+    step: "06",
+    title: "Post-Launch Support",
+    description: "Providing ongoing maintenance, updates, and optimization to keep your web solution robust and secure.",
+  },
 ];
 
 export default function WebDevelopmentPage() {
@@ -53,67 +96,82 @@ export default function WebDevelopmentPage() {
       <Header />
       <main className="flex-grow bg-background">
         {/* Hero Section */}
-        <section className="section-padding bg-primary text-primary-foreground text-center">
-          <div className="container-max">
-            <Globe className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Expert Web Development Services
+        <section className="section-padding bg-primary text-primary-foreground">
+          <div className="container-max text-center">
+            <Globe className="h-20 w-20 text-accent mx-auto mb-6 animate-fade-in-up" />
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100 text-title-glow-primary">
+              Web Development: Building Your Digital Foundation
             </h1>
-            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Building powerful, scalable, and engaging web solutions tailored to your business needs.
+            <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
+              Crafting innovative and robust web solutions that elevate your online presence and drive tangible business results.
             </p>
+            <ScheduleDemoSheet>
+              <Button size="lg" variant="neon" className="animate-fade-in-up animation-delay-300">
+                Request a Free Consultation
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
 
-        {/* Our Web Development Expertise Section */}
+        {/* Service Offerings Section */}
         <section className="section-padding">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Our Web Development Expertise
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 text-title-glow-primary">
+              Our Web Development Services
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
               {expertiseAreas.map((area, index) => (
-                <Card key={area.title} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
+                <Card key={area.title} className={`overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${index * 100 + 200}`}>
+                  <div className="relative h-56 w-full">
+                    <Image
+                      src="https://placehold.co/600x400.png"
+                      alt={area.title}
+                      layout="fill"
+                      objectFit="cover"
+                    />
+                    {area.icon && <area.icon className="absolute top-4 left-4 h-10 w-10 text-accent bg-background/80 backdrop-blur-sm p-2 rounded-lg shadow-md" />}
+                  </div>
                   <CardHeader>
-                    <div className="flex items-center mb-3">
-                      <area.icon className="h-10 w-10 text-accent mr-3" />
-                      <CardTitle className="text-2xl text-primary">{area.title}</CardTitle>
-                    </div>
-                    <CardDescription>{area.description}</CardDescription>
+                    <CardTitle className="text-2xl text-primary">{area.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="flex-grow">
-                    <h4 className="font-semibold mb-2 text-foreground/90">Includes:</h4>
-                    <ul className="space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                      {area.details.map(detail => <li key={detail}>{detail}</li>)}
-                    </ul>
+                  <CardContent>
+                    <CardDescription className="text-foreground/80">{area.description}</CardDescription>
                   </CardContent>
+                  <CardFooter>
+                    <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
+                      <Link href={area.learnMoreLink}>
+                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      </Link>
+                    </Button>
+                  </CardFooter>
                 </Card>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Technologies We Use Section */}
+        {/* Benefits Section */}
         <section className="section-padding bg-secondary">
-          <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Technologies We Master
+          <div className="container-max text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-12 text-title-glow-primary">
+              Benefits of Partnering with Avyukta for Web Development
             </h2>
-            <div className="flex flex-wrap justify-center gap-3 md:gap-4 animate-fade-in-up animation-delay-200">
-              {techStack.map((tech) => (
-                <span key={tech} className="bg-card text-card-foreground px-4 py-2 rounded-full shadow-md text-sm font-medium border border-border">
-                  {tech}
-                </span>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {benefits.map((benefit, index) => (
+                <div key={index} className={`p-6 bg-card rounded-lg shadow-lg flex items-start space-x-3 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
+                  <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
+                  <p className="text-foreground/90 text-left">{benefit}</p>
+                </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* Our Process Section */}
+        {/* Our Development Process Section */}
         <section className="section-padding">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Our Development Process
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 text-title-glow-primary">
+              Our Web Development Process
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {developmentProcess.map((item, index) => (
@@ -130,18 +188,19 @@ export default function WebDevelopmentPage() {
         </section>
 
         {/* CTA Section */}
-        <section className="section-padding bg-primary">
+        <section className="section-padding bg-secondary">
           <div className="container-max text-center">
-            <MessageSquare className="h-12 w-12 text-accent mx-auto mb-4 animate-fade-in-up" />
-            <h2 className="text-3xl font-bold text-primary-foreground mb-6 animate-fade-in-up animation-delay-100">
-              Ready to Build Your Next Web Solution?
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 text-title-glow-primary">
+              Ready to Build Your Powerful Web Presence?
             </h2>
-            <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Let's discuss your project requirements and how our web development expertise can bring your vision to life.
+            <p className="text-xl text-muted-foreground mb-8 max-w-xl mx-auto">
+              Let's discuss your project and create a cutting-edge web solution that drives your business forward.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=WebDevelopmentInquiry">Get a Free Quote</Link>
-            </Button>
+            <ScheduleDemoSheet>
+              <Button size="lg" variant="neon">
+                Get Your Free Quote
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
       </main>

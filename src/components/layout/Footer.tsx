@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -16,13 +15,13 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-secondary text-secondary-foreground section-padding">
+    <footer className="bg-background/30 backdrop-blur-lg border-t border-primary/20 text-secondary-foreground section-padding">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
             <Logo className="text-primary mb-4" />
             <p className="text-sm text-muted-foreground">
-              Voxaiomni: Itf'y your business with revolution IT solutions.
+              Avyukta: Itf'y your business with revolution IT solutions.
             </p>
           </div>
           <div>
@@ -63,7 +62,7 @@ const Footer = () => {
                     <Input type="email" placeholder="Enter your email" className="bg-background text-foreground" />
                 </div>
                 <div>
-                    <Button type="submit" variant="default" size="icon" aria-label="Subscribe">
+                    <Button type="submit" variant="neon" size="icon" aria-label="Subscribe">
                     <Send className="h-4 w-4" />
                     </Button>
                 </div>
@@ -83,9 +82,9 @@ const Footer = () => {
         
         <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
           {currentYear ? (
-            <p>&copy; {currentYear} Voxaiomni. All rights reserved.</p>
+            <p>&copy; {currentYear} Avyukta. All rights reserved.</p>
           ) : (
-            <p>&copy; Voxaiomni. All rights reserved.</p> 
+            <p>&copy; Avyukta. All rights reserved.</p> 
           )}
         </div>
       </div>

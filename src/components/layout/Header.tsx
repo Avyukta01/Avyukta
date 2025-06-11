@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -35,13 +34,15 @@ import {
   ArrowRight,
   Sparkles,
   DownloadCloud,
-  Bot,
-  PhoneCall
+  PhoneCall,
+  MessageCircle,
+  MessageSquare,
+  Phone
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent, SheetTrigger, SheetClose } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTrigger, SheetClose } from "@/components/ui/sheet";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -49,9 +50,10 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import type { LucideIcon } from "lucide-react";
-import { ThemeToggle } from "@/components/ui/ThemeToggle";
 import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet";
-import { ScrollArea } from "@/components/ui/scroll-area"; // Added ScrollArea import
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
+import { cn } from "@/lib/utils";
 
 interface NavSubLink {
   href: string;
@@ -63,17 +65,18 @@ interface NavServiceCategory {
   title: string;
   icon: LucideIcon;
   href: string;
-  subServices: string[]; // Can be key features, descriptions, or related sub-items
+  subServices?: { label: string; href: string }[];
+  description?: string;
 }
 
 interface NavLink {
   href: string;
   label: string;
   icon?: LucideIcon;
-  desktopSubLinks?: NavSubLink[]; // Will be phased out for Company & Resources if using multi-column
+  desktopSubLinks?: NavSubLink[];
   desktopServiceCategories?: NavServiceCategory[];
+  description?: string;
 }
-
 
 const navLinks: NavLink[] = [
   { href: "/", label: "Home" },
@@ -83,52 +86,92 @@ const navLinks: NavLink[] = [
     label: "Services",
     desktopServiceCategories: [
       {
-        title: "Ideation & Design",
-        icon: Lightbulb,
-        href: "/services/ideation-design",
-        subServices: ["UI/UX Design", "Product Roadmap", "Design Thinking Workshops", "User Research & Personas"],
-      },
-      {
-        title: "Mobile App Development",
-        icon: Smartphone,
-        href: "/services/mobile-apps",
-        subServices: ["Android App Development", "iOS App Development", "Cross-Platform App Development", "Progressive Web Apps (PWA)"],
-      },
-      {
         title: "Web Development",
         icon: Globe,
         href: "/services/web-development",
-        subServices: ["Website Development", "Web App Development", "E-Commerce Development", "Frontend Development"],
+        subServices: [
+          { label: "Website Development", href: "/services/web-development/website-development" },
+          { label: "Web App Development", href: "/services/web-development/web-app-development" },
+          { label: "E-Commerce Development", href: "/services/web-development/e-commerce-development" },
+          { label: "Frontend Development", href: "/services/web-development/frontend-development" },
+        ],
+      },
+      {
+        title: "Mobile Apps",
+        icon: Smartphone,
+        href: "/services/mobile-apps",
+        subServices: [
+          { label: "Android App Development", href: "/services/mobile-apps/android-app-development" },
+          { label: "iOS App Development", href: "/services/mobile-apps/ios-app-development" },
+          { label: "Cross-Platform App Development", href: "/services/mobile-apps/cross-platform-app-development" },
+          { label: "Progressive Web Apps (PWA)", href: "/services/mobile-apps/pwa-development" },
+        ],
       },
       {
         title: "Software Development",
         icon: Layers3,
         href: "/services/software-development",
-        subServices: ["Custom Software Development", "Enterprise Software Development", "SaaS Product Development", "ERP & CRM Solutions"],
+        subServices: [
+          { label: "Custom Software Development", href: "/services/software-development/custom-software-development" },
+          { label: "Enterprise Software Development", href: "/services/software-development/enterprise-software-development" },
+          { label: "SaaS Product Development", href: "/services/software-development/saas-product-development" },
+          { label: "ERP & CRM Solutions", href: "/services/software-development/erp-crm-solutions" },
+        ],
       },
       {
-        title: "AI Development",
+        title: "AI Solutions",
         icon: BrainCircuit,
         href: "/services/ai-solutions",
-        subServices: ["AI Consulting", "AI Agent Development", "AI Chatbot Development", "Adaptive AI Systems"],
+        subServices: [
+          { label: "AI Consulting", href: "/services/ai-solutions/ai-consulting" },
+          { label: "AI Agent Development", href: "/services/ai-solutions/ai-agent-development" },
+          { label: "AI Chatbot Development", href: "/services/ai-solutions/ai-chatbot-development" },
+          { label: "Adaptive AI Systems", href: "/services/ai-solutions/adaptive-ai-systems" },
+        ],
+      },
+      {
+        title: "Cloud Solutions",
+        icon: CloudCog,
+        href: "/services/cloud-solutions",
+        subServices: [
+          { label: "Cloud Migration", href: "/services/cloud-solutions/cloud-migration" },
+          { label: "Infrastructure as Code (IaC)", href: "/services/cloud-solutions/iac" },
+          { label: "CI/CD Pipelines", href: "/services/cloud-solutions/cicd-pipelines" },
+          { label: "Containerization & Orchestration", href: "/services/cloud-solutions/containerization-orchestration" },
+        ]
+      },
+      {
+        title: "DevOps & CI/CD",
+        icon: GitMerge,
+        href: "/services/devops-cicd",
+        subServices: [
+          { label: "CI/CD Pipeline Setup", href: "/services/devops-cicd/cicd-pipeline-setup" },
+          { label: "Containerization (Docker, Kubernetes)", href: "/services/devops-cicd/containerization" },
+          { label: "Infrastructure Automation", href: "/services/devops-cicd/infrastructure-automation" },
+          { label: "Monitoring & Logging", href: "/services/devops-cicd/monitoring-logging" },
+        ],
       },
       {
         title: "Blockchain Development",
         icon: Blocks,
         href: "/services/blockchain-development",
-        subServices: ["ICO Development", "Smart Contract Development", "Wallet Development", "NFT Development"],
+        subServices: [
+          { label: "ICO Development", href: "/services/blockchain-development/ico-development" },
+          { label: "Smart Contract Development", href: "/services/blockchain-development/smart-contract-development" },
+          { label: "Wallet Development", href: "/services/blockchain-development/wallet-development" },
+          { label: "NFT Development", href: "/services/blockchain-development/nft-development" },
+        ],
       },
       {
-        title: "Cloud & DevOps Services",
-        icon: CloudCog,
-        href: "/services/devops-cicd", // Corrected link
-        subServices: ["Cloud Migration", "Infrastructure as Code (IaC)", "CI/CD Pipelines", "Containerization & Orchestration"],
-      },
-      {
-        title: "Tech Consultancy",
-        icon: Users,
-        href: "/company/consulting",
-        subServices: ["Digital Transformation Strategy", "Technology Stack Advisory", "IT Architecture Planning", "Cybersecurity Consulting"],
+        title: "IT Consulting",
+        icon: Lightbulb,
+        href: "/services/it-consulting",
+        subServices: [
+          { label: "Digital Transformation Strategy", href: "/services/it-consulting/digital-transformation" },
+          { label: "Technology Stack Advisory", href: "/services/it-consulting/tech-stack-advisory" },
+          { label: "IT Architecture Planning", href: "/services/it-consulting/it-architecture-planning" },
+          { label: "Cybersecurity Consulting", href: "/services/it-consulting/cybersecurity-consulting" },
+        ],
       },
     ],
   },
@@ -136,248 +179,205 @@ const navLinks: NavLink[] = [
     href: "/products",
     label: "Products",
     desktopServiceCategories: [
-      {
-        title: "AIChatBotPro",
-        icon: Bot,
-        href: "/products/aichatbotpro",
-        subServices: [
-          "Natural Language Understanding",
-          "Multi-Platform Integration",
-          "24/7 Customer Support",
-          "Lead Generation Tools",
-        ],
-      },
-      {
-        title: "AI Voice Caller",
-        icon: PhoneCall,
-        href: "/products/aivoicecaller",
-        subServices: [
-          "Intelligent Outbound Campaigns",
-          "Conversational IVR",
-          "Real-time Voice Analytics",
-          "CRM Integration",
-        ],
-      },
-      {
-        title: "CRM",
-        icon: Users,
-        href: "/products/crm",
-        subServices: [
-          "Omni-channel Single Sign-On",
-          "Sales & Lead Management",
-          "Task Automation & Triggers",
-          "Detailed Reporting Modules",
-        ],
-      },
-      {
-        title: "DialerIndia",
-        icon: PhoneCall,
-        href: "/products/dialer-india",
-        subServices: [
-          "Automated & Predictive Dialing",
-          "Call Recording & Monitoring",
-          "Real-time Call Analytics",
-          "Lead Management System",
-        ],
-      },
+      { title: "CRM Master", icon: Users, href: "/products/crm", description: "A comprehensive CRM solution for lead, sales, and task management." },
+      { title: "DialerIndia", icon: PhoneCall, href: "/products/dialer-india", description: "Advanced dialing solutions with call recording and analytics." },
+      { icon: MessageCircle, href: "/products/aichatbotpro", title: "WhatsApp AI Chatbot", description: "Automate customer interactions with our intelligent AI chatbot." },
+      { icon: PhoneCall, href: "/products/aivoicecaller", title: "AI Voice Caller", description: "Transform voice communications with our AI Voice Caller." },
     ],
   },
   {
     href: "/company",
     label: "Company",
     desktopServiceCategories: [
-      { title: "About Us", icon: Building, href: "/about", subServices: ["Our mission & vision", "Company journey", "Core values"] },
-      { title: "Pricing", icon: DollarSign, href: "/company/pricing", subServices: ["Flexible plans", "Transparent costs", "Custom quotes"] },
-      { title: "Consulting", icon: Award, href: "/company/consulting", subServices: ["Expert advice", "Strategic guidance", "Industry insights"] },
-      { title: "Contact Us", icon: Mail, href: "/contact", subServices: ["Get in touch", "Support channels", "Office locations"] },
-      { title: "Careers", icon: Briefcase, href: "/company/careers", subServices: ["Join our team", "Open positions", "Company culture"] },
-      { title: "Our Team", icon: Users, href: "/company/team", subServices: ["Meet the experts", "Leadership profiles", "Our innovators"] },
-      { title: "Why Choose Us", icon: Sparkles, href: "/company/why-choose-us", subServices: ["Our differentiators", "Client success stories", "Commitment to quality"] },
-      { title: "Partners & Affiliations", icon: Handshake, href: "/company/partners", subServices: ["Strategic alliances", "Technology partners", "Industry memberships"] },
+      { title: "About Us", icon: Building, href: "/about", description: "Learn about our journey, mission, and values." },
+      { title: "Pricing", icon: DollarSign, href: "/company/pricing", description: "Explore flexible plans and transparent costs." },
+      { title: "Consulting", icon: Award, href: "/company/consulting", description: "Get expert advice and strategic guidance." },
+      { title: "Contact Us", icon: Mail, href: "/contact", description: "Reach out for inquiries or support." },
+      { title: "Careers", icon: Briefcase, href: "/company/careers", description: "Discover opportunities to join our team." },
+      { title: "Our Team", icon: Users, href: "/company/team", description: "Meet the dedicated professionals behind Avyukta." },
+      { title: "Why Choose Us", icon: Sparkles, href: "/company/why-choose-us", description: "Understand our differentiators and client success." },
+      { title: "Partners & Affiliations", icon: Handshake, href: "/company/partners", description: "Explore our strategic alliances and partners." },
     ],
   },
   {
     href: "/resources",
     label: "Resources",
     desktopServiceCategories: [
-      { title: "Blog", icon: Newspaper, href: "/blog", subServices: ["Latest articles", "Industry insights", "Tech trends"] },
-      { title: "Case Studies", icon: FileText, href: "/resources/case-studies", subServices: ["Success stories", "Real-world impact", "Client projects"] },
-      { title: "Whitepapers & Reports", icon: ScrollText, href: "/resources/whitepapers-reports", subServices: ["In-depth research", "Expert analysis", "Market reports"] },
-      { title: "News & Announcements", icon: Megaphone, href: "/resources/news-announcements", subServices: ["Company updates", "Press releases", "Product launches"] },
-      { title: "Webinars & Events", icon: CalendarClock, href: "/resources/webinars-events", subServices: ["Online sessions", "Upcoming conferences", "Event recordings"] },
-      { title: "Download Brochures", icon: DownloadCloud, href: "/resources/brochures", subServices: ["Service details", "Company profiles", "Product sheets"] },
-      { title: "Help Center / FAQs", icon: HelpCircle, href: "/faq", subServices: ["Common questions", "Support articles", "Troubleshooting"] },
-      { title: "Tutorials & How-tos", icon: BookOpen, href: "/resources/tutorials", subServices: ["Step-by-step guides", "Product tips", "Developer resources"] },
-      { title: "Newsletter Signup", icon: Mail, href: "/resources/newsletter", subServices: ["Stay informed", "Exclusive content", "Updates"] },
+      { title: "Blog", icon: Newspaper, href: "/blog", description: "Read our latest articles and industry insights." },
+      { title: "Case Studies", icon: FileText, href: "/resources/case-studies", description: "View real-world success stories and project impacts." },
+      { title: "Whitepapers & Reports", icon: ScrollText, href: "/resources/whitepapers-reports", description: "Access in-depth research and expert analysis." },
+      { title: "News & Announcements", icon: Megaphone, href: "/resources/news-announcements", description: "Stay updated with company news and press releases." },
+      { title: "Webinars & Events", icon: CalendarClock, href: "/resources/webinars-events", description: "Join our online sessions and discover upcoming events." },
+      { title: "Download Brochures", icon: DownloadCloud, href: "/resources/brochures", description: "Download service details and company profiles." },
+      { title: "Help Center / FAQs", icon: HelpCircle, href: "/faq", description: "Find answers to common questions and support articles." },
+      { title: "Tutorials & How-tos", icon: BookOpen, href: "/resources/tutorials", description: "Explore step-by-step guides and product tips." },
+      { title: "Newsletter Signup", icon: Mail, href: "/resources/newsletter", description: "Subscribe for exclusive content and updates." },
     ],
   },
 ];
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [activeServiceCategory, setActiveServiceCategory] = React.useState<NavServiceCategory | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/50">
       <div className="container-max flex h-16 items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-4 lg:space-x-6">
-          {navLinks.map((link) =>
-            (link.desktopServiceCategories) ? ( 
-              <DropdownMenu key={link.label}>
-                <DropdownMenuTrigger asChild>
-                  <Button
-                    variant="ghost"
-                    className="text-sm font-medium text-foreground/80 hover:text-primary focus-visible:text-primary focus-visible:ring-0 focus-visible:ring-offset-0 data-[state=open]:text-primary px-1 transition-colors"
-                  >
-                    {link.label}
-                    <ChevronDown className="ml-1 h-4 w-4 opacity-70" />
-                  </Button>
-                </DropdownMenuTrigger>
-                <DropdownMenuContent
-                  className={
-                    link.label === "Services"
-                      ? "md:w-auto md:min-w-[60rem] lg:min-w-[70rem] xl:min-w-[80rem] p-0"
-                      : link.label === "Products"
-                        ? "md:w-auto md:min-w-[45rem] p-6" 
-                        : link.label === "Company"
-                          ? "md:w-auto md:min-w-[40rem] p-6" 
-                          : link.label === "Resources"
-                            ? "md:w-auto md:min-w-[60rem] p-6" 
-                            : "w-60 p-1" 
+
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center space-x-6">
+          {navLinks.map((link) => (
+            <React.Fragment key={link.href}>
+              {link.desktopServiceCategories && link.desktopServiceCategories.length > 0 ? (
+                <DropdownMenu onOpenChange={(open) => {
+                  if (!open) {
+                    setActiveServiceCategory(null);
                   }
-                  align="start"
-                >
-                  {link.desktopServiceCategories && (
-                    link.label === "Services" ? (
-                      <ScrollArea className="max-h-[70vh]"> {/* Padding removed from ScrollArea */}
-                        <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-x-8 gap-y-6 p-6`}> {/* Padding added to inner div */}
-                          {link.desktopServiceCategories.map((category) => (
-                            <div key={category.title} className="flex flex-col space-y-2">
-                              <Link href={category.href} className="group inline-flex items-center space-x-2">
-                                <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
-                                <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
-                              </Link>
-                              {category.subServices && category.subServices.length > 0 && (
-                                <ul className="space-y-1.5">
-                                  {category.subServices.slice(0, 3).map((subService) => ( 
-                                    <li key={subService}>
-                                      <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
-                                        {subService}
-                                      </span>
-                                    </li>
-                                  ))}
-                                </ul>
-                              )}
-                              <Link href={category.href} className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
-                                Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                              </Link>
+                }}>
+                  <DropdownMenuTrigger asChild>
+                    <Button variant="ghost" className="flex items-center space-x-1">
+                      {link.label}
+                      <ChevronDown className="h-4 w-4 transition-transform duration-200 group-data-[state=open]:rotate-180" />
+                    </Button>
+                  </DropdownMenuTrigger>
+                  <DropdownMenuContent
+                    className="w-full md:w-[700px] p-4 bg-card/80 backdrop-blur rounded-lg shadow-xl border border-primary/20 flex flex-col md:flex-row"
+                    onMouseLeave={() => setActiveServiceCategory(null)}
+                  >
+                    {/* Left Pane: Main Service Categories */}
+                    <div className="flex flex-col w-full md:w-1/2 pr-4 overflow-y-auto max-h-[300px] border-r border-border/50">
+                      {link.desktopServiceCategories.map((category) => (
+                        <DropdownMenuItem
+                          key={category.href}
+                          onMouseEnter={() => setActiveServiceCategory(category)}
+                          className={cn(
+                            "flex items-center space-x-3 p-2 cursor-pointer rounded-md transition-colors",
+                            activeServiceCategory?.href === category.href ? "bg-accent/10" : "hover:bg-accent/5"
+                          )}
+                        >
+                          <Link href={category.href} passHref className="flex items-center space-x-3 w-full">
+                            {category.icon && <category.icon className="h-5 w-5 text-accent flex-shrink-0" />}
+                            <span className="font-medium text-foreground">{category.title}</span>
+                          </Link>
+                        </DropdownMenuItem>
+                      ))}
+                    </div>
+
+                    {/* Right Pane: Sub-Services */}
+                    <div className="flex flex-col w-full md:w-1/2 pl-4 pt-4 md:pt-0 overflow-y-auto max-h-[300px]">
+                      {activeServiceCategory ? (
+                        <React.Fragment>
+                          <h4 className="font-semibold text-primary mb-2">
+                            {activeServiceCategory.title} Sub-services
+                          </h4>
+                          {activeServiceCategory.subServices && activeServiceCategory.subServices.length > 0 ? (
+                            <div className="space-y-1">
+                              {activeServiceCategory.subServices.map((subService) => (
+                                <DropdownMenuItem asChild key={subService.href}>
+                                  <Link href={subService.href} className="text-sm text-muted-foreground cursor-pointer hover:text-primary transition-colors p-1">
+                                    {subService.label}
+                                  </Link>
+                                </DropdownMenuItem>
+                              ))}
                             </div>
-                          ))}
-                        </div>
-                      </ScrollArea>
-                    ) : (
-                      <div className={`grid grid-cols-1 ${
-                        link.label === 'Products' ? 'md:grid-cols-2'
-                        : link.label === 'Company' ? 'md:grid-cols-2'
-                        : link.label === 'Resources' ? 'md:grid-cols-3'
-                        : 'md:grid-cols-1'
-                      } gap-x-8 gap-y-6`}>
-                        {link.desktopServiceCategories.map((category) => (
-                          <div key={category.title} className="flex flex-col space-y-2">
-                            <Link href={category.href} className="group inline-flex items-center space-x-2">
-                              <category.icon className="h-5 w-5 text-accent group-hover:text-accent/80 transition-colors" />
-                              <h3 className="text-md font-semibold text-accent group-hover:text-accent/80 transition-colors">{category.title}</h3>
-                            </Link>
-                            {category.subServices && category.subServices.length > 0 && (
-                              <ul className="space-y-1.5">
-                                {category.subServices.slice(0, 3).map((subService) => (
-                                  <li key={subService}>
-                                    <span className="text-sm text-popover-foreground/80 hover:text-popover-foreground cursor-default">
-                                      {subService}
-                                    </span>
-                                  </li>
-                                ))}
-                              </ul>
-                            )}
-                            <Link href={category.href} className="inline-flex items-center text-sm text-accent hover:text-accent/80 transition-colors mt-2">
-                              Learn More <ArrowRight className="ml-1 h-4 w-4" />
-                            </Link>
-                          </div>
-                        ))}
-                      </div>
-                    )
-                  )}
-                  {link.desktopSubLinks && !link.desktopServiceCategories && (
-                    link.desktopSubLinks.map((subLink) => (
-                      <DropdownMenuItem key={subLink.href} asChild>
-                        <Link href={subLink.href} className="w-full flex items-center">
-                          {subLink.icon && <subLink.icon className="mr-2 h-4 w-4 opacity-70 flex-shrink-0" />}
-                          {subLink.label}
-                        </Link>
-                      </DropdownMenuItem>
-                    ))
-                  )}
-                </DropdownMenuContent>
-              </DropdownMenu>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="text-sm font-medium text-foreground/80 hover:text-primary focus-visible:text-primary focus-visible:outline-none transition-colors"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+                          ) : (
+                            <p className="text-sm text-muted-foreground">No specific sub-services listed.</p>
+                          )}
+                        </React.Fragment>
+                      ) : (
+                        <p className="text-sm text-muted-foreground italic">Hover over a service category to see its sub-services.</p>
+                      )}
+                    </div>
+                  </DropdownMenuContent>
+                </DropdownMenu>
+              ) : (
+                <Link
+                  href={link.href}
+                  className="font-medium text-foreground hover:text-primary transition-colors"
+                >
+                  {link.label}
+                </Link>
+              )}
+            </React.Fragment>
+          ))}
+          <div className="hidden md:flex items-center ml-auto">
+            <QuoteFormSheet>
+              <Button className="ml-4 bg-accent text-accent-foreground hover:bg-accent/90 flex items-center">
+                <Phone className="h-4 w-4 mr-2" /> Talk to Us
+              </Button>
+            </QuoteFormSheet>
+          </div>
         </nav>
-        <div className="hidden md:flex items-center space-x-2">
-          <ThemeToggle />
-          <QuoteFormSheet>
-            <AnimatedButton className="bg-accent text-accent-foreground hover:bg-accent/90">
-              Talk to Us
-            </AnimatedButton>
-          </QuoteFormSheet>
-        </div>
-        <div className="md:hidden flex items-center space-x-2">
-          <ThemeToggle />
+
+        {/* Mobile Menu */}
+        <div className="md:hidden">
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
-              <Button variant="ghost" size="icon">
+              <Button variant="ghost" size="icon" className="ml-auto">
                 <MoreHorizontal className="h-6 w-6" />
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
-              <div className="flex flex-col space-y-6">
-                <div className="flex justify-between items-center">
-                  <Logo />
-                  <SheetClose asChild>
-                     <Button variant="ghost" size="icon">
-                        <X className="h-6 w-6" />
-                        <span className="sr-only">Close menu</span>
-                      </Button>
-                  </SheetClose>
-                </div>
+            <SheetContent side="right" className="flex flex-col w-[300px] sm:w-[400px]">
+              <SheetHeader className="text-left">
+                <SheetClose asChild>
+                  <Button variant="ghost" size="icon" className="absolute top-4 right-4">
+                    <X className="h-6 w-6" />
+                    <span className="sr-only">Close menu</span>
+                  </Button>
+                </SheetClose>
+                <Logo />
+              </SheetHeader>
+              <ScrollArea className="my-4 h-[calc(100vh-8rem)] pb-10">
                 <nav className="flex flex-col space-y-4">
                   {navLinks.map((link) => (
-                     <React.Fragment key={link.href}>
-                      <SheetClose asChild>
-                        <Link
-                          href={link.href}
-                          className="text-base font-medium text-foreground/80 hover:text-foreground transition-colors"
-                        >
+                    <div key={link.href}>
+                      {link.desktopServiceCategories ? (
+                        <>
+                          <Button variant="ghost" className="w-full justify-start text-lg px-0 py-2">
+                            {link.label}
+                          </Button>
+                          <div className="ml-4 flex flex-col space-y-2">
+                            {link.desktopServiceCategories.map((category) => (
+                              <div key={category.href}>
+                                <Link href={category.href} onClick={() => setIsMobileMenuOpen(false)} className="block py-1 text-base font-medium text-foreground hover:text-primary transition-colors">
+                                  {category.title}
+                                </Link>
+                                {category.subServices && category.subServices.length > 0 && (
+                                  <div className="ml-4 flex flex-col space-y-1">
+                                    {category.subServices.map((subService) => (
+                                      <Link key={subService.href} href={subService.href} onClick={() => setIsMobileMenuOpen(false)} className="block text-sm text-muted-foreground hover:text-primary transition-colors">
+                                        {subService.label}
+                                      </Link>
+                                    ))}
+                                  </div>
+                                )}
+                              </div>
+                            ))}
+                          </div>
+                        </>
+                      ) : (
+                        <Link href={link.href} onClick={() => setIsMobileMenuOpen(false)} className="block py-2 text-lg font-medium text-foreground hover:text-primary transition-colors">
                           {link.label}
                         </Link>
-                      </SheetClose>
-                    </React.Fragment>
+                      )}
+                    </div>
                   ))}
+                  <div className="pt-4 space-y-4">
+                    <QuoteFormSheet>
+                      <Button variant="outline" className="w-full">
+                        Schedule a Demo
+                      </Button>
+                    </QuoteFormSheet>
+                    <QuoteFormSheet>
+                      <Button className="w-full flex items-center justify-center p-2 rounded-md hover:bg-muted transition-colors">
+                        <Phone className="h-5 w-5 mr-2" /> Talk to Us
+                      </Button>
+                    </QuoteFormSheet>
+                  </div>
                 </nav>
-                <QuoteFormSheet>
-                  <AnimatedButton className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
-                    Talk to Us
-                  </AnimatedButton>
-                </QuoteFormSheet>
-              </div>
+              </ScrollArea>
             </SheetContent>
           </Sheet>
         </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -76,7 +75,7 @@ export default function ConsultingPage() {
               Expert Consulting to Elevate Your Business
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Partner with Voxaiomni to navigate complexity, unlock opportunities, and achieve strategic excellence.
+              Partner with Avyukta to navigate complexity, unlock opportunities, and achieve strategic excellence.
             </p>
           </div>
         </section>
@@ -133,11 +132,11 @@ export default function ConsultingPage() {
           </div>
         </section>
 
-        {/* Why Partner with Voxaiomni Consulting? */}
+        {/* Why Partner with Avyukta Consulting? */}
         <section className="section-padding">
           <div className="container-max">
             <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Why Partner with Voxaiomni Consulting?
+              Why Partner with Avyukta Consulting?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {whyChooseUsPoints.map((point, index) => (
@@ -167,7 +166,7 @@ export default function ConsultingPage() {
             <div className="animate-fade-in-right animation-delay-100">
               <h3 className="text-2xl font-semibold text-primary mb-4">Client Success Spotlight</h3>
               <blockquote className="border-l-4 border-primary pl-4 italic text-muted-foreground mb-4">
-                "Voxaiomni's consulting team provided invaluable insights that transformed our approach to AI. Their strategic guidance led to a 30% increase in operational efficiency within six months."
+                "Avyukta's consulting team provided invaluable insights that transformed our approach to AI. Their strategic guidance led to a 30% increase in operational efficiency within six months."
               </blockquote>
               <p className="font-semibold text-primary">- Alex Chen, CTO at FutureForward Corp</p>
             </div>

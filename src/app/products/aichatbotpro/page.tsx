@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -8,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { Bot, MessageSquare, Zap, Users, CheckCircle, BarChartHorizontalBig, Settings, ArrowRight } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const features = [
   {
@@ -17,7 +17,7 @@ const features = [
   },
   {
     title: "Multi-Platform Seamless Integration",
-    description: "Deploy AIChatBotPro across your website, mobile apps, WhatsApp, Facebook Messenger, and other key customer touchpoints.",
+    description: "Deploy WhatsApp Ai Chat Bot across your website, mobile apps, WhatsApp, Facebook Messenger, and other key customer touchpoints.",
     icon: Zap,
   },
   {
@@ -59,7 +59,7 @@ const useCases = [
 ];
 
 
-export default function AIChatBotProPage() {
+export default function WhatsAppAiChatBotPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -68,38 +68,39 @@ export default function AIChatBotProPage() {
         <section className="section-padding bg-primary text-primary-foreground">
           <div className="container-max text-center">
             <Bot className="h-20 w-20 text-accent mx-auto mb-6 animate-fade-in-up" />
-            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              AIChatBotPro: Revolutionize Your Customer Engagement
+            <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100 text-title-glow-primary">
+              WhatsApp Ai Chat Bot: Revolutionize Your Customer Engagement
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               Intelligent, 24/7 AI-powered chatbots to elevate customer support, drive sales, streamline operations, and deliver exceptional user experiences.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=AIChatBotPro_Demo">Request a Demo</Link>
-            </Button>
+            <ScheduleDemoSheet>
+              <Button size="lg" variant="neon" className="animate-fade-in-up animation-delay-300">
+                Request a Demo
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
 
-        {/* What is AIChatBotPro? Section */}
+        {/* What is WhatsApp Ai Chat Bot? Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
-                src="https://placehold.co/600x450.png"
-                alt="AIChatBotPro Interface"
-                width={600}
-                height={450}
-                className="rounded-lg shadow-xl"
+                src="/images/WhatsAppaiomni.jpg"
+                alt="WhatsApp Ai Chat Bot Interface"
+                fill
+                className="rounded-lg shadow-xl object-cover"
                 data-ai-hint="chatbot interface conversation"
               />
             </div>
             <div className="animate-fade-in-right animation-delay-100">
-              <h2 className="text-3xl font-bold text-primary mb-6">Meet AIChatBotPro</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6 text-title-glow-primary">Meet WhatsApp Ai Chat Bot</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                AIChatBotPro is more than just a chatbot; it's your AI-powered customer engagement specialist. Designed to understand and respond to your customers' needs with human-like precision, it automates interactions, provides instant support, and helps you build stronger customer relationships, all while reducing operational overhead.
+                WhatsApp Ai Chat Bot is more than just a chatbot; it's your AI-powered customer engagement specialist. Designed to understand and respond to your customers' needs with human-like precision, it automates interactions, provides instant support, and helps you build stronger customer relationships, all while reducing operational overhead.
               </p>
               <p className="text-muted-foreground text-lg">
-                Whether you're looking to boost sales, improve customer service, or gather valuable feedback, AIChatBotPro offers a versatile and powerful solution.
+                Whether you're looking to boost sales, improve customer service, or gather valuable feedback, WhatsApp Ai Chat Bot offers a versatile and powerful solution.
               </p>
             </div>
           </div>
@@ -108,8 +109,8 @@ export default function AIChatBotProPage() {
         {/* Key Features Section */}
         <section className="section-padding bg-secondary">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Core Features of AIChatBotPro
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up text-title-glow-primary">
+              Core Features of WhatsApp Ai Chat Bot
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {features.map((feature, index) => (
@@ -132,7 +133,7 @@ export default function AIChatBotProPage() {
         {/* Benefits Section */}
         <section className="section-padding">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up text-title-glow-primary">
               Unlock Tangible Business Benefits
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -149,26 +150,26 @@ export default function AIChatBotProPage() {
         {/* Use Cases Section */}
         <section className="section-padding bg-secondary">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up text-title-glow-primary">
               Versatile Applications Across Industries
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
               {useCases.map((useCase, index) => (
                 <Card key={useCase.name} className={`flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                   <div className="relative h-48 w-full">
+                  <div className="relative h-48 w-full">
                     <Image
                         src={useCase.image}
                         alt={useCase.name}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
                         data-ai-hint={useCase.aiHint}
                     />
                     </div>
                   <CardHeader>
-                    <CardTitle className="text-lg text-primary">{useCase.name}</CardTitle>
+                    <CardTitle className="text-xl text-primary">{useCase.name}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="text-sm text-muted-foreground">{useCase.description}</p>
+                    <CardDescription>{useCase.description}</CardDescription>
                   </CardContent>
                 </Card>
               ))}
@@ -179,14 +180,14 @@ export default function AIChatBotProPage() {
         {/* CTA Section */}
         <section className="section-padding bg-primary">
           <div className="container-max text-center">
-            <h2 className="text-3xl font-bold text-primary-foreground mb-6 animate-fade-in-up">
+            <h2 className="text-3xl font-bold text-primary-foreground mb-6 animate-fade-in-up text-title-glow-primary">
               Ready to Transform Your Customer Interactions?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Discover how AIChatBotPro can empower your business. Schedule a personalized demo with our experts today.
+              Discover how WhatsApp Ai Chat Bot can empower your business. Schedule a personalized demo with our experts today.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=AIChatBotPro_Inquiry&product=AIChatBotPro">Get Started with AIChatBotPro</Link>
+            <Button asChild size="lg" variant="neon" className="animate-fade-in-up animation-delay-300">
+              <Link href="/contact?subject=WhatsApp_Ai_Chat_Bot_Inquiry&product=WhatsApp_Ai_Chat_Bot">Get Started with WhatsApp Ai Chat Bot</Link>
             </Button>
           </div>
         </section>

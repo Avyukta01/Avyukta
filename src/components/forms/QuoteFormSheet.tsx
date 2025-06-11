@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -57,10 +56,12 @@ const quoteFormSchema = z.object({
   email: z.string().email({
     message: "Please enter a valid email address.",
   }),
-  companyName: z.string().optional(),
-  phoneNumber: z.string().refine((val) => !val || /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/.test(val), {
+  companyName: z.string().min(1, {
+    message: "Company name is required.",
+  }),
+  phoneNumber: z.string().refine((val) => /^[+]?[(]?[0-9]{3}[)]?[-\s.]?[0-9]{3}[-\s.]?[0-9]{4,6}$/.test(val), {
     message: "Please enter a valid phone number.",
-  }).optional(),
+  }),
   interestedService: z.string({
     required_error: "Please select a service.",
   }),
@@ -84,18 +85,18 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
     defaultValues: {
-      fullName: "Avyukta",
-      email: "dineshbaghel6251@gmail.com",
+      fullName: "",
+      email: "",
       companyName: "",
-      phoneNumber: "+91 9588922752",
-      interestedService: undefined,
+      phoneNumber: "",
+      interestedService: "",
       projectDetails: "",
     },
   });
 
-  async function onSubmit(data: QuoteFormValues) {
+  const onSubmit = async (data: QuoteFormValues) => {
     try {
-      const response = await fetch('/api/send-quote-request', {
+      const response = await fetch('/api/send-quote', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -109,53 +110,32 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
         throw new Error(result.message || 'Failed to submit quote request.');
       }
 
-      if (result.previewUrl) { 
-        toast({
-          title: "Test Email Processed (Ethereal)!",
-          description: (
-            React.createElement('div', null,
-              React.createElement('p', null, "Your quote request was processed using a local test service."),
-              React.createElement('p', {className: "font-semibold mt-2"}, "Please check your server console (the terminal where 'npm run dev' is running) for the Ethereal preview URL to view the email content."),
-              React.createElement('p', {className: "mt-1 text-xs"}, "No actual email was delivered to an inbox.")
-            )
-          ),
-          variant: "default",
-          duration: 10000, 
-        });
-      } else {
-        toast({
-          title: "Quote Request Submitted!",
-          description: result.message || "Thank you! We've received your request and will be in touch soon.",
-          variant: "default",
-        });
-      }
-      form.reset();
-      setIsOpen(false); 
-    } catch (error) {
-      let errorMessage = "Could not submit your quote request. Please try again later.";
-      if (error instanceof Error) {
-        errorMessage = error.message;
-      }
       toast({
-        title: "Submission Failed",
-        description: errorMessage,
-        variant: "destructive",
+        title: 'Success',
+        description: 'Your quote request has been sent successfully.',
       });
-      console.error("Error submitting quote form:", error);
+      form.reset();
+      setIsOpen(false);
+    } catch (error) {
+      toast({
+        title: 'Error',
+        description: 'Failed to send quote request. Please try again.',
+        variant: 'destructive',
+      });
     }
-  }
+  };
 
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>{children}</SheetTrigger>
-      <SheetContent className="sm:max-w-lg w-full p-0 flex flex-col">
-        <SheetHeader className="p-6 pb-4 text-left">
+      <SheetContent className="sm:max-w-lg w-full p-0 flex flex-col bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg overflow-visible">
+        <SheetHeader className="p-6 pb-4 text-left flex-shrink-0">
           <SheetTitle className="text-2xl text-primary">Request a Quote</SheetTitle>
           <SheetDescription>
-            Tell us about your project, and we'll get back to you with a personalized quote.
+            Tell us about your project, and we\'ll get back to you with a personalized quote.
           </SheetDescription>
         </SheetHeader>
-        <ScrollArea className="flex-grow">
+        <ScrollArea className="flex-grow max-h-[calc(100vh - 150px)]">
           <div className="p-6 pt-0">
             <Form {...form}>
               <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
@@ -166,7 +146,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Full Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Avyukta" {...field} />
+                        <Input placeholder="Enter your full name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -179,7 +159,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="e.g., dineshbaghel6251@gmail.com" {...field} />
+                        <Input type="email" placeholder="Enter your email address" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -190,9 +170,9 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                   name="companyName"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Company Name (Optional)</FormLabel>
+                      <FormLabel>Company Name</FormLabel>
                       <FormControl>
-                        <Input placeholder="e.g., Voxaiomni Solutions" {...field} />
+                        <Input placeholder="Enter your company name" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -203,9 +183,9 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                   name="phoneNumber"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel>Phone Number (Optional)</FormLabel>
+                      <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="e.g., +91 9588922752" {...field} />
+                        <Input type="tel" placeholder="e.g., +1 123 456 7890" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -223,7 +203,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent>
+                        <SelectContent className="z-[9999]">
                           {servicesList.map((service) => (
                             <SelectItem key={service.id} value={service.id}>
                               {service.label}
@@ -255,7 +235,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     </FormItem>
                   )}
                 />
-                <SheetFooter className="pt-6 flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 sticky bottom-0 bg-background pb-6 z-10">
+                <SheetFooter className="pt-6 flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2 sticky bottom-0 bg-background pb-6 z-10 flex-shrink-0">
                   <SheetClose asChild>
                     <Button type="button" variant="outline">Cancel</Button>
                   </SheetClose>
@@ -270,4 +250,4 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
       </SheetContent>
     </Sheet>
   );
-}
+} 

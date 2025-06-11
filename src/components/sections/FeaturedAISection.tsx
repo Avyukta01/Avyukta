@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Card, CardHeader, CardTitle, CardDescription, CardContent, CardFooter } from "@/components/ui/card";
@@ -9,10 +8,10 @@ import Link from "next/link"; // Added Link
 
 const aiInnovations = [
   {
-    title: "AIChatBotPro",
+    title: "WhatsApp Ai Chat Bot",
     icon: Bot,
     description: "Elevate customer interactions and automate support with our intelligent, 24/7 AI-powered chatbot solution.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/WhatsAppaiomni.jpg",
     imageHint: "ai chatbot interface",
     features: [
       "Natural Language Understanding (NLU)", 
@@ -61,8 +60,8 @@ const FeaturedAISection = () => {
                 <Image
                   src={item.image}
                   alt={item.title}
-                  layout="fill"
-                  objectFit="cover"
+                  fill
+                  className="object-cover"
                   data-ai-hint={item.imageHint}
                 />
               </div>

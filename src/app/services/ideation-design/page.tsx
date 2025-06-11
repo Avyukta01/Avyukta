@@ -62,7 +62,7 @@ export default function IdeationDesignPage() {
             <div className="animate-fade-in-left">
               <h2 className="text-3xl font-bold text-primary mb-6">Our Design Philosophy</h2>
               <p className="text-muted-foreground mb-4">
-                At Voxaiomni, we believe that great design is born from a deep understanding of user needs and business objectives. Our philosophy centers on empathy, collaboration, and iteration. We strive to create digital experiences that are not only aesthetically pleasing but also intuitive, accessible, and effective in solving real-world problems.
+                At Avyukta, we believe that great design is born from a deep understanding of user needs and business objectives. Our philosophy centers on empathy, collaboration, and iteration. We strive to create digital experiences that are not only aesthetically pleasing but also intuitive, accessible, and effective in solving real-world problems.
               </p>
               <p className="text-muted-foreground">
                 We champion a human-centered approach, ensuring that every design decision is validated by user insights and contributes to a seamless and delightful user journey.

@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -15,59 +14,59 @@ import Link from "next/link";
 const dialerFeatures = [
   {
     title: "Comprehensive Call Handling",
-    description: "Supports Inbound, Outbound, and Blended call flows with agent-controlled, broadcast, and predictive dialing modes.",
+    description: "Experience ultimate flexibility with support for Inbound, Outbound, and Blended call flows. Utilize agent-controlled, broadcast, and highly efficient predictive dialing modes to optimize every customer interaction and campaign performance.",
     icon: PhoneCall,
     secondaryIcon: GitMerge,
   },
   {
     title: "Compliance & Call Recording",
-    description: "Full USA, UK, and Canada call compliance, with integrated call recording and three-way calling capabilities.",
+    description: "Ensure full compliance with stringent USA, UK, and Canada call regulations. Our platform offers integrated, high-quality call recording for quality assurance and dispute resolution, alongside seamless three-way calling capabilities.",
     icon: ShieldCheck,
     secondaryIcon: Mic,
   },
   {
     title: "Advanced Dialing Features",
-    description: "Includes Scheduled Call-backs (Agent-Only/Anyone), IVRs, Voicemail boxes, and Answering Machine Detection (FTC compliant).",
+    description: "Boost agent efficiency and call center performance with features like Scheduled Call-backs (Agent-Only/Anyone options), customizable IVRs (Interactive Voice Responses), dedicated Voicemail boxes, and FTC-compliant Answering Machine Detection.",
     icon: Clock,
     secondaryIcon: Settings,
   },
   {
     title: "Reporting & Analytics",
-    description: "Comprehensive reports, detailed Call Detail Records (CDRs), and 20+ custom reports including Pie/Bar graph-based analytics.",
+    description: "Gain deep, actionable insights into your call center operations with comprehensive reports. Access detailed Call Detail Records (CDRs) and leverage over 20 customizable reports, including intuitive Pie/Bar graph-based analytics for quick data visualization and decision-making.",
     icon: BarChartHorizontalBig,
     secondaryIcon: FilePieChart,
   },
   {
     title: "Scalability & User Management",
-    description: "Fully on-demand service, multi-tenant, multi-user, and scalable to hundreds of seats.",
+    description: "Our fully on-demand service is designed for ultimate scalability, supporting multi-tenant and multi-user environments. Easily scale your operations from a few agents to hundreds of seats, ensuring consistent performance even during peak call volumes.",
     icon: Users,
     secondaryIcon: TrendingUp,
   },
   {
     title: "Agent Efficiency Tools",
-    description: "HotKeys for faster call disposition, definable agent wrap-up times, custom call dispositions, and remote agent login.",
+    description: "Empower your agents with tools designed for maximum efficiency. Utilize customizable HotKeys for faster call disposition, define optimal agent wrap-up times, create custom call dispositions, and enable secure remote agent login for flexible work environments.",
     icon: Keyboard,
     secondaryIcon: Zap,
   },
   {
     title: "Campaign & Lead Management",
-    description: "Manage multiple campaigns and lead-lists, recycle specified status calls, and apply custom TimeZone restrictions.",
+    description: "Effectively manage multiple outbound and inbound campaigns simultaneously. Organize and segment lead-lists, automate recycling of specified status calls, and apply custom TimeZone restrictions to ensure compliant and effective outreach.",
     icon: ListChecks,
     secondaryIcon: Briefcase,
   },
   {
     title: "CRM & API Integration",
-    description: "Integrate with Zoho, SugarCRM, Salesforce, In-house CRMs, and more via API. Supports SMS/Email OTP verification.",
+    description: "Seamlessly integrate DialerIndia with popular CRMs like Zoho, SugarCRM, Salesforce, and your in-house CRMs via robust API capabilities. Enhance data flow and automate workflows, with added support for SMS/Email OTP verification for secure access.",
     icon: Database,
   },
   {
     title: "Enhanced Call Control",
-    description: "Transfer calls with customer data, park calls with custom music, send dropped calls to voicemail, and manage Caller ID (compliance permitting).",
+    description: "Maintain full control over your calls with advanced features such as transferring calls with complete customer data, parking calls with custom music-on-hold, automatically sending dropped calls to voicemail, and managing Caller ID (where compliance permits).",
     icon: PhoneForwarded,
   },
   {
     title: "ACD & Blended Operations",
-    description: "Function as an ACD for inbound/fronter/closer calls, allowing agents to handle both inbound and outbound calls in one session.",
+    description: "Function as a highly efficient Automatic Call Distributor (ACD) for inbound, fronter, and closer calls. Enable agents to seamlessly handle both inbound and outbound calls within a single session, maximizing productivity and ensuring optimal resource utilization.",
     icon: GitMerge, // Or Users for agent focus
   },
 ];
@@ -126,7 +125,7 @@ export default function DialerIndiaPage() {
             <div className="animate-fade-in-right animation-delay-100">
               <h2 className="text-3xl font-bold text-primary mb-6">Introducing DialerIndia</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                DialerIndia by Voxaiomni is a comprehensive call center software solution engineered to optimize your outbound, inbound, and blended calling operations. It combines powerful dialing capabilities with advanced agent management, CRM integrations, and detailed reporting to drive productivity and enhance customer engagement.
+                DialerIndia by Avyukta is a comprehensive call center software solution engineered to optimize your outbound, inbound, and blended calling operations. It combines powerful dialing capabilities with advanced agent management, CRM integrations, and detailed reporting to drive productivity and enhance customer engagement.
               </p>
               <p className="text-muted-foreground text-lg">
                 Whether you're running telemarketing campaigns, providing customer support, or conducting surveys, DialerIndia offers the flexibility and features to meet your unique business needs.

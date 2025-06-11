@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -49,7 +48,7 @@ export default function NewsletterPage() {
     await new Promise(resolve => setTimeout(resolve, 1000));
     toast({
       title: "Successfully Subscribed!",
-      description: "Thank you for subscribing to the Voxaiomni newsletter.",
+      description: "Thank you for subscribing to the Avyukta newsletter.",
     });
     form.reset();
   }
@@ -66,7 +65,7 @@ export default function NewsletterPage() {
               Subscribe to Our Newsletter
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Get the latest news, product updates, and exclusive insights from Voxaiomni directly to your inbox.
+              Get the latest news, product updates, and exclusive insights from Avyukta directly to your inbox.
             </p>
           </div>
         </section>
@@ -96,7 +95,7 @@ export default function NewsletterPage() {
                             <div className="flex space-x-2">
                               <Input 
                                 type="email" 
-                                placeholder="you@example.com" 
+                                placeholder="sales@dialerindia.com" 
                                 {...field} 
                                 className="flex-grow"
                               />

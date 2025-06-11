@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -50,10 +49,10 @@ export default function WhyChooseUsPage() {
           <div className="container-max">
             <Sparkles className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Why Partner with Voxaiomni?
+              Why Partner with Avyukta?
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Discover the Voxaiomni difference: Where expertise meets innovation to drive your success.
+              Discover the Avyukta difference: Where expertise meets innovation to drive your success.
             </p>
           </div>
         </section>
@@ -96,7 +95,7 @@ export default function WhyChooseUsPage() {
             <div className="animate-fade-in-right">
               <h2 className="text-3xl font-bold text-primary mb-6">Our Commitment to You</h2>
               <p className="text-muted-foreground mb-6">
-                At Voxaiomni, we are dedicated to more than just delivering projects. We build lasting partnerships founded on trust, transparency, and a shared vision for success.
+                At Avyukta, we are dedicated to more than just delivering projects. We build lasting partnerships founded on trust, transparency, and a shared vision for success.
               </p>
               <ul className="space-y-4">
                 {ourCommitmentPoints.map((point) => (
@@ -120,7 +119,7 @@ export default function WhyChooseUsPage() {
             <div className="max-w-2xl mx-auto bg-card p-8 rounded-xl shadow-2xl animate-fade-in-up animation-delay-200">
               <MessageSquareQuote className="h-12 w-12 text-accent mx-auto mb-4" />
               <blockquote className="text-xl italic text-muted-foreground mb-6">
-                "Choosing Voxaiomni was a game-changer for our digital strategy. Their team not only delivered a world-class product but also provided invaluable insights that helped us grow our market share by 25% in just one year."
+                "Choosing Avyukta was a game-changer for our digital strategy. Their team not only delivered a world-class product but also provided invaluable insights that helped us grow our market share by 25% in just one year."
               </blockquote>
               <p className="font-semibold text-primary">- Sarah L., CEO of NextGen Solutions</p>
             </div>
@@ -135,7 +134,7 @@ export default function WhyChooseUsPage() {
               Ready to Elevate Your Business?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Let's discuss how Voxaiomni's expertise can help you achieve your strategic objectives and unlock new opportunities.
+              Let's discuss how Avyukta's expertise can help you achieve your strategic objectives and unlock new opportunities.
             </p>
             <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/contact?source=why-choose-us">Start Your Project With Us</Link>

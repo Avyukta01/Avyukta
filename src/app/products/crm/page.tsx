@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -10,92 +9,93 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const crmFeatures = [
   {
     title: "Omni-channel Single Sign-On with Live Location",
-    description: "Secure and seamless access across platforms with real-time location tracking for field teams.",
+    description: "Experience secure and seamless access across all CRM platforms, enhanced with real-time live location tracking for your field sales and service teams. This ensures accurate attendance, optimized route planning, and enhanced visibility of on-ground operations.",
     icon: LogIn,
     secondaryIcon: MapPin,
   },
   {
     title: "Target Work Stats with Priorities & Escalations",
-    description: "Track monthly targets, prioritize tasks, and manage escalations effectively for optimal performance.",
+    description: "Efficiently track daily, weekly, and monthly sales targets for individual team members and departments. Our system allows you to set task priorities, receive automated escalation alerts for missed deadlines or critical issues, and gain actionable insights into team performance.",
     icon: Target,
     secondaryIcon: AlertTriangle,
   },
   {
     title: "Voice-Based Notifications for All CRM Events",
-    description: "Stay instantly updated with voice alerts for important CRM activities and notifications.",
+    description: "Stay instantly updated with critical CRM activities through intelligent voice notifications. Receive real-time voice alerts for new leads, pending tasks, meeting reminders, sales closures, and important customer interactions, ensuring no critical update is missed.",
     icon: Bell,
     secondaryIcon: Volume2,
   },
   {
     title: "Omni Channelled Unified Communication",
-    description: "Centralize all customer interactions from various channels into one unified platform.",
+    description: "Centralize all your customer interactions across various channels, including email, chat, social media, and calls, into one unified platform. This provides your team with a complete 360-degree view of every customer, enabling personalized and consistent communication.",
     icon: MessageSquare,
     secondaryIcon: GitMerge,
   },
   {
     title: "Sales CRM",
-    description: "Comprehensive tools to manage sales pipelines, track deals, and boost sales team productivity.",
+    description: "Empower your sales team with comprehensive tools to manage the entire sales pipeline, from lead inception to deal closure. Track opportunities, manage quotes, forecast sales, and analyze performance with intuitive dashboards to boost productivity and revenue.",
     icon: DollarSign,
     secondaryIcon: TrendingUp,
   },
   {
     title: "Lead Management",
-    description: "Capture, track, nurture, and qualify leads efficiently to convert them into loyal customers.",
+    description: "Effectively capture, track, nurture, and qualify leads from various sources. Our robust lead management system helps you segment leads, automate follow-ups, assign scores, and ensure that your sales team focuses on the most promising prospects, maximizing conversion rates.",
     icon: Filter,
     secondaryIcon: Users,
   },
   {
     title: "Google Modules and Emails Integrations",
-    description: "Seamlessly integrate with Google Workspace modules and email services for enhanced productivity.",
+    description: "Seamlessly integrate your CRM with Google Workspace modules like Calendar, Drive, and Gmail. Sync contacts, schedule meetings directly from CRM, and manage email communications within the platform, enhancing collaboration and streamlining workflows.",
     icon: Mail,
   },
   {
     title: "Attendance, Leave, Task, Salary, Incentive Management",
-    description: "Manage all HR-related aspects including attendance, leave, tasks, payroll, and incentives in one place.",
+    description: "A complete HR solution integrated within your CRM. Manage employee attendance (with live location), track leave requests, allocate and monitor tasks, process salaries, and calculate incentives all from a single dashboard, simplifying HR operations.",
     icon: Briefcase,
     secondaryIcon: CalendarDays,
   },
   {
     title: "Secure Employee Task Allocation & Management",
-    description: "Assign and manage employee tasks securely, with options for customer details masking to ensure privacy.",
+    description: "Assign and manage employee tasks securely with advanced privacy features, including customer details masking. Ensure sensitive client information is protected while providing teams with clear task assignments, progress tracking, and performance monitoring.",
     icon: ShieldCheck,
     secondaryIcon: EyeOff,
   },
   {
     title: "Custom Client Stages",
-    description: "Define and customize client stages in your sales pipeline to match your unique business processes.",
+    description: "Tailor your sales and customer pipelines by defining and customizing client stages to precisely match your unique business processes. This flexibility allows for a highly personalized customer journey and accurate progress tracking.",
     icon: SlidersHorizontal,
     secondaryIcon: Settings2,
   },
   {
     title: "Auto Triggers for Personal and Complete Logout",
-    description: "Automate actions with triggers, including personal reminders and complete logout for idle users to enhance security.",
+    description: "Automate actions and enhance security with configurable triggers. Set up personal reminders for tasks, meetings, or follow-ups. Implement automatic complete logout for idle users after a defined period, ensuring data security and compliance.",
     icon: Zap,
     secondaryIcon: LogOut,
   },
   {
     title: "Events & Meetings Management",
-    description: "Schedule, manage, and track events and meetings seamlessly within the CRM.",
+    description: "Efficiently schedule, manage, and track all your business events and customer meetings directly within the CRM. Send automated invitations, track RSVPs, manage agendas, and log meeting notes for a complete record of interactions.",
     icon: CalendarPlus,
   },
   {
     title: "Client CRM Login",
-    description: "Provide a dedicated portal for clients to log in, view their information, and interact with your business.",
+    description: "Provide a dedicated, secure portal for your clients to log in. Through this portal, clients can view their project status, access shared documents, submit support tickets, and interact with your team, enhancing transparency and engagement.",
     icon: UserCheck,
   },
   {
     title: "Daily Emails for Logins/Logouts & Task Summaries",
-    description: "Automated daily email reports for user logins, logouts, detailed task summaries, and occupancy rates.",
+    description: "Receive automated daily email reports providing a comprehensive overview of user activity. This includes detailed summaries of logins and logouts, completed and pending tasks, and team occupancy rates, offering quick insights into daily operations.",
     icon: MailCheck,
     secondaryIcon: Activity,
   },
   {
     title: "25+ Detailed Reporting Modules",
-    description: "Access over 25 comprehensive reporting modules for deep insights into sales, performance, and customer data.",
+    description: "Gain deep, actionable insights into your sales, marketing, and customer service performance with over 25 comprehensive reporting modules. Customize reports, visualize data with advanced charts, and identify key trends to make informed business decisions.",
     icon: BarChart3,
     secondaryIcon: PieChart,
   },
@@ -130,24 +130,26 @@ export default function CRMPage() {
           <div className="container-max text-center">
             <Users className="h-20 w-20 text-accent mx-auto mb-6 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Voxaiomni CRM: Unify Your Customer Relationships
+              Avyukta CRM: Unify Your Customer Relationships
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               A comprehensive CRM solution to streamline sales, manage leads, automate tasks, and provide deep insights for unparalleled customer engagement and business growth.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=CRM_Demo_Request">Request a Demo</Link>
-            </Button>
+            <ScheduleDemoSheet>
+              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+                Request a Demo
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
 
-        {/* What is Voxaiomni CRM? Section */}
+        {/* What is Avyukta CRM? Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
                 src="https://placehold.co/600x450.png"
-                alt="Voxaiomni CRM Dashboard"
+                alt="Avyukta CRM Dashboard"
                 width={600}
                 height={450}
                 className="rounded-lg shadow-xl"
@@ -155,9 +157,9 @@ export default function CRMPage() {
               />
             </div>
             <div className="animate-fade-in-right animation-delay-100">
-              <h2 className="text-3xl font-bold text-primary mb-6">Meet Voxaiomni CRM</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6">Meet Avyukta CRM</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                Voxaiomni CRM is an all-in-one Customer Relationship Management platform meticulously engineered to empower your business. It centralizes customer data, automates critical workflows, and provides powerful tools for sales, marketing, and service teams to collaborate effectively and build lasting customer loyalty.
+                Avyukta CRM is an all-in-one Customer Relationship Management platform meticulously engineered to empower your business. It centralizes customer data, automates critical workflows, and provides powerful tools for sales, marketing, and service teams to collaborate effectively and build lasting customer loyalty.
               </p>
               <p className="text-muted-foreground text-lg">
                 From advanced lead management and sales automation to comprehensive reporting and employee productivity tools, our CRM is designed for scalability and customizability to fit your unique operational needs.
@@ -170,7 +172,7 @@ export default function CRMPage() {
         <section className="section-padding bg-secondary">
           <div className="container-max">
             <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Core Features of Voxaiomni CRM
+              Core Features of Avyukta CRM
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {crmFeatures.map((feature, index) => (
@@ -246,10 +248,10 @@ export default function CRMPage() {
               Ready to Revolutionize Your Customer Management?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Discover how Voxaiomni CRM can transform your sales, service, and marketing efforts.
+              Discover how Avyukta CRM can transform your sales, service, and marketing efforts.
             </p>
             <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=CRM_Inquiry&product=VoxaiomniCRM">Contact Our CRM Experts</Link>
+              <Link href="/contact?subject=CRM_Inquiry&product=AvyuktaCRM">Contact Our CRM Experts</Link>
             </Button>
           </div>
         </section>

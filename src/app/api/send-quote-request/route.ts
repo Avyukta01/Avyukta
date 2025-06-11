@@ -1,4 +1,3 @@
-
 import { type NextRequest, NextResponse } from 'next/server';
 import nodemailer from 'nodemailer';
 
@@ -48,7 +47,7 @@ export async function POST(request: NextRequest) {
     console.log(`Attempting to send email via ${envSmtpHost}:${envSmtpPort}`);
 
     const mailOptions = {
-      from: process.env.EMAIL_FROM || `"${fullName} via Voxaiomni Quote" <${envSmtpUser}>`,
+      from: process.env.EMAIL_FROM || `"${fullName} via Avyukta Quote" <${envSmtpUser}>`,
       replyTo: email,
       to: process.env.EMAIL_TO || envSmtpUser, // Target recipient
       subject: `New Quote Request: ${interestedService} from ${companyName || fullName}`,

@@ -1,13 +1,15 @@
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import HeroSection from "@/components/sections/HeroSection";
-import VideoSection from "@/components/sections/VideoSection";
-import ExpertiseSection from "@/components/sections/ExpertiseSection";
 import FeaturedAISection from "@/components/sections/FeaturedAISection";
-import TechStackSection from "@/components/sections/TechStackSection";
 import TrustedBySection from "@/components/sections/TrustedBySection";
+import ExpertiseSection from "@/components/sections/ExpertiseSection";
+import VideoSection from "@/components/sections/VideoSection";
+import TechStackSection from "@/components/sections/TechStackSection";
+import ProductHighlightsSection from "@/components/sections/ProductHighlightsSection";
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import BlogSection from "@/components/sections/BlogSection";
+import ClientsAndAffiliatesSection from "@/components/sections/ClientsAndAffiliatesSection";
 
 export default function HomePage() {
   return (
@@ -15,15 +17,15 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        {/* Swapped Order: FeaturedAISection now comes before TrustedBySection */}
-        <FeaturedAISection /> 
-        <TrustedBySection />
+        <ProductHighlightsSection />
+        <FeaturedAISection />
         <ExpertiseSection />
         <VideoSection />
-        {/* Original position of FeaturedAISection was here, it's now above TrustedBySection */}
         <TechStackSection />
-        <TestimonialsSection />
         <BlogSection />
+        <ClientsAndAffiliatesSection />
+        <TestimonialsSection />
+        <TrustedBySection />
       </main>
       <Footer />
     </div>

@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -96,7 +95,7 @@ export default function PricingPage() {
               Flexible Pricing for Every Business
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Choose the plan that's right for you and unlock your potential with Voxaiomni.
+              Choose the plan that's right for you and unlock your potential with Avyukta.
             </p>
           </div>
         </section>

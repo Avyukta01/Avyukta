@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -73,7 +72,7 @@ export default function TeamPage() {
               Meet Our Innovators
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              The passionate minds driving Voxaiomni forward. We are a collective of thinkers, creators, and problem-solvers dedicated to excellence.
+              The passionate minds driving Avyukta forward. We are a collective of thinkers, creators, and problem-solvers dedicated to excellence.
             </p>
           </div>
         </section>
@@ -95,7 +94,7 @@ export default function TeamPage() {
                       <Image
                         src={member.image}
                         alt={member.name}
-                        layout="fill"
+                        fill
                         objectFit="cover"
                         data-ai-hint={member.aiHint}
                       />

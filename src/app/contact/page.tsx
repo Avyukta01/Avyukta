@@ -1,4 +1,3 @@
-
 "use client";
 
 import * as React from "react";
@@ -121,7 +120,7 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel>Email Address</FormLabel>
                             <FormControl>
-                              <Input placeholder="you@example.com" {...field} />
+                              <Input placeholder="sales@dialerindia.com" {...field} />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -183,12 +182,10 @@ export default function ContactPage() {
                       <span>A-26, Laxminarayan Vihar, Between Mahadev Mandir and Kirana, Near Kotecha Building, Vande Mataram Road, Bharat Mata Circle, Jaipur, 302020 Rajasthan, India.</span>
                     </div>
                     <div className="flex items-center">
-                      <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-                      <span>US: +1-408-426-2726</span>
-                    </div>
-                    <div className="flex items-center">
-                      <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-                      <span>IND: +91 856-000-0600</span>
+                      <Link href="tel:+918560000600" className="flex items-center">
+                        <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
+                        <span>+91 856-00-00-600 [Call]</span>
+                      </Link>
                     </div>
                     <div className="flex items-center">
                       <Phone className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
@@ -196,7 +193,32 @@ export default function ContactPage() {
                     </div>
                     <div className="flex items-center">
                       <Mail className="h-5 w-5 mr-3 text-primary flex-shrink-0" />
-                      <span>contact@voxaiomni.com</span>
+                      <span>sales@dialerindia.com</span>
+                    </div>
+                  </CardContent>
+                </Card>
+                
+                <Card className="shadow-lg">
+                  <CardHeader>
+                    <CardTitle className="text-2xl text-primary flex items-center">
+                      <Building className="mr-3 h-7 w-7" /> Global Offices
+                    </CardTitle>
+                  </CardHeader>
+                  <CardContent className="p-6 space-y-4">
+                    <div className="mb-4">
+                      <p className="font-medium text-foreground mb-2">India (Headquarters)</p>
+                      <p className="text-muted-foreground">+91 856-00-00-600 [Call]</p>
+                      <p className="text-muted-foreground">Mumbai, Maharashtra</p>
+                    </div>
+                    <div className="mb-4">
+                      <p className="font-medium text-foreground mb-2">United States</p>
+                      <p className="text-muted-foreground">+1 (XXX) XXX-XXXX [Call]</p>
+                      <p className="text-muted-foreground">New York, NY</p>
+                    </div>
+                    <div className="mb-4">
+                      <p className="font-medium text-foreground mb-2">South Korea</p>
+                      <p className="text-muted-foreground">+82 (XXX) XXXX-XXXX [Call]</p>
+                      <p className="text-muted-foreground">Seoul</p>
                     </div>
                   </CardContent>
                 </Card>
@@ -213,7 +235,7 @@ export default function ContactPage() {
                      </Button>
                      <br />
                      <Button variant="link" asChild className="p-0 text-muted-foreground hover:text-primary">
-                       <Link href="/company/careers?subject=CareerInquiry&message=I'm interested in career opportunities at Voxaiomni.">Explore Careers</Link>
+                       <Link href="/company/careers?subject=CareerInquiry&message=I'm interested in career opportunities at Avyukta.">Explore Careers</Link>
                      </Button>
                   </CardContent>
                 </Card>
@@ -237,7 +259,7 @@ export default function ContactPage() {
                 allowFullScreen={true}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Voxaiomni Office Location"
+                title="Avyukta Office Location"
               ></iframe>
             </div>
           </div>

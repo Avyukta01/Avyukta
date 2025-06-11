@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -130,7 +129,7 @@ export default function PartnersPage() {
           <div className="container-max text-center">
             <Handshake className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h2 className="text-3xl font-bold text-primary-foreground mb-6 animate-fade-in-up animation-delay-100">
-              Interested in Partnering with Voxaiomni?
+              Interested in Partnering with Avyukta?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               We are always looking for synergistic partnerships to drive innovation and create mutual value. Let's explore how we can collaborate.

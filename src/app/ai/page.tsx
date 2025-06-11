@@ -1,11 +1,10 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import { BrainCircuit, Lightbulb, Bot, BarChart3, ShieldCheck, Cpu, Speech, Eye, MessageSquare, ArrowRight } from "lucide-react";
+import { BrainCircuit, Lightbulb, Bot, BarChart3, ShieldCheck, Cpu, Speech, Eye, MessageSquare, ArrowRight, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -58,16 +57,16 @@ const aiExpertiseAreas = [
 
 const featuredAIProducts = [
   {
-    name: "AIChatBotPro",
+    name: "WhatsApp Ai Chat Bot",
     description: "Our flagship AI chatbot, offering 24/7 intelligent customer engagement.",
     icon: Bot,
-    link: "/products/aichatbotpro" // Placeholder link
+    link: "/products/whatsapp-ai-chat-bot" // Placeholder link
   },
   {
-    name: "AnalyticsMaster",
-    description: "Advanced AI-driven analytics platform for deep data insights.",
-    icon: BarChart3,
-    link: "/products/analyticsmaster" // Placeholder link
+    name: "AI Voice Caller",
+    description: "Transform your voice communications with our AI Voice Caller, automating outbound calls and enhancing inbound interactions.",
+    icon: PhoneCall,
+    link: "/products/aivoicecaller"
   }
 ];
 
@@ -81,39 +80,11 @@ export default function AIPage() {
           <div className="container-max">
             <BrainCircuit className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Voxaiomni AI: Itf'y your business with revolution IT solutions.
+              Avyukta AI: Itf'y your business with revolution IT solutions.
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Leverage the power of Artificial Intelligence to transform your business, unlock new opportunities, and drive unprecedented growth.
             </p>
-          </div>
-        </section>
-
-        {/* Our AI Expertise Section */}
-        <section className="section-padding">
-          <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Our AI Expertise
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {aiExpertiseAreas.map((area, index) => (
-                <Card key={area.title} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <CardHeader>
-                    <div className="flex items-center mb-3">
-                      <area.icon className="h-10 w-10 text-accent mr-3" />
-                      <CardTitle className="text-2xl text-primary">{area.title}</CardTitle>
-                    </div>
-                    <CardDescription>{area.description}</CardDescription>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <h4 className="font-semibold mb-2 text-foreground/90">Example Applications:</h4>
-                    <ul className="space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                      {area.details.map(detail => <li key={detail}>{detail}</li>)}
-                    </ul>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -145,6 +116,34 @@ export default function AIPage() {
           </div>
         </section>
 
+        {/* Our AI Expertise Section */}
+        <section className="section-padding">
+          <div className="container-max">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
+              Our AI Expertise
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {aiExpertiseAreas.map((area, index) => (
+                <Card key={area.title} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
+                  <CardHeader>
+                    <div className="flex items-center mb-3">
+                      <area.icon className="h-10 w-10 text-accent mr-3" />
+                      <CardTitle className="text-2xl text-primary">{area.title}</CardTitle>
+                    </div>
+                    <CardDescription>{area.description}</CardDescription>
+                  </CardHeader>
+                  <CardContent className="flex-grow">
+                    <h4 className="font-semibold mb-2 text-foreground/90">Example Applications:</h4>
+                    <ul className="space-y-1 text-sm text-muted-foreground list-disc list-inside">
+                      {area.details.map(detail => <li key={detail}>{detail}</li>)}
+                    </ul>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* Ethical AI Section */}
         <section className="section-padding">
           <div className="container-max text-center">
@@ -153,7 +152,7 @@ export default function AIPage() {
               Ethical & Responsible AI
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              At Voxaiomni, we are committed to developing AI solutions that are fair, transparent, and accountable. We prioritize ethical considerations throughout the AI lifecycle, ensuring our technology serves humanity responsibly.
+              At Avyukta, we are committed to developing AI solutions that are fair, transparent, and accountable. We prioritize ethical considerations throughout the AI lifecycle, ensuring our technology serves humanity responsibly.
             </p>
           </div>
         </section>
@@ -166,7 +165,7 @@ export default function AIPage() {
               Ready to Unlock Your AI Potential?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Let's discuss how Voxaiomni's AI expertise can revolutionize your business.
+              Let's discuss how Avyukta's AI expertise can revolutionize your business.
             </p>
             <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=AIProjectInquiry">Talk to Our AI Experts</Link>

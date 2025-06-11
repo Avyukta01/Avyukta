@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -75,7 +74,7 @@ export default function BlogPostClientPage({ post }: BlogPostClientPageProps) {
                 <Image
                   src={post.image}
                   alt={post.title}
-                  layout="fill"
+                  fill
                   objectFit="cover"
                   data-ai-hint={post.aiHint}
                   priority 

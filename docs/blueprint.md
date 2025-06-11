@@ -6,7 +6,7 @@
 - Prominent Call-to-Action Buttons: Image section with prominent 'Get a Quote' and 'Talk to Us 24/7' buttons for direct customer interaction.
 - Engaging Video Showcase: Embedded YouTube video section to showcase company highlights and offerings.
 - Expandable Expertise Cards: Expandable cards for expertise sections (Ideation & Design, Mobile App Development, etc.) to provide detailed information on click.
-- Featured AI Innovation Showcase: Showcase featured AI innovations with dedicated cards to highlight 'AIChatBotPro' and 'AnalyticsMaster'.
+- Featured AI Innovation Showcase: Showcase featured AI innovations with dedicated cards to highlight 'WhatsApp Ai Chat Bot' and 'AnalyticsMaster'.
 - Client Testimonials Scroller: Dynamic display of client testimonials in a continuous running row format.
 - Subscription and Social Media Footer: Subscribe section in the footer with an input box and button, alongside social media icons for easy follow.
 

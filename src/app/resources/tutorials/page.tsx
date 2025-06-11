@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -11,13 +10,15 @@ import Link from "next/link";
 
 const tutorials = [
   {
-    title: "Getting Started with AIChatBotPro",
-    excerpt: "Learn the basics of setting up and customizing your AIChatBotPro for optimal customer engagement.",
+    title: "Getting Started with AI Voice Caller",
+    excerpt: "Learn how to effectively use AI Voice Caller for automated voice communications and enhanced customer interactions.",
+    date: "2024-03-15",
+    slug: "/resources/tutorials/ai-voice-caller",
+    category: "AI Solutions",
+    readTime: "8 min read",
+    author: "AI Team",
     image: "https://placehold.co/600x400.png",
-    slug: "/resources/tutorials/aichatbotpro-setup", // Placeholder slug
-    aiHint: "chatbot setup interface",
-    icon: Bot,
-    category: "Product Guide",
+    imageHint: "ai voice call interface"
   },
   {
     title: "Mastering Data Visualization in AnalyticsMaster",
@@ -30,7 +31,7 @@ const tutorials = [
   },
   {
     title: "Integrating Our API with Your Application",
-    excerpt: "A step-by-step guide to seamlessly integrate Voxaiomni's API into your existing software stack.",
+    excerpt: "A step-by-step guide to seamlessly integrate Avyukta's API into your existing software stack.",
     image: "https://placehold.co/600x400.png",
     slug: "/resources/tutorials/api-integration-guide", // Placeholder slug
     aiHint: "api integration code",
@@ -49,7 +50,7 @@ export default function TutorialsPage() {
           <div className="container-max">
             <BookOpen className="h-16 w-16 text-accent mx-auto mb-4 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Voxaiomni Tutorials & How-tos
+              Avyukta Tutorials & How-tos
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Learn how to make the most of our products and services with our step-by-step guides and expert tips.

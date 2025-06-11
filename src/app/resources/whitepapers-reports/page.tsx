@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -65,7 +64,7 @@ export default function WhitepapersReportsPage() {
               Our Knowledge Hub
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              Explore in-depth whitepapers and insightful reports from Voxaiomni's experts.
+              Explore in-depth whitepapers and insightful reports from Avyukta's experts.
             </p>
           </div>
         </section>
@@ -122,7 +121,7 @@ export default function WhitepapersReportsPage() {
           <div className="container-max text-center">
             <BookOpen className="h-12 w-12 text-primary mx-auto mb-4 animate-fade-in-up" />
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-6 animate-fade-in-up animation-delay-100">
-              Stay Ahead with Voxaiomni Insights
+              Stay Ahead with Avyukta Insights
             </h2>
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               Subscribe to our newsletter to get the latest research, reports, and technology news delivered to your inbox.

@@ -1,4 +1,3 @@
-
 "use client";
 
 import Header from "@/components/layout/Header";
@@ -71,7 +70,7 @@ export default function AIVoiceCallerPage() {
               AI Voice Caller: Intelligent Voice Automation
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
-              Transform your voice communications with our AI-powered caller that automates outbound calls, enhances inbound interactions, and provides actionable insights from every conversation.
+              Transform your voice communications with Avyukta's AI-powered caller that automates outbound calls, enhances inbound interactions, and provides actionable insights from every conversation.
             </p>
             <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=AIVoiceCaller_Demo">Schedule a Demo</Link>
@@ -95,7 +94,7 @@ export default function AIVoiceCallerPage() {
             <div className="animate-fade-in-right animation-delay-100">
               <h2 className="text-3xl font-bold text-primary mb-6">Introducing AI Voice Caller</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                Voxaiomni's AI Voice Caller leverages the latest advancements in artificial intelligence and voice technology to revolutionize how businesses engage with customers over the phone. It's designed to handle a vast range of voice communication tasks with human-like conversational abilities.
+                Avyukta's AI Voice Caller leverages the latest advancements in artificial intelligence and voice technology to revolutionize how businesses engage with customers over the phone. It's designed to handle a vast range of voice communication tasks with human-like conversational abilities.
               </p>
               <p className="text-muted-foreground text-lg">
                 From intelligent outbound campaigns that feel personal, to sophisticated inbound call handling and deep voice analytics, our AI Voice Caller empowers you to optimize your operations, improve customer satisfaction, and unlock new levels of efficiency.
@@ -107,24 +106,17 @@ export default function AIVoiceCallerPage() {
         {/* Key Features Section */}
         <section className="section-padding bg-secondary">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Powerful Features of AI Voice Caller
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8 animate-fade-in-up">
+              Key Features:
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <ul className="space-y-4 text-lg md:text-xl text-foreground max-w-2xl mx-auto">
               {features.map((feature, index) => (
-                <Card key={feature.title} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <CardHeader>
-                    <div className="flex items-center mb-3">
-                      <feature.icon className="h-10 w-10 text-accent mr-3" />
-                      <CardTitle className="text-xl text-primary">{feature.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription>{feature.description}</CardDescription>
-                  </CardContent>
-                </Card>
+                <li key={index} className="flex items-start">
+                  <span className="mr-3 text-accent">•</span>
+                  <span>{feature.description}</span>
+                </li>
               ))}
-            </div>
+            </ul>
           </div>
         </section>
 

@@ -1,18 +1,16 @@
-
 "use client";
 
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Star } from "lucide-react"; 
-import Image from "next/image"; 
 
 const testimonialsData = [
   {
-    quote: "Voxaiomni's Dialer CRM delivered ROI in 3 months with 600% better output and full transparency. Highly effective for our recruiting consultancy in Mumbai!",
+    quote: "Avyukta's Dialer CRM delivered ROI in 3 months with 600% better output and full transparency. Highly effective for our recruiting consultancy in Mumbai!",
     name: "Mr. J K Sarolia",
     role: "Managing Director",
     company: "Mumbai Job Junction",
-    image: "https://placehold.co/100x100.png",
+    image: "/reviewlogo/man1.avif",
     aiHint: "male director portrait",
     stars: 5,
   },
@@ -21,7 +19,7 @@ const testimonialsData = [
     name: "Ms. Priya Sharma",
     role: "Head of Marketing",
     company: "Bangalore Retail Co.",
-    image: "https://placehold.co/100x100.png",
+    image: "/reviewlogo/women1.jpeg",
     aiHint: "female marketing head",
     stars: 5,
   },
@@ -30,16 +28,16 @@ const testimonialsData = [
     name: "Mr. Arjun Reddy",
     role: "Chief Operations Officer",
     company: "Delhi Logistics Ltd.",
-    image: "https://placehold.co/100x100.png",
+    image: "/reviewlogo/man2.jpeg",
     aiHint: "male COO portrait",
     stars: 4,
   },
   {
-    quote: "A world-class e-commerce platform from Voxaiomni tripled our online revenue for handcrafted goods. It's robust, secure, and so user-friendly for our Pune customers.",
+    quote: "A world-class e-commerce platform from Avyukta tripled our online revenue for handcrafted goods. It's robust, secure, and so user-friendly for our Pune customers.",
     name: "Mrs. Ananya Deshpande",
     role: "Founder & CEO",
     company: "PuneCrafts Online",
-    image: "https://placehold.co/100x100.png",
+    image: "/reviewlogo/women2.jpeg",
     aiHint: "female founder portrait",
     stars: 5,
   },
@@ -48,26 +46,8 @@ const testimonialsData = [
     name: "Mr. Vikram Singh",
     role: "IT Director",
     company: "Hyderabad Tech Solutions",
-    image: "https://placehold.co/100x100.png",
+    image: "/reviewlogo/man3.jpeg",
     aiHint: "male IT director",
-    stars: 4,
-  },
-  {
-    quote: "The mobile app developed by Voxaiomni for our Chennai-based educational services has seen a 50% increase in student engagement. Fantastic UI/UX!",
-    name: "Dr. R. Meenakshi",
-    role: "Director of E-Learning",
-    company: "Chennai EduTech",
-    image: "https://placehold.co/100x100.png",
-    aiHint: "female director education",
-    stars: 5,
-  },
-  {
-    quote: "Their blockchain solution brought much-needed transparency to our supply chain in Kolkata. Tracking materials from source to consumer is now effortless and secure.",
-    name: "Mr. Sameer Basu",
-    role: "Supply Chain Head",
-    company: "Kolkata Goods Co.",
-    image: "https://placehold.co/100x100.png",
-    aiHint: "male supply chain manager",
     stars: 4,
   }
 ];
@@ -88,7 +68,7 @@ const TestimonialsSection = () => {
             What Our Clients Say
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
-            Hear directly from businesses that have partnered with Voxaiomni to achieve their goals.
+            Hear directly from businesses that have partnered with Avyukta to achieve their goals.
           </p>
         </div>
         <div className="marquee">

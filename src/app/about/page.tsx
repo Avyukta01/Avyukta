@@ -1,4 +1,3 @@
-
 "use client"; 
 
 import Header from "@/components/layout/Header";
@@ -17,7 +16,7 @@ export default function AboutPage() {
         <section className="section-padding bg-primary text-primary-foreground text-center">
           <div className="container-max">
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up">
-              About Voxaiomni
+              About Avyukta
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Itf'y your business with revolution IT solutions.
@@ -25,22 +24,28 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Our Story / Mission / Vision Section */}
+        {/* Our Story Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <h2 className="text-3xl font-bold text-primary mb-6">Our Journey</h2>
               <p className="text-muted-foreground mb-4">
-                Founded with a passion for technology and a vision to empower businesses, Voxaiomni started as a small team of dedicated developers and strategists. Over the years, we've grown into a leading provider of digital solutions, helping clients across various industries achieve their goals.
+                Founded with a passion for technology and a vision to empower businesses, Avyukta started as a small team of dedicated developers and strategists. Over the years, we've grown into a leading provider of digital solutions, helping clients across various industries achieve their goals.
               </p>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground mb-4">
                 Our commitment to excellence, innovation, and client success remains the cornerstone of our identity. We believe in building long-lasting partnerships and delivering impactful results.
               </p>
+              <p className="text-muted-foreground mb-6">
+                At Avyukta, we combine technical expertise with creative thinking to deliver solutions that drive real business value. Our team of experienced professionals is dedicated to understanding your unique challenges and providing tailored solutions that help you achieve your goals.
+              </p>
+              <Button asChild variant="outline" className="animate-fade-in-up">
+                <Link href="/company/why-choose-us">Learn More</Link>
+              </Button>
             </div>
             <div className="animate-fade-in-right animation-delay-100">
               <Image
                 src="https://placehold.co/600x400.png"
-                alt="Voxaiomni Team Working"
+                alt="Avyukta Team Working"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-xl"
@@ -75,7 +80,7 @@ export default function AboutPage() {
         <section className="section-padding">
           <div className="container-max">
             <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Why Choose Voxaiomni?
+              Why Choose Avyukta?
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="flex flex-col items-center text-center p-6 bg-card rounded-lg shadow-lg animate-fade-in-up animation-delay-200">
@@ -107,7 +112,7 @@ export default function AboutPage() {
         <section className="section-padding bg-primary">
           <div className="container-max text-center">
             <h2 className="text-3xl font-bold text-primary-foreground mb-6 animate-fade-in-up">
-              Ready to Revolutionize With Voxaiomni?
+              Ready to Revolutionize With Avyukta?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Let's discuss how we can help your business achieve its digital ambitions.

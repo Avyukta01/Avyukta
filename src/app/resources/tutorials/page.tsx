@@ -72,10 +72,9 @@ export default function TutorialsPage() {
                       <Image
                         src={tutorial.image}
                         alt={tutorial.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="group-hover:scale-105 transition-transform duration-500 object-cover"
                         data-ai-hint={tutorial.aiHint}
-                        className="group-hover:scale-105 transition-transform duration-500"
                       />
                        {tutorial.icon && <tutorial.icon className="absolute top-4 left-4 h-10 w-10 text-white/90 bg-black/40 p-2 rounded-lg shadow-md" />}
                        <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">

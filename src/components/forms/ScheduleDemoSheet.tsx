@@ -108,7 +108,7 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
       <SheetTrigger asChild>
         {children}
       </SheetTrigger>
-      <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg">
+      <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg z-[9999]">
         <SheetHeader className="p-6 pb-4 text-left flex-shrink-0">
           <SheetTitle className="text-2xl font-bold">Schedule a Demo</SheetTitle>
           <SheetDescription>

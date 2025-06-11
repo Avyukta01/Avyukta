@@ -82,10 +82,9 @@ export default function WhitepapersReportsPage() {
                     <Image
                       src={item.image}
                       alt={item.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      className="group-hover:scale-105 transition-transform duration-500 object-cover"
                       data-ai-hint={item.aiHint}
-                      className="group-hover:scale-105 transition-transform duration-500"
                     />
                      <div className="absolute top-3 right-3 bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded">
                         {item.category}

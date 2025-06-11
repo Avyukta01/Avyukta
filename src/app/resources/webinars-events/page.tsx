@@ -100,10 +100,9 @@ export default function WebinarsEventsPage() {
                       <Image
                         src={event.image}
                         alt={event.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="group-hover:scale-105 transition-transform duration-500 object-cover"
                         data-ai-hint={event.aiHint}
-                        className="group-hover:scale-105 transition-transform duration-500"
                       />
                        <div className="absolute top-3 right-3 bg-accent text-accent-foreground text-xs font-semibold px-2 py-1 rounded flex items-center">
                         {event.icon && <event.icon className="h-4 w-4 mr-1.5" />}
@@ -166,10 +165,9 @@ export default function WebinarsEventsPage() {
                       <Image
                         src={event.image}
                         alt={event.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="group-hover:scale-105 transition-transform duration-500 object-cover"
                         data-ai-hint={event.aiHint}
-                        className="group-hover:scale-105 transition-transform duration-500"
                       />
                         <div className="absolute top-3 right-3 bg-primary text-primary-foreground text-xs font-semibold px-2 py-1 rounded flex items-center">
                             {event.icon && <event.icon className="h-4 w-4 mr-1.5" />}

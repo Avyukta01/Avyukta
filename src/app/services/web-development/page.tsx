@@ -126,8 +126,8 @@ export default function WebDevelopmentPage() {
                     <Image
                       src="https://placehold.co/600x400.png"
                       alt={area.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      className="object-cover"
                     />
                     {area.icon && <area.icon className="absolute top-4 left-4 h-10 w-10 text-accent bg-background/80 backdrop-blur-sm p-2 rounded-lg shadow-md" />}
                   </div>

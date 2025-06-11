@@ -79,10 +79,9 @@ export default function CaseStudiesPage() {
                       <Image
                         src={study.image}
                         alt={study.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="group-hover:scale-105 transition-transform duration-500 object-cover"
                         data-ai-hint={study.aiHint}
-                        className="group-hover:scale-105 transition-transform duration-500"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
                        {study.icon && <study.icon className="absolute top-4 right-4 h-10 w-10 text-white/80 bg-black/30 p-2 rounded-lg" />}

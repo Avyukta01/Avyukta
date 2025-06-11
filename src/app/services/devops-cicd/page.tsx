@@ -62,9 +62,8 @@ export default function DevOpsCICDPage() {
               <Image
                 src="https://placehold.co/600x400.png"
                 alt="DevOps infinity loop"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-xl"
+                fill
+                className="rounded-lg shadow-xl object-cover"
                 data-ai-hint="devops cycle abstract"
               />
             </div>

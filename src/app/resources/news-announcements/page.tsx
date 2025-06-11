@@ -75,8 +75,8 @@ export default function NewsAnnouncementsPage() {
                       <Image
                         src={item.image}
                         alt={item.title}
-                        layout="fill"
-                        objectFit="cover"
+                        fill
+                        className="object-cover"
                         data-ai-hint={item.aiHint}
                       />
                     </div>

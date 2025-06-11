@@ -199,13 +199,17 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                       <FormLabel>Primary Service of Interest</FormLabel>
                       <Select onValueChange={field.onChange} defaultValue={field.value}>
                         <FormControl>
-                          <SelectTrigger>
+                          <SelectTrigger className="bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-background/70 focus:bg-background/80 transition-all duration-300">
                             <SelectValue placeholder="Select a service" />
                           </SelectTrigger>
                         </FormControl>
-                        <SelectContent className="z-[9999]">
+                        <SelectContent className="z-[9999] bg-background/80 backdrop-blur-md border-primary/20 shadow-lg">
                           {servicesList.map((service) => (
-                            <SelectItem key={service.id} value={service.id}>
+                            <SelectItem 
+                              key={service.id} 
+                              value={service.id}
+                              className="hover:bg-primary/10 focus:bg-primary/20 focus:text-primary transition-all duration-200 cursor-pointer"
+                            >
                               {service.label}
                             </SelectItem>
                           ))}

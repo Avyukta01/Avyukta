@@ -142,8 +142,8 @@ export default function MobileAppsPage() {
                     <Image
                       src={service.image}
                       alt={service.title}
-                      layout="fill"
-                      objectFit="cover"
+                      fill
+                      className="object-cover"
                     />
                     {service.icon && <service.icon className="absolute top-4 left-4 h-10 w-10 text-accent bg-background/80 backdrop-blur-sm p-2 rounded-lg shadow-md" />}
                   </div>

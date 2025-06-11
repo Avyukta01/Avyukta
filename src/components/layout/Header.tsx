@@ -20,8 +20,6 @@ import {
   DollarSign,
   Building,
   Handshake,
-  Sun,
-  Moon,
   Globe,
   Smartphone,
   BrainCircuit,
@@ -242,53 +240,79 @@ const Header = () => {
                     </Button>
                   </DropdownMenuTrigger>
                   <DropdownMenuContent
-                    className="w-full md:w-[700px] p-4 bg-card/80 backdrop-blur rounded-lg shadow-xl border border-primary/20 flex flex-col md:flex-row"
+                    className="w-full md:w-[700px] p-4 bg-card/70 backdrop-blur-md rounded-lg shadow-xl border border-primary/20 flex flex-col md:flex-row"
                     onMouseLeave={() => setActiveServiceCategory(null)}
                   >
                     {/* Left Pane: Main Service Categories */}
                     <div className="flex flex-col w-full md:w-1/2 pr-4 overflow-y-auto max-h-[300px] border-r border-border/50">
                       {link.desktopServiceCategories.map((category) => (
-                        <DropdownMenuItem
-                          key={category.href}
-                          onMouseEnter={() => setActiveServiceCategory(category)}
-                          className={cn(
-                            "flex items-center space-x-3 p-2 cursor-pointer rounded-md transition-colors",
-                            activeServiceCategory?.href === category.href ? "bg-accent/10" : "hover:bg-accent/5"
-                          )}
-                        >
-                          <Link href={category.href} passHref className="flex items-center space-x-3 w-full">
-                            {category.icon && <category.icon className="h-5 w-5 text-accent flex-shrink-0" />}
-                            <span className="font-medium text-foreground">{category.title}</span>
+                        <React.Fragment key={category.title}>
+                          <Link
+                            href={category.href}
+                            className={cn(
+                              "flex items-center space-x-3 p-3 rounded-lg transition-all duration-200",
+                              "hover:bg-primary/20 hover:backdrop-blur-md group",
+                              activeServiceCategory?.title === category.title
+                                ? "bg-primary/20 backdrop-blur-md text-primary"
+                                : "text-foreground/80"
+                            )}
+                            onMouseEnter={() => setActiveServiceCategory(category)}
+                          >
+                            <category.icon className="h-6 w-6 text-accent group-hover:text-primary transition-colors" />
+                            <span className="font-medium text-lg">{category.title}</span>
                           </Link>
-                        </DropdownMenuItem>
-                      ))}
-                    </div>
-
-                    {/* Right Pane: Sub-Services */}
-                    <div className="flex flex-col w-full md:w-1/2 pl-4 pt-4 md:pt-0 overflow-y-auto max-h-[300px]">
-                      {activeServiceCategory ? (
-                        <React.Fragment>
-                          <h4 className="font-semibold text-primary mb-2">
-                            {activeServiceCategory.title} Sub-services
-                          </h4>
-                          {activeServiceCategory.subServices && activeServiceCategory.subServices.length > 0 ? (
-                            <div className="space-y-1">
-                              {activeServiceCategory.subServices.map((subService) => (
-                                <DropdownMenuItem asChild key={subService.href}>
-                                  <Link href={subService.href} className="text-sm text-muted-foreground cursor-pointer hover:text-primary transition-colors p-1">
+                          {isMobileMenuOpen && category.subServices && (
+                            <ul className="ml-6 mt-2 space-y-1">
+                              {category.subServices.map((subService) => (
+                                <li key={subService.href}>
+                                  <Link
+                                    href={subService.href}
+                                    className="block p-2 rounded-md text-sm text-muted-foreground hover:bg-muted hover:text-foreground transition-colors"
+                                  >
                                     {subService.label}
                                   </Link>
-                                </DropdownMenuItem>
+                                </li>
                               ))}
-                            </div>
-                          ) : (
-                            <p className="text-sm text-muted-foreground">No specific sub-services listed.</p>
+                            </ul>
                           )}
                         </React.Fragment>
-                      ) : (
-                        <p className="text-sm text-muted-foreground italic">Hover over a service category to see its sub-services.</p>
-                      )}
+                      ))}
                     </div>
+                    {/* Right Pane: Sub-services (only for desktop and when a category is active) */}
+                    {activeServiceCategory && activeServiceCategory.subServices && ( // Render only if sub-services exist
+                      <div className="hidden md:flex flex-col w-full md:w-1/2 pl-4 overflow-y-auto max-h-[300px]">
+                        <h3 className="text-xl font-semibold text-primary mb-4 border-b border-border/50 pb-2">
+                          {activeServiceCategory.title}
+                        </h3>
+                        <ScrollArea className="h-full pr-4">
+                          <div className="grid grid-cols-1 gap-2">
+                            {activeServiceCategory.subServices.map((subService) => (
+                              <Link
+                                key={subService.href}
+                                href={subService.href}
+                                className="flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 group relative overflow-hidden"
+                              >
+                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                                {subService.icon && <subService.icon className="h-5 w-5 text-accent mr-2 flex-shrink-0 group-hover:text-primary transition-colors relative z-10" />}
+                                <span className="font-medium text-foreground/90 group-hover:text-primary transition-colors relative z-10">{subService.label}</span>
+                                <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground group-hover:text-primary transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 relative z-10" />
+                              </Link>
+                            ))}
+                          </div>
+                        </ScrollArea>
+                      </div>
+                    )}
+                    {activeServiceCategory && activeServiceCategory.description && !activeServiceCategory.subServices && (
+                        <div className="hidden md:flex flex-col w-full md:w-1/2 pl-4 overflow-y-auto max-h-[300px] justify-center items-center text-center">
+                            <activeServiceCategory.icon className="h-12 w-12 text-accent mb-4" />
+                            <p className="text-muted-foreground max-w-sm">{activeServiceCategory.description}</p>
+                            <Button asChild variant="link" className="mt-4 text-accent hover:underline">
+                                <Link href={activeServiceCategory.href}>
+                                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                                </Link>
+                            </Button>
+                        </div>
+                    )}
                   </DropdownMenuContent>
                 </DropdownMenu>
               ) : (

@@ -7,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { PhoneCall, Mic, Voicemail, BarChartHorizontalBig, Users, CheckCircle, Settings, Database, ShieldCheck } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const features = [
   {
@@ -72,9 +73,11 @@ export default function AIVoiceCallerPage() {
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               Transform your voice communications with Avyukta's AI-powered caller that automates outbound calls, enhances inbound interactions, and provides actionable insights from every conversation.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=AIVoiceCaller_Demo">Schedule a Demo</Link>
-            </Button>
+            <ScheduleDemoSheet>
+              <Button size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+                Schedule a Demo
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
 

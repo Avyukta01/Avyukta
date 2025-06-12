@@ -224,7 +224,7 @@ export default function SmartContractDevelopmentPage() {
               Ready to Build Your Smart Contract?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Let's discuss your project and create secure, efficient smart contracts together.
+              Ready to build secure and efficient decentralized applications?
             </p>
             <ScheduleDemoSheet>
               <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">

@@ -199,7 +199,7 @@ export default function AIConsultingPage() {
               Let's discuss how our AI consulting services can help you achieve your business objectives.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="neon">
+              <Button size="lg" variant="neon" className="animate-fade-in-up animation-delay-300">
                 Get Started Today
               </Button>
             </ScheduleDemoSheet>

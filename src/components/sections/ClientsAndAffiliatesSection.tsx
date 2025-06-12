@@ -5,23 +5,23 @@ import Image from "next/image";
 
 // Placeholder data for clients and affiliates
 const clients = [
-  { name: "Shriram Finance", logo: "/clientslogo/shriramlogo.jpeg", alt: "Shriram Finance Logo" },
-  { name: "Askmebazzar", logo: "/clientslogo/askmebazzarlog.png", alt: "Askmebazzar Logo" },
-  { name: "Indian Oil", logo: "/clientslogo/indianlogo.jpeg", alt: "Indian Oil Logo" },
-  { name: "BSNL", logo: "/clientslogo/bsnllogo.png", alt: "BSNL Logo" },
-  { name: "Aadhaar", logo: "/clientslogo/aadhaarlogo.png", alt: "Aadhaar Logo" },
-  { name: "HP", logo: "/clientslogo/hplogo.png", alt: "HP Logo" },
-  { name: "Bharat Gas", logo: "/clientslogo/bharatlogo.jpeg", alt: "Bharat Gas Logo" },
-  { name: "Videocon", logo: "/clientslogo/videoconlogo.jpeg", alt: "Videocon Logo" },
-  { name: "MTS", logo: "/clientslogo/mtslogo.png", alt: "MTS Logo" },
-  { name: "DARCL", logo: "/clientslogo/darcllogo.jpeg", alt: "DARCL Logo" },
+  { name: "Shriram Finance", logo: "/clients logo/shriramlogo.png", alt: "Shriram Finance Logo" },
+  { name: "Askmebazzar", logo: "/clients logo/askmebazzarlog.png", alt: "Askmebazzar Logo" },
+  { name: "Indian Oil", logo: "/clients logo/indianlogo.jpeg", alt: "Indian Oil Logo" },
+  { name: "BSNL", logo: "/clients logo/bsnllogo.png", alt: "BSNL Logo" },
+  { name: "Aadhaar", logo: "/clients logo/aadhaarlogo.png", alt: "Aadhaar Logo" },
+  { name: "HP", logo: "/clients logo/hplogo.png", alt: "HP Logo" },
+  { name: "Bharat Gas", logo: "/clients logo/bharatlogo.png", alt: "Bharat Gas Logo" },
+  { name: "Videocon", logo: "/clients logo/videoconlogo.jpeg", alt: "Videocon Logo" },
+  { name: "MTS", logo: "/clients logo/mtslogo.png", alt: "MTS Logo" },
+  { name: "DARCL", logo: "/clients logo/darcllogo.jpeg", alt: "DARCL Logo" },
 ];
 
 const affiliates = [
   { name: "Sangoma", logo: "/affilaitlogo/sangomalogo.jpeg", alt: "Sangoma Logo" },
   { name: "Dinstar", logo: "/affilaitlogo/dinstar.png", alt: "Dinstar Logo" },
   { name: "Vivacom", logo: "/affilaitlogo/vivacomlogo.png", alt: "Vivacom Logo" },
-  { name: "Airtel", logo: "/affilaitlogo/airtellogo.png", alt: "Airtel Logo" },
+  { name: "Airtel", logo: "/affilaitlogo/airtellogo.jpeg", alt: "Airtel Logo" },
 ];
 
 const ClientsAndAffiliatesSection = () => {

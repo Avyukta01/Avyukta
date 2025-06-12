@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
 import { 
   PhoneCall, Users, ShieldCheck, Mic, BarChartHorizontalBig, Settings, Zap, GitMerge, Database, FilePieChart, 
-  Keyboard, PhoneForwarded, PhoneIncoming, PhoneOutgoing, MessageSquare, CheckCircle, Clock, ListChecks, TrendingUp, Briefcase
+  Keyboard, PhoneForwarded, PhoneIncoming, PhoneOutgoing, MessageSquare, CheckCircle, Clock, ListChecks, TrendingUp, Briefcase, ArrowRight
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";

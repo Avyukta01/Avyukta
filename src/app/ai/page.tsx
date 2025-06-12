@@ -110,7 +110,7 @@ export default function AIPage() {
             </div>
              <div className="text-center mt-12 animate-fade-in-up animation-delay-400">
                 <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/products">Explore All Products</Link>
+                    <Link href="/products/explore">Explore All Products</Link>
                 </Button>
             </div>
           </div>

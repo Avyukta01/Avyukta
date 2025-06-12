@@ -5,9 +5,9 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Users, PhoneCall } from "lucide-react";
 import Link from "next/link";
 
-export default function ProductHighlightsSection() {
+export default function ProductHighlightsSection({ className }: { className?: string }) {
   return (
-    <section className="py-24 bg-gradient-to-b from-background to-background/80">
+    <section className={`bg-gradient-to-b from-background to-background/80 ${className || ''}`}>
       <div className="container max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
@@ -28,9 +28,7 @@ export default function ProductHighlightsSection() {
                   <Users className="h-8 w-8 text-primary" />
                 </div>
                 <div>
-                  <h2 className="text-4xl md:text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-                    CRM Master
-                  </h2>
+                
                   <h3 className="text-xl md:text-2xl mt-2 text-muted-foreground font-normal">
                     CRM Solutions
                   </h3>
@@ -65,11 +63,8 @@ export default function ProductHighlightsSection() {
                   <PhoneCall className="h-8 w-8 text-primary" />
                 </div>
                 <div>
-                  <h2 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
+                <h3 className="text-xl md:text-2xl mt-2 text-muted-foreground font-normal">
                     DialerIndia
-                  </h2>
-                  <h3 className="text-lg mt-1 text-muted-foreground">
-                    Advanced Call Center Solution
                   </h3>
                 </div>
               </div>

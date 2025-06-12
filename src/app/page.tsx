@@ -17,7 +17,7 @@ export default function HomePage() {
       <Header />
       <main className="flex-grow">
         <HeroSection />
-        <ProductHighlightsSection />
+        <ProductHighlightsSection className="pt-8 pb-12" />
         <FeaturedAISection />
         <ExpertiseSection />
         <VideoSection />

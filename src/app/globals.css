@@ -39,44 +39,26 @@
     --accent-foreground-hsl: 0 0% 10%;      /* Dark text on accent */
     --accent-pink-hsl: 320 80% 70%;         /* Bright Pink for alternative glow */
 
-    /* Glow Colors - Using primary and accent for varied neon glows */
-    --neon-glow-primary-color-hsl: var(--primary-hsl); /* Vibrant Purple for main glows */
-    --neon-glow-secondary-color-hsl: var(--accent-hsl); /* Bright Cyan/Blue for secondary glows */
-    --neon-glow-tertiary-color-hsl: var(--accent-pink-hsl); /* Bright Pink for tertiary glows */
+    /* Glow Colors - Using primary and accent for varied neon glows - REMOVED NEON EFFECT */
+    --neon-glow-primary-color-hsl: var(--primary-hsl); /* Kept for general primary color use if needed */
+    --neon-glow-secondary-color-hsl: var(--accent-hsl); /* Kept for general accent color use if needed */
+    --neon-glow-tertiary-color-hsl: var(--accent-pink-hsl); /* Kept for general tertiary color use if needed */
 
     /* Borders & Rings */
     --border-accent-hsl: var(--accent-hsl); /* Accent color for key borders */
     --border-subtle-hsl: 250 20% 25%;          /* Subtle border for inputs, etc. */
     --ring-hsl: var(--accent-hsl);   
     
-    /* Neon Glow Effects (Primary - Vibrant Purple) */
-    --neon-glow-primary-box-shadow:
-      0 0 15px hsla(var(--neon-glow-primary-color-hsl), 0.9),
-      0 0 30px hsla(var(--neon-glow-primary-color-hsl), 0.7),
-      0 0 50px hsla(var(--neon-glow-primary-color-hsl), 0.5);
+    /* Neon Glow Effects (Primary - Vibrant Purple) - REMOVED NEON EFFECT */
+    --neon-glow-primary-box-shadow: none;
+    --neon-glow-primary-text-shadow: none;
+    --neon-glow-primary-box-shadow-hover: none;
 
-    --neon-glow-primary-text-shadow:
-      0 0 8px hsla(var(--neon-glow-primary-color-hsl), 1),
-      0 0 16px hsla(var(--neon-glow-primary-color-hsl), 0.9),
-      0 0 24px hsla(var(--neon-glow-primary-color-hsl), 0.7);
+    /* Neon Glow Effects (Secondary - Bright Cyan/Blue) - REMOVED NEON EFFECT */
+    --neon-glow-secondary-box-shadow: none;
 
-    /* Added hover state for primary neon glow */
-    --neon-glow-primary-box-shadow-hover:
-      0 0 20px hsla(var(--neon-glow-primary-color-hsl), 1),
-      0 0 40px hsla(var(--neon-glow-primary-color-hsl), 0.8),
-      0 0 60px hsla(var(--neon-glow-primary-color-hsl), 0.6);
-
-    /* Neon Glow Effects (Secondary - Bright Cyan/Blue) */
-    --neon-glow-secondary-box-shadow:
-      0 0 12px hsla(var(--neon-glow-secondary-color-hsl), 0.8),
-      0 0 20px hsla(var(--neon-glow-secondary-color-hsl), 0.6),
-      0 0 35px hsla(var(--neon-glow-secondary-color-hsl), 0.4);
-
-    /* Neon Glow Effects (Tertiary - Bright Pink) */
-    --neon-glow-tertiary-box-shadow:
-      0 0 12px hsla(var(--neon-glow-tertiary-color-hsl), 0.8),
-      0 0 20px hsla(var(--neon-glow-tertiary-color-hsl), 0.6),
-      0 0 35px hsla(var(--neon-glow-tertiary-color-hsl), 0.4);
+    /* Neon Glow Effects (Tertiary - Bright Pink) - REMOVED NEON EFFECT */
+    --neon-glow-tertiary-box-shadow: none;
       
     /* Title Text Color (Base for glowing titles) */
     --title-text-color-hsl: 0 0% 100%; /* Pure White */
@@ -172,25 +154,10 @@
     --border-subtle-hsl: 250 20% 25%; 
     --ring-hsl: var(--accent-hsl);   
 
-    --neon-glow-primary-box-shadow:
-      0 0 15px hsla(var(--neon-glow-primary-color-hsl), 0.9),
-      0 0 30px hsla(var(--neon-glow-primary-color-hsl), 0.7),
-      0 0 50px hsla(var(--neon-glow-primary-color-hsl), 0.5);
-
-    --neon-glow-primary-text-shadow:
-      0 0 8px hsla(var(--neon-glow-primary-color-hsl), 1),
-      0 0 16px hsla(var(--neon-glow-primary-color-hsl), 0.9),
-      0 0 24px hsla(var(--neon-glow-primary-color-hsl), 0.7);
-    
-    --neon-glow-secondary-box-shadow:
-      0 0 12px hsla(var(--neon-glow-secondary-color-hsl), 0.8),
-      0 0 20px hsla(var(--neon-glow-secondary-color-hsl), 0.6),
-      0 0 35px hsla(var(--neon-glow-secondary-color-hsl), 0.4);
-
-    --neon-glow-tertiary-box-shadow:
-      0 0 12px hsla(var(--neon-glow-tertiary-color-hsl), 0.8),
-      0 0 20px hsla(var(--neon-glow-tertiary-color-hsl), 0.6),
-      0 0 35px hsla(var(--neon-glow-tertiary-color-hsl), 0.4);
+    --neon-glow-primary-box-shadow: none;
+    --neon-glow-primary-text-shadow: none;
+    --neon-glow-secondary-box-shadow: none;
+    --neon-glow-tertiary-box-shadow: none;
       
     --title-text-color-hsl: 0 0% 100%;
 
@@ -241,25 +208,25 @@
     background-color: hsl(var(--sidebar-background));
   }
 
-  /* Specific styling for elements that should have primary neon glow */
+  /* Specific styling for elements that should have primary neon glow - REMOVED NEON EFFECT */
   .bg-card { 
-    border: 1px solid hsla(var(--border-glow-light-color-hsl), 0.2);
-    box-shadow: var(--neon-glow-light-box-shadow);
+    @apply border; 
+    border-color: hsl(var(--border-subtle-hsl)); /* Use subtle border */
+    box-shadow: none;
   }
 
-  /* Buttons with neon effect - example class */
+  /* Buttons with neon effect - example class - REMOVED NEON EFFECT */
   .btn-primary-neon {
-    background-color: transparent; /* Changed to transparent for outlined effect */
-    color: hsl(var(--primary)); /* Primary color for text */
-    border: 2px solid hsl(var(--primary)); /* Outlined border */
-    box-shadow: var(--neon-glow-primary-box-shadow);
+    @apply bg-primary text-primary-foreground; 
+    border: 1px solid hsl(var(--primary)); /* Solid primary border */
     transition: all 0.3s ease-in-out;
+    box-shadow: none;
   }
 
   .btn-primary-neon:hover, .btn-primary-neon:focus-visible {
-    background-color: hsla(var(--primary-hsl), 0.1); /* Subtle background on hover */
-    color: hsl(var(--primary-foreground));
-    box-shadow: var(--neon-glow-primary-box-shadow-hover);
+    @apply bg-primary/90;
+    border-color: hsl(var(--primary)); 
+    box-shadow: none;
   }
 
   .section-padding {
@@ -275,23 +242,23 @@
     padding-right: 1rem;
   }
 
-  /* Text that should have a strong neon glow */
+  /* Text that should have a strong neon glow - REMOVED NEON EFFECT */
   .text-title-glow-primary {
     color: hsl(var(--title-text-color-hsl));
-    text-shadow: var(--neon-glow-primary-text-shadow);
+    text-shadow: none; 
   }
 
-  /* Box shadows for neon glow */
+  /* Box shadows for neon glow - REMOVED NEON EFFECT */
   .shadow-neon-glow-primary { 
-    box-shadow: var(--neon-glow-primary-box-shadow);
+    box-shadow: none;
   }
 
   .shadow-neon-glow-primary-hover {
-    box-shadow: var(--neon-glow-primary-box-shadow-hover);
+    box-shadow: none;
   }
 
   .shadow-neon-glow-light {
-    box-shadow: var(--neon-glow-light-box-shadow);
+    box-shadow: none;
   }
 
   /* Animation delays */
@@ -327,20 +294,22 @@
     100% { transform: translateX(-100%); }
   }
 
-   /* Pulse glow animation for icons/elements */
+   /* Pulse glow animation for icons/elements - REMOVED NEON EFFECT */
    @keyframes pulse-glow {
     0%, 100% {
-      filter: drop-shadow(0 0 6px hsla(var(--accent-hsl), 0.9)) drop-shadow(0 0 12px hsla(var(--accent-hsl), 0.7)); /* More intense pulse */
+      filter: none;
       opacity: 1;
+      box-shadow: none;
     }
     50% {
-      filter: drop-shadow(0 0 10px hsla(var(--accent-hsl), 1)) drop-shadow(0 0 25px hsla(var(--accent-hsl), 0.9)); /* More intense pulse */
-      opacity: 0.8;
+      filter: none;
+      opacity: 1;
+      box-shadow: none;
     }
   }
 
   .animate-pulse-glow {
-    animation: pulse-glow 2s infinite alternate;
+    animation: none;
   }
 
    /* Fade In Up animation */
@@ -391,7 +360,7 @@
     animation: fade-in-right 0.6s ease-out forwards;
   }
 
-  /* Hero Section Particle Background - now with abstract neon shapes/glows */
+  /* Hero Section Particle Background - REMOVED NEON EFFECT */
   .particle-background-hero::before {
     content: "";
     position: absolute;
@@ -399,10 +368,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: radial-gradient(circle at 10% 20%, hsla(var(--neon-glow-secondary-color-hsl), 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, hsla(var(--neon-glow-tertiary-color-hsl), 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, hsla(var(--neon-glow-primary-color-hsl), 0.1) 0%, transparent 100%);
-    animation: particles-drift 30s infinite alternate ease-in-out, neon-pulse 5s infinite alternate ease-in-out;
+    background: none; /* Removed background gradient */
+    animation: none; /* Removed all animations */
     pointer-events: none;
     z-index: 0;
   }
@@ -416,57 +383,58 @@
     100% { transform: translate(0, 0) scale(1); }
   }
 
-  /* New neon-pulse animation for background glow */
+  /* New neon-pulse animation for background glow - REMOVED NEON EFFECT */
   @keyframes neon-pulse {
-    0% { filter: brightness(1) blur(0px); opacity: 0.8; }
-    50% { filter: brightness(1.3) blur(4px); opacity: 1; }
-    100% { filter: brightness(1) blur(0px); opacity: 0.8; }
+    0% { filter: none; opacity: 1; }
+    50% { filter: none; opacity: 1; }
+    100% { filter: none; opacity: 1; }
   }
 }
 
 @layer components {
-  /* Card default style: border with light magenta/purple neon glow */
+  /* Card default style: border with light magenta/purple neon glow - REMOVED NEON EFFECT */
   .bg-card { 
     @apply border; 
-    border-color: hsla(var(--border-glow-light-color-hsl), 0.3); /* Subtle always-on border */
-    box-shadow: var(--neon-glow-light-box-shadow); 
+    border-color: hsl(var(--border-subtle-hsl)); /* Use subtle border */
+    box-shadow: none; 
   }
 
-  /* Primary buttons with vibrant purple background and light magenta/purple neon glow effect on hover/focus */
+  /* Primary buttons with vibrant purple background and light magenta/purple neon glow effect on hover/focus - REMOVED NEON EFFECT */
   .btn-primary-neon {
     @apply bg-primary text-primary-foreground; 
-    border: 1px solid transparent; 
+    border: 1px solid hsl(var(--primary)); /* Solid primary border */
     transition: box-shadow 0.3s ease-in-out, background-color 0.3s ease-in-out, border-color 0.3s ease-in-out;
+    box-shadow: none;
   }
   .btn-primary-neon:hover, .btn-primary-neon:focus-visible {
     @apply bg-primary/90;
-    border-color: hsl(var(--border-glow-light-color-hsl)); 
-    box-shadow: var(--neon-glow-light-box-shadow);
+    border-color: hsl(var(--primary)); 
+    box-shadow: none;
   }
 }
 
 @layer utilities {
   .section-padding {
-    @apply py-12 md:py-20 lg:py-24;
+    @apply py-8;
   }
   .container-max {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
 
-  /* Neon Text Glow Utility (Primary - Vibrant Purple) */
+  /* Neon Text Glow Utility (Primary - Vibrant Purple) - REMOVED NEON EFFECT */
   .text-title-glow-primary {
     color: hsl(var(--title-text-color-hsl)); /* Off-white/Light Lavender text */
-    text-shadow: var(--neon-glow-primary-text-shadow); 
+    text-shadow: none; 
   }
   
-  /* Box Shadow Glow Utilities (Primary - Vibrant Purple for general accents if needed) */
+  /* Box Shadow Glow Utilities (Primary - Vibrant Purple for general accents if needed) - REMOVED NEON EFFECT */
   .shadow-neon-glow-primary { 
-    box-shadow: var(--neon-glow-primary-box-shadow);
+    box-shadow: none;
   }
   
-  /* Box Shadow Glow Utilities (Light - Magenta/Purple, e.g. for card borders) */
+  /* Box Shadow Glow Utilities (Light - Magenta/Purple, e.g. for card borders) - REMOVED NEON EFFECT */
   .shadow-neon-glow-light {
-    box-shadow: var(--neon-glow-light-box-shadow);
+    box-shadow: none;
   }
 
 
@@ -505,19 +473,19 @@
       transform: translateX(-50%); 
     }
   }
-   /* Updated pulse-glow animation for buttons or other elements to use light magenta/purple glow */
+   /* Updated pulse-glow animation for buttons or other elements to use light magenta/purple glow - REMOVED NEON EFFECT */
    @keyframes pulse-glow {
     0%, 100% {
-      box-shadow: 0 0 3px hsla(var(--neon-glow-light-color-hsl), 0.5), 0 0 6px hsla(var(--neon-glow-light-color-hsl), 0.3);
-      opacity: 0.8;
+      box-shadow: none;
+      opacity: 1;
     }
     50% {
-      box-shadow: var(--neon-glow-light-box-shadow);
+      box-shadow: none;
       opacity: 1;
     }
   }
   .animate-pulse-glow {
-    animation: pulse-glow 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    animation: none;
   }
 
    @keyframes fade-in-up {
@@ -564,7 +532,7 @@
     opacity: 0;
   }
 
-  /* Particle effect for Hero Section - Updated to use primary neon purple */
+  /* Hero Section Particle Background - Removed Neon Effect */
   .particle-background-hero::before {
     content: '';
     position: absolute;
@@ -572,14 +540,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image:
-      radial-gradient(hsla(var(--neon-glow-primary-color-hsl), 0.1) 0.5px, transparent 0.5px), 
-      radial-gradient(hsla(var(--neon-glow-primary-color-hsl), 0.07) 0.5px, transparent 0.5px);
-    background-size: 30px 30px, 50px 50px; 
-    background-position: 0 0, 15px 15px; 
-    animation: particles-drift 45s linear infinite; 
+    background-image: none; /* Removed background image */
+    background-size: auto; 
+    background-position: center; 
+    animation: none; /* Removed all animations */
     z-index: 1; 
-    opacity: 0.7; /* Slightly increased opacity for more presence */
+    opacity: 1; 
     pointer-events: none; 
   }
 

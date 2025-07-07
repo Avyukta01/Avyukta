@@ -36,6 +36,13 @@ import {
 } from "@/components/ui/sheet";
 import { useToast } from "@/hooks/use-toast";
 import { ScrollArea } from "@/components/ui/scroll-area";
+import { ChevronDown } from "lucide-react";
+import { cn } from "@/lib/utils";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
 
 const servicesList = [
   { id: "web-development", label: "Web Development" },
@@ -81,6 +88,7 @@ interface QuoteFormSheetProps {
 export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
   const { toast } = useToast();
   const [isOpen, setIsOpen] = React.useState(false);
+  const [servicePopoverOpen, setServicePopoverOpen] = React.useState(false);
 
   const form = useForm<QuoteFormValues>({
     resolver: zodResolver(quoteFormSchema),
@@ -159,7 +167,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="Enter your email address" {...field} />
+                        <Input type="email" placeholder="sales@dialerindia.com" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -185,7 +193,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="e.g., +1 123 456 7890" {...field} />
+                        <Input type="tel" placeholder="+91 856-00-00-600" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -197,24 +205,37 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                   render={({ field }) => (
                     <FormItem>
                       <FormLabel>Primary Service of Interest</FormLabel>
-                      <Select onValueChange={field.onChange} defaultValue={field.value}>
-                        <FormControl>
-                          <SelectTrigger className="bg-background/50 backdrop-blur-sm border-primary/20 hover:bg-background/70 focus:bg-background/80 transition-all duration-300">
-                            <SelectValue placeholder="Select a service" />
-                          </SelectTrigger>
-                        </FormControl>
-                        <SelectContent className="z-[9999] bg-background/80 backdrop-blur-md border-primary/20 shadow-lg">
+                      <Popover open={servicePopoverOpen} onOpenChange={setServicePopoverOpen}>
+                        <PopoverTrigger asChild>
+                          <FormControl>
+                            <Button
+                              variant={"outline"}
+                              className={cn(
+                                "w-full pl-3 text-left font-normal",
+                                !field.value && "text-muted-foreground"
+                              )}
+                            >
+                              {field.value ? servicesList.find(s => s.id === field.value)?.label : <span>Select a service</span>}
+                              <ChevronDown className="ml-auto h-4 w-4 opacity-60" />
+                            </Button>
+                          </FormControl>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-[320px] p-2 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col gap-2 z-[9999]">
                           {servicesList.map((service) => (
-                            <SelectItem 
-                              key={service.id} 
-                              value={service.id}
-                              className="hover:bg-primary/10 focus:bg-primary/20 focus:text-primary transition-all duration-200 cursor-pointer"
+                            <Button
+                              key={service.id}
+                              variant={field.value === service.id ? 'default' : 'outline'}
+                              className="w-full py-2 px-0 text-base font-semibold rounded-md border"
+                              onClick={() => {
+                                field.onChange(service.id);
+                                setServicePopoverOpen(false);
+                              }}
                             >
                               {service.label}
-                            </SelectItem>
+                            </Button>
                           ))}
-                        </SelectContent>
-                      </Select>
+                        </PopoverContent>
+                      </Popover>
                       <FormMessage />
                     </FormItem>
                   )}

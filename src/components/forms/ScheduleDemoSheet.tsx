@@ -33,8 +33,13 @@ import { Calendar } from "@/components/ui/calendar";
 import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
 import { cn } from "@/lib/utils";
 import { format } from "date-fns";
-import { CalendarIcon } from "lucide-react";
+import { CalendarIcon, ChevronDown } from "lucide-react";
 import { toast } from "@/components/ui/use-toast";
+import {
+  Dialog,
+  DialogContent,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 
 const timeSlots = [
   "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM", "4:00 PM", "5:00 PM"
@@ -63,6 +68,8 @@ interface ScheduleDemoSheetProps {
 
 export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
   const [open, setOpen] = React.useState(false);
+  const [timeDialogOpen, setTimeDialogOpen] = React.useState(false);
+  const [productPopoverOpen, setProductPopoverOpen] = React.useState(false);
   const form = useForm<z.infer<typeof scheduleDemoSchema>>({
     resolver: zodResolver(scheduleDemoSchema),
     defaultValues: {
@@ -108,7 +115,7 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
       <SheetTrigger asChild>
         {children}
       </SheetTrigger>
-      <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg z-[9999]">
+      <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg z-[9998]">
         <SheetHeader className="p-6 pb-4 text-left flex-shrink-0">
           <SheetTitle className="text-2xl font-bold">Schedule a Demo</SheetTitle>
           <SheetDescription>
@@ -124,7 +131,7 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
                 <FormItem>
                   <FormLabel>Email</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your email" {...field} />
+                    <Input placeholder="sales@dialerindia.com" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -137,7 +144,7 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
                 <FormItem>
                   <FormLabel>Phone Number</FormLabel>
                   <FormControl>
-                    <Input placeholder="Enter your phone number" {...field} />
+                    <Input placeholder="+91 856-00-00-600" {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -149,20 +156,37 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Select Product</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a product" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
+                  <Popover open={productPopoverOpen} onOpenChange={setProductPopoverOpen}>
+                    <PopoverTrigger asChild>
+                      <FormControl>
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-full pl-3 text-left font-normal",
+                            !field.value && "text-muted-foreground"
+                          )}
+                        >
+                          {field.value ? field.value : <span>Select a product</span>}
+                          <ChevronDown className="ml-auto h-4 w-4 opacity-60" />
+                        </Button>
+                      </FormControl>
+                    </PopoverTrigger>
+                    <PopoverContent className="w-[320px] p-2 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col gap-2 z-[9999]">
                       {products.map((product) => (
-                        <SelectItem key={product} value={product}>
+                        <Button
+                          key={product}
+                          variant={field.value === product ? 'default' : 'outline'}
+                          className="w-full py-2 px-0 text-base font-semibold rounded-md border"
+                          onClick={() => {
+                            field.onChange(product);
+                            setProductPopoverOpen(false);
+                          }}
+                        >
                           {product}
-                        </SelectItem>
+                        </Button>
                       ))}
-                    </SelectContent>
-                  </Select>
+                    </PopoverContent>
+                  </Popover>
                   <FormMessage />
                 </FormItem>
               )}
@@ -173,8 +197,8 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
               render={({ field }) => (
                 <FormItem className="flex flex-col">
                   <FormLabel>Preferred Date</FormLabel>
-                  <Popover>
-                    <PopoverTrigger asChild>
+                  <Dialog>
+                    <DialogTrigger asChild>
                       <FormControl>
                         <Button
                           variant={"outline"}
@@ -191,19 +215,22 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
                           <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
                         </Button>
                       </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-auto p-0" align="start">
+                    </DialogTrigger>
+                    <DialogContent className="w-[320px] max-w-xs p-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col items-center justify-center">
                       <Calendar
                         mode="single"
                         selected={field.value}
-                        onSelect={field.onChange}
+                        onSelect={(date) => {
+                          field.onChange(date);
+                        }}
                         disabled={(date) =>
                           date < new Date() || date.getDay() === 0 || date.getDay() === 6
                         }
                         initialFocus
+                        className="mx-auto"
                       />
-                    </PopoverContent>
-                  </Popover>
+                    </DialogContent>
+                  </Dialog>
                   <FormMessage />
                 </FormItem>
               )}
@@ -214,20 +241,39 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
               render={({ field }) => (
                 <FormItem>
                   <FormLabel>Preferred Time Slot</FormLabel>
-                  <Select onValueChange={field.onChange} defaultValue={field.value}>
-                    <FormControl>
-                      <SelectTrigger>
-                        <SelectValue placeholder="Select a time slot" />
-                      </SelectTrigger>
-                    </FormControl>
-                    <SelectContent>
-                      {timeSlots.map((time) => (
-                        <SelectItem key={time} value={time}>
-                          {time}
-                        </SelectItem>
-                      ))}
-                    </SelectContent>
-                  </Select>
+                  <Dialog open={timeDialogOpen} onOpenChange={setTimeDialogOpen}>
+                    <DialogTrigger asChild>
+                      <FormControl>
+                        <Button
+                          variant={"outline"}
+                          className={cn(
+                            "w-full pl-3 text-left font-normal",
+                            !field.value && "text-muted-foreground"
+                          )}
+                        >
+                          {field.value ? field.value : <span>Select a time slot</span>}
+                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                        </Button>
+                      </FormControl>
+                    </DialogTrigger>
+                    <DialogContent className="w-[280px] max-w-xs pt-8 pb-4 px-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col items-center justify-center">
+                      <div className="grid grid-cols-2 gap-2 w-full mt-2">
+                        {timeSlots.map((time) => (
+                          <Button
+                            key={time}
+                            variant={field.value === time ? 'default' : 'outline'}
+                            className="w-full py-2 px-0 text-sm font-semibold rounded-md"
+                            onClick={() => {
+                              field.onChange(time);
+                              setTimeDialogOpen(false);
+                            }}
+                          >
+                            {time}
+                          </Button>
+                        ))}
+                      </div>
+                    </DialogContent>
+                  </Dialog>
                   <FormMessage />
                 </FormItem>
               )}

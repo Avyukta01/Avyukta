@@ -68,5 +68,18 @@
     "postcss": "^8.5.5",
     "tailwindcss": "^3.4.17",
     "typescript": "^5"
-  }
+  },
+  "description": "A beautiful, responsive website template built with HTML, CSS, and JavaScript.",
+  "main": "postcss.config.js",
+  "directories": {
+    "doc": "docs"
+  },
+ 
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Avyukta01/Avyukta/issues"
+  },
+  "homepage": "https://github.com/Avyukta01/Avyukta#readme"
 }

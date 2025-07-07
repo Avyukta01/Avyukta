@@ -4,7 +4,7 @@ import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent, CardFooter } from "@/components/ui/card";
-import { Globe, Smartphone, BrainCircuit, ArrowRight, Settings, Lightbulb, Code2, Blocks, CloudCog, GitMerge, Layers3 } from "lucide-react";
+import { Globe, Smartphone, BrainCircuit, ArrowRight, Settings, Lightbulb, Code2, Blocks, CloudCog, GitMerge, Layers3, Phone } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -104,6 +104,19 @@ const services = [
     ],
     image: "https://placehold.co/600x400.png",
     learnMoreLink: "/services/devops-cicd"
+  },
+  {
+    title: "GSM Gateway",
+    icon: Phone,
+    points: [
+      "Seamless integration of GSM voice and SMS with VoIP and PBX systems",
+      "Reliable connectivity for remote, rural, or mobile locations",
+      "Cost-effective call routing and least cost routing (LCR) capabilities",
+      "Supports multi-SIM, multi-channel, and scalable deployments",
+      "Ideal for call centers, enterprises, and telecom operators"
+    ],
+    image: "https://placehold.co/600x400.png",
+    learnMoreLink: "/services/gsm-gateway"
   }
 ];
 

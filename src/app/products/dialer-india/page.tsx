@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const dialerFeatures = [
   {
@@ -103,9 +104,11 @@ export default function DialerIndiaPage() {
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               Empower your call center operations with our robust, scalable, and feature-rich dialing platform, designed for maximum efficiency and compliance.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=DialerIndia_Demo_Request">Request a Demo</Link>
-            </Button>
+            <ScheduleDemoSheet>
+              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+                Request a Demo
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
 

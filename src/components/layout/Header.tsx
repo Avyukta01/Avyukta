@@ -35,7 +35,8 @@ import {
   PhoneCall,
   MessageCircle,
   MessageSquare,
-  Phone
+  Phone,
+  GraduationCap
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -161,6 +162,12 @@ const navLinks: NavLink[] = [
         ],
       },
       {
+        title: "GSM Gateway",
+        icon: Phone,
+        href: "/services/gsm-gateway",
+        description: "Seamless GSM-to-VoIP integration for enterprises, call centers, and telecom operators."
+      },
+      {
         title: "IT Consulting",
         icon: Lightbulb,
         href: "/services/it-consulting",
@@ -181,6 +188,10 @@ const navLinks: NavLink[] = [
       { title: "DialerIndia", icon: PhoneCall, href: "/products/dialer-india", description: "Advanced dialing solutions with call recording and analytics." },
       { icon: MessageCircle, href: "/products/aichatbotpro", title: "WhatsApp AI Chatbot", description: "Automate customer interactions with our intelligent AI chatbot." },
       { icon: PhoneCall, href: "/products/aivoicecaller", title: "AI Voice Caller", description: "Transform voice communications with our AI Voice Caller." },
+      // Add My School App
+      { icon: GraduationCap, href: "/products/my-school-app", title: "My School App", description: "A complete digital platform for schools, students, and parents." },
+      { icon: Globe, href: "/products/olx-replica", title: "OLX Replica", description: "A robust classified ads marketplace platform inspired by OLX." },
+      { icon: Smartphone, href: "/products/app-replica", title: "App Replica", description: "Custom mobile app solutions inspired by top apps, tailored for your business." },
     ],
   },
   {

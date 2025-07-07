@@ -46,14 +46,16 @@ const HeroSection = () => {
               Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
             </AnimatedButton>
           </QuoteFormSheet>
-          <AnimatedButton
-            size="lg"
-            variant="neon"
-            pulseAnimation
-          >
-            Talk To Us 24*7
-            <Phone className="ml-2 h-5 w-5 animate-pulse" /> 
-          </AnimatedButton>
+          <QuoteFormSheet>
+            <AnimatedButton
+              size="lg"
+              variant="neon"
+              pulseAnimation
+            >
+              Talk To Us 24*7
+              <Phone className="ml-2 h-5 w-5 animate-pulse" /> 
+            </AnimatedButton>
+          </QuoteFormSheet>
         </div>
       </div>
     </section>

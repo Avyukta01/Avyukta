@@ -12,9 +12,9 @@ export async function POST(request: Request) {
   } = await request.json();
 
   const transporter = nodemailer.createTransport({
-    host: 'smtp-relay.sendinblue.com', // Brevo SMTP host
+    host: 'smtp-relay.sendinblue.com', // or your SMTP host
     port: 587,
-    secure: false, // true for 465, false for other ports
+    secure: false,
     auth: {
       user: 'testing.web@dialerindia.com',
       pass: 'testing.web@2133',
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
   try {
     await transporter.sendMail({
       from: 'testing.web@dialerindia.com',
-      to: 'testing.web@dialerindia.com', // Send to the same email for testing
+      to: email,
       subject: `New Quote Request from ${fullName}`,
       html: `
         <h1>New Quote Request</h1>

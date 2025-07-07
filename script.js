@@ -96,4 +96,14 @@ serviceCards.forEach(card => {
     card.addEventListener('mouseleave', () => {
         card.style.transform = 'translateY(0)';
     });
+});
+
+const transporter = nodemailer.createTransport({
+  host: 'smtp-relay.sendinblue.com',
+  port: 587,
+  secure: false,
+  auth: {
+    user: 'testing.web@dialerindia.com',
+    pass: 'testing.web@2133', // Make sure this is the SMTP password from the dashboard!
+  },
 }); 

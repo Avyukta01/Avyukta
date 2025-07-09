@@ -118,6 +118,7 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <link rel="icon" href="/favicon.png" />
       </head>
       <body className={`${poppins.variable} ${roboto_mono.variable} antialiased`}>
         <ThemeProvider

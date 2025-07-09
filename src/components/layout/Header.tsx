@@ -191,7 +191,6 @@ const navLinks: NavLink[] = [
       // Add My School App
       { icon: GraduationCap, href: "/products/my-school-app", title: "My School App", description: "A complete digital platform for schools, students, and parents." },
       { icon: Globe, href: "/products/olx-replica", title: "OLX Replica", description: "A robust classified ads marketplace platform inspired by OLX." },
-      { icon: Smartphone, href: "/products/app-replica", title: "App Replica", description: "Custom mobile app solutions inspired by top apps, tailored for your business." },
     ],
   },
   {

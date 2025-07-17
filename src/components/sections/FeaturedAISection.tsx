@@ -6,6 +6,14 @@ import { Bot, PhoneCall, ArrowRight } from "lucide-react"; // Changed BarChart3 
 import Image from "next/image";
 import Link from "next/link"; // Added Link
 
+
+const styles = {
+  section: {
+    paddingBottom: '0px !important',
+  }
+ 
+}
+
 const aiInnovations = [
   {
     title: "WhatsApp Ai Chat Bot",
@@ -43,7 +51,7 @@ const aiInnovations = [
 
 const FeaturedAISection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className=" bg-background">
       <div className="container-max">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">

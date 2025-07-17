@@ -35,9 +35,14 @@ const blogPosts = [
 
 const BlogSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background" style={{paddingBottom: '0px'}}>
+      <style jsx>{`
+        section.section-padding {
+          padding-bottom: 0px !important;
+        }
+      `}</style>
       <div className="container-max">
-        <div className="text-center mb-12">
+        <div className="text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             Latest From Our Blog
           </h2>

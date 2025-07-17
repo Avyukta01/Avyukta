@@ -115,172 +115,174 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
       <SheetTrigger asChild>
         {children}
       </SheetTrigger>
-      <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg z-[9998]">
+      <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg z-[9998] flex flex-col">
         <SheetHeader className="p-6 pb-4 text-left flex-shrink-0">
-          <SheetTitle className="text-2xl font-bold">Schedule a Demo</SheetTitle>
+          <SheetTitle className="text-2xl font-bold">Request a Demo</SheetTitle>
           <SheetDescription>
-            Fill out the form below to schedule a personalized demo of our products.
+            Fill out the form below to request a personalized demo of our products.
           </SheetDescription>
         </SheetHeader>
-        <Form {...form}>
-          <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 p-6">
-            <FormField
-              control={form.control}
-              name="email"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input placeholder="sales@dialerindia.com" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="phoneNumber"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Phone Number</FormLabel>
-                  <FormControl>
-                    <Input placeholder="+91 856-00-00-600" {...field} />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="product"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Select Product</FormLabel>
-                  <Popover open={productPopoverOpen} onOpenChange={setProductPopoverOpen}>
-                    <PopoverTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={"outline"}
-                          className={cn(
-                            "w-full pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value ? field.value : <span>Select a product</span>}
-                          <ChevronDown className="ml-auto h-4 w-4 opacity-60" />
-                        </Button>
-                      </FormControl>
-                    </PopoverTrigger>
-                    <PopoverContent className="w-[320px] p-2 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col gap-2 z-[9999]">
-                      {products.map((product) => (
-                        <Button
-                          key={product}
-                          variant={field.value === product ? 'default' : 'outline'}
-                          className="w-full py-2 px-0 text-base font-semibold rounded-md border"
-                          onClick={() => {
-                            field.onChange(product);
-                            setProductPopoverOpen(false);
-                          }}
-                        >
-                          {product}
-                        </Button>
-                      ))}
-                    </PopoverContent>
-                  </Popover>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="date"
-              render={({ field }) => (
-                <FormItem className="flex flex-col">
-                  <FormLabel>Preferred Date</FormLabel>
-                  <Dialog>
-                    <DialogTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={"outline"}
-                          className={cn(
-                            "w-full pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value ? (
-                            format(field.value, "PPP")
-                          ) : (
-                            <span>Pick a date</span>
-                          )}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DialogTrigger>
-                    <DialogContent className="w-[320px] max-w-xs p-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col items-center justify-center">
-                      <Calendar
-                        mode="single"
-                        selected={field.value}
-                        onSelect={(date) => {
-                          field.onChange(date);
-                        }}
-                        disabled={(date) =>
-                          date < new Date() || date.getDay() === 0 || date.getDay() === 6
-                        }
-                        initialFocus
-                        className="mx-auto"
-                      />
-                    </DialogContent>
-                  </Dialog>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="timeSlot"
-              render={({ field }) => (
-                <FormItem>
-                  <FormLabel>Preferred Time Slot</FormLabel>
-                  <Dialog open={timeDialogOpen} onOpenChange={setTimeDialogOpen}>
-                    <DialogTrigger asChild>
-                      <FormControl>
-                        <Button
-                          variant={"outline"}
-                          className={cn(
-                            "w-full pl-3 text-left font-normal",
-                            !field.value && "text-muted-foreground"
-                          )}
-                        >
-                          {field.value ? field.value : <span>Select a time slot</span>}
-                          <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
-                        </Button>
-                      </FormControl>
-                    </DialogTrigger>
-                    <DialogContent className="w-[280px] max-w-xs pt-8 pb-4 px-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col items-center justify-center">
-                      <div className="grid grid-cols-2 gap-2 w-full mt-2">
-                        {timeSlots.map((time) => (
+        <div className="flex-1 overflow-y-auto">
+          <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6 p-6">
+              <FormField
+                control={form.control}
+                name="email"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Email</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your email" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="phoneNumber"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Phone Number</FormLabel>
+                    <FormControl>
+                      <Input placeholder="Enter your phone number" {...field} />
+                    </FormControl>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="product"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Select Product</FormLabel>
+                    <Popover open={productPopoverOpen} onOpenChange={setProductPopoverOpen}>
+                      <PopoverTrigger asChild>
+                        <FormControl>
                           <Button
-                            key={time}
-                            variant={field.value === time ? 'default' : 'outline'}
-                            className="w-full py-2 px-0 text-sm font-semibold rounded-md"
+                            variant={"outline"}
+                            className={cn(
+                              "w-full pl-3 text-left font-normal",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value ? field.value : <span>Select a product</span>}
+                            <ChevronDown className="ml-auto h-4 w-4 opacity-60" />
+                          </Button>
+                        </FormControl>
+                      </PopoverTrigger>
+                      <PopoverContent className="w-[320px] p-2 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col gap-2 z-[9999]">
+                        {products.map((product) => (
+                          <Button
+                            key={product}
+                            variant={field.value === product ? 'default' : 'outline'}
+                            className="w-full py-2 px-0 text-base font-semibold rounded-md border"
                             onClick={() => {
-                              field.onChange(time);
-                              setTimeDialogOpen(false);
+                              field.onChange(product);
+                              setProductPopoverOpen(false);
                             }}
                           >
-                            {time}
+                            {product}
                           </Button>
                         ))}
-                      </div>
-                    </DialogContent>
-                  </Dialog>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <Button type="submit" className="w-full">Schedule Demo</Button>
-          </form>
-        </Form>
+                      </PopoverContent>
+                    </Popover>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="date"
+                render={({ field }) => (
+                  <FormItem className="flex flex-col">
+                    <FormLabel>Preferred Date</FormLabel>
+                    <Dialog>
+                      <DialogTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-full pl-3 text-left font-normal",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value ? (
+                              format(field.value, "PPP")
+                            ) : (
+                              <span>Pick a date</span>
+                            )}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </DialogTrigger>
+                      <DialogContent className="w-[320px] max-w-xs p-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col items-center justify-center">
+                        <Calendar
+                          mode="single"
+                          selected={field.value}
+                          onSelect={(date) => {
+                            field.onChange(date);
+                          }}
+                          disabled={(date) =>
+                            date < new Date() || date.getDay() === 0 || date.getDay() === 6
+                          }
+                          initialFocus
+                          className="mx-auto"
+                        />
+                      </DialogContent>
+                    </Dialog>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <FormField
+                control={form.control}
+                name="timeSlot"
+                render={({ field }) => (
+                  <FormItem>
+                    <FormLabel>Preferred Time Slot</FormLabel>
+                    <Dialog open={timeDialogOpen} onOpenChange={setTimeDialogOpen}>
+                      <DialogTrigger asChild>
+                        <FormControl>
+                          <Button
+                            variant={"outline"}
+                            className={cn(
+                              "w-full pl-3 text-left font-normal",
+                              !field.value && "text-muted-foreground"
+                            )}
+                          >
+                            {field.value ? field.value : <span>Select a time slot</span>}
+                            <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                          </Button>
+                        </FormControl>
+                      </DialogTrigger>
+                      <DialogContent className="w-[280px] max-w-xs pt-8 pb-4 px-4 bg-white/20 backdrop-blur-lg border border-white/30 shadow-lg flex flex-col items-center justify-center">
+                        <div className="grid grid-cols-2 gap-2 w-full mt-2">
+                          {timeSlots.map((time) => (
+                            <Button
+                              key={time}
+                              variant={field.value === time ? 'default' : 'outline'}
+                              className="w-full py-2 px-0 text-sm font-semibold rounded-md"
+                              onClick={() => {
+                                field.onChange(time);
+                                setTimeDialogOpen(false);
+                              }}
+                            >
+                              {time}
+                            </Button>
+                          ))}
+                        </div>
+                      </DialogContent>
+                    </Dialog>
+                    <FormMessage />
+                  </FormItem>
+                )}
+              />
+              <Button type="submit" className="w-full bg-white text-black border border-black hover:bg-gray-100">Request a Demo</Button>
+            </form>
+          </Form>
+        </div>
       </SheetContent>
     </Sheet>
   );

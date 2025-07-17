@@ -7,6 +7,7 @@ import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/com
 import { BrainCircuit, Lightbulb, Bot, BarChart3, ShieldCheck, Cpu, Speech, Eye, MessageSquare, ArrowRight, PhoneCall } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const aiExpertiseAreas = [
   {
@@ -167,9 +168,11 @@ export default function AIPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Let's discuss how Avyukta's AI expertise can revolutionize your business.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-              <Link href="/contact?subject=AIProjectInquiry">Talk to Our AI Experts</Link>
-            </Button>
+            <ScheduleDemoSheet>
+              <Button asChild size="lg" variant="default" className="bg-white text-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+                <Link href="#">Talk to Our AI Experts</Link>
+              </Button>
+            </ScheduleDemoSheet>
           </div>
         </section>
       </main>

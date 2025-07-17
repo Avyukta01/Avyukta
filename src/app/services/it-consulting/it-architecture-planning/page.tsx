@@ -212,7 +212,7 @@ export default function ITArchitecturePlanningPage() {
               Let's build a resilient and innovative IT foundation for your business success.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
                 <span>Get a Free Consultation</span>
               </Button>
             </ScheduleDemoSheet>

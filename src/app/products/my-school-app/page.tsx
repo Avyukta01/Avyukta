@@ -101,26 +101,26 @@ export default function MySchoolAppPage() {
           <div className="container-max text-center">
             <GraduationCap className="h-20 w-20 text-accent mx-auto mb-6 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              My School App: Revolutionizing Education
+              School App: Revolutionizing Education
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               A comprehensive digital learning platform that transforms traditional education into an interactive, engaging, and efficient learning experience for students, teachers, and parents.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-                Request a Demo
+              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+                <span>Request a Demo</span>
               </Button>
             </ScheduleDemoSheet>
           </div>
         </section>
 
-        {/* What is My School App? Section */}
+        {/* What is School App? Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
                 src="https://placehold.co/600x450.png"
-                alt="My School App Dashboard"
+                alt="School App Dashboard"
                 width={600}
                 height={450}
                 className="rounded-lg shadow-xl"
@@ -128,9 +128,9 @@ export default function MySchoolAppPage() {
               />
             </div>
             <div className="animate-fade-in-right animation-delay-100">
-              <h2 className="text-3xl font-bold text-primary mb-6">Introducing My School App</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6">Introducing School App</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                My School App by Avyukta is a cutting-edge educational technology platform designed to bridge the gap between traditional and digital learning. Our comprehensive solution empowers educational institutions to create engaging, interactive, and personalized learning experiences for students of all ages.
+                School App by Avyukta is a modern, intuitive educational technology platform designed to seamlessly connect schools, students, and parents. Our user-friendly solution empowers educational institutions to enhance communication, streamline administration, and foster a collaborative learning environment.
               </p>
               <p className="text-muted-foreground text-lg">
                 From kindergarten to higher education, our platform provides the tools and features needed to enhance academic performance, improve communication, and streamline administrative processes in the modern educational landscape.
@@ -235,7 +235,7 @@ export default function MySchoolAppPage() {
               Ready to Transform Your School?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Join hundreds of educational institutions already using My School App to enhance learning outcomes.
+              Join hundreds of educational institutions already using School App to enhance learning outcomes.
             </p>
             <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=SchoolApp_Inquiry&product=MySchoolApp">Contact Our Education Experts</Link>

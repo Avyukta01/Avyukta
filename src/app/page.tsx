@@ -10,13 +10,14 @@ import ProductHighlightsSection from "@/components/sections/ProductHighlightsSec
 import TestimonialsSection from "@/components/sections/TestimonialsSection";
 import BlogSection from "@/components/sections/BlogSection";
 import ClientsAndAffiliatesSection from "@/components/sections/ClientsAndAffiliatesSection";
-
+import OurValuedClients from "@/components/sections/ourvaluedclients";
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
       <main className="flex-grow">
         <HeroSection />
+        <OurValuedClients />
         <ProductHighlightsSection className="pt-8 pb-12" />
         <FeaturedAISection />
         <ExpertiseSection />

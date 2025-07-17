@@ -1,51 +1,36 @@
 import { NextResponse } from "next/server";
-import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
   try {
     const { email, phoneNumber, product, date, timeSlot } = await req.json();
 
-    // Create a transporter using SMTP
-    const transporter = nodemailer.createTransport({
-      host: "smtp-relay.brevo.com",
-      port: 587,
-      secure: false,
-      auth: {
-        user: "testing.web@dialerindia.com",
-        pass: "testing.web@2133",
-      },
-    });
-
     // Format the date
     const formattedDate = new Date(date).toLocaleDateString();
 
-    // Email content
-    const mailOptions = {
-      from: "testing.web@dialerindia.com",
-      to: "sales@dialerindia.com",
-      subject: "New Demo Request",
-      html: `
-        <h2>New Demo Request</h2>
-        <p><strong>Product:</strong> ${product}</p>
-        <p><strong>Date:</strong> ${formattedDate}</p>
-        <p><strong>Time Slot:</strong> ${timeSlot}</p>
-        <p><strong>Contact Details:</strong></p>
-        <ul>
-          <li>Email: ${email}</li>
-          <li>Phone: ${phoneNumber}</li>
-        </ul>
-      `,
-    };
+    // 1. Send form details to Admin WhatsApp
+    const adminPhone = '9588922752'; 
+    const adminMsg = ` New Demo Request:\n\n Product: ${product}\n Date: ${formattedDate}\n Time Slot: ${timeSlot}\n Email: ${email}\n Phone: ${phoneNumber}`;
+    const encodedAdminMsg = encodeURIComponent(adminMsg);
+    const adminUrl = `https://wa.clouddialer.in/api/send?number=91${adminPhone}&type=text&message=${encodedAdminMsg}&instance_id=673B2D67E7616&access_token=67037ac5e67ca`;
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+    await fetch(adminUrl, {
+      method: 'GET',
+      headers: { 'x-api-key': '34543545' },
+    });
 
-    return NextResponse.json({ message: "Demo request received successfully" });
+    // 2. Send Thank You message to User WhatsApp
+    const thankYouMsg = ` Thank you for booking a demo of ${product}! Our team will contact you shortly to confirm the appointment.`;
+    const encodedThankYouMsg = encodeURIComponent(thankYouMsg);
+    const userUrl = `https://wa.clouddialer.in/api/send?number=91${phoneNumber}&type=text&message=${encodedThankYouMsg}&instance_id=673B2D67E7616&access_token=67037ac5e67ca`;
+
+    await fetch(userUrl, {
+      method: 'GET',
+      headers: { 'x-api-key': '34543545' },
+    });
+
+    return NextResponse.json({ message: "WhatsApp messages sent successfully" });
   } catch (error) {
-    console.error("Error scheduling demo:", error);
-    return NextResponse.json(
-      { error: "Failed to schedule demo" },
-      { status: 500 }
-    );
+    console.error("Error sending WhatsApp messages:", error);
+    return NextResponse.json({ error: "Failed to send WhatsApp messages" }, { status: 500 });
   }
-} 
+}

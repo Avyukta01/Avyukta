@@ -74,8 +74,8 @@ export default function CRMPage() {
               A comprehensive CRM solution to streamline sales, manage leads, automate tasks, and provide deep insights for unparalleled customer engagement and business growth.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-                Request a Demo
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+                <span>Request a Demo</span>
               </Button>
             </ScheduleDemoSheet>
           </div>

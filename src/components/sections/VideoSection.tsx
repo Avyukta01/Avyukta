@@ -4,12 +4,17 @@ import { Card, CardContent } from "@/components/ui/card";
 
 const VideoSection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background" style={{paddingBottom: '0px'}}>
+      <style jsx>{`
+        section.section-padding {
+          padding-bottom: 0px !important;
+        }
+      `}</style>
       <div className="container-max text-center">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+        <h2 className="text-3xl md:text-4xl font-bold">
           See Avyukta in Action
         </h2>
-        <p className="text-muted-foreground mb-12 max-w-xl mx-auto">
+        <p className="text-muted-foreground max-w-xl mx-auto">
           Discover how our innovative solutions can transform your business. Watch our latest highlights and offerings.
         </p>
         <Card className="overflow-hidden shadow-2xl max-w-3xl mx-auto">

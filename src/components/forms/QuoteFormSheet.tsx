@@ -167,7 +167,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Email Address</FormLabel>
                       <FormControl>
-                        <Input type="email" placeholder="sales@dialerindia.com" {...field} />
+                        <Input type="email" placeholder="Enter your email" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -193,7 +193,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                     <FormItem>
                       <FormLabel>Phone Number</FormLabel>
                       <FormControl>
-                        <Input type="tel" placeholder="+91 856-00-00-600" {...field} />
+                        <Input type="tel" placeholder="Enter your phone number" {...field} />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -264,7 +264,7 @@ export function QuoteFormSheet({ children }: QuoteFormSheetProps) {
                   <SheetClose asChild>
                     <Button type="button" variant="outline">Cancel</Button>
                   </SheetClose>
-                  <Button type="submit" className="bg-accent text-accent-foreground hover:bg-accent/90" disabled={form.formState.isSubmitting}>
+                  <Button type="submit" className="inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 py-2 w-40 bg-white text-black border border-black hover:bg-gray-100" disabled={form.formState.isSubmitting}>
                     {form.formState.isSubmitting ? "Submitting..." : "Submit Request"}
                   </Button>
                 </SheetFooter>

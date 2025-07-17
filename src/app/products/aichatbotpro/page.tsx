@@ -10,36 +10,17 @@ import Link from "next/link";
 import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
 const features = [
-  {
-    title: "Advanced Natural Language Understanding (NLU)",
-    description: "Our chatbot comprehends complex queries, user intent, and sentiment, ensuring natural and effective conversations.",
-    icon: MessageSquare,
-  },
-  {
-    title: "Multi-Platform Seamless Integration",
-    description: "Deploy WhatsApp Ai Chat Bot across your website, mobile apps, WhatsApp, Facebook Messenger, and other key customer touchpoints.",
-    icon: Zap,
-  },
-  {
-    title: "Customizable Conversation Flows",
-    description: "Tailor chatbot interactions to your specific business needs, branding, and customer journeys with an intuitive flow builder.",
-    icon: Settings,
-  },
-  {
-    title: "Intelligent Lead Generation & Qualification",
-    description: "Automate lead capture, qualify prospects based on predefined criteria, and seamlessly pass hot leads to your sales team.",
-    icon: Users,
-  },
-  {
-    title: "24/7 Instant Customer Support",
-    description: "Provide round-the-clock assistance, answer FAQs instantly, and resolve common issues without human intervention, improving satisfaction.",
-    icon: CheckCircle,
-  },
-  {
-    title: "Comprehensive Analytics & Reporting",
-    description: "Gain valuable insights into customer interactions, chatbot performance, and popular queries to continuously optimize your strategy.",
-    icon: BarChartHorizontalBig,
-  },
+  { title: "Instant Customer Engagement 24/7", description: "Engage customers instantly at any time of day, providing answers and support around the clock." },
+  { title: "Reduces Support Cost & Wait Time", description: "Automate responses to common queries, reducing the need for large support teams and minimizing customer wait times." },
+  { title: "Boosts Sales with Real-Time Interaction", description: "Convert more leads and close sales faster by interacting with customers in real time." },
+  { title: "Personalized and Multilingual", description: "Deliver tailored responses in multiple languages to serve a diverse customer base." },
+  { title: "Integrates with CRM, Website, and ERP", description: "Seamlessly connect with your CRM, website, and ERP systems for unified customer management." },
+  { title: "Scales Without Adding Team Members", description: "Handle unlimited conversations simultaneously without increasing your support staff." },
+  { title: "Automated Greetings & Welcome Messages", description: "Greet every customer with automated, customizable welcome messages." },
+  { title: "Keyword-Based Responses", description: "Respond instantly to specific keywords or phrases for efficient query handling." },
+  { title: "Product / Service Showcase", description: "Showcase your products or services directly in the chat to drive interest and conversions." },
+  { title: "Collect User Information", description: "Gather leads and customer details automatically during conversations." },
+  { title: "Chat History & Logging", description: "Maintain a complete log of all chats for quality assurance and future reference." },
 ];
 
 const benefits = [
@@ -75,8 +56,8 @@ export default function WhatsAppAiChatBotPage() {
               Intelligent, 24/7 AI-powered chatbots to elevate customer support, drive sales, streamline operations, and deliver exceptional user experiences.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="neon" className="animate-fade-in-up animation-delay-300">
-                Request a Demo
+              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+                <span>Request a Demo</span>
               </Button>
             </ScheduleDemoSheet>
           </div>
@@ -85,13 +66,15 @@ export default function WhatsAppAiChatBotPage() {
         {/* What is WhatsApp Ai Chat Bot? Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-left">
+            <div className="animate-fade-in-left flex justify-center">
               <Image
                 src="/images/WhatsAppaiomni.jpg"
                 alt="WhatsApp Ai Chat Bot Interface"
-                fill
-                className="rounded-lg shadow-xl object-cover"
+                width={400}
+                height={400}
+                className="rounded-lg shadow-xl object-cover max-w-full h-auto"
                 data-ai-hint="chatbot interface conversation"
+                priority
               />
             </div>
             <div className="animate-fade-in-right animation-delay-100">
@@ -117,7 +100,7 @@ export default function WhatsAppAiChatBotPage() {
                 <Card key={feature.title} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
                   <CardHeader>
                     <div className="flex items-center mb-3">
-                      <feature.icon className="h-10 w-10 text-accent mr-3" />
+                      <MessageSquare className="h-10 w-10 text-accent mr-3" />
                       <CardTitle className="text-xl text-primary">{feature.title}</CardTitle>
                     </div>
                   </CardHeader>

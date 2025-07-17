@@ -13,12 +13,14 @@ const logos = [
 
 const TrustedBySection = () => {
   return (
-    <section className="section-padding bg-background">
+    <section className="section-padding bg-background" >
+      
+      
       <div className="container-max">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80 mb-12">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80">
           Our Channel Partner
         </h2>
-        <div className="marquee">
+        <div className="marquee" style={{paddingTop: '8px !important'}}>
           <div className="marquee-content marquee-content-hover">
             {[...logos, ...logos].map((logo, index) => ( // Duplicate logos for seamless loop
               <div

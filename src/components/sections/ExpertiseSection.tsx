@@ -65,7 +65,12 @@ const expertiseData: ExpertiseItem[] = [
 
 const ExpertiseSection = () => {
   return (
-    <section className="section-padding bg-secondary">
+    <section className=" bg-secondary" style={{paddingTop: '6px !important'}}>
+      <style jsx>{`
+        section.section-padding {
+          padding-bottom: 0px !important;
+        }
+      `}</style>
       <div className="container-max">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in-up">

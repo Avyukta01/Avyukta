@@ -80,7 +80,9 @@ const Footer = () => {
             </div>
         </div>
         
-        <div className="border-t border-border pt-8 text-center text-sm text-muted-foreground">
+        {/* Full-width white line, edge-to-edge */}
+        <div className="border-t border-white w-screen absolute left-0 right-0" style={{margin: 0, padding: 0}} />
+        <div className="pt-8 text-center text-sm text-muted-foreground relative z-10">
           {currentYear ? (
             <p>&copy; {currentYear} Avyukta. All rights reserved.</p>
           ) : (

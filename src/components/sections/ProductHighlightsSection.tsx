@@ -9,16 +9,13 @@ export default function ProductHighlightsSection({ className }: { className?: st
   return (
     <section className={`bg-gradient-to-b from-background to-background/80 ${className || ''}`}>
       <div className="container max-w-6xl mx-auto px-4">
-        <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-primary to-accent">
-            Our Products
-          </h1>
-          <h2 className="text-muted-foreground text-lg max-w-2xl mx-auto">
+           <h2 className="jsx-7e3ffb6c76ff136f text-3xl md:text-4xl font-bold text-white text-center" >
             Discover our innovative solutions designed to transform your business operations
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 max-w-5xl mx-auto pt-6
+">
           {/* CRM Card */}
           <Card className="group relative overflow-hidden bg-background/60 backdrop-blur-sm border-primary/20 hover:border-primary/40 transition-all duration-300 hover:shadow-2xl hover:shadow-primary/20">
             <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
@@ -30,7 +27,7 @@ export default function ProductHighlightsSection({ className }: { className?: st
                 <div>
                 
                   <h3 className="text-xl md:text-2xl mt-2 text-muted-foreground font-normal">
-                    CRM Solutions
+                    Avyukta CRM Solutions
                   </h3>
                 </div>
               </div>
@@ -88,7 +85,7 @@ export default function ProductHighlightsSection({ className }: { className?: st
             </CardContent>
           </Card>
         </div>
-      </div>
+      
     </section>
   );
 } 

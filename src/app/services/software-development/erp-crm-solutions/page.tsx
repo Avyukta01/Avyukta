@@ -199,7 +199,7 @@ export default function ERPCRMSolutionsPage() {
               Discover how integrated ERP & CRM solutions can revolutionize your operations.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="neon">
+              <Button size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100">
                 Get a Free Consultation
               </Button>
             </ScheduleDemoSheet>

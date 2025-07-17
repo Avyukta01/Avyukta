@@ -36,7 +36,9 @@ import {
   MessageCircle,
   MessageSquare,
   Phone,
-  GraduationCap
+  GraduationCap,
+  Info,
+  Truck
 } from "lucide-react";
 import Logo from "@/components/ui/Logo";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
@@ -168,6 +170,18 @@ const navLinks: NavLink[] = [
         description: "Seamless GSM-to-VoIP integration for enterprises, call centers, and telecom operators."
       },
       {
+        title: "HLR",
+        icon: Globe,
+        href: "/services/hlr-lookup",
+        description: "Real-time HLR Lookup for global mobile number verification, carrier detection, and delivery optimization."
+      },
+      {
+        title: "DND",
+        icon: Info,
+        href: "/services/dnd",
+        description: "DND (Do Not Disturb) management for compliant, secure, and effective communication."
+      },
+      {
         title: "IT Consulting",
         icon: Lightbulb,
         href: "/services/it-consulting",
@@ -178,19 +192,27 @@ const navLinks: NavLink[] = [
           { label: "Cybersecurity Consulting", href: "/services/it-consulting/cybersecurity-consulting" },
         ],
       },
+      {
+        title: "Telephony",
+        icon: PhoneCall,
+        href: "/services/telephony",
+        description: "Cloud Telephony Solutions for Modern Business Communication, Call Automation, and Global Connectivity."
+      },
     ],
   },
   {
     href: "/products",
     label: "Products",
     desktopServiceCategories: [
-      { title: "CRM Master", icon: Users, href: "/products/crm", description: "A comprehensive CRM solution for lead, sales, and task management." },
+      { title: "Avyukta CRM Master", icon: Users, href: "/products/crm", description: "A comprehensive Avyukta CRM solution for lead, sales, and task management." },
       { title: "DialerIndia", icon: PhoneCall, href: "/products/dialer-india", description: "Advanced dialing solutions with call recording and analytics." },
-      { icon: MessageCircle, href: "/products/aichatbotpro", title: "WhatsApp AI Chatbot", description: "Automate customer interactions with our intelligent AI chatbot." },
+      { icon: MessageCircle, href: "/products/aichatbotpro", title: "WhatsApp AI", description: "Automate customer interactions with our intelligent AI chatbot." },
       { icon: PhoneCall, href: "/products/aivoicecaller", title: "AI Voice Caller", description: "Transform voice communications with our AI Voice Caller." },
-      // Add My School App
-      { icon: GraduationCap, href: "/products/my-school-app", title: "My School App", description: "A complete digital platform for schools, students, and parents." },
-      { icon: Globe, href: "/products/olx-replica", title: "OLX Replica", description: "A robust classified ads marketplace platform inspired by OLX." },
+      { icon: GraduationCap, href: "/products/my-school-app", title: "School App", description: "A modern, intuitive platform for schools, students, and parents to connect, learn, and grow together." },
+      { icon: Globe, href: "/products/taxi-ride-booking", title: "Taxi/Ride Booking App", description: "A complete, professional taxi and ride booking platform for modern businesses." },
+      { icon: Truck, href: "/products/quick-delivery-app", title: "Quick Delivery App", description: "A real-time, scalable delivery platform for managing users, agents, orders, and analytics." },
+      { icon: Building, href: "/products/society-management-app", title: "Society Management App", description: "Digitize and simplify society operations, billing, security, and communication." },
+      { icon: MessageCircle, href: "/products/omnichannel", title: "OmniChannel", description: "OmniChannel platform for Virtual, Meta, WhatsApp, API, SMS, RCS, OBD, and more." },
     ],
   },
   {
@@ -303,7 +325,6 @@ const Header = () => {
                                 className="flex items-center space-x-3 p-3 rounded-lg transition-all duration-200 group relative overflow-hidden"
                               >
                                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                                {subService.icon && <subService.icon className="h-5 w-5 text-accent mr-2 flex-shrink-0 group-hover:text-primary transition-colors relative z-10" />}
                                 <span className="font-medium text-foreground/90 group-hover:text-primary transition-colors relative z-10">{subService.label}</span>
                                 <ArrowRight className="h-4 w-4 ml-auto text-muted-foreground group-hover:text-primary transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 relative z-10" />
                               </Link>
@@ -336,11 +357,11 @@ const Header = () => {
             </React.Fragment>
           ))}
           <div className="hidden md:flex items-center ml-auto">
-            <QuoteFormSheet>
+            <ScheduleDemoSheet>
               <Button className="ml-4 bg-accent text-accent-foreground hover:bg-accent/90 flex items-center">
                 <Phone className="h-4 w-4 mr-2" /> Talk to Us
               </Button>
-            </QuoteFormSheet>
+            </ScheduleDemoSheet>
           </div>
         </nav>
 
@@ -399,11 +420,6 @@ const Header = () => {
                     </div>
                   ))}
                   <div className="pt-4 space-y-4">
-                    <QuoteFormSheet>
-                      <Button variant="outline" className="w-full">
-                        Schedule a Demo
-                      </Button>
-                    </QuoteFormSheet>
                     <QuoteFormSheet>
                       <Button className="w-full flex items-center justify-center p-2 rounded-md hover:bg-muted transition-colors">
                         <Phone className="h-5 w-5 mr-2" /> Talk to Us

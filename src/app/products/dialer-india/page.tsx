@@ -105,8 +105,8 @@ export default function DialerIndiaPage() {
               Empower your call center operations with our robust, scalable, and feature-rich dialing platform, designed for maximum efficiency and compliance.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
-                Request a Demo
+              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+                <span>Request a Demo</span>
               </Button>
             </ScheduleDemoSheet>
           </div>
@@ -219,7 +219,7 @@ export default function DialerIndiaPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Discover how DialerIndia can optimize your calling campaigns and boost agent performance.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=DialerIndia_Inquiry&product=DialerIndia">Contact Our Dialer Experts</Link>
             </Button>
           </div>

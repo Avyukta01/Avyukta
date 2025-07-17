@@ -188,7 +188,7 @@ export default function ServicesPage() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-8">
               Let's discuss how our services can help you achieve your business goals.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+            <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100">
               <Link href="/contact?subject=ServiceInquiry">Get a Free Consultation</Link>
             </Button>
           </div>

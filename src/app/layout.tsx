@@ -121,12 +121,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.png" />
       </head>
       <body className={`${poppins.variable} ${roboto_mono.variable} antialiased`}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
           {children}
           <Toaster />
           <FloatingWhatsAppButton />

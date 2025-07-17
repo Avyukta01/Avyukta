@@ -61,7 +61,12 @@ const TestimonialsSection = () => {
   const duplicatedTestimonials = [...testimonialsData, ...testimonialsData];
 
   return (
-    <section className="section-padding bg-secondary text-secondary-foreground">
+    <section className="section-padding bg-secondary text-secondary-foreground" style={{paddingBottom: '0px'}}>
+      <style jsx>{`
+        section.section-padding {
+          padding-bottom: 0px !important;
+        }
+      `}</style>
       <div className="container-max">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">

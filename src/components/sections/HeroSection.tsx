@@ -4,10 +4,23 @@ import { QuoteFormSheet } from "@/components/forms/QuoteFormSheet";
 import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ArrowRight, Phone } from "lucide-react";
 import Typewriter from 'typewriter-effect';
+import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
+
+
+const styles = {
+  section: {
+    paddingBottom: '0px !important',
+  }
+ 
+}
+
+
+
+
 
 const HeroSection = () => {
   return (
-    <section className="relative text-primary-foreground section-padding min-h-[70vh] flex items-center overflow-hidden particle-background-hero">
+    <section className="relative text-primary-foreground section-padding pb-0 min-h-[70vh] flex items-center overflow-hidden particle-background-hero">
       {/* The particle-background-hero class will apply the ::before pseudo-element for the particle effect */}
       <div className="container-max relative z-20 text-center">
         <p className="text-base md:text-lg font-semibold text-primary mb-4 animate-fade-in-up">
@@ -46,7 +59,7 @@ const HeroSection = () => {
               Get a Quote <ArrowRight className="ml-2 h-5 w-5" />
             </AnimatedButton>
           </QuoteFormSheet>
-          <QuoteFormSheet>
+          <ScheduleDemoSheet>
             <AnimatedButton
               size="lg"
               variant="neon"
@@ -55,7 +68,7 @@ const HeroSection = () => {
               Talk To Us 24*7
               <Phone className="ml-2 h-5 w-5 animate-pulse" /> 
             </AnimatedButton>
-          </QuoteFormSheet>
+          </ScheduleDemoSheet>
         </div>
       </div>
     </section>

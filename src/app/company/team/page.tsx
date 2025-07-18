@@ -10,53 +10,38 @@ import Link from "next/link";
 
 const teamMembers = [
   {
-    name: "Dr. Evelyn Reed",
-    role: "Chief Executive Officer",
+    name: " Mr.Kartikey K Sharma",
+    role: " Founder-CEO Director ",
     bio: "Visionary leader with 20+ years in tech, driving innovation and strategic growth.",
-    image: "https://placehold.co/300x300.png",
+    image: "/team/k.s.png",
     linkedin: "#",
     aiHint: "ceo portrait business"
   },
   {
-    name: "Marcus Chen",
-    role: "Chief Technology Officer",
-    bio: "Expert in AI and scalable architectures, leading our cutting-edge development.",
-    image: "https://placehold.co/300x300.png",
+    name: "Mr. Bhisham Kakwani",
+    role: "Founder-CFO",
+    bio: "Strategic financial leader with a vision for sustainable business success.",
+    image: "/team/b.k.png",
     linkedin: "#",
     aiHint: "cto portrait tech"
   },
   {
-    name: "Aisha Khan",
-    role: "VP of Product",
-    bio: "Passionate about creating user-centric products that solve real-world problems.",
-    image: "https://placehold.co/300x300.png",
+    name: "Mr. Rohit Gupta",
+    role: "CSO",
+    bio: "Visionary leader aligning business goals with market trends.",
+    image: "/team/r.g.png",
     linkedin: "#",
     aiHint: "product manager portrait"
   },
   {
-    name: "David Lee",
-    role: "Lead Software Engineer",
-    bio: "Full-stack maestro dedicated to building robust and efficient software solutions.",
-    image: "https://placehold.co/300x300.png",
+    name: " Mr. Yash Suman",
+    role: "CTO - Director",
+    bio: "CTO & Director driving tech innovation and scalable architecture.",
+    image: "/team/Y.s.png",
     linkedin: "#",
-    aiHint: "software engineer portrait"
+    aiHint: "cto portrait tech"
   },
-  {
-    name: "Sophia Miller",
-    role: "Head of Design",
-    bio: "Creative force behind our intuitive and beautiful user experiences.",
-    image: "https://placehold.co/300x300.png",
-    linkedin: "#",
-    aiHint: "designer portrait creative"
-  },
-  {
-    name: "Ben Carter",
-    role: "Marketing Director",
-    bio: "Strategist connecting our innovative solutions with businesses worldwide.",
-    image: "https://placehold.co/300x300.png",
-    linkedin: "#",
-    aiHint: "marketing director portrait"
-  },
+ 
 ];
 
 export default function TeamPage() {

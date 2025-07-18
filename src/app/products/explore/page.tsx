@@ -241,7 +241,7 @@ export default function ExploreProductsPage() {
             <p className="text-lg text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-100">
               Contact us today to discuss your specific needs and how our products can help you achieve your goals.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-200">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-200">
               <Link href="/contact">Get a Free Consultation</Link>
             </Button>
           </div>

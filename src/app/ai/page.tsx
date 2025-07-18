@@ -9,53 +9,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
 
-const aiExpertiseAreas = [
-  {
-    title: "Machine Learning Solutions",
-    icon: Cpu,
-    description: "Develop custom machine learning models to solve complex business problems, from predictive analytics to anomaly detection.",
-    details: [
-      "Predictive Maintenance",
-      "Customer Churn Prediction",
-      "Fraud Detection Systems",
-      "Recommendation Engines",
-    ],
-  },
-  {
-    title: "Natural Language Processing (NLP)",
-    icon: Speech,
-    description: "Enable intelligent text and speech understanding with our NLP services for chatbots, sentiment analysis, and more.",
-    details: [
-      "Intelligent Chatbots & Virtual Assistants",
-      "Sentiment Analysis & Opinion Mining",
-      "Automated Text Summarization",
-      "Named Entity Recognition (NER)",
-    ],
-  },
-  {
-    title: "Computer Vision",
-    icon: Eye,
-    description: "Implement advanced computer vision solutions for image recognition, object detection, and video analytics.",
-    details: [
-      "Object Detection & Tracking",
-      "Image Classification & Tagging",
-      "Facial Recognition Systems",
-      "Automated Quality Control",
-    ],
-  },
-    {
-    title: "AI Strategy & Consulting",
-    icon: Lightbulb,
-    description: "Partner with us to define your AI roadmap, identify high-impact use cases, and integrate AI seamlessly into your operations.",
-    details: [
-      "AI Readiness Assessment",
-      "Use Case Ideation & Prioritization",
-      "Data Strategy for AI",
-      "AI Governance & Ethics Frameworks",
-    ],
-  },
-];
-
 const featuredAIProducts = [
   {
     name: "WhatsApp Ai Chat Bot",
@@ -69,6 +22,50 @@ const featuredAIProducts = [
     icon: PhoneCall,
     link: "/products/aivoicecaller"
   }
+];
+
+// Replace aiExpertiseAreas with new expertise list
+const aiExpertiseDetails = [
+  {
+    title: "1. Multiple Websites Monitoring with Notifications including Phone Calls",
+    description: "Automatic monitoring of multiple URLs with instant downtime alerts via notifications and phone calls.",
+  },
+  {
+    title: "2. Automatic monitoring of multiple URLs with downtime alerts",
+    description: "Stay informed about your website uptime with real-time monitoring and instant alerts for any downtime.",
+  },
+  {
+    title: "3. Build a Voice AI Chatbot with ElevenLabs and InfraNodus Knowledge Expert",
+    description: "Create advanced voice AI chatbots leveraging ElevenLabs and InfraNodus for deep knowledge integration.",
+  },
+  {
+    title: "4. Sticky Note AI Agent (OpenAI Chat Model + More)",
+    description: "Build an interactive AI agent with a chat interface, sticky notes, and multiple integrated tools.",
+  },
+  {
+    title: "5. Build an Interactive AI Agent with Chat Interface and Multiple Tools",
+    description: "Develop AI agents that can interact, assist, and automate tasks using a chat interface and various tools.",
+  },
+  {
+    title: "6. Voice-Based Appointment Booking System with ElevenLabs AI and Cal.com",
+    description: "Automate appointment bookings with a voice-based AI system integrated with ElevenLabs and Cal.com.",
+  },
+  {
+    title: "7. AI-Powered Social Media Content Creator with Multi-Platform Publishing & Approval",
+    description: "Generate, schedule, and publish content across multiple social platforms with AI-driven workflows and approval chains.",
+  },
+  {
+    title: "8. Build a Voice AI Chatbot with ElevenLabs and InfraNodus Knowledge Experts",
+    description: "Leverage ElevenLabs and InfraNodus to build voice-enabled chatbots with expert knowledge capabilities.",
+  },
+  {
+    title: "9. AI-Powered WhatsApp Chatbot for Text, Voice, Images, and PDF with RAG",
+    description: "Deploy WhatsApp chatbots that handle text, voice, images, and PDFs using Retrieval-Augmented Generation (RAG).",
+  },
+  {
+    title: "10. Create & Upload AI-Generated ASMR YouTube Shorts with Seedance, Fal AI, and GPT-4",
+    description: "Produce and upload AI-generated ASMR YouTube Shorts using Seedance, Fal AI, and GPT-4 for creative content.",
+  },
 ];
 
 export default function AIPage() {
@@ -124,20 +121,13 @@ export default function AIPage() {
               Our AI Expertise
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {aiExpertiseAreas.map((area, index) => (
-                <Card key={area.title} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
+              {aiExpertiseDetails.map((item, index) => (
+                <Card key={item.title} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
                   <CardHeader>
-                    <div className="flex items-center mb-3">
-                      <area.icon className="h-10 w-10 text-accent mr-3" />
-                      <CardTitle className="text-2xl text-primary">{area.title}</CardTitle>
-                    </div>
-                    <CardDescription>{area.description}</CardDescription>
+                    <CardTitle className="text-xl text-primary font-bold mb-2">{item.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
-                    <h4 className="font-semibold mb-2 text-foreground/90">Example Applications:</h4>
-                    <ul className="space-y-1 text-sm text-muted-foreground list-disc list-inside">
-                      {area.details.map(detail => <li key={detail}>{detail}</li>)}
-                    </ul>
+                    <p className="text-muted-foreground text-base">{item.description}</p>
                   </CardContent>
                 </Card>
               ))}
@@ -145,18 +135,7 @@ export default function AIPage() {
           </div>
         </section>
 
-        {/* Ethical AI Section */}
-        <section className="section-padding">
-          <div className="container-max text-center">
-            <ShieldCheck className="h-12 w-12 text-accent mx-auto mb-4 animate-fade-in-up" />
-            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in-up animation-delay-100">
-              Ethical & Responsible AI
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
-              At Avyukta, we are committed to developing AI solutions that are fair, transparent, and accountable. We prioritize ethical considerations throughout the AI lifecycle, ensuring our technology serves humanity responsibly.
-            </p>
-          </div>
-        </section>
+      
 
         {/* CTA Section */}
         <section className="section-padding bg-primary">

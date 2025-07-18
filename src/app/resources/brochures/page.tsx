@@ -12,7 +12,7 @@ const brochures = [
   {
     title: "Company Overview Brochure",
     description: "Get a comprehensive overview of Avyukta, our mission, services, and success stories.",
-    image: "https://placehold.co/600x400.png",
+    image: "/brochures/avyuktabroucher.png",
     aiHint: "brochure cover design",
     downloadLink: "/brochures/avyukta_brouchre.pdf",
     suggestedFilename: "Avyukta_Company_Overview.pdf", // Or use "avyukta_brochur.pdf" if preferred

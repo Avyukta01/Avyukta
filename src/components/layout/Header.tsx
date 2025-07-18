@@ -220,7 +220,6 @@ const navLinks: NavLink[] = [
     label: "Company",
     desktopServiceCategories: [
       { title: "About Us", icon: Building, href: "/about", description: "Learn about our journey, mission, and values." },
-      { title: "Pricing", icon: DollarSign, href: "/company/pricing", description: "Explore flexible plans and transparent costs." },
       { title: "Consulting", icon: Award, href: "/company/consulting", description: "Get expert advice and strategic guidance." },
       { title: "Contact Us", icon: Mail, href: "/contact", description: "Reach out for inquiries or support." },
       { title: "Careers", icon: Briefcase, href: "/company/careers", description: "Discover opportunities to join our team." },

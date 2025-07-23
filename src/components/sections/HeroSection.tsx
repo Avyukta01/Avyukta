@@ -21,11 +21,18 @@ const styles = {
 
 const HeroSection = () => {
   return (
-    <section className="relative text-primary-foreground pt-24 pb-0 min-h-[calc(100vh-6rem)] flex items-center overflow-hidden particle-background-hero">
+    <section className="relative text-primary-foreground pt-24px  pb-0 min-h-[calc(100vh-6rem)] flex items-center overflow-hidden particle-background-hero">
       {/* The particle-background-hero class will apply the ::before pseudo-element for the particle effect */}
       <div className="container-max relative z-20 text-center">
-        <div className="flex justify-center mb-6 animate-fade-in-up">
-          <Image src="/logos/avyuktahero.png" alt="Avyukta Hero" width={500} height={500} className="mx-auto" priority />
+      <div className="flex justify-center mb-6 animate-fade-in-up">
+          <Image
+            src="/logos/avyuktahero.png"
+            alt="Avyukta Hero"
+            width={500}
+            height={500}
+            className="mx-auto"
+            priority
+          />
         </div>
         <p className="text-base md:text-lg font-semibold text-primary mb-4 animate-fade-in-up">
           <span className="relative inline-block">

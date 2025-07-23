@@ -210,7 +210,7 @@ const navLinks: NavLink[] = [
       { icon: PhoneCall, href: "/products/aivoicecaller", title: "AI Voice Caller", description: "Transform voice communications with our AI Voice Caller." },
       { icon: GraduationCap, href: "/products/my-school-app", title: "School App", description: "A modern, intuitive platform for schools, students, and parents to connect, learn, and grow together." },
       { icon: Globe, href: "/products/taxi-ride-booking", title: "Taxi/Ride Booking App", description: "A complete, professional taxi and ride booking platform for modern businesses." },
-      { icon: Truck, href: "/products/quick-delivery-app", title: "Quick Delivery App", description: "A real-time, scalable delivery platform for managing users, agents, orders, and analytics." },
+      { icon: Truck, href: "/products/quick-delivery-app", title: "Quick Delivery & Parcel Delivery App", description: "A real-time, scalable delivery platform for managing users, agents, orders, and analytics." },
       { icon: Building, href: "/products/society-management-app", title: "Society Management App", description: "Digitize and simplify society operations, billing, security, and communication." },
       { icon: MessageCircle, href: "/products/omnichannel", title: "OmniChannel", description: "OmniChannel platform for Virtual, Meta, WhatsApp, API, SMS, RCS, OBD, and more." },
     ],

@@ -125,6 +125,8 @@ export default function RootLayout({
           {children}
           <Toaster />
           <FloatingWhatsAppButton />
+          <elevenlabs-convai agent-id="agent_01k0ppyxn5eecaswntz2r3symf"></elevenlabs-convai>
+          <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
         </ThemeProvider>
       </body>
     </html>

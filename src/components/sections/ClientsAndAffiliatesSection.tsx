@@ -34,7 +34,7 @@ const ClientsAndAffiliatesSection = () => {
                   alt={affiliate.alt}
                   width={150}
                   height={100}
-                  className="grayscale hover:grayscale-0 transition-all duration-300 object-cover"
+                  className="object-cover"
                 />
               </div>
             ))}

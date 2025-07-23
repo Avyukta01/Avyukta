@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import type { FC } from "react";
+import { Phone } from "lucide-react";
 
 // WhatsApp SVG Icon
 const WhatsAppIcon: FC<React.SVGProps<SVGSVGElement>> = (props) => (

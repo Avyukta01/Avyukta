@@ -27,8 +27,8 @@ const Logo = ({ className }: { className?: string }) => {
       <Image
         src={finalSrc} 
         alt="Avyukta Logo"
-        width={40} 
-        height={40} 
+        width={120} 
+        height={120} 
         className="h-8 w-auto md:h-10" 
         data-ai-hint="company logo"
         key={finalSrc} // Adding key to help React differentiate if src changes

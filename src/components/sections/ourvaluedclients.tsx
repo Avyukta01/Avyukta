@@ -42,7 +42,7 @@ export default function OurValuedClientsPage() {
                   alt={client.alt}
                   width={150}
                   height={300}
-                  className="grayscale hover:grayscale-0 transition-all duration-300 object-cover"
+                  className="object-cover"
                 />
               </div>
             ))}

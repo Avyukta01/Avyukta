@@ -5,6 +5,7 @@ import { AnimatedButton } from "@/components/ui/AnimatedButton";
 import { ArrowRight, Phone } from "lucide-react";
 import Typewriter from 'typewriter-effect';
 import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
+import Image from "next/image";
 
 
 const styles = {
@@ -23,6 +24,9 @@ const HeroSection = () => {
     <section className="relative text-primary-foreground section-padding pb-0 min-h-[70vh] flex items-center overflow-hidden particle-background-hero">
       {/* The particle-background-hero class will apply the ::before pseudo-element for the particle effect */}
       <div className="container-max relative z-20 text-center">
+        <div className="flex justify-center mb-6 animate-fade-in-up">
+          <Image src="/logos/avyuktahero.png" alt="Avyukta Hero" width={500} height={500} className="mx-auto" priority />
+        </div>
         <p className="text-base md:text-lg font-semibold text-primary mb-4 animate-fade-in-up">
           <span className="relative inline-block">
             Your Trusted Partner in IT Solutions

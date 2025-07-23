@@ -11,7 +11,7 @@ const blogPosts = [
     title: "The Future of AI in Business Automation",
     date: "October 26, 2023",
     excerpt: "Discover how AI is reshaping industries by automating complex tasks and driving efficiency.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/aibusinesses.png",
     slug: "/blog/future-of-ai",
     aiHint: "ai technology"
   },
@@ -19,7 +19,7 @@ const blogPosts = [
     title: "Top 5 Trends in Web Development for 2024",
     date: "November 5, 2023",
     excerpt: "Stay ahead of the curve with these emerging web development trends that will define the next year.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/web.png",
     slug: "/blog/web-dev-trends-2024",
     aiHint: "web design code"
   },
@@ -27,7 +27,7 @@ const blogPosts = [
     title: "Maximizing ROI with Mobile-First Strategies",
     date: "November 12, 2023",
     excerpt: "Learn why a mobile-first approach is crucial for business success in today's digital landscape.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/stra.png",
     slug: "/blog/mobile-first-roi",
     aiHint: "mobile app analytics"
   },

@@ -25,7 +25,7 @@ const TrustedBySection = () => {
             {[...logos, ...logos].map((logo, index) => ( // Duplicate logos for seamless loop
               <div
                 key={`${logo.name}-${index}`} // Unique key for duplicated items
-                className="inline-block grayscale hover:grayscale-0 transition-all duration-300 mx-10 md:mx-16 align-middle" // Added margins for spacing
+                className="inline-block mx-10 md:mx-16 align-middle" // Added margins for spacing
                 title={logo.name}
               >
                 <Image

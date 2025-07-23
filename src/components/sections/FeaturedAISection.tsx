@@ -19,7 +19,7 @@ const aiInnovations = [
     title: "WhatsApp Ai Chat Bot",
     icon: Bot,
     description: "Elevate customer interactions and automate support with our intelligent, 24/7 AI-powered chatbot solution.",
-    image: "/images/WhatsAppaiomni.jpg",
+    image: "/images/Whastappai.png",
     imageHint: "ai chatbot interface",
     features: [
       "Natural Language Understanding (NLU)", 
@@ -35,7 +35,7 @@ const aiInnovations = [
     title: "AI Voice Caller",
     icon: PhoneCall, // Changed from BarChart3
     description: "Transform your voice communications with our AI Voice Caller, automating outbound calls and enhancing inbound interactions.",
-    image: "https://placehold.co/600x400.png",
+    image: "/images/Aivoicecaller.png",
     imageHint: "ai voice call dashboard",
     features: [
       "Intelligent Outbound Dialing Campaigns", 
@@ -64,7 +64,7 @@ const FeaturedAISection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
           {aiInnovations.map((item) => (
             <Card key={item.title} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300">
-              <div className="relative h-56 w-full">
+              <div className="relative aspect-[16/9] w-full">
                 <Image
                   src={item.image}
                   alt={item.title}

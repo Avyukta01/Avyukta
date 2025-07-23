@@ -32,7 +32,7 @@ export default function QuickDeliveryAppPage() {
           <div className="container-max">
             <Globe className="h-16 w-16 text-accent mx-auto mb-4" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4">
-              Quick Delivery App
+              Quick Delivery & Parcel Delivery App
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto">
               Launch your own scalable, real-time delivery platform. Manage users, agents, orders, payments, and analytics—all in one place, with dedicated apps for users and delivery partners.

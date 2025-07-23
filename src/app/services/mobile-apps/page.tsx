@@ -14,7 +14,7 @@ const services = [
     title: "Android App Development",
     icon: Bot,
     description: "Crafting high-performance and feature-rich Android applications tailored to your business needs, ensuring seamless user experiences across devices.",
-    image: "https://placehold.co/600x400.png",
+    image: "/moblieimages/appdevelopment.png",
     learnMoreLink: "/services/mobile-apps/android-app-development",
     keyFeatures: [
       "Custom Android App Development",

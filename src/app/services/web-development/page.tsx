@@ -124,7 +124,19 @@ export default function WebDevelopmentPage() {
                 <Card key={area.title} className={`overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out animate-fade-in-up animation-delay-${index * 100 + 200}`}>
                   <div className="relative h-56 w-full">
                     <Image
-                      src="https://placehold.co/600x400.png"
+                      src={area.title === "Website Development"
+                        ? "/webimages/webdev.png"
+                        : area.title === "Web Application Development"
+                          ? "/webimages/webapp.png"
+                          : area.title === "E-Commerce Development"
+                            ? "/webimages/e-commerce.png"
+                            : area.title === "CMS Development"
+                              ? "/webimages/gms.png"
+                              : area.title === "Frontend Development"
+                                ? "/webimages/front.png"
+                                : area.title === "Backend & API Development"
+                                  ? "/webimages/backend.png"
+                                  : "https://placehold.co/600x400.png"}
                       alt={area.title}
                       fill
                       className="object-cover"

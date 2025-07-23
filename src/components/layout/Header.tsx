@@ -250,8 +250,8 @@ const Header = () => {
   const [activeServiceCategory, setActiveServiceCategory] = React.useState<NavServiceCategory | null>(null);
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-primary/20 bg-background/60 backdrop-blur supports-[backdrop-filter]:bg-background/50">
-      <div className="container-max flex h-16 items-center justify-between">
+<header className="fixed top-4 left-4 right-4 z-50 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md supports-[backdrop-filter]:bg-white/10 shadow-md overflow-hidden">
+     <div className="container-max flex h-16 items-center justify-between">
         <Logo />
 
         {/* Desktop Navigation */}

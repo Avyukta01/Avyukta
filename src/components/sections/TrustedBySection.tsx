@@ -20,7 +20,7 @@ const TrustedBySection = () => {
         <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80">
           Our Channel Partner
         </h2>
-        <div className="marquee" style={{paddingTop: '8px !important'}}>
+        <div className="marquee" style={{paddingTop: '36gi tpx !important'}}>
           <div className="marquee-content marquee-content-hover">
             {[...logos, ...logos].map((logo, index) => ( // Duplicate logos for seamless loop
               <div

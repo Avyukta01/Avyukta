@@ -27,7 +27,7 @@ const services = [
     title: "iOS App Development",
     icon: Apple,
     description: "Building intuitive and elegant iOS applications that stand out on the Apple App Store, focusing on performance, security, and user engagement.",
-    image: "https://placehold.co/600x400.png",
+    image: "mobliesimages/ios.png",
     learnMoreLink: "/services/mobile-apps/ios-app-development",
     keyFeatures: [
       "Native iOS App Development (Swift/Objective-C)",

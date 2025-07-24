@@ -54,9 +54,9 @@ const crmBenefits = [
 
 const useCases = [
     { name: "Sales Force Automation", description: "Managing leads, opportunities, and sales pipelines effectively.", image: "/productimage/sale.png", aiHint: "sales team graph", alt: "Sales Force Automation dashboard in Avyukta CRM for managing leads, opportunities, and sales pipelines" },
-    { name: "Customer Service Management", description: "Tracking support tickets, managing customer inquiries, and ensuring timely resolution.", image: "https://placehold.co/400x300.png", aiHint: "customer support team", alt: "Customer Service Management interface in Avyukta CRM for tracking support tickets and inquiries" },
-    { name: "Marketing Campaign Tracking", description: "Monitoring campaign performance and attributing leads to marketing efforts.", image: "https://placehold.co/400x300.png", aiHint: "marketing analytics chart", alt: "Marketing Campaign Tracking analytics in Avyukta CRM for monitoring campaign performance and lead attribution" },
-    { name: "Employee & Task Management", description: "Organizing internal tasks, tracking employee performance and attendance.", image: "https://placehold.co/400x300.png", aiHint: "team task board", alt: "Employee and Task Management dashboard in Avyukta CRM for tracking performance and attendance" },
+    { name: "Customer Service Management", description: "Tracking support tickets, managing customer inquiries, and ensuring timely resolution.", image: "/productimage/cus.png", aiHint: "customer support team", alt: "Customer Service Management interface in Avyukta CRM for tracking support tickets and inquiries" },
+    { name: "Marketing Campaign Tracking", description: "Monitoring campaign performance and attributing leads to marketing efforts.", image: "/productimage/m.png", aiHint: "marketing analytics chart", alt: "Marketing Campaign Tracking analytics in Avyukta CRM for monitoring campaign performance and lead attribution" },
+    { name: "Employee & Task Management", description: "Organizing internal tasks, tracking employee performance and attendance.", image: "/productimage/em.png", aiHint: "team task board", alt: "Employee and Task Management dashboard in Avyukta CRM for tracking performance and attendance" },
 ];
 
 const crmImages = [

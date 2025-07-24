@@ -30,7 +30,7 @@ export default function OurValuedClientsPage() {
     <section className=" bg-background overflow-hidden">
       <div className="container-max">
         {/* Clients Section */}
-        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12">
+        <h2 className="text-3xl md:text-4xl font-bold text-white text-center mb-12 mt-12">
           Our Valued Clients
         </h2>
         <div className="relative w-full overflow-hidden mb-16">

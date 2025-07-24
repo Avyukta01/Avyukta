@@ -14,7 +14,7 @@ const services = [
     title: "Android App Development",
     icon: Bot,
     description: "Crafting high-performance and feature-rich Android applications tailored to your business needs, ensuring seamless user experiences across devices.",
-    image: "/moblieimages/appdevelopment.png",
+    image: "/mobileimages/appdevelopment.png",
     learnMoreLink: "/services/mobile-apps/android-app-development",
     keyFeatures: [
       "Custom Android App Development",
@@ -27,7 +27,7 @@ const services = [
     title: "iOS App Development",
     icon: Apple,
     description: "Building intuitive and elegant iOS applications that stand out on the Apple App Store, focusing on performance, security, and user engagement.",
-    image: "mobliesimages/ios.png",
+    image: "/mobileimages/ios.png",
     learnMoreLink: "/services/mobile-apps/ios-app-development",
     keyFeatures: [
       "Native iOS App Development (Swift/Objective-C)",
@@ -40,7 +40,7 @@ const services = [
     title: "Cross-Platform App Development",
     icon: Code2,
     description: "Developing versatile applications that run seamlessly on both iOS and Android platforms, saving time and resources without compromising on quality.",
-    image: "https://placehold.co/600x400.png",
+    image: "/mobileimages/mcp.jpg",
     learnMoreLink: "/services/mobile-apps/cross-platform-app-development",
     keyFeatures: [
       "React Native Development",
@@ -53,7 +53,7 @@ const services = [
     title: "Progressive Web Apps (PWAs)",
     icon: Rocket,
     description: "Delivering web applications that offer a native app-like experience with offline capabilities, push notifications, and fast loading times.",
-    image: "https://placehold.co/600x400.png",
+    image: "/mobileimages/pwa.jpg",
     learnMoreLink: "/services/mobile-apps/pwa-development",
     keyFeatures: [
       "Offline Functionality",
@@ -162,7 +162,7 @@ export default function MobileAppsPage() {
                   <CardFooter>
                     <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
                       <Link href={service.learnMoreLink}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        Know More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   </CardFooter>

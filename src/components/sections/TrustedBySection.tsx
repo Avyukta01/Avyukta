@@ -17,29 +17,27 @@ const TrustedBySection = () => {
       
       
       <div className="container-max">
-        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80">
+        <h2 className="text-2xl md:text-3xl font-semibold text-center text-foreground/80 mb-9">
           Our Channel Partner
         </h2>
-        <div className="marquee" style={{paddingTop: '36gi tpx !important'}}>
-          <div className="marquee-content marquee-content-hover">
-            {[...logos, ...logos].map((logo, index) => ( // Duplicate logos for seamless loop
-              <div
-                key={`${logo.name}-${index}`} // Unique key for duplicated items
-                className="inline-block mx-10 md:mx-16 align-middle" // Added margins for spacing
-                title={logo.name}
-              >
-                <Image
-                  src={logo.src}
-                  alt={`${logo.name} Logo`}
-                  width={200}
-                  height={80}
-                  style={{ objectFit: 'contain' }}
-                  data-ai-hint={logo.hint}
-                  className="rounded-md"
-                />
-              </div>
-            ))}
-          </div>
+        <div className="flex justify-center items-center gap-12" style={{marginTop: '0px'}}>
+          {logos.map((logo, index) => (
+            <div
+              key={`${logo.name}-${index}`}
+              className="inline-block align-middle"
+              title={logo.name}
+            >
+              <Image
+                src={logo.src}
+                alt={`${logo.name} Logo`}
+                width={200}
+                height={80}
+                style={{ objectFit: 'contain' }}
+                data-ai-hint={logo.hint}
+                className="rounded-md"
+              />
+            </div>
+          ))}
         </div>
       </div>
     </section>

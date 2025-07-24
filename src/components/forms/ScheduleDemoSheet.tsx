@@ -117,9 +117,9 @@ export function ScheduleDemoSheet({ children }: ScheduleDemoSheetProps) {
       </SheetTrigger>
       <SheetContent className="w-[400px] sm:w-[540px] bg-background/80 backdrop-blur-md border border-gray-200/50 shadow-lg z-[9998] flex flex-col">
         <SheetHeader className="p-6 pb-4 text-left flex-shrink-0">
-          <SheetTitle className="text-2xl font-bold">Request a Demo</SheetTitle>
+          <SheetTitle className="text-2xl font-bold">Schedule Meeting</SheetTitle>
           <SheetDescription>
-            Fill out the form below to request a personalized demo of our products.
+            Fill out the form below to schedule a meeting with our team.
           </SheetDescription>
         </SheetHeader>
         <div className="flex-1 overflow-y-auto">

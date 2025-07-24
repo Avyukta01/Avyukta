@@ -122,7 +122,9 @@ export default function RootLayout({
       </head>
       <body className={`${poppins.variable} ${roboto_mono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
-          {children}
+          <main className="flex-grow pt-20">
+            {children}
+          </main>
           <Toaster />
           <FloatingWhatsAppButton />
           <elevenlabs-convai agent-id="agent_01k0ppyxn5eecaswntz2r3symf"></elevenlabs-convai>

@@ -29,7 +29,7 @@ export default function GSMGatewayPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/cloudimage/gsm.svg"
                 alt="GSM Gateway Device"
                 width={600}
                 height={400}
@@ -86,22 +86,22 @@ export default function GSMGatewayPage() {
                 {
                   title: "Call Centers",
                   desc: "Optimize outbound and inbound call costs, ensure high availability, and support remote agent operations.",
-                  img: "https://placehold.co/400x300.png"
+                  img: "/cloudimage/call.svg"
                 },
                 {
                   title: "Enterprises & SMEs",
                   desc: "Integrate GSM connectivity for branch offices, mobile teams, or as a backup for critical communications.",
-                  img: "https://placehold.co/400x300.png"
+                  img: "/cloudimage/sme.svg"
                 },
                 {
                   title: "Telecom Operators",
                   desc: "Expand network reach, offer value-added services, and enable rural or last-mile connectivity.",
-                  img: "https://placehold.co/400x300.png"
+                  img: "/cloudimage/tel.svg"
                 },
                 {
                   title: "Emergency & Remote Sites",
                   desc: "Ensure reliable voice and SMS communications in disaster recovery, construction, or remote field operations.",
-                  img: "https://placehold.co/400x300.png"
+                  img: "/cloudimage/em.svg"
                 }
               ].map((useCase, idx) => (
                 <Card key={useCase.title} className="flex flex-col overflow-hidden shadow-lg">

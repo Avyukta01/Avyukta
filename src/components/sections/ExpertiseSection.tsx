@@ -72,7 +72,7 @@ const ExpertiseSection = () => {
         }
       `}</style>
       <div className="container-max">
-        <div className="text-center mb-12">
+        <div className="text-center mb-12 mt-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 animate-fade-in-up">
             Our Expertise
           </h2>
@@ -98,7 +98,7 @@ const ExpertiseSection = () => {
               <CardFooter>
                 <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
                   <Link href={item.learnMoreLink}>
-                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                    Know More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </CardFooter>

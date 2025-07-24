@@ -101,7 +101,7 @@ export default function AIPage() {
                   </div>
                   <p className="text-muted-foreground mb-4">{product.description}</p>
                   <Button asChild variant="link" className="text-accent p-0">
-                    <Link href={product.link}>Learn More <ArrowRight className="ml-2 h-4 w-4" /></Link>
+                    <Link href={product.link}>Know More <ArrowRight className="ml-2 h-4 w-4" /></Link>
                   </Button>
                 </Card>
               ))}

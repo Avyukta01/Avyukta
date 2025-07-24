@@ -55,7 +55,7 @@ const allProducts = [
     link: "/services/ai-solutions/ai-agent-development"
   },
   {
-    name: "CRM Master",
+    name: " Avyukta Universal CRM",
     description: "An all-in-one Customer Relationship Management platform engineered to empower your business with centralized data and automated workflows.",
     icon: Users,
     image: "https://placehold.co/600x450.png", // Placeholder image
@@ -70,7 +70,7 @@ const allProducts = [
     link: "/products/crm"
   },
   {
-    name: "DialerIndia",
+    name: "Dialer India",
     description: "An advanced call center solution for efficient outbound and inbound call management, predictive dialing, and comprehensive reporting.",
     icon: PhoneCall,
     image: "https://placehold.co/600x450.png", // Placeholder image
@@ -222,7 +222,7 @@ export default function ExploreProductsPage() {
                   <CardFooter>
                     <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
                       <Link href={product.link}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        Know More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   </CardFooter>

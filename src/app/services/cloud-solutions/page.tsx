@@ -60,7 +60,7 @@ export default function CloudSolutionsPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
              <div className="animate-fade-in-left animation-delay-100">
               <Image
-                src="https://placehold.co/600x450.png"
+                src="/cloudimage/cloud.jpg"
                 alt="Abstract cloud network"
                 width={600}
                 height={450}

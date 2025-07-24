@@ -42,9 +42,9 @@ const BlogSection = () => {
         }
       `}</style>
       <div className="container-max">
-        <div className="text-center">
+        <div className="text-center mb-10">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            Latest From Our Blog
+            Latest From Our Blogs
           </h2>
           <p className="text-muted-foreground max-w-xl mx-auto">
             Stay informed with our latest insights, trends, and articles on technology and innovation.

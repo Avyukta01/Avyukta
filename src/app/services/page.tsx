@@ -170,7 +170,7 @@ export default function ServicesPage() {
                   <CardFooter className="pt-1">
                     <Button asChild variant="link" className="text-primary text-sm p-0 hover:text-accent">
                       <Link href={service.learnMoreLink}>
-                        Learn More <ArrowRight className="ml-1 h-3 w-3" />
+                        Know More <ArrowRight className="ml-1 h-3 w-3" />
                       </Link>
                     </Button>
                   </CardFooter>

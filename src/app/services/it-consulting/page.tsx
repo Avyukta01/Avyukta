@@ -130,7 +130,7 @@ export default function ITConsultingPage() {
                   </CardHeader>
                   <CardContent>
                     <Link href={service.link} className="text-accent hover:underline flex items-center mt-4">
-                      Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                      Know More <ArrowRight className="ml-2 h-4 w-4" />
                     </Link>
                   </CardContent>
                 </Card>

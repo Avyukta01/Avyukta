@@ -21,7 +21,7 @@ const styles = {
 
 const HeroSection = () => {
   return (
-    <section className="relative text-primary-foreground pt-24px  pb-0 min-h-[calc(100vh-6rem)] flex items-center overflow-hidden particle-background-hero">
+    <section className="relative text-primary-foreground py-4 min-h-[60vh] flex items-center overflow-hidden particle-background-hero">
       {/* The particle-background-hero class will apply the ::before pseudo-element for the particle effect */}
       <div className="container-max relative z-20 text-center">
       

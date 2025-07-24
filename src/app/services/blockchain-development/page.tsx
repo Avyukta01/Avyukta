@@ -60,7 +60,7 @@ export default function BlockchainDevelopmentPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
-                src="https://placehold.co/600x450.png"
+                src="/cloudimage/block.svg"
                 alt="Abstract blockchain network"
                 width={600}
                 height={450}

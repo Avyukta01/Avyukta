@@ -152,7 +152,7 @@ export default function WebDevelopmentPage() {
                   <CardFooter>
                     <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
                       <Link href={area.learnMoreLink}>
-                        Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                        Know More <ArrowRight className="ml-2 h-4 w-4" />
                       </Link>
                     </Button>
                   </CardFooter>

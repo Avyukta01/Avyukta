@@ -338,7 +338,7 @@ const Header = () => {
                             <p className="text-muted-foreground max-w-sm">{activeServiceCategory.description}</p>
                             <Button asChild variant="link" className="mt-4 text-accent hover:underline">
                                 <Link href={activeServiceCategory.href}>
-                                    Learn More <ArrowRight className="ml-2 h-4 w-4" />
+                                    Know More <ArrowRight className="ml-2 h-4 w-4" />
                                 </Link>
                             </Button>
                         </div>

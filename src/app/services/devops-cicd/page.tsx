@@ -58,9 +58,9 @@ export default function DevOpsCICDPage() {
         {/* Why DevOps? Section */}
          <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in-left">
+            <div className="animate-fade-in-left relative h-80">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/productimage/devops.svg"
                 alt="DevOps infinity loop"
                 fill
                 className="rounded-lg shadow-xl object-cover"

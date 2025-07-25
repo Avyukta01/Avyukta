@@ -52,10 +52,10 @@ const benefits = [
 ];
 
 const useCases = [
-    { name: "Appointment Reminders", description: "Automate calls to remind customers of upcoming appointments.", image: "https://placehold.co/400x300.png", aiHint: "calendar reminder call" },
-    { name: "Customer Feedback Surveys", description: "Conduct voice surveys post-interaction to gather feedback.", image: "https://placehold.co/400x300.png", aiHint: "survey feedback voice" },
-    { name: "Promotional Campaigns", description: "Run targeted outbound calling campaigns for new offers.", image: "https://placehold.co/400x300.png", aiHint: "marketing campaign megaphone" },
-    { name: "Intelligent Call Routing", description: "Route inbound calls effectively based on caller intent.", image: "https://placehold.co/400x300.png", aiHint: "call center routing" },
+    { name: "Appointment Reminders", description: "Automate calls to remind customers of upcoming appointments.", image: "/productimage/u.svg", aiHint: "calendar reminder call" },
+    { name: "Customer Feedback Surveys", description: "Conduct voice surveys post-interaction to gather feedback.", image: "/productimage/e-c.png", aiHint: "survey feedback voice" },
+    { name: "Promotional Campaigns", description: "Run targeted outbound calling campaigns for new offers.", image: "/productimage/pro.svg", aiHint: "marketing campaign megaphone" },
+    { name: "Intelligent Call Routing", description: "Route inbound calls effectively based on caller intent.", image: "/productimage/man.png", aiHint: "call center routing" },
 ];
 
 export default function AIVoiceCallerPage() {
@@ -86,7 +86,7 @@ export default function AIVoiceCallerPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
-                src="https://placehold.co/600x450.png"
+                src="/productimage/aicaller.svg"
                 alt="AI Voice Caller Dashboard"
                 width={600}
                 height={450}

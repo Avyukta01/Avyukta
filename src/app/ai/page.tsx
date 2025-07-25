@@ -8,6 +8,8 @@ import { BrainCircuit, Lightbulb, Bot, BarChart3, ShieldCheck, Cpu, Speech, Eye,
 import Link from "next/link";
 import Image from "next/image";
 import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
+import { aiExpertiseDetails } from "@/app/ai/aiExpertiseData";
+import { useRef, useState, RefObject } from "react";
 
 const featuredAIProducts = [
   {
@@ -24,51 +26,36 @@ const featuredAIProducts = [
   }
 ];
 
-// Replace aiExpertiseAreas with new expertise list
-const aiExpertiseDetails = [
-  {
-    title: "1. Multiple Websites Monitoring with Notifications including Phone Calls",
-    description: "Automatic monitoring of multiple URLs with instant downtime alerts via notifications and phone calls.",
-  },
-  {
-    title: "2. Automatic monitoring of multiple URLs with downtime alerts",
-    description: "Stay informed about your website uptime with real-time monitoring and instant alerts for any downtime.",
-  },
-  {
-    title: "3. Build a Voice AI Chatbot with ElevenLabs and InfraNodus Knowledge Expert",
-    description: "Create advanced voice AI chatbots leveraging ElevenLabs and InfraNodus for deep knowledge integration.",
-  },
-  {
-    title: "4. Sticky Note AI Agent (OpenAI Chat Model + More)",
-    description: "Build an interactive AI agent with a chat interface, sticky notes, and multiple integrated tools.",
-  },
-  {
-    title: "5. Build an Interactive AI Agent with Chat Interface and Multiple Tools",
-    description: "Develop AI agents that can interact, assist, and automate tasks using a chat interface and various tools.",
-  },
-  {
-    title: "6. Voice-Based Appointment Booking System with ElevenLabs AI and Cal.com",
-    description: "Automate appointment bookings with a voice-based AI system integrated with ElevenLabs and Cal.com.",
-  },
-  {
-    title: "7. AI-Powered Social Media Content Creator with Multi-Platform Publishing & Approval",
-    description: "Generate, schedule, and publish content across multiple social platforms with AI-driven workflows and approval chains.",
-  },
-  {
-    title: "8. Build a Voice AI Chatbot with ElevenLabs and InfraNodus Knowledge Experts",
-    description: "Leverage ElevenLabs and InfraNodus to build voice-enabled chatbots with expert knowledge capabilities.",
-  },
-  {
-    title: "9. AI-Powered WhatsApp Chatbot for Text, Voice, Images, and PDF with RAG",
-    description: "Deploy WhatsApp chatbots that handle text, voice, images, and PDFs using Retrieval-Augmented Generation (RAG).",
-  },
-  {
-    title: "10. Create & Upload AI-Generated ASMR YouTube Shorts with Seedance, Fal AI, and GPT-4",
-    description: "Produce and upload AI-generated ASMR YouTube Shorts using Seedance, Fal AI, and GPT-4 for creative content.",
-  },
-];
-
 export default function AIPage() {
+  const [searchCategory, setSearchCategory] = useState("");
+  const [searchText, setSearchText] = useState("");
+  const [highlighted, setHighlighted] = useState<{ [key: string]: boolean }>({});
+  const sectionRefs: Record<string, RefObject<HTMLDivElement>> = {
+    sales: useRef<HTMLDivElement>(null),
+    marketing: useRef<HTMLDivElement>(null),
+    support: useRef<HTMLDivElement>(null),
+  };
+
+  const handleSearch = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (searchCategory && sectionRefs[searchCategory]) {
+      sectionRefs[searchCategory].current?.scrollIntoView({ behavior: "smooth", block: "start" });
+      // Highlight matching cards
+      const matches: { [key: string]: boolean } = {};
+      aiExpertiseDetails.forEach(item => {
+        if (
+          item.category === searchCategory &&
+          (item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+            item.shortDescription.toLowerCase().includes(searchText.toLowerCase()))
+        ) {
+          matches[item.title] = true;
+        }
+      });
+      setHighlighted(matches);
+      setTimeout(() => setHighlighted({}), 2000); // Remove highlight after 2s
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
@@ -83,33 +70,56 @@ export default function AIPage() {
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-2xl mx-auto animate-fade-in-up animation-delay-200">
               Leverage the power of Artificial Intelligence to transform your business, unlock new opportunities, and drive unprecedented growth.
             </p>
-          </div>
-        </section>
-
-        {/* Featured AI Products Section */}
-        <section className="section-padding bg-secondary">
-          <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Our Featured AI Products
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {featuredAIProducts.map((product, index) => (
-                <Card key={product.name} className={`p-6 shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <div className="flex items-center mb-4">
-                    <product.icon className="h-10 w-10 text-primary mr-4" />
-                    <h3 className="text-2xl font-semibold text-primary">{product.name}</h3>
-                  </div>
-                  <p className="text-muted-foreground mb-4">{product.description}</p>
-                  <Button asChild variant="link" className="text-accent p-0">
-                    <Link href={product.link}>Know More <ArrowRight className="ml-2 h-4 w-4" /></Link>
-                  </Button>
-                </Card>
-              ))}
-            </div>
-             <div className="text-center mt-12 animate-fade-in-up animation-delay-400">
-                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
-                    <Link href="/products/explore">Explore All Products</Link>
+            {/* Product Buttons */}
+            <div className="flex flex-col md:flex-row justify-center gap-6 mt-10 mb-10">
+              <Link href="/products/aichatbotpro">
+                <Button className="bg-white text-black rounded-full px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
+                  WhatsApp Ai Chat Bot
                 </Button>
+              </Link>
+              <Link href="/products/aivoicecaller">
+                <Button className="bg-white text-black rounded-full px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
+                  AI Voice Caller
+                </Button>
+              </Link>
+            </div>
+            {/* Search Bar for AI Expertise by Category */}
+            <div className="flex flex-col items-center mb-12">
+              <form onSubmit={handleSearch} className="w-full max-w-xl flex gap-0 bg-white/30 backdrop-blur border border-white/30 rounded-full shadow-lg overflow-hidden">
+                <select
+                  className="rounded-l-full px-5 py-3 bg-gray-100 text-black border-none focus:ring-0 focus:outline-none min-w-[140px]"
+                  value={searchCategory}
+                  onChange={e => setSearchCategory(e.target.value)}
+                  required
+                >
+                  <option value="">Select Category</option>
+                  <option value="sales">Sales</option>
+                  <option value="marketing">Marketing</option>
+                  <option value="support">Support</option>
+                </select>
+                <div className="flex items-center flex-grow relative">
+                  <span className="absolute left-3 text-gray-400">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                      <circle cx="11" cy="11" r="8" />
+                      <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg>
+                  </span>
+                  <input
+                    type="text"
+                    placeholder="Search in selected category..."
+                    className="w-full pl-10 pr-4 py-3 bg-white text-black border-none focus:ring-0 focus:outline-none"
+                    value={searchText}
+                    onChange={e => setSearchText(e.target.value)}
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  className="rounded-r-full bg-black text-white px-7 py-3 font-bold hover:bg-gray-900 transition"
+                >
+                  Search
+                </button>
+              </form>
             </div>
           </div>
         </section>
@@ -120,18 +130,44 @@ export default function AIPage() {
             <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
               Our AI Expertise
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {aiExpertiseDetails.map((item, index) => (
-                <Card key={item.title} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <CardHeader>
-                    <CardTitle className="text-xl text-primary font-bold mb-2">{item.title}</CardTitle>
-                  </CardHeader>
-                  <CardContent className="flex-grow">
-                    <p className="text-muted-foreground text-base">{item.description}</p>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
+            {/* Category Filter (optional, for future) */}
+            {/* <div className="flex justify-center mb-8 gap-4">
+              <Button>CRM</Button>
+              <Button>Sales</Button>
+              <Button>Marketing</Button>
+              <Button>AI</Button>
+            </div> */}
+            {["sales", "marketing", "support"].map((cat) => (
+              <div key={cat} className="mb-8" ref={sectionRefs[cat]}>
+                <h3 className="text-lg font-bold mb-4 capitalize text-primary">{cat}</h3>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                  {aiExpertiseDetails.filter(item => item.category === cat &&
+                    (!searchCategory || searchCategory !== cat || searchText.trim() === "" ||
+                      item.title.toLowerCase().includes(searchText.toLowerCase()) ||
+                      item.shortDescription.toLowerCase().includes(searchText.toLowerCase())
+                    )
+                  ).map(item => (
+                    <div
+                      key={item.title}
+                      className={`bg-[#181828] rounded-2xl p-0 flex flex-col min-h-[300px] max-h-[340px] w-full shadow-md overflow-hidden ${highlighted[item.title] ? "ring-4 ring-yellow-400" : ""}`}
+                    >
+                      <div className="relative w-full h-48 md:h-56 bg-[#23233a]">
+                        <img src={item.image} alt={item.title} className="object-cover w-full h-full" />
+                      </div>
+                      <div className="flex flex-col flex-grow px-4 py-3">
+                        <div className="text-sm font-semibold text-white mb-1 line-clamp-2">{item.title}</div>
+                        <span className="text-xs text-gray-400 mb-2 line-clamp-2">{item.shortDescription}</span>
+                        <div className="flex justify-end mt-auto">
+                          <Link href={item.link}>
+                            <button className="bg-white text-black rounded-full px-4 py-1 text-xs font-bold hover:bg-gray-200 transition">Know More</button>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
           </div>
         </section>
 

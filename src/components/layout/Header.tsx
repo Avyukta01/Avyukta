@@ -204,7 +204,7 @@ const navLinks: NavLink[] = [
     href: "/products",
     label: "Products",
     desktopServiceCategories: [
-      { title: "Avyukta CRM Master", icon: Users, href: "/products/crm", description: "A comprehensive Avyukta CRM solution for lead, sales, and task management." },
+      { title: "Universal Avyukta CRM", icon: Users, href: "/products/crm", description: "A comprehensive Universal Avyukta CRM solution for lead, sales, and task management." },
       { title: "DialerIndia", icon: PhoneCall, href: "/products/dialer-india", description: "Advanced dialing solutions with call recording and analytics." },
       { icon: MessageCircle, href: "/products/aichatbotpro", title: "WhatsApp AI", description: "Automate customer interactions with our intelligent AI chatbot." },
       { icon: PhoneCall, href: "/products/aivoicecaller", title: "AI Voice Caller", description: "Transform voice communications with our AI Voice Caller." },

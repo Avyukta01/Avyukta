@@ -53,10 +53,10 @@ const crmBenefits = [
 ];
 
 const useCases = [
-    { name: "Sales Force Automation", description: "Managing leads, opportunities, and sales pipelines effectively.", image: "/productimage/sale.png", aiHint: "sales team graph", alt: "Sales Force Automation dashboard in Avyukta CRM for managing leads, opportunities, and sales pipelines" },
-    { name: "Customer Service Management", description: "Tracking support tickets, managing customer inquiries, and ensuring timely resolution.", image: "/productimage/cus.png", aiHint: "customer support team", alt: "Customer Service Management interface in Avyukta CRM for tracking support tickets and inquiries" },
-    { name: "Marketing Campaign Tracking", description: "Monitoring campaign performance and attributing leads to marketing efforts.", image: "/productimage/m.png", aiHint: "marketing analytics chart", alt: "Marketing Campaign Tracking analytics in Avyukta CRM for monitoring campaign performance and lead attribution" },
-    { name: "Employee & Task Management", description: "Organizing internal tasks, tracking employee performance and attendance.", image: "/productimage/em.png", aiHint: "team task board", alt: "Employee and Task Management dashboard in Avyukta CRM for tracking performance and attendance" },
+    { name: "Sales Force Automation", description: "Managing leads, opportunities, and sales pipelines effectively.", image: "/productimage/sale.png", aiHint: "sales team graph", alt: "Sales Force Automation dashboard in Universal Avyukta CRM for managing leads, opportunities, and sales pipelines" },
+    { name: "Customer Service Management", description: "Tracking support tickets, managing customer inquiries, and ensuring timely resolution.", image: "/productimage/cus.png", aiHint: "customer support team", alt: "Customer Service Management interface in Universal Avyukta CRM for tracking support tickets and inquiries" },
+    { name: "Marketing Campaign Tracking", description: "Monitoring campaign performance and attributing leads to marketing efforts.", image: "/productimage/m.png", aiHint: "marketing analytics chart", alt: "Marketing Campaign Tracking analytics in Universal Avyukta CRM for monitoring campaign performance and lead attribution" },
+    { name: "Employee & Task Management", description: "Organizing internal tasks, tracking employee performance and attendance.", image: "/productimage/em.png", aiHint: "team task board", alt: "Employee and Task Management dashboard in Universal Avyukta CRM for tracking performance and attendance" },
 ];
 
 const crmImages = [
@@ -108,7 +108,7 @@ function LeadManagementCarousel() {
       {/* SEO-friendly Title and Description */}
       <h3 className="text-lg font-bold mb-2 text-primary">Advanced Lead Management</h3>
       <p className="mb-4 text-muted-foreground">
-        Empower your sales team with intelligent lead management. Capture, nurture, and convert leads efficiently with automated workflows, real-time analytics, and seamless integrations. Maximize your conversion rates and grow your business with Avyukta CRM.
+        Empower your sales team with intelligent lead management. Capture, nurture, and convert leads efficiently with automated workflows, real-time analytics, and seamless integrations. Maximize your conversion rates and grow your business with Universal Avyukta CRM.
       </p>
       {/* Features List */}
       <ul className="list-disc pl-5 mb-2 text-sm text-foreground">
@@ -201,7 +201,7 @@ function AccountManagementCarousel() {
       </div>
       <h3 className="text-lg font-bold mb-2 text-primary">Comprehensive Account Management</h3>
       <p className="mb-4 text-muted-foreground">
-        Manage all your customer accounts in one place. Avyukta CRM provides a 360-degree view of every client, enabling your team to build stronger relationships, track every interaction, and deliver personalized service that drives loyalty and growth.
+        Manage all your customer accounts in one place. Universal Avyukta CRM provides a 360-degree view of every client, enabling your team to build stronger relationships, track every interaction, and deliver personalized service that drives loyalty and growth.
       </p>
       <ul className="list-disc pl-5 mb-2 text-sm text-foreground">
         {accountFeatures.map((feature, idx) => (
@@ -373,7 +373,7 @@ function GoogleIntegrationCarousel() {
       </div>
       <h3 className="text-lg font-bold mb-2 text-primary">Powerful Google Integration</h3>
       <p className="mb-4 text-muted-foreground">
-        Connect your CRM with Google Workspace for a unified workflow. Sync calendars, manage emails, and collaborate on documents directly within Avyukta CRM to boost productivity and streamline your business operations.
+        Connect your CRM with Google Workspace for a unified workflow. Sync calendars, manage emails, and collaborate on documents directly within Universal Avyukta CRM to boost productivity and streamline your business operations.
       </p>
       <ul className="list-disc pl-5 mb-2 text-sm text-foreground">
         {googleFeatures.map((feature, idx) => (
@@ -393,7 +393,7 @@ function GoogleIntegrationCarousel() {
       </ul>
       <h4 className="text-base font-semibold mt-4 mb-2 text-primary">How It Works</h4>
       <ol className="list-decimal pl-5 mb-4 text-sm text-foreground">
-        <li><strong>Connect:</strong> Authorize your Google Workspace account in Avyukta CRM.</li>
+        <li><strong>Connect:</strong> Authorize your Google Workspace account in Universal Avyukta CRM.</li>
         <li><strong>Sync:</strong> Automatically import contacts, events, and emails.</li>
         <li><strong>Collaborate:</strong> Share and edit documents with your team in real time.</li>
         <li><strong>Automate:</strong> Set up workflows for reminders, follow-ups, and document sharing.</li>
@@ -458,7 +458,7 @@ function CustomerLabelStyleCarousel() {
       </div>
       <h3 className="text-lg font-bold mb-2 text-primary">Flexible Customer Labeling</h3>
       <p className="mb-4 text-muted-foreground">
-        Organize and segment your customers with powerful, customizable labels. Avyukta CRM lets you create, assign, and manage labels for efficient targeting, communication, and workflow automation.
+        Organize and segment your customers with powerful, customizable labels. Universal Avyukta CRM lets you create, assign, and manage labels for efficient targeting, communication, and workflow automation.
       </p>
       <ul className="list-disc pl-5 mb-2 text-sm text-foreground">
         {labelFeatures.map((feature, idx) => (
@@ -519,7 +519,7 @@ export default function CRMPage() {
           <div className="container-max text-center">
             <Users className="h-20 w-20 text-accent mx-auto mb-6 animate-fade-in-up" />
             <h1 className="text-4xl md:text-5xl font-bold mb-4 animate-fade-in-up animation-delay-100">
-              Avyukta CRM: Unify Your Customer Relationships
+              Universal Avyukta CRM: Unify Your Customer Relationships
             </h1>
             <p className="text-lg md:text-xl text-primary-foreground/80 max-w-3xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               A comprehensive CRM solution to streamline sales, manage leads, automate tasks, and provide deep insights for unparalleled customer engagement and business growth.
@@ -536,13 +536,13 @@ export default function CRMPage() {
           </div>
         </section>
 
-        {/* What is Avyukta CRM? Section */}
+        {/* What is Universal Avyukta CRM? Section */}
         <section className="section-padding">
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
                 src="/productimage/crm.svg"
-                alt="Avyukta CRM Dashboard"
+                alt="Universal Avyukta CRM Dashboard"
                 width={600}
                 height={450}
                 className="rounded-lg shadow-xl"
@@ -550,9 +550,9 @@ export default function CRMPage() {
               />
             </div>
             <div className="animate-fade-in-right animation-delay-100">
-              <h2 className="text-3xl font-bold text-primary mb-6">Meet Avyukta CRM</h2>
+              <h2 className="text-3xl font-bold text-primary mb-6">Meet Universal Avyukta CRM</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                Avyukta CRM is an all-in-one Customer Relationship Management platform meticulously engineered to empower your business. It centralizes customer data, automates critical workflows, and provides powerful tools for sales, marketing, and service teams to collaborate effectively and build lasting customer loyalty.
+                Universal Avyukta CRM is an all-in-one Customer Relationship Management platform meticulously engineered to empower your business. It centralizes customer data, automates critical workflows, and provides powerful tools for sales, marketing, and service teams to collaborate effectively and build lasting customer loyalty.
               </p>
               <p className="text-muted-foreground text-lg">
                 From advanced lead management and sales automation to comprehensive reporting and employee productivity tools, our CRM is designed for scalability and customizability to fit your unique operational needs.
@@ -565,7 +565,7 @@ export default function CRMPage() {
         <section className="section-padding bg-secondary">
           <div className="container-max">
             <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up">
-              Core Features of Avyukta CRM
+              Core Features of Universal Avyukta CRM
             </h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 sd:grid-cols-3 sd:grid-cols-5 gap-6 max-w-6xl mx-75">
               {crmFeatures.map((feature, index) => (
@@ -755,7 +755,7 @@ export default function CRMPage() {
               Ready to Revolutionize Your Customer Management?
             </h2>
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
-              Discover how Avyukta CRM can transform your sales, service, and marketing efforts.
+              Discover how Universal Avyukta CRM can transform your sales, service, and marketing efforts.
             </p>
             <ScheduleDemoSheet>
               <Button size="lg" variant="default" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">

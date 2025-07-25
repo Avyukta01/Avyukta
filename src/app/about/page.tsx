@@ -44,7 +44,7 @@ export default function AboutPage() {
             </div>
             <div className="animate-fade-in-right animation-delay-100">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/productimage/avyuktahome.svg"
                 alt="Avyukta Team Working"
                 width={600}
                 height={400}

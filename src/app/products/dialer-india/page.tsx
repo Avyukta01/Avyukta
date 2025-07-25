@@ -82,10 +82,10 @@ const dialerBenefits = [
 ];
 
 const useCases = [
-    { name: "Telemarketing & Sales", description: "Run high-volume outbound campaigns, manage leads, and track sales performance.", image: "https://placehold.co/400x300.png", aiHint: "sales team callcenter" },
-    { name: "Customer Support Centers", description: "Handle inbound inquiries efficiently with ACD, IVR, and call recording for quality assurance.", image: "https://placehold.co/400x300.png", aiHint: "customer support headset" },
-    { name: "Lead Generation & Nurturing", description: "Systematically contact and qualify leads, schedule follow-ups, and integrate with CRM.", image: "https://placehold.co/400x300.png", aiHint: "lead generation graph" },
-    { name: "Surveys & Market Research", description: "Conduct automated or agent-assisted surveys and gather valuable market insights.", image: "https://placehold.co/400x300.png", aiHint: "market research chart" },
+    { name: "Telemarketing & Sales", description: "Run high-volume outbound campaigns, manage leads, and track sales performance.", image: "/productimage/da.png", aiHint: "sales team callcenter" },
+    { name: "Customer Support Centers", description: "Handle inbound inquiries efficiently with ACD, IVR, and call recording for quality assurance.", image: "/productimage/cus.png", aiHint: "customer support headset" },
+    { name: "Lead Generation & Nurturing", description: "Systematically contact and qualify leads, schedule follow-ups, and integrate with CRM.", image: "/productimage/lead.png", aiHint: "lead generation graph" },
+    { name: "Surveys & Market Research", description: "Conduct automated or agent-assisted surveys and gather valuable market insights.", image: "/productimage/reseacrh.png", aiHint: "market research chart" },
 ];
 
 
@@ -117,7 +117,7 @@ export default function DialerIndiaPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
-                src="https://placehold.co/600x450.png"
+                src="/productimage/dialer.svg"
                 alt="DialerIndia Dashboard Interface"
                 width={600}
                 height={450}

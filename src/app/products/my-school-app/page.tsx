@@ -78,10 +78,10 @@ const schoolAppBenefits = [
 ];
 
 const useCases = [
-    { name: "K-12 Schools", description: "Complete digital transformation for primary and secondary education with comprehensive student and parent engagement.", image: "https://placehold.co/400x300.png", aiHint: "school building students" },
-    { name: "Higher Education", description: "Advanced learning management for colleges and universities with research tools and academic collaboration.", image: "https://placehold.co/400x300.png", aiHint: "university campus" },
-    { name: "Online Academies", description: "Virtual learning environments for distance education and skill development programs.", image: "https://placehold.co/400x300.png", aiHint: "online learning platform" },
-    { name: "Corporate Training", description: "Employee training and development with progress tracking and certification management.", image: "https://placehold.co/400x300.png", aiHint: "corporate training room" },
+    { name: "K-12 Schools", description: "Complete digital transformation for primary and secondary education with comprehensive student and parent engagement.", image: "/productimage/school1.svg", aiHint: "school building students" },
+    { name: "Higher Education", description: "Advanced learning management for colleges and universities with research tools and academic collaboration.", image: "/productimage/high.png", aiHint: "university campus" },
+    { name: "Online Academies", description: "Virtual learning environments for distance education and skill development programs.", image: "/productimage/online.png", aiHint: "online learning platform" },
+    { name: "Corporate Training", description: "Employee training and development with progress tracking and certification management.", image: "/productimage/training.png", aiHint: "corporate training room" },
 ];
 
 const statistics = [
@@ -119,7 +119,7 @@ export default function MySchoolAppPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
-                src="https://placehold.co/600x450.png"
+                src="/productimage/school.svg"
                 alt="School App Dashboard"
                 width={600}
                 height={450}

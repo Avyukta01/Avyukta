@@ -33,10 +33,10 @@ const benefits = [
 ];
 
 const useCases = [
-    { name: "E-commerce Assistance", description: "Product recommendations, order tracking, returns processing.", image: "https://placehold.co/400x300.png", aiHint: "e-commerce online shopping" },
-    { name: "Customer Support Automation", description: "Answering FAQs, troubleshooting, guiding users.", image: "https://placehold.co/400x300.png", aiHint: "customer support headset" },
-    { name: "Sales & Lead Nurturing", description: "Qualifying leads, scheduling demos, follow-ups.", image: "https://placehold.co/400x300.png", aiHint: "sales team meeting" },
-    { name: "Appointment Booking", description: "Scheduling and managing appointments for services.", image: "https://placehold.co/400x300.png", aiHint: "calendar appointment booking" },
+    { name: "E-commerce Assistance", description: "Product recommendations, order tracking, returns processing.", image: "/productimage/e-c.png", aiHint: "e-commerce online shopping" },
+    { name: "Customer Support Automation", description: "Answering FAQs, troubleshooting, guiding users.", image: "/productimage/auto.png", aiHint: "customer support headset" },
+    { name: "Sales & Lead Nurturing", description: "Qualifying leads, scheduling demos, follow-ups.", image: "/productimage/lead.png", aiHint: "sales team meeting" },
+    { name: "Appointment Booking", description: "Scheduling and managing appointments for services.", image: "/productimage/image.png", aiHint: "calendar appointment booking" },
 ];
 
 

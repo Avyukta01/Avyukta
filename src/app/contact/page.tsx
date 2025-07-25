@@ -197,32 +197,7 @@ export default function ContactPage() {
                     </div>
                   </CardContent>
                 </Card>
-                
-                <Card className="shadow-lg">
-                  <CardHeader>
-                    <CardTitle className="text-2xl text-primary flex items-center">
-                      <Building className="mr-3 h-7 w-7" /> Global Offices
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="p-6 space-y-4">
-                    <div className="mb-4">
-                      <p className="font-medium text-foreground mb-2">India (Headquarters)</p>
-                      <p className="text-muted-foreground">+91 856-00-00-600 [Call]</p>
-                      <p className="text-muted-foreground">Mumbai, Maharashtra</p>
-                    </div>
-                    <div className="mb-4">
-                      <p className="font-medium text-foreground mb-2">United States</p>
-                      <p className="text-muted-foreground">+1 (XXX) XXX-XXXX [Call]</p>
-                      <p className="text-muted-foreground">New York, NY</p>
-                    </div>
-                    <div className="mb-4">
-                      <p className="font-medium text-foreground mb-2">South Korea</p>
-                      <p className="text-muted-foreground">+82 (XXX) XXXX-XXXX [Call]</p>
-                      <p className="text-muted-foreground">Seoul</p>
-                    </div>
-                  </CardContent>
-                </Card>
-                
+                {/* Removed Global Offices card as requested */}
                 <Card className="shadow-lg">
                   <CardHeader>
                     <CardTitle className="text-2xl text-primary flex items-center">

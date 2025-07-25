@@ -27,7 +27,7 @@ export default function ProductHighlightsSection({ className }: { className?: st
                 <div>
                 
                   <h3 className="text-xl md:text-2xl mt-2 text-muted-foreground font-normal">
-                    Avyukta Universal CRM 
+                    Universal Avyukta CRM 
                   </h3>
                 </div>
               </div>

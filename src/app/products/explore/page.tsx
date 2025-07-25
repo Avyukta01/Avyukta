@@ -55,7 +55,7 @@ const allProducts = [
     link: "/services/ai-solutions/ai-agent-development"
   },
   {
-    name: " Avyukta Universal CRM",
+    name: "Universal Avyukta CRM",
     description: "An all-in-one Customer Relationship Management platform engineered to empower your business with centralized data and automated workflows.",
     icon: Users,
     image: "https://placehold.co/600x450.png", // Placeholder image
@@ -110,25 +110,25 @@ const categories = [
     title: "Process Automation",
     description: "Intelligent automation solutions to streamline business operations",
     icon: Zap,
-    products: ["AI Agent Development", "CRM Master", "DialerIndia"]
+    products: ["AI Agent Development", "Universal Avyukta CRM", "DialerIndia"]
   },
   {
     title: "Data & Analytics",
     description: "Solutions for gaining insights and making data-driven decisions",
     icon: BarChart3,
-    products: ["CRM Master", "DialerIndia"]
+    products: ["Universal Avyukta CRM", "DialerIndia"]
   },
   {
     title: "Sales & Marketing",
     description: "Tools to optimize sales processes and marketing campaigns",
     icon: TrendingUp,
-    products: ["CRM Master", "DialerIndia"]
+    products: ["Universal Avyukta CRM", "DialerIndia"]
   },
   {
     title: "Workforce Management",
     description: "Solutions for efficient employee and task management",
     icon: Briefcase,
-    products: ["CRM Master"]
+    products: ["Universal Avyukta CRM"]
   },
   {
     title: "Blockchain & Web3",

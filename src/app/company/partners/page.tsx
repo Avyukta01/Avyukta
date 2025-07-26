@@ -10,43 +10,43 @@ import Image from "next/image";
 
 const technologyPartners = [
   {
-    name: "TechNova Solutions",
-    description: "Collaborating on next-generation AI-driven analytics platforms to provide deeper business insights.",
-    logo: "https://placehold.co/150x70.png",
-    aiHint: "tech company logo"
+    name: "Bitrix24",
+    description: "A leading collaboration and CRM platform, Bitrix24 empowers our clients with advanced tools for communication, project management, and sales automation—all in one secure cloud ecosystem.",
+    logo: "/logos/Bitrix24.png",
+    aiHint: "Bitrix24 official logo"
   },
   {
-    name: "CloudPioneers Inc.",
-    description: "Strategic alliance for robust and scalable cloud infrastructure, ensuring high availability and performance.",
-    logo: "https://placehold.co/150x70.png",
-    aiHint: "cloud services logo"
+    name: "OpenVox",
+    description: "OpenVox is a global provider of VoIP gateways and telephony solutions. Our partnership enables seamless, scalable, and reliable voice communications for businesses of all sizes.",
+    logo: "/logos/openvox.png",
+    aiHint: "OpenVox official logo"
   },
   {
-    name: "CyberSecure Ltd.",
-    description: "Partnering to integrate advanced cybersecurity measures into our software solutions, protecting client data.",
-    logo: "https://placehold.co/150x70.png",
-    aiHint: "cybersecurity logo"
+    name: "Yealink",
+    description: "Yealink is a world-renowned manufacturer of IP phones and unified communication devices. Together, we deliver high-quality, integrated voice and video solutions for modern enterprises.",
+    logo: "/logos/yealink.png",
+    aiHint: "Yealink official logo"
   },
 ];
 
 const industryAffiliations = [
   {
-    name: "Global Tech Innovators Alliance",
-    description: "Member of a leading alliance fostering collaboration and setting industry standards in technology.",
-    logo: "https://placehold.co/150x70.png",
-    aiHint: "alliance logo"
+    name: "Sangoma",
+    description: "Sangoma is a global leader in unified communications and VoIP solutions, supporting our mission to deliver reliable and innovative connectivity for businesses.",
+    logo: "/affilaitlogo/sangomalogo.jpeg",
+    aiHint: "Sangoma official logo"
   },
   {
-    name: "AI Ethics & Governance Council",
-    description: "Committed to responsible AI development through our participation in this vital council.",
-    logo: "https://placehold.co/150x70.png",
-    aiHint: "ethics council logo"
+    name: "Dinstar",
+    description: "Dinstar provides advanced VoIP gateways and communication hardware, helping us enable seamless integration and scalable telephony for our clients.",
+    logo: "/affilaitlogo/dinstar.png",
+    aiHint: "Dinstar official logo"
   },
   {
-    name: "Sustainable Tech Initiative",
-    description: "Proud affiliate promoting environmentally conscious technology solutions and practices.",
-    logo: "https://placehold.co/150x70.png",
-    aiHint: "sustainability logo"
+    name: "Vivacom",
+    description: "Vivacom is a leading telecommunications provider, recognized for its commitment to quality and innovation in the communications industry.",
+    logo: "/affilaitlogo/vivacomlogo.png",
+    aiHint: "Vivacom official logo"
   },
 ];
 
@@ -82,9 +82,9 @@ export default function PartnersPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {technologyPartners.map((partner, index) => (
-                <Card key={partner.name} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 300}`}>
+                <Card key={partner.name} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 300} rounded-xl`}>
                   <CardHeader className="items-center text-center">
-                    <Image src={partner.logo} alt={`${partner.name} Logo`} width={120} height={60} className="mb-4 h-14 object-contain" data-ai-hint={partner.aiHint} />
+                    <Image src={partner.logo} alt={`${partner.name} Logo`} width={160} height={70} className="mb-4 w-[160px] h-[70px] object-cover rounded-lg mx-auto" data-ai-hint={partner.aiHint} />
                     <CardTitle className="text-xl text-primary">{partner.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">
@@ -110,9 +110,9 @@ export default function PartnersPage() {
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {industryAffiliations.map((affiliation, index) => (
-                <Card key={affiliation.name} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 300}`}>
+                <Card key={affiliation.name} className={`flex flex-col shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 300} rounded-xl`}>
                   <CardHeader className="items-center text-center">
-                     <Image src={affiliation.logo} alt={`${affiliation.name} Logo`} width={120} height={60} className="mb-4 h-14 object-contain" data-ai-hint={affiliation.aiHint} />
+                     <Image src={affiliation.logo} alt={`${affiliation.name} Logo`} width={160} height={70} className="mb-4 w-[160px] h-[70px] object-cover rounded-lg mx-auto" data-ai-hint={affiliation.aiHint} />
                     <CardTitle className="text-xl text-primary">{affiliation.name}</CardTitle>
                   </CardHeader>
                   <CardContent className="flex-grow">

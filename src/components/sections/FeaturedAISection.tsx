@@ -101,7 +101,7 @@ const FeaturedAISection = () => {
           ))}
         </div>
         <div className="text-center">
-          <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90">
+          <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-md">
             <Link href="/ai">
              Explore All AI Solutions <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

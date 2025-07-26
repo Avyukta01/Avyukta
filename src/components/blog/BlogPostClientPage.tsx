@@ -19,23 +19,21 @@ export default function BlogPostClientPage({ post }: BlogPostClientPageProps) {
   const fullContent = `${post.excerpt} \n\n(This is currently a placeholder using the post's excerpt. In a real application, this section would contain the complete blog post content, potentially formatted with Markdown or a rich text editor.)`;
 
   const shareOnSocialMedia = (platform: 'twitter' | 'linkedin' | 'facebook') => {
-    const url = typeof window !== 'undefined' ? window.location.href : `https://yourdomain.com${pathname}`;
-    const text = `Check out this article: ${post.title}`;
     let shareUrl = '';
 
     switch (platform) {
       case 'twitter':
-        shareUrl = `https://twitter.com/intent/tweet?url=${encodeURIComponent(url)}&text=${encodeURIComponent(text)}`;
+        shareUrl = 'https://x.com/avyukta_ecall';
         break;
       case 'linkedin':
-        shareUrl = `https://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(url)}&title=${encodeURIComponent(post.title)}&summary=${encodeURIComponent(post.excerpt)}`;
+        shareUrl = 'https://www.linkedin.com/company/avyukta-intellicall1/';
         break;
       case 'facebook':
-        shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        shareUrl = 'https://www.facebook.com/Avyuktaintellicalldialer';
         break;
     }
     if (shareUrl) {
-      window.open(shareUrl, '_blank', 'noopener,noreferrer');
+      window.open(shareUrl, '_blank', 'noopener,noreferrer,width=600,height=400');
     }
   };
 

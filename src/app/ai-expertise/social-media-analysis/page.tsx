@@ -5,6 +5,7 @@ import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { ScheduleDemoSheet } from "@/components/forms/ScheduleDemoSheet";
+import Head from "next/head";
 
 export const metadata: Metadata = {
   title: "Social Media Analysis and Automated Email Generation | Avyukta AI",
@@ -22,6 +23,31 @@ export const metadata: Metadata = {
 export default function SocialMediaAnalysisPage() {
   return (
     <div className="flex flex-col min-h-screen">
+      <Head>
+        <meta property="og:title" content="Social Media Analysis and Automated Email Generation | Avyukta AI" />
+        <meta property="og:description" content="Automate your lead generation and outreach with AI-powered social media analysis and email generation. Integrate Google Sheets, RapidAPI, and OpenAI for a seamless workflow." />
+        <meta property="og:image" content="/aiimage/gmail.png" />
+        <meta property="og:type" content="website" />
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Social Media Analysis and Automated Email Generation | Avyukta AI" />
+        <meta name="twitter:description" content="Automate your lead generation and outreach with AI-powered social media analysis and email generation. Integrate Google Sheets, RapidAPI, and OpenAI for a seamless workflow." />
+        <meta name="twitter:image" content="/aiimage/gmail.png" />
+        <meta name="geo.region" content="IN" />
+        <meta name="geo.placename" content="India" />
+        <meta name="geo.position" content="28.6139;77.2090" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          "name": "Avyukta AI",
+          "image": "/aiimage/gmail.png",
+          "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "IN"
+          },
+          "url": "https://avyukta.ai/ai-expertise/social-media-analysis",
+          "description": "Automate your lead generation and outreach with AI-powered social media analysis and email generation. Integrate Google Sheets, RapidAPI, and OpenAI for a seamless workflow."
+        }) }} />
+      </Head>
       <Header />
       <main className="flex-grow bg-background">
         {/* Hero Section */}

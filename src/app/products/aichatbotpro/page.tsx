@@ -39,7 +39,6 @@ const useCases = [
     { name: "Appointment Booking", description: "Scheduling and managing appointments for services.", image: "/productimage/image.png", aiHint: "calendar appointment booking" },
 ];
 
-
 export default function WhatsAppAiChatBotPage() {
   return (
     <div className="flex flex-col min-h-screen">
@@ -77,85 +76,193 @@ export default function WhatsAppAiChatBotPage() {
                 priority
               />
             </div>
-            <div className="animate-fade-in-right animation-delay-100">
-              <h2 className="text-3xl font-bold text-primary mb-6 text-title-glow-primary">Meet WhatsApp Ai Chat Bot</h2>
+            <div className="animate-fade-in-right animation-delay-100 space-y-6">
+              <h2 className="text-3xl font-bold text-primary mb-6 text-title-glow-primary">Meet WhatsApp AI Chatbot Pro</h2>
               <p className="text-muted-foreground mb-4 text-lg">
-                WhatsApp Ai Chat Bot is more than just a chatbot; it's your AI-powered customer engagement specialist. Designed to understand and respond to your customers' needs with human-like precision, it automates interactions, provides instant support, and helps you build stronger customer relationships, all while reducing operational overhead.
+                WhatsApp AI Chatbot Pro is a powerful solution designed to automate, personalize, and scale your business communications on WhatsApp. Whether you need verified business messaging, global outreach, or unlimited messaging capabilities, our flexible plans ensure you have the right tools to engage your customers and grow your business.
               </p>
               <p className="text-muted-foreground text-lg">
-                Whether you're looking to boost sales, improve customer service, or gather valuable feedback, WhatsApp Ai Chat Bot offers a versatile and powerful solution.
+                Explore our tailored WhatsApp solutions below to find the perfect fit for your marketing, support, and automation needs.
               </p>
             </div>
           </div>
         </section>
 
-        {/* Key Features Section */}
+        {/* Key Features Section (Brochure Content) */}
         <section className="section-padding bg-secondary">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up text-title-glow-primary">
-              Core Features of WhatsApp Ai Chat Bot
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8 text-title-glow-primary">
+              WhatsApp AI Chatbot Pro: Brochure Overview
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {features.map((feature, index) => (
-                <Card key={feature.title} className={`shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <CardHeader>
-                    <div className="flex items-center mb-3">
-                      <MessageSquare className="h-10 w-10 text-accent mr-3" />
-                      <CardTitle className="text-xl text-primary">{feature.title}</CardTitle>
-                    </div>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription>{feature.description}</CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {/* Meta WhatsApp API Card */}
+              <Card className="shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary">META WhatsApp API (Official)</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-muted-foreground">
+                  <div>Verified Business Messaging (Green Tick)</div>
+                  <div>₹0.95/msg (Promotional – India)</div>
+                  <div>₹0.19/msg (Transactional – India)</div>
+                  <div>International Pricing: <a href="https://bit.ly/AICMWA" target="_blank" rel="noopener noreferrer" className="text-primary underline">View Rates</a></div>
+                  <div>Panel Charges: ₹8000/month</div>
+                  <div>Min Recharge: As per Meta Policy</div>
+                  <div>Includes: Flow Builder + API/DB Triggers (as per scope)</div>
+                  <div>Ideal For: Verified businesses, regulated campaigns, CRM workflows</div>
+                  <div>Optional Add-ons: Bot, CRM Integration, Custom Dashboard</div>
+                </CardContent>
+              </Card>
+              {/* Virtual WhatsApp Card */}
+              <Card className="shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary">VIRTUAL WhatsApp (R-CLI)</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-muted-foreground">
+                  <div>Non-Official Gateway via Registered CLI</div>
+                  <div>Flat ₹0.17/msg – Global Pricing</div>
+                  <div>Min Recharge: ₹10,000</div>
+                  <div className="text-warning">Random numbers will appear while sending messages</div>
+                  <div>Includes: Flow Builder + API/DB Triggers (as per scope)</div>
+                  <div>Ideal For: Fast & affordable marketing without green tick</div>
+                  <div>Setup: Quick activation, no approval required</div>
+                </CardContent>
+              </Card>
+              {/* WhatsApp Panel Card */}
+              <Card className="shadow-lg">
+                <CardHeader>
+                  <CardTitle className="text-xl text-primary">WhatsApp Panel</CardTitle>
+                </CardHeader>
+                <CardContent className="space-y-2 text-muted-foreground">
+                  <div>₹60,000/year (One-Time Setup, No Warranty)</div>
+                  <div>Unlimited WhatsApp Messaging (Any Country)</div>
+                  <div>Includes:</div>
+                  <ul className="list-disc pl-5">
+                    <li>Flow Builder + API/DB Triggers</li>
+                    <li>WA API Access</li>
+                    <li>Bulk Messaging</li>
+                    <li>Auto-Responder + Smart Replies</li>
+                    <li>Export Group Participants Contacts</li>
+                    <li>Up to 25 Phone Instances / Scans (More on Request)</li>
+                  </ul>
+                  <div>Great for marketing teams, resellers, or self-hosting</div>
+                  <div>Free Demo Available</div>
+                </CardContent>
+              </Card>
+            </div>
+            <div className="mt-6 flex flex-col items-center">
+              <a href="/public/brochures/avyukta_brouchre.pdf" download className="inline-block px-6 py-3 bg-white text-black font-semibold rounded shadow hover:bg-gray-100 transition border border-gray-300">Download Brochure PDF</a>
             </div>
           </div>
         </section>
 
-        {/* Benefits Section */}
+        {/* Benefits Section (Website Proposal PDF Content) */}
         <section className="section-padding">
-          <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up text-title-glow-primary">
-              Unlock Tangible Business Benefits
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {benefits.map((benefit, index) => (
-                <div key={index} className={`p-6 bg-card rounded-lg shadow-lg flex items-start space-x-3 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <CheckCircle className="h-6 w-6 text-green-500 mt-1 flex-shrink-0" />
-                  <p className="text-foreground/90">{benefit}</p>
-                </div>
-              ))}
-            </div>
+          <div className="container-max text-center">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-8 text-title-glow-primary">WhatsApp Solutions & Proposal</h2>
+            <p className="mb-4 text-lg text-muted-foreground">Download our detailed website proposal for WhatsApp solutions and explore all features, pricing, and technical details.</p>
+            <a href="https://bit.ly/AICWAMS" target="_blank" rel="noopener noreferrer" className="inline-block px-6 py-3 bg-white text-black font-semibold rounded shadow hover:bg-gray-100 transition border border-gray-300">Download Website Proposal PDF</a>
           </div>
         </section>
-        
-        {/* Use Cases Section */}
+
+        {/* Ratesheet Section */}
         <section className="section-padding bg-secondary">
           <div className="container-max">
-            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-12 animate-fade-in-up text-title-glow-primary">
-              Versatile Applications Across Industries
-            </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
-              {useCases.map((useCase, index) => (
-                <Card key={useCase.name} className={`flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 animate-fade-in-up animation-delay-${index * 100 + 200}`}>
-                  <div className="relative h-48 w-full">
-                    <Image
-                        src={useCase.image}
-                        alt={useCase.name}
-                        fill
-                        className="object-cover"
-                        data-ai-hint={useCase.aiHint}
-                    />
-                    </div>
-                  <CardHeader>
-                    <CardTitle className="text-xl text-primary">{useCase.name}</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <CardDescription>{useCase.description}</CardDescription>
-                  </CardContent>
-                </Card>
-              ))}
+            <h2 className="text-3xl md:text-4xl font-bold text-primary text-center mb-8 text-title-glow-primary">WhatsApp Solutions Ratesheet</h2>
+            <div className="overflow-x-auto bg-white rounded-lg shadow-lg">
+              <table className="min-w-full text-sm text-gray-900">
+                <thead>
+                  <tr className="bg-primary text-primary-foreground">
+                    <th className="px-6 py-4 text-left font-semibold border-b border-primary/20">Feature</th>
+                    <th className="px-6 py-4 text-left font-semibold border-b border-primary/20">META WhatsApp API (Official)</th>
+                    <th className="px-6 py-4 text-left font-semibold border-b border-primary/20">VIRTUAL WhatsApp (R-CLI)</th>
+                    <th className="px-6 py-4 text-left font-semibold border-b border-primary/20">Broadcast WhatsApp Panel</th>
+                  </tr>
+                </thead>
+                <tbody className="text-gray-900">
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Business Verification</td>
+                    <td className="px-6 py-4">Verified by Meta</td>
+                    <td className="px-6 py-4">Not Verified</td>
+                    <td className="px-6 py-4">Not Verified</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Promotional (India)</td>
+                    <td className="px-6 py-4">₹0.95/msg</td>
+                    <td className="px-6 py-4">Not Available</td>
+                    <td className="px-6 py-4">Unlimited</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Transactional (India)</td>
+                    <td className="px-6 py-4">₹0.19/msg</td>
+                    <td className="px-6 py-4">Not Available</td>
+                    <td className="px-6 py-4">Unlimited</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Global Messaging Rate</td>
+                    <td className="px-6 py-4">
+                      <a href="https://bit.ly/AICMWA" target="_blank" rel="noopener noreferrer" className="text-primary underline hover:text-primary/80">
+                        WhatsApp Meta Ratesheet
+                      </a>
+                    </td>
+                    <td className="px-6 py-4">₹0.17/msg</td>
+                    <td className="px-6 py-4">Unlimited</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Panel Charges</td>
+                    <td className="px-6 py-4">₹8000/month</td>
+                    <td className="px-6 py-4">Included</td>
+                    <td className="px-6 py-4">₹60,000/year</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Minimum Recharge</td>
+                    <td className="px-6 py-4">As per Meta policy</td>
+                    <td className="px-6 py-4">₹10,000/month</td>
+                    <td className="px-6 py-4">Not Applicable</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Sender Numbers</td>
+                    <td className="px-6 py-4">Official Number Only</td>
+                    <td className="px-6 py-4">Random Numbers</td>
+                    <td className="px-6 py-4">Up to 25 Instances</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Green Tick / Branding</td>
+                    <td className="px-6 py-4">Supported</td>
+                    <td className="px-6 py-4">Not Supported</td>
+                    <td className="px-6 py-4">Not Supported</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Automation / Flow Builder</td>
+                    <td className="px-6 py-4">Included (scope-based)</td>
+                    <td className="px-6 py-4">Included (scope-based)</td>
+                    <td className="px-6 py-4">Included</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">API & DB Trigger Integration</td>
+                    <td className="px-6 py-4">Supported (as per scope)</td>
+                    <td className="px-6 py-4">Supported (as per scope)</td>
+                    <td className="px-6 py-4">Included</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Bulk Messaging</td>
+                    <td className="px-6 py-4">As per Meta rules</td>
+                    <td className="px-6 py-4">Allowed</td>
+                    <td className="px-6 py-4">Fully Supported</td>
+                  </tr>
+                  <tr className="border-b border-gray-200 hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Auto-Reply & Group Export</td>
+                    <td className="px-6 py-4">Supported via Flow</td>
+                    <td className="px-6 py-4">Supported</td>
+                    <td className="px-6 py-4">Supported</td>
+                  </tr>
+                  <tr className="hover:bg-gray-50">
+                    <td className="px-6 py-4 font-medium">Demo Availability</td>
+                    <td className="px-6 py-4">Yes</td>
+                    <td className="px-6 py-4">Yes</td>
+                    <td className="px-6 py-4">Yes</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </div>
         </section>

@@ -233,14 +233,8 @@ const navLinks: NavLink[] = [
     label: "Resources",
     desktopServiceCategories: [
       { title: "Blog", icon: Newspaper, href: "/blog", description: "Read our latest articles and industry insights." },
-      { title: "Case Studies", icon: FileText, href: "/resources/case-studies", description: "View real-world success stories and project impacts." },
-      { title: "Whitepapers & Reports", icon: ScrollText, href: "/resources/whitepapers-reports", description: "Access in-depth research and expert analysis." },
-      { title: "News & Announcements", icon: Megaphone, href: "/resources/news-announcements", description: "Stay updated with company news and press releases." },
-      { title: "Webinars & Events", icon: CalendarClock, href: "/resources/webinars-events", description: "Join our online sessions and discover upcoming events." },
       { title: "Download Brochures", icon: DownloadCloud, href: "/resources/brochures", description: "Download service details and company profiles." },
       { title: "Help Center / FAQs", icon: HelpCircle, href: "/faq", description: "Find answers to common questions and support articles." },
-      { title: "Tutorials & How-tos", icon: BookOpen, href: "/resources/tutorials", description: "Explore step-by-step guides and product tips." },
-      { title: "Newsletter Signup", icon: Mail, href: "/resources/newsletter", description: "Subscribe for exclusive content and updates." },
     ],
   },
 ];

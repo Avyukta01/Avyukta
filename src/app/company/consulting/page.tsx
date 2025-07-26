@@ -155,7 +155,7 @@ export default function ConsultingPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/images/clients.svg"
                 alt="Client success visual"
                 width={600}
                 height={400}

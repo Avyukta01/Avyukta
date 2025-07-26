@@ -73,12 +73,12 @@ export default function AIPage() {
             {/* Product Buttons */}
             <div className="flex flex-col md:flex-row justify-center gap-6 mt-10 mb-10">
               <Link href="/products/aichatbotpro">
-                <Button className="bg-white text-black rounded-full px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
+                <Button className="bg-white text-black rounded-md px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
                   WhatsApp Ai Chat Bot
                 </Button>
               </Link>
               <Link href="/products/aivoicecaller">
-                <Button className="bg-white text-black rounded-full px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
+                <Button className="bg-white text-black rounded-md px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
                   AI Voice Caller
                 </Button>
               </Link>

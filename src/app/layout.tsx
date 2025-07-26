@@ -4,6 +4,7 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster"; // Added Toaster
 import { ThemeProvider } from 'next-themes'; // Added ThemeProvider
 import FloatingWhatsAppButton from '@/components/ui/FloatingWhatsAppButton'; // Import the new button
+import { CallPopup } from '@/components/ui/CallPopup'; // Import the call popup
 
 const poppins = Poppins({
   weight: ['300', '400', '500', '600', '700'], // Specify weights you need
@@ -119,6 +120,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
         <link rel="icon" href="/favicon.png" />
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
       </head>
       <body className={`${poppins.variable} ${roboto_mono.variable} antialiased`}>
         <ThemeProvider attribute="class" defaultTheme="dark" disableTransitionOnChange>
@@ -127,8 +129,7 @@ export default function RootLayout({
           </main>
           <Toaster />
           <FloatingWhatsAppButton />
-          <elevenlabs-convai agent-id="agent_01k0ppyxn5eecaswntz2r3symf"></elevenlabs-convai>
-          <script src="https://unpkg.com/@elevenlabs/convai-widget-embed" async type="text/javascript"></script>
+          <CallPopup />
         </ThemeProvider>
       </body>
     </html>

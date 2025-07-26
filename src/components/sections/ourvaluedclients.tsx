@@ -23,6 +23,17 @@ const clients = [
   { name: "Videocon", logo: "/clients logo/videoconlogo.jpeg", alt: "Videocon Logo" },
   { name: "MTS", logo: "/clients logo/mtslogo.png", alt: "MTS Logo" },
   { name: "DARCL", logo: "/clients logo/darcllogo.jpeg", alt: "DARCL Logo" },
+  { name: "Client 1", logo: "/clients logo/1.png", alt: "Client 1 Logo" },
+  { name: "Client 2", logo: "/clients logo/2.png", alt: "Client 2 Logo" },
+  { name: "Client 3", logo: "/clients logo/3.png", alt: "Client 3 Logo" },
+  { name: "Client 4", logo: "/clients logo/4.png", alt: "Client 4 Logo" },
+  { name: "Client 5", logo: "/clients logo/5.png", alt: "Client 5 Logo" },
+  { name: "Client 6", logo: "/clients logo/6.png", alt: "Client 6 Logo" },
+  { name: "Client 7", logo: "/clients logo/7.png", alt: "Client 7 Logo" },
+  { name: "Client 8", logo: "/clients logo/8.png", alt: "Client 8 Logo" },
+  { name: "Client 9", logo: "/clients logo/9.png", alt: "Client 9 Logo" },
+  { name: "Client 10", logo: "/clients logo/10.png", alt: "Client 10 Logo" },
+  { name: "Client 11", logo: "/clients logo/11.png", alt: "Client 11 Logo" },
 ];
 
 export default function OurValuedClientsPage() {

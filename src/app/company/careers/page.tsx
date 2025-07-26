@@ -101,7 +101,7 @@ export default function CareerPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
             <div className="animate-fade-in-left animation-delay-100">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/images/anu.svg" 
                 alt="Team working collaboratively in a modern office"
                 width={600}
                 height={400}

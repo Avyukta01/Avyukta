@@ -84,7 +84,7 @@ export default function WhyChooseUsPage() {
           <div className="container-max grid md:grid-cols-2 gap-12 items-center">
              <div className="animate-fade-in-left animation-delay-100">
               <Image
-                src="https://placehold.co/600x450.png"
+                src="/images/comitment.png"
                 alt="Team collaborating on a project"
                 width={600}
                 height={450}

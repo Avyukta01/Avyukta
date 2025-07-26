@@ -70,7 +70,7 @@ export default function IdeationDesignPage() {
             </div>
             <div className="animate-fade-in-right animation-delay-100">
               <Image
-                src="https://placehold.co/600x400.png"
+                src="/productimage/school1.svg"
                 alt="Team collaborating on design"
                 width={600}
                 height={400}

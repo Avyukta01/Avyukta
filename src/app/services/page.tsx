@@ -18,7 +18,7 @@ const services = [
       "Intuitive, accessible, and aesthetically pleasing UI/UX designs",
       "Seamless user experience from start to finish"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/productimage/school1.svg",
     learnMoreLink: "/services/ideation-design"
   },
   {
@@ -30,7 +30,7 @@ const services = [
       "E-commerce, utility tools, social networking, enterprise apps",
       "Focus on UX/UI, performance, and scalability"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/mobileimages/pwa.jpg",
     learnMoreLink: "/services/mobile-apps"
   },
   {
@@ -42,7 +42,7 @@ const services = [
       "Content management systems (CMS)",
       "Modern technologies: Next.js, React, Node.js"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/productimage/online.png",
     learnMoreLink: "/services/web-development"
   },
   {
@@ -54,7 +54,7 @@ const services = [
       "Robust API development",
       "Agile methodologies for quality, scalability, and security"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/webimages/webapp.png",
     learnMoreLink: "/services/software-development"
   },
   {
@@ -66,7 +66,7 @@ const services = [
       "Computer vision and intelligent automation",
       "Gain insights, optimize processes, enhance customer experiences"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/webimages/backend.png",
     learnMoreLink: "/services/ai-solutions"
   },
   {
@@ -78,7 +78,7 @@ const services = [
       "DApps on Ethereum and Hyperledger",
       "Enhance security, traceability, and efficiency"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/webimages/webdev.png",
     learnMoreLink: "/services/blockchain-development"
   },
   {
@@ -90,7 +90,7 @@ const services = [
       "Management across AWS, Google Cloud, and Azure",
       "Optimize costs, improve scalability, enhance security"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/cloudimage/block.svg",
     learnMoreLink: "/services/cloud-solutions"
   },
   {
@@ -102,7 +102,7 @@ const services = [
       "Automated testing and comprehensive monitoring",
       "Accelerate delivery, improve quality, foster collaboration"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/productimage/devops.svg",
     learnMoreLink: "/services/devops-cicd"
   },
   {
@@ -115,7 +115,7 @@ const services = [
       "Supports multi-SIM, multi-channel, and scalable deployments",
       "Ideal for call centers, enterprises, and telecom operators"
     ],
-    image: "https://placehold.co/600x400.png",
+    image: "/webimages/gms.png",
     learnMoreLink: "/services/gsm-gateway"
   }
 ];

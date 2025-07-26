@@ -38,7 +38,7 @@ const teamMembers = [
     role: "CTO - Director",
     bio: "CTO & Director driving tech innovation and scalable architecture.",
     image: "/team/Y.s.png",
-    linkedin: "#",
+    linkedin: "https://www.linkedin.com/in/yash-suman-480229198/",
     aiHint: "cto portrait tech"
   },
  

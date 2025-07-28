@@ -15,7 +15,7 @@ const Footer = () => {
   }, []);
 
   return (
-    <footer className="bg-background/30 backdrop-blur-lg border-t border-primary/20 text-secondary-foreground section-padding">
+    <footer className="bg-neutral-900/70 backdrop-blur-2xl border border-white/20 rounded-2xl shadow-lg text-secondary-foreground section-padding mx-4 my-8">
       <div className="container-max">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           <div>
@@ -74,8 +74,6 @@ const Footer = () => {
             </div>
         </div>
         
-        {/* Full-width white line, edge-to-edge */}
-        <div className="border-t border-white w-screen absolute left-0 right-0" style={{margin: 0, padding: 0}} />
         <div className="pt-8 text-center text-sm text-muted-foreground relative z-10">
           {currentYear ? (
             <p>&copy; {currentYear} Avyukta. All rights reserved.</p>

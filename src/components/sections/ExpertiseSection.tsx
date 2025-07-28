@@ -96,7 +96,7 @@ const ExpertiseSection = () => {
                 <p className="text-sm text-muted-foreground">{item.description}</p>
               </CardContent>
               <CardFooter>
-                <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
+                <Button asChild variant="default" className="bg-white text-black hover:bg-gray-200 border border-gray-300">
                   <Link href={item.learnMoreLink}>
                     Know More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -118,8 +118,8 @@ const ExpertiseSection = () => {
                 Discover the full spectrum of our capabilities. We offer a comprehensive suite of services to help you achieve your goals.
               </p>
               <Button 
-                variant="outline" 
-                className="bg-primary-foreground text-primary hover:bg-primary-foreground/90 w-full mt-auto"
+                variant="default" 
+                className="bg-white text-black hover:bg-gray-200 border border-gray-300 w-full mt-auto"
                 asChild
               >
                 <Link href="/services">View All Services</Link>

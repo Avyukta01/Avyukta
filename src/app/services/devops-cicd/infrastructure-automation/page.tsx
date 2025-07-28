@@ -137,7 +137,7 @@ export default function InfrastructureAutomationPage() {
               Streamline your IT operations with robust infrastructure automation. From provisioning to configuration, we help you build efficient, scalable, and resilient systems.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Automate Your Infrastructure</span>
               </Button>
             </ScheduleDemoSheet>
@@ -240,7 +240,7 @@ export default function InfrastructureAutomationPage() {
               Contact us to discuss how infrastructure automation can transform your operations.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Get a Free Consultation</span>
               </Button>
             </ScheduleDemoSheet>

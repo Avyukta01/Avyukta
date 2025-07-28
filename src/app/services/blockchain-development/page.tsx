@@ -137,7 +137,7 @@ export default function BlockchainDevelopmentPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Our experts are here to guide you through the possibilities of blockchain and develop a solution tailored to your needs.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=BlockchainInquiry">Discuss Your Blockchain Project</Link>
             </Button>
           </div>

@@ -61,7 +61,7 @@ export default function DNDServicePage() {
               Ready to protect your business and your customers? Contact us to see how our DND management service can simplify compliance and enhance your reputation.
             </p>
             <a href="/contact?subject=DND_Inquiry&product=DND">
-              <button className="bg-white text-black border border-black hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold text-base shadow-md transition-all">
+              <button className="bg-white text-black border border-gray-300 hover:bg-gray-200 px-6 py-2 rounded-lg font-semibold text-base shadow-md transition-all">
                 Request a Demo
               </button>
             </a>

@@ -73,12 +73,12 @@ export default function AIPage() {
             {/* Product Buttons */}
             <div className="flex flex-col md:flex-row justify-center gap-6 mt-10 mb-10">
               <Link href="/products/aichatbotpro">
-                <Button className="bg-white text-black rounded-md px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
+                <Button className="bg-white text-black rounded-md px-8 py-4 font-bold text-lg shadow hover:bg-gray-200 transition border border-gray-300 w-full md:w-auto">
                   WhatsApp Ai Chat Bot
                 </Button>
               </Link>
               <Link href="/products/aivoicecaller">
-                <Button className="bg-white text-black rounded-md px-8 py-4 font-bold text-lg shadow hover:bg-gray-100 transition border border-black w-full md:w-auto">
+                <Button className="bg-white text-black rounded-md px-8 py-4 font-bold text-lg shadow hover:bg-gray-200 transition border border-gray-300 w-full md:w-auto">
                   AI Voice Caller
                 </Button>
               </Link>
@@ -184,7 +184,7 @@ export default function AIPage() {
               Let's discuss how Avyukta's AI expertise can revolutionize your business.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-white text-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <Link href="#">Talk to Our AI Experts</Link>
               </Button>
             </ScheduleDemoSheet>

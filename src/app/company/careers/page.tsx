@@ -134,7 +134,7 @@ export default function CareerPage() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               While we may not have specific roles listed at this moment, we are always on the lookout for passionate and talented individuals. If you believe your skills and aspirations align with our vision, we'd love to hear from you.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=CareerInquiry&message=I'm interested in career opportunities at Avyukta.">Submit Your Resume</Link>
             </Button>
           </div>
@@ -150,7 +150,7 @@ export default function CareerPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Join a team that's shaping the future of technology. We're excited to learn about your ambitions.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact">Get in Touch with HR</Link>
             </Button>
           </div>

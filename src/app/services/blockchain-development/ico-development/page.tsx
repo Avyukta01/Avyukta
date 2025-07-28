@@ -114,7 +114,7 @@ export default function ICODevelopmentPage() {
               Launch your Initial Coin Offering with confidence. Our comprehensive ICO development services ensure a secure, compliant, and successful token launch.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Start Your ICO Journey</span>
               </Button>
             </ScheduleDemoSheet>
@@ -201,7 +201,7 @@ export default function ICODevelopmentPage() {
               Let's discuss your project and create a successful ICO strategy together.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Schedule a Consultation</span>
               </Button>
             </ScheduleDemoSheet>

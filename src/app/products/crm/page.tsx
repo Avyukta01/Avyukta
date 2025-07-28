@@ -758,7 +758,7 @@ export default function CRMPage() {
               Discover how Universal Avyukta CRM can transform your sales, service, and marketing efforts.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="default" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+              <Button size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 Contact Our CRM Experts
             </Button>
             </ScheduleDemoSheet>

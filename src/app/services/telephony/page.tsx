@@ -80,7 +80,7 @@ export default function TelephonyServicePage() {
               Ready to modernize your communications? Contact us for a free demo and discover how our Telephony platform can boost your business efficiency and customer satisfaction.
             </p>
             <ScheduleDemoSheet>
-              <button className="bg-white text-black border border-black hover:bg-gray-100 px-8 py-3 rounded-lg font-semibold text-lg shadow-md transition-all">
+              <button className="bg-white text-black border border-gray-300 hover:bg-gray-200 px-8 py-3 rounded-lg font-semibold text-lg shadow-md transition-all">
                 Request a Free Demo
               </button>
             </ScheduleDemoSheet>

@@ -131,7 +131,7 @@ export default function IdeationDesignPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Our ideation and design experts are ready to help you refine your vision and create a product that stands out.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=DesignInquiry">Discuss Your Idea</Link>
             </Button>
           </div>

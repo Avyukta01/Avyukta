@@ -87,7 +87,7 @@ const BlogSection = () => {
           ))}
         </div>
         <div className="text-center mt-12">
-          <Button size="lg" variant="outline" className="border-primary text-primary hover:bg-primary/10">
+          <Button size="lg" variant="outline" className="bg-white text-black border border-gray-300 hover:bg-gray-200">
             <Link href="/blog">Visit Our Blog</Link>
           </Button>
         </div>

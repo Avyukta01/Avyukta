@@ -106,7 +106,7 @@ export default function WebDevelopmentPage() {
               Crafting innovative and robust web solutions that elevate your online presence and drive tangible business results.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+              <Button size="lg" variant="outline" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 Request a Free Consultation
               </Button>
             </ScheduleDemoSheet>
@@ -209,7 +209,7 @@ export default function WebDevelopmentPage() {
               Let's discuss your project and create a cutting-edge web solution that drives your business forward.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100">
+              <Button size="lg" variant="outline" className="bg-white text-black border border-gray-300 hover:bg-gray-200">
                 Get Your Free Quote
               </Button>
             </ScheduleDemoSheet>

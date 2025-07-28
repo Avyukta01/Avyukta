@@ -66,7 +66,7 @@ export default function QuickDeliveryAppPage() {
             <h2 className="text-3xl font-bold mb-4">Ready to Accelerate Your Delivery Business?</h2>
             <p className="text-lg mb-6">Contact Avyukta today for a free consultation and see how our Quick Delivery App can transform your operations.</p>
             <ScheduleDemoSheet>
-              <button className="inline-block bg-white text-black px-8 py-4 rounded-xl font-bold text-lg shadow border border-white transition hover:bg-black hover:text-white">Request a Demo</button>
+              <button className="inline-block bg-white text-black px-8 py-4 rounded-xl font-bold text-lg shadow border border-gray-300 transition hover:bg-gray-200">Request a Demo</button>
             </ScheduleDemoSheet>
           </div>
         </section>

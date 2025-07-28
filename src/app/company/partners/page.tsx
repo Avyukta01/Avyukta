@@ -134,7 +134,7 @@ export default function PartnersPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               We are always looking for synergistic partnerships to drive innovation and create mutual value. Let's explore how we can collaborate.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=PartnershipInquiry">Connect With Us</Link>
             </Button>
           </div>

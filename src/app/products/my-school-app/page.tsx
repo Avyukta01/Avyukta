@@ -107,7 +107,7 @@ export default function MySchoolAppPage() {
               A comprehensive digital learning platform that transforms traditional education into an interactive, engaging, and efficient learning experience for students, teachers, and parents.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Request a Demo</span>
               </Button>
             </ScheduleDemoSheet>
@@ -237,7 +237,7 @@ export default function MySchoolAppPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Join hundreds of educational institutions already using School App to enhance learning outcomes.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=SchoolApp_Inquiry&product=MySchoolApp">Contact Our Education Experts</Link>
             </Button>
           </div>

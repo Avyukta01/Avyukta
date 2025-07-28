@@ -104,7 +104,7 @@ export default function HLRLookupPage() {
               Ready to improve your communication, reduce costs, and protect your business? Contact us for a free consultation and see how our HLR Lookup API can transform your number validation process.
             </p>
             <a href="/contact?subject=HLR_Lookup_Inquiry&product=HLR_Lookup">
-              <button className="bg-accent text-accent-foreground hover:bg-accent/90 px-8 py-3 rounded-lg font-semibold text-lg shadow-md transition-all">
+              <button className="bg-white text-black border border-gray-300 hover:bg-gray-200 px-8 py-3 rounded-lg font-semibold text-lg shadow-md transition-all">
                 Get a Free Consultation
               </button>
             </a>

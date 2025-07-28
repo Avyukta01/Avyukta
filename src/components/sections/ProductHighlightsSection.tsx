@@ -39,12 +39,11 @@ export default function ProductHighlightsSection({ className }: { className?: st
               <div className="flex justify-start">
                 <Link href="/products/crm">
                   <Button 
-                    variant="outline" 
-                    className="group/btn relative overflow-hidden border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-md"
+                    variant="default" 
+                    className="bg-white text-black hover:bg-gray-200 border border-gray-300 shadow-md"
                   >
                     <span className="relative z-10">Know More</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                   </Button>
                 </Link>
               </div>
@@ -73,12 +72,11 @@ export default function ProductHighlightsSection({ className }: { className?: st
               <div className="flex justify-start">
                 <Link href="/products/dialer-india">
                   <Button 
-                    variant="outline" 
-                    className="group/btn relative overflow-hidden border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-md"
+                    variant="default" 
+                    className="bg-white text-black hover:bg-gray-200 border border-gray-300 shadow-md"
                   >
                     <span className="relative z-10">Know More</span>
                     <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/btn:translate-x-1" />
-                    <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 opacity-0 group-hover/btn:opacity-100 transition-opacity duration-300" />
                   </Button>
                 </Link>
               </div>

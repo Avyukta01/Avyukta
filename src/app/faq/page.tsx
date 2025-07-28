@@ -88,7 +88,7 @@ export default function FaqPage() {
                 <p className="text-muted-foreground mb-6">
                   If you can't find the answer you're looking for in our FAQs, please don't hesitate to reach out to our support team. We're here to help!
                 </p>
-                <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
+                <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200">
                   <Link href="/contact?subject=SupportInquiry">Contact Support</Link>
                 </Button>
               </CardContent>

@@ -55,7 +55,7 @@ export default function WhatsAppAiChatBotPage() {
               Intelligent, 24/7 AI-powered chatbots to elevate customer support, drive sales, streamline operations, and deliver exceptional user experiences.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="outline" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Request a Demo</span>
               </Button>
             </ScheduleDemoSheet>

@@ -91,7 +91,7 @@ const FeaturedAISection = () => {
                 </ul>
               </CardContent>
               <CardFooter>
-                <Button asChild variant="link" className="text-primary p-0 hover:text-accent">
+                <Button asChild variant="default" className="bg-white text-black hover:bg-gray-200 border border-gray-300">
                   <Link href={item.learnMoreLink}>
                     Know More <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
@@ -101,7 +101,7 @@ const FeaturedAISection = () => {
           ))}
         </div>
         <div className="text-center">
-          <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 rounded-md">
+          <Button asChild size="lg" variant="default" className="bg-white text-black hover:bg-gray-200 border border-gray-300 rounded-md">
             <Link href="/ai">
              Explore All AI Solutions <ArrowRight className="ml-2 h-5 w-5" />
             </Link>

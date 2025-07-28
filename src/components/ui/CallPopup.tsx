@@ -291,19 +291,10 @@ export function CallPopup({ className }: CallPopupProps) {
 
             {/* ElevenLabs Convai Widget */}
             <div className="text-center">
-              <h3 className="font-medium text-gray-900 mb-3">Start Your Conversation:</h3>
               <div className="bg-blue-50 rounded-lg p-4">
                 <ElevenLabsWidget agentId="agent_01k0ppyxn5eecaswntz2r3symf" />
               </div>
             </div>
-
-            {/* Close Button */}
-            <Button
-              onClick={() => setShowSuccessPopup(false)}
-              className="w-full bg-black hover:bg-gray-800 text-white"
-            >
-              Close
-            </Button>
           </div>
         </SheetContent>
       </Sheet>

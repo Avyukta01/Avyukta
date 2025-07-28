@@ -138,7 +138,7 @@ export default function CloudSolutionsPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Our cloud experts are ready to help you design, implement, and manage the perfect cloud strategy for your organization.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=CloudSolutionsInquiry">Consult Our Cloud Experts</Link>
             </Button>
           </div>

@@ -23,7 +23,7 @@ export default function MonitoringLoggingPage() {
               Gain real-time insights into your applications and infrastructure with our robust monitoring and logging solutions. Ensure high performance and quick issue resolution.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Get a Consultation</span>
               </Button>
             </ScheduleDemoSheet>
@@ -75,7 +75,7 @@ export default function MonitoringLoggingPage() {
               Let's implement a robust monitoring and logging strategy for your business.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Schedule a Demo</span>
               </Button>
             </ScheduleDemoSheet>

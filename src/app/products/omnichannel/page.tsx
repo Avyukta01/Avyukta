@@ -87,7 +87,7 @@ export default function OmniChannelProductPage() {
               Ready to connect everywhere? Contact us for a quick demo and see how OmniChannel can transform your customer experience.
             </p>
             <ScheduleDemoSheet>
-              <button className="bg-white text-black border border-black hover:bg-gray-100 px-6 py-2 rounded-lg font-semibold text-base shadow-md transition-all">
+              <button className="bg-white text-black border border-gray-300 hover:bg-gray-200 px-6 py-2 rounded-lg font-semibold text-base shadow-md transition-all">
                 Request a Demo
               </button>
             </ScheduleDemoSheet>

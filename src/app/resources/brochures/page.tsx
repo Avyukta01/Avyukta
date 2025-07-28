@@ -79,7 +79,7 @@ export default function BrochuresPage() {
                     <CardDescription>{brochure.description}</CardDescription>
                   </CardContent>
                   <CardFooter>
-                    <Button asChild variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 group-hover:bg-primary transition-colors w-full md:w-auto">
+                    <Button asChild variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 group-hover:bg-gray-200 transition-colors w-full md:w-auto">
                       <a 
                         href={brochure.downloadLink} 
                         target="_blank" 
@@ -111,7 +111,7 @@ export default function BrochuresPage() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               If you can't find what you're looking for or need more details, please don't hesitate to contact us.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact">Contact Us</Link>
             </Button>
           </div>

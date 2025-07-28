@@ -74,7 +74,7 @@ export default function AIVoiceCallerPage() {
               Transform your voice communications with Avyukta's AI-powered caller that automates outbound calls, enhances inbound interactions, and provides actionable insights from every conversation.
             </p>
             <ScheduleDemoSheet>
-              <Button size="lg" variant="outline" className="bg-white text-black border border-black hover:bg-gray-100 animate-fade-in-up animation-delay-300">
+              <Button size="lg" variant="outline" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 Request a Demo
               </Button>
             </ScheduleDemoSheet>
@@ -179,7 +179,7 @@ export default function AIVoiceCallerPage() {
             <p className="text-xl text-primary-foreground/80 mb-8 max-w-xl mx-auto animate-fade-in-up animation-delay-200">
               Discover how our AI Voice Caller can automate tasks, improve engagement, and provide critical insights.
             </p>
-            <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/contact?subject=AIVoiceCaller_Inquiry&product=AIVoiceCaller">Contact Our AI Voice Experts</Link>
             </Button>
           </div>

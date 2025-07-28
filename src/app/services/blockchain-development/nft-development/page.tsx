@@ -135,7 +135,7 @@ export default function NftDevelopmentPage() {
               Unlock the power of Non-Fungible Tokens with our end-to-end NFT development services. From unique digital assets to robust marketplaces, we bring your vision to life.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Start Your NFT Project</span>
               </Button>
             </ScheduleDemoSheet>
@@ -238,7 +238,7 @@ export default function NftDevelopmentPage() {
               Partner with us to build groundbreaking NFT projects, from conceptualization to launch.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Get an NFT Consultation</span>
               </Button>
             </ScheduleDemoSheet>

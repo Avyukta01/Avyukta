@@ -124,7 +124,7 @@ export default function SmartContractDevelopmentPage() {
               Build secure, efficient, and scalable smart contracts with our expert development team. From DeFi protocols to NFT marketplaces, we deliver robust blockchain solutions.
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Start Your Project</span>
               </Button>
             </ScheduleDemoSheet>
@@ -227,7 +227,7 @@ export default function SmartContractDevelopmentPage() {
               Ready to build secure and efficient decentralized applications?
             </p>
             <ScheduleDemoSheet>
-              <Button asChild size="lg" variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+              <Button asChild size="lg" variant="default" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
                 <span>Schedule a Consultation</span>
               </Button>
             </ScheduleDemoSheet>

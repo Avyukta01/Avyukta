@@ -115,7 +115,7 @@ export default function TeamPage() {
             <p className="text-muted-foreground max-w-xl mx-auto mb-8 animate-fade-in-up animation-delay-200">
               We're always looking for passionate individuals to contribute to our mission. Explore exciting career opportunities and grow with us.
             </p>
-            <Button asChild size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 animate-fade-in-up animation-delay-300">
+            <Button asChild size="lg" className="bg-white text-black border border-gray-300 hover:bg-gray-200 animate-fade-in-up animation-delay-300">
               <Link href="/company/careers">View Open Positions</Link>
             </Button>
           </div>

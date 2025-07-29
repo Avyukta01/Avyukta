@@ -12,7 +12,7 @@ export async function POST(request: Request) {
     } = await request.json();
 
     // 1. WhatsApp to Admin
-    const adminPhone = '9588922752'; 
+    const adminPhone = '8560000600'; 
     const adminMessage = ` New Quote Request:\nName: ${fullName}\nEmail: ${email}\nCompany: ${companyName}\nPhone: ${phoneNumber}\nService: ${interestedService}\nDetails: ${projectDetails}`;
     const encodedAdminMsg = encodeURIComponent(adminMessage);
 

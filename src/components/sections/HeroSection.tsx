@@ -230,8 +230,8 @@ const communicationServices = [
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isNavigating, setIsNavigating] = useState(false);
-  const [showDetails, setShowDetails] = useState(false);
-  const [selectedService, setSelectedService] = useState<any>(null);
+  const [showDetails, setShowDetails] = useState(true); // Set to true by default
+  const [selectedService, setSelectedService] = useState<any>(communicationServices[0]); // Set first service by default
   const scrollContainerRef = useRef<HTMLDivElement>(null);
   const router = useRouter();
 
@@ -273,7 +273,7 @@ const HeroSection = () => {
     setCurrentIndex(index);
     scrollToService(index);
     
-    // Show service details instead of navigating
+    // Update selected service and show details
     setSelectedService(communicationServices[index]);
     setShowDetails(true);
   };
@@ -374,123 +374,101 @@ const HeroSection = () => {
                 </p>
               </div>
               
-              {!showDetails ? (
-                <>
-                  <div className="flex items-center w-full mx-auto">
-                    {/* Left Navigation Button */}
-                    <button
-                      onClick={prevSlide}
-                      className="bg-white/20 backdrop-blur-sm rounded-full p-2 md:p-3 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg mx-2 flex-shrink-0 z-10"
-                    >
-                      <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-white" />
-                    </button>
-                    {/* Services Container */}
-                    <div className="relative flex-1 overflow-hidden">
-                      <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef}>
-                        <div className="flex gap-3 md:gap-4 lg:gap-5 pb-2 min-w-max px-2">
-                          {communicationServices.map((service, index) => (
-                            <button
-                              key={index}
-                              className={`group relative px-3 py-2 md:px-4 md:py-3 lg:px-5 lg:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm lg:text-base transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 flex-shrink-0 overflow-hidden min-w-[100px] md:min-w-[120px] lg:min-w-[140px] ${
-                                index === currentIndex
-                                  ? 'bg-gradient-to-r from-accent to-accent/80 text-white shadow-xl shadow-accent/25 border-2 border-accent/50' 
-                                  : 'bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm'
-                              }`}
-                              onClick={() => handleServiceClick(index)}
-                              onMouseEnter={() => {
-                                const button = document.querySelector(`[data-service="${index}"]`);
-                                if (button) {
-                                  button.classList.add('ring-2', 'ring-accent/30');
-                                }
-                              }}
-                              onMouseLeave={() => {
-                                const button = document.querySelector(`[data-service="${index}"]`);
-                                if (button) {
-                                  button.classList.remove('ring-2', 'ring-accent/30');
-                                }
-                              }}
-                              data-service={index}
-                            >
-                              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
-                              
-                              <div className="flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap relative z-10">
-                                <span className="text-sm md:text-lg transform group-hover:scale-110 transition-transform duration-200">{service.icon}</span>
-                                <span className="group-hover:text-accent transition-colors duration-200">{service.title}</span>
-                              </div>
-                              
-                              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
-                                {service.description}
-                              </div>
-                            </button>
-                          ))}
-                        </div>
+              <div className="space-y-6">
+                {/* Service Cards Row */}
+                <div className="flex items-center w-full mx-auto">
+                  {/* Left Navigation Button */}
+                  <button
+                    onClick={prevSlide}
+                    className="bg-white/20 backdrop-blur-sm rounded-full p-2 md:p-3 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg mx-2 flex-shrink-0 z-10"
+                  >
+                    <ChevronLeft className="h-4 w-4 md:h-6 md:w-6 text-white" />
+                  </button>
+                  {/* Services Container */}
+                  <div className="relative flex-1 overflow-hidden">
+                    <div className="overflow-x-auto scrollbar-hide" ref={scrollContainerRef}>
+                      <div className="flex gap-3 md:gap-4 lg:gap-5 pb-2 min-w-max px-2">
+                        {communicationServices.map((service, index) => (
+                          <button
+                            key={index}
+                            className={`group relative px-3 py-2 md:px-4 md:py-3 lg:px-5 lg:py-3 rounded-lg md:rounded-xl font-semibold text-xs md:text-sm lg:text-base transition-all duration-300 cursor-pointer transform hover:scale-105 active:scale-95 flex-shrink-0 overflow-hidden min-w-[100px] md:min-w-[120px] lg:min-w-[140px] ${
+                              index === currentIndex
+                                ? 'bg-gradient-to-r from-accent to-accent/80 text-white shadow-xl shadow-accent/25 border-2 border-accent/50' 
+                                : 'bg-white/10 text-white border-2 border-white/20 hover:bg-white/20 hover:border-white/40 backdrop-blur-sm'
+                            }`}
+                            onClick={() => handleServiceClick(index)}
+                            onMouseEnter={() => {
+                              const button = document.querySelector(`[data-service="${index}"]`);
+                              if (button) {
+                                button.classList.add('ring-2', 'ring-accent/30');
+                              }
+                            }}
+                            onMouseLeave={() => {
+                              const button = document.querySelector(`[data-service="${index}"]`);
+                              if (button) {
+                                button.classList.remove('ring-2', 'ring-accent/30');
+                              }
+                            }}
+                            data-service={index}
+                          >
+                            <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                            
+                            <div className="flex items-center justify-center gap-1 md:gap-2 whitespace-nowrap relative z-10">
+                              <span className="text-sm md:text-lg transform group-hover:scale-110 transition-transform duration-200">{service.icon}</span>
+                              <span className="group-hover:text-accent transition-colors duration-200">{service.title}</span>
+                            </div>
+                            
+                            <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 bg-black/80 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap z-20">
+                              {service.description}
+                            </div>
+                          </button>
+                        ))}
                       </div>
                     </div>
-                    {/* Right Navigation Button */}
-                    <button
-                      onClick={nextSlide}
-                      className="bg-white/20 backdrop-blur-sm rounded-full p-2 md:p-3 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg mx-2 flex-shrink-0 z-10"
-                    >
-                      <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-white" />
-                    </button>
                   </div>
+                  {/* Right Navigation Button */}
+                  <button
+                    onClick={nextSlide}
+                    className="bg-white/20 backdrop-blur-sm rounded-full p-2 md:p-3 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg mx-2 flex-shrink-0 z-10"
+                  >
+                    <ChevronRight className="h-4 w-4 md:h-6 md:w-6 text-white" />
+                  </button>
+                </div>
 
-                  {/* Dots Indicator */}
-                  <div className="flex justify-center mt-4 md:mt-6 gap-1 md:gap-2">
-                    {communicationServices.map((_, index) => (
-                      <button
-                        key={index}
-                        onClick={() => handleServiceClick(index)}
-                        className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
-                          index === currentIndex 
-                            ? 'bg-accent' 
-                            : 'bg-white/30 hover:bg-white/50'
-                        }`}
-                      />
-                    ))}
-                  </div>
-                  <div className="text-center mt-4 md:mt-6">
-                    <p className="text-primary-foreground/60 text-xs md:text-sm">
-                      Click on any service to learn more about our solutions
-                    </p>
-                  </div>
-                </>
-              ) : (
-                <div className="text-center">
-                  <div className="flex items-center justify-center mb-6">
+                {/* Dots Indicator */}
+                <div className="flex justify-center gap-1 md:gap-2">
+                  {communicationServices.map((_, index) => (
                     <button
-                      onClick={() => setShowDetails(false)}
-                      className="bg-white/20 backdrop-blur-sm rounded-full p-2 border border-white/30 hover:bg-white/30 transition-all duration-300 shadow-lg mr-4"
-                    >
-                      <ChevronLeft className="h-4 w-4 text-white" />
-                    </button>
+                      key={index}
+                      onClick={() => handleServiceClick(index)}
+                      className={`w-2 h-2 md:w-3 md:h-3 rounded-full transition-all duration-300 ${
+                        index === currentIndex 
+                          ? 'bg-accent' 
+                          : 'bg-white/30 hover:bg-white/50'
+                      }`}
+                    />
+                  ))}
+                </div>
+
+                {/* Service Details Section */}
+                <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20 animate-fade-in-up">
+                  <div className="flex items-center justify-center mb-6">
                     <div className="flex items-center gap-3">
                       <span className="text-2xl">{selectedService?.icon}</span>
                       <h4 className="text-xl md:text-2xl font-bold text-white">{selectedService?.title}</h4>
                     </div>
                   </div>
                   
-                  <div className="bg-white/10 backdrop-blur-sm rounded-xl p-6 border border-white/20">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
-                      {selectedService?.details.map((detail: string, index: number) => (
-                        <div key={index} className="flex items-start gap-3 p-3 bg-white/5 rounded-lg border border-white/10">
-                          <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-white text-sm md:text-base">{detail}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                  
-                  <div className="mt-6">
-                    <button
-                      onClick={() => setShowDetails(false)}
-                      className="bg-white text-black hover:bg-gray-200 border border-gray-300 px-6 py-2 rounded-lg transition-all duration-300"
-                    >
-                      Back to Services
-                    </button>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 text-left">
+                    {selectedService?.details.map((detail: string, index: number) => (
+                      <div key={index} className="flex items-start gap-3 p-3 bg-white/5 rounded-lg border border-white/10 hover:bg-white/10 transition-colors duration-200">
+                        <div className="w-2 h-2 bg-accent rounded-full mt-2 flex-shrink-0"></div>
+                        <p className="text-white text-sm md:text-base">{detail}</p>
+                      </div>
+                    ))}
                   </div>
                 </div>
-              )}
+              </div>
             </div>
           </div>
         </div>

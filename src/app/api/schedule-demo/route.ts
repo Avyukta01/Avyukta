@@ -8,7 +8,7 @@ export async function POST(req: Request) {
     const formattedDate = new Date(date).toLocaleDateString();
 
     // 1. Send form details to Admin WhatsApp
-    const adminPhone = '9588922752'; 
+    const adminPhone = '8560000600'; 
     const adminMsg = ` New Demo Request:\n\n Product: ${product}\n Date: ${formattedDate}\n Time Slot: ${timeSlot}\n Email: ${email}\n Phone: ${phoneNumber}`;
     const encodedAdminMsg = encodeURIComponent(adminMsg);
     const adminUrl = `https://wa.clouddialer.in/api/send?number=91${adminPhone}&type=text&message=${encodedAdminMsg}&instance_id=673B2D67E7616&access_token=67037ac5e67ca`;
